@@ -9,6 +9,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import { getQuizById } from '../data/catalog';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../state/store';
+import { theme } from '../styles/theme';
 
 const DIFFICULTIES = [
   'very easy',
@@ -47,7 +48,7 @@ export default function QuizStartScreen() {
 
   return (
     <SafeAreaView style={styles.safe} edges={['bottom', 'left', 'right']}>
-      <View style={styles.container}>
+    <View style={styles.container}>
         <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
           <Animated.Text entering={FadeInUp} style={styles.title}>
             {quiz?.title ?? 'Quiz'}
@@ -55,15 +56,15 @@ export default function QuizStartScreen() {
 
           <Animated.View entering={FadeInUp.delay(60)} style={styles.metaRow}>
             <View style={styles.metaPill}>
-              <Icon name="clock" size={14} color="#4A90E2" />
+              <Icon name="clock" size={14} color={theme.colors.textPrimary} />
               <Text style={styles.metaText}>{estTime} min</Text>
             </View>
             <View style={styles.metaPill}>
-              <Icon name="trending-up" size={14} color="#4A90E2" />
+              <Icon name="trending-up" size={14} color={theme.colors.textPrimary} />
               <Text style={styles.metaText}>{difficulty}</Text>
             </View>
             <View style={styles.metaPill}>
-              <Icon name="list" size={14} color="#4A90E2" />
+              <Icon name="list" size={14} color={theme.colors.textPrimary} />
               <Text style={styles.metaText}>{totalQuestions} Qs</Text>
             </View>
           </Animated.View>
@@ -79,15 +80,17 @@ export default function QuizStartScreen() {
               ItemSeparatorComponent={() => <View style={{ width: 8 }} />}
               renderItem={({ item }) => {
                 const active = item === difficulty;
+                const locked = item === 'professor' && !isPremium;
                 return (
                   <TouchableOpacity
-                    style={[styles.diffPill, active && styles.diffPillActive]}
+                    style={[styles.diffPill, active && styles.diffPillActive, locked && styles.diffPillLocked]}
                     onPress={() => setDifficulty(item as Difficulty)}
                     activeOpacity={0.9}
                   >
                     <Text style={[styles.diffPillText, active && styles.diffPillTextActive]}>
                       {item}
                     </Text>
+                    {locked && <Icon name="lock" size={14} color={theme.colors.textSecondary} style={{ marginLeft: 6 }} />}
                   </TouchableOpacity>
                 );
               }}
@@ -103,7 +106,7 @@ export default function QuizStartScreen() {
             <Text style={styles.cardTitle}>Themes</Text>
             {quiz?.themes.map((t) => (
               <View key={t.id} style={styles.row}>
-                <Icon name="check-circle" size={18} color="#34C759" />
+                <Icon name="check-circle" size={18} color={theme.colors.success} />
                 <View style={{ flex: 1 }}>
                   <Text style={styles.rowTitle}>{t.title}</Text>
                   <Text style={styles.rowDesc}>{t.description}</Text>
@@ -116,7 +119,7 @@ export default function QuizStartScreen() {
             <Text style={styles.cardTitle}>What you will do</Text>
             {quiz?.actions.map((a, idx) => (
               <View key={idx} style={styles.row}>
-                <Icon name="activity" size={18} color="#FF9F0A" />
+                <Icon name="activity" size={18} color={theme.colors.premium || '#F5A623'} />
                 <Text style={styles.rowTitle}>{a}</Text>
               </View>
             ))}
@@ -126,7 +129,7 @@ export default function QuizStartScreen() {
             <Text style={styles.cardTitle}>Requirements to pass</Text>
             {quiz?.requirements.map((r, idx) => (
               <View key={idx} style={styles.row}>
-                <Icon name="shield" size={18} color="#5856D6" />
+                <Icon name="shield" size={18} color="#8B9AF2" />
                 <Text style={styles.rowTitle}>{r}</Text>
               </View>
             ))}
@@ -149,8 +152,8 @@ export default function QuizStartScreen() {
 
         <View style={styles.footer}>
           {isProfessorLocked ? (
-            <View style={[styles.cta, { backgroundColor: '#E9ECEF' }]}>
-              <Text style={[styles.ctaText, { color: '#111' }]}>Premium required for Professor</Text>
+            <View style={[styles.cta, { backgroundColor: theme.colors.surfaceAlt }]}> 
+              <Text style={[styles.ctaText, { color: theme.colors.textSecondary }]}>Premium required for Professor</Text>
             </View>
           ) : (
             <TouchableOpacity
@@ -158,78 +161,85 @@ export default function QuizStartScreen() {
               activeOpacity={0.9}
               onPress={() => navigation.navigate('Quiz', { quizId: quiz?.id ?? 'q1' })}
             >
-              <Text style={styles.ctaText}>Start Quiz</Text>
+        <Text style={styles.ctaText}>Start Quiz</Text>
             </TouchableOpacity>
           )}
         </View>
-      </View>
+    </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: '#F5F6F8' },
+  safe: { flex: 1, backgroundColor: theme.colors.background },
   container: { flex: 1 },
   content: { padding: 16, paddingBottom: 24 },
-  title: { fontSize: 28, fontWeight: '800', marginBottom: 8 },
+  title: { fontSize: 28, fontWeight: '800', marginBottom: 8, color: theme.colors.textPrimary },
   metaRow: { flexDirection: 'row', gap: 8, marginBottom: 12 },
   metaPill: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
-    backgroundColor: '#EAF2FF',
+    backgroundColor: theme.colors.surfaceAlt,
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderRadius: 999,
+    borderWidth: 1,
+    borderColor: theme.colors.hairline,
   },
-  metaText: { color: '#1C69D4', fontWeight: '600', textTransform: 'capitalize' },
+  metaText: { color: theme.colors.textPrimary, fontWeight: '600', textTransform: 'capitalize' },
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: theme.colors.surface,
     borderRadius: 16,
     padding: 16,
     marginBottom: 12,
-    shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 2 },
+    borderWidth: 1,
+    borderColor: theme.colors.hairline,
   },
-  cardTitle: { fontSize: 18, fontWeight: '700', marginBottom: 8 },
-  paragraph: { color: '#333' },
+  cardTitle: { fontSize: 18, fontWeight: '700', marginBottom: 8, color: theme.colors.textPrimary },
+  paragraph: { color: theme.colors.textSecondary },
   row: { flexDirection: 'row', alignItems: 'flex-start', gap: 10, marginBottom: 8 },
-  rowTitle: { fontSize: 15, fontWeight: '600', flexShrink: 1 },
-  rowDesc: { color: '#555', marginTop: 2 },
+  rowTitle: { fontSize: 15, fontWeight: '600', flexShrink: 1, color: theme.colors.textPrimary },
+  rowDesc: { color: theme.colors.textSecondary, marginTop: 2 },
   sampleQ: {
     paddingVertical: 8,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: '#eee',
+    borderBottomColor: theme.colors.hairline,
   },
-  sampleQText: { fontWeight: '600', marginBottom: 6 },
+  sampleQText: { fontWeight: '600', marginBottom: 6, color: theme.colors.textPrimary },
   answerChip: {
     alignSelf: 'flex-start',
-    backgroundColor: '#F1F5F9',
+    backgroundColor: theme.colors.surfaceAlt,
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderRadius: 10,
     marginRight: 8,
     marginBottom: 6,
+    borderWidth: 1,
+    borderColor: theme.colors.hairline,
   },
-  answerChipText: { color: '#111' },
-  footer: { padding: 16, backgroundColor: '#F5F6F8' },
+  answerChipText: { color: theme.colors.textPrimary },
+  footer: { padding: 16, backgroundColor: theme.colors.background },
   cta: {
-    backgroundColor: '#4A90E2',
+    backgroundColor: theme.colors.primary,
     padding: 16,
     borderRadius: 16,
     alignItems: 'center',
   },
   ctaText: { color: 'white', fontWeight: '700' },
   diffPill: {
-    backgroundColor: '#F2F2F7',
+    backgroundColor: theme.colors.surfaceAlt,
     paddingVertical: 10,
     paddingHorizontal: 14,
     borderRadius: 999,
+    borderWidth: 1,
+    borderColor: theme.colors.hairline,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  diffPillActive: { backgroundColor: '#1C69D4' },
-  diffPillText: { color: '#111', textTransform: 'capitalize', fontWeight: '600' },
+  diffPillLocked: { borderColor: '#F5A623' },
+  diffPillActive: { backgroundColor: theme.colors.primary, borderColor: theme.colors.primary },
+  diffPillText: { color: theme.colors.textPrimary, textTransform: 'capitalize', fontWeight: '600' },
   diffPillTextActive: { color: '#fff' },
 });
 

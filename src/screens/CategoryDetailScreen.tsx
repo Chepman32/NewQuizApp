@@ -5,6 +5,7 @@ import { useRoute, useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/RootNavigator';
 import { getQuizzesForCategory } from '../data/catalog';
+import { theme } from '../styles/theme';
 
 export default function CategoryDetailScreen() {
   const route = useRoute<any>();
@@ -15,7 +16,7 @@ export default function CategoryDetailScreen() {
   return (
     <SafeAreaView style={styles.safe} edges={['bottom', 'left', 'right']}>
       <View style={styles.container}>
-        <Text style={styles.title}>Category: {categoryId}</Text>
+        <Text style={styles.title}>Category</Text>
         <FlatList
           data={quizzes}
           keyExtractor={(item) => item.id}
@@ -25,6 +26,7 @@ export default function CategoryDetailScreen() {
               onPress={() => navigation.navigate('QuizStart', { quizId: item.id })}
             >
               <Text style={styles.itemText}>{item.title}</Text>
+              <Text style={styles.itemSub} numberOfLines={1}>Difficulty: {item.difficulty}</Text>
             </TouchableOpacity>
           )}
         />
@@ -34,15 +36,18 @@ export default function CategoryDetailScreen() {
 }
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: '#F5F6F8' },
+  safe: { flex: 1, backgroundColor: theme.colors.background },
   container: { flex: 1, padding: 16 },
-  title: { fontSize: 20, fontWeight: '700', marginBottom: 12 },
+  title: { fontSize: 24, fontWeight: '800', marginBottom: 12, color: theme.colors.textPrimary },
   item: {
-    backgroundColor: '#fff',
+    backgroundColor: theme.colors.surface,
     padding: 16,
     borderRadius: 12,
     marginBottom: 10,
+    borderWidth: 1,
+    borderColor: theme.colors.hairline,
   },
-  itemText: { fontSize: 16, fontWeight: '600' },
+  itemText: { fontSize: 16, fontWeight: '700', color: theme.colors.textPrimary },
+  itemSub: { color: theme.colors.textSecondary, marginTop: 4 },
 });
 

@@ -12,6 +12,7 @@ import StoreScreen from '../screens/StoreScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import Icon from 'react-native-vector-icons/Feather';
 import Feather from 'react-native-vector-icons/Feather';
+import { theme } from '../styles/theme';
 
 Feather.loadFont();
 
@@ -33,6 +34,9 @@ function MainTabs() {
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarShowLabel: true,
+        tabBarActiveTintColor: '#fff',
+        tabBarInactiveTintColor: theme.colors.textSecondary,
+        tabBarStyle: { backgroundColor: theme.colors.surface, borderTopColor: theme.colors.hairline },
         tabBarIcon: ({ color, size }) => {
           const name =
             route.name === 'Quizzes'
@@ -56,7 +60,13 @@ function MainTabs() {
 
 export default function RootNavigator() {
   return (
-    <RootStack.Navigator>
+    <RootStack.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: theme.colors.background },
+        headerTintColor: theme.colors.textPrimary,
+        contentStyle: { backgroundColor: theme.colors.background },
+      }}
+    >
       <RootStack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }} />
       <RootStack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} />
       <RootStack.Screen name="CategoryDetail" component={CategoryDetailScreen} options={{ title: 'Category' }} />

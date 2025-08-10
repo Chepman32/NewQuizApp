@@ -8,6 +8,7 @@ import { getQuizById } from '../data/catalog';
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from '../state/store';
 import { consumeHint } from '../state/slices/appSlice';
+import { theme } from '../styles/theme';
 
 export default function QuizScreen() {
   const route = useRoute<any>();
@@ -104,8 +105,8 @@ export default function QuizScreen() {
 
   if (!quiz || !q) {
     return (
-      <View style={styles.container}>
-        <Text>Loading…</Text>
+      <View style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
+        <Text style={{ color: theme.colors.textSecondary }}>Loading…</Text>
       </View>
     );
   }
@@ -127,7 +128,7 @@ export default function QuizScreen() {
           const isSelected = selectedAnswer === a.text;
           return (
             <TouchableOpacity key={a.id} style={[styles.answer, disabled && styles.answerDisabled, isReveal && styles.answerReveal, isSelected && styles.answerSelected]} disabled={disabled} onPress={() => onAnswerPress(a.text)}>
-              <Text style={[disabled && { opacity: 0.5 }]}>{a.text}</Text>
+              <Text style={[styles.answerText, disabled && { opacity: 0.5 }]}>{a.text}</Text>
             </TouchableOpacity>
           );
         })}
@@ -149,7 +150,7 @@ export default function QuizScreen() {
         <View style={styles.sheet}>
           <Text style={styles.sheetTitle}>Choose a hint</Text>
           {!hintAvailable && (
-            <Text style={{ marginBottom: 8, color: '#666' }}>No hints available or limit reached (2 per question).</Text>
+            <Text style={{ marginBottom: 8, color: theme.colors.textSecondary }}>No hints available or limit reached (2 per question).</Text>
           )}
           <TouchableOpacity style={[styles.sheetItem, !hintAvailable && { opacity: 0.5 }]} disabled={!hintAvailable} onPress={() => applyHint('50-50')}>
             <Text style={styles.sheetItemText}>Eliminate 2 incorrect answers</Text>
@@ -168,33 +169,32 @@ function prevScoreFrom(items: { isCorrect: boolean }[]) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16 },
+  container: { flex: 1, padding: 16, backgroundColor: theme.colors.background },
   topRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 8 },
-  progress: { fontWeight: '700' },
+  progress: { fontWeight: '700', color: theme.colors.textSecondary },
   questionContainer: { flex: 1 },
-  question: { fontSize: 20, fontWeight: '700', marginBottom: 12 },
+  question: { fontSize: 22, fontWeight: '800', marginBottom: 12, color: theme.colors.textPrimary },
   answer: {
-    backgroundColor: '#fff',
+    backgroundColor: theme.colors.surface,
     padding: 16,
     borderRadius: 12,
     marginBottom: 12,
-    shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 2 },
+    borderWidth: 1,
+    borderColor: theme.colors.hairline,
   },
-  answerDisabled: { backgroundColor: '#F2F2F7' },
-  answerReveal: { borderWidth: 2, borderColor: '#34C759' },
-  answerSelected: { borderWidth: 2, borderColor: '#1C69D4' },
+  answerText: { color: theme.colors.textPrimary },
+  answerDisabled: { backgroundColor: '#0F223C' },
+  answerReveal: { borderWidth: 2, borderColor: theme.colors.success },
+  answerSelected: { borderWidth: 2, borderColor: theme.colors.primary },
   footerRow: { marginTop: 8 },
-  hintBtn: { backgroundColor: '#34C759', padding: 14, borderRadius: 12, alignItems: 'center', marginBottom: 8 },
-  hintText: { color: '#fff', fontWeight: '700' },
-  confirmBtn: { backgroundColor: '#1C69D4', padding: 14, borderRadius: 12, alignItems: 'center' },
+  hintBtn: { backgroundColor: theme.colors.surfaceAlt, padding: 14, borderRadius: 12, alignItems: 'center', marginBottom: 8, borderWidth: 1, borderColor: theme.colors.hairline },
+  hintText: { color: theme.colors.textPrimary, fontWeight: '700' },
+  confirmBtn: { backgroundColor: theme.colors.primary, padding: 14, borderRadius: 12, alignItems: 'center' },
   confirmText: { color: '#fff', fontWeight: '700' },
   backdrop: { position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.25)' },
-  sheet: { position: 'absolute', left: 0, right: 0, bottom: 0, backgroundColor: '#fff', padding: 16, borderTopLeftRadius: 20, borderTopRightRadius: 20 },
-  sheetTitle: { fontSize: 18, fontWeight: '800', marginBottom: 8 },
+  sheet: { position: 'absolute', left: 0, right: 0, bottom: 0, backgroundColor: theme.colors.surface, padding: 16, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderTopWidth: 1, borderColor: theme.colors.hairline },
+  sheetTitle: { fontSize: 18, fontWeight: '800', marginBottom: 8, color: theme.colors.textPrimary },
   sheetItem: { paddingVertical: 14 },
-  sheetItemText: { fontWeight: '600' },
+  sheetItemText: { fontWeight: '600', color: theme.colors.textPrimary },
 });
 
