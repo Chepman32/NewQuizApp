@@ -6,10 +6,29 @@ import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/RootNavigator';
 import { CATEGORIES } from '../data/catalog';
-import Feather from 'react-native-vector-icons/Feather';
 import { categoryColor, theme } from '../styles/theme';
+import MathIcon from '../assets/icons/MathIcon';
+import PhysicsIcon from '../assets/icons/PhysicsIcon';
+import ChemistryIcon from '../assets/icons/ChemistryIcon';
+import JavaScriptIcon from '../assets/icons/JavaScriptIcon';
+import Feather from 'react-native-vector-icons/Feather';
 
 Feather.loadFont();
+
+function renderCategoryIcon(id: string, color: string) {
+  switch (id) {
+    case 'math':
+      return <MathIcon color={color} />;
+    case 'physics':
+      return <PhysicsIcon color={color} />;
+    case 'chemistry':
+      return <ChemistryIcon color={color} />;
+    case 'javascript':
+      return <JavaScriptIcon color={color} />;
+    default:
+      return <Feather name="grid" size={24} color={color} />;
+  }
+}
 
 export default function HomeScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
@@ -31,7 +50,7 @@ export default function HomeScreen() {
                 onPress={() => navigation.navigate('CategoryDetail', { categoryId: item.id })}
               >
                 <View style={[styles.iconWrap, { backgroundColor: categoryColor(item.id) + '33' }] }>
-                  <Feather name={item.iconName || 'grid'} size={24} color={categoryColor(item.id)} />
+                  {renderCategoryIcon(item.id, categoryColor(item.id))}
                 </View>
                 <View style={{ flex: 1 }}>
                   <Text style={styles.cardTitle}>{item.name}</Text>
@@ -63,9 +82,9 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   iconWrap: {
-    width: 44,
-    height: 44,
-    borderRadius: 12,
+    width: 56,
+    height: 56,
+    borderRadius: 14,
     alignItems: 'center',
     justifyContent: 'center',
   },
