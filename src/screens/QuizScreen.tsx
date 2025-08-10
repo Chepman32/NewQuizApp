@@ -4,7 +4,10 @@ import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-na
 import { useRoute, useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/RootNavigator';
-import { getQuizById } from '../data/mockQuizzes';
+import { getQuizById } from '../data/catalog';
+import { useDispatch, useSelector } from 'react-redux';
+import type { RootState } from '../state/store';
+import { consumeHint } from '../state/slices/appSlice';
 
 export default function QuizScreen() {
   const route = useRoute<any>();
@@ -12,12 +15,14 @@ export default function QuizScreen() {
   const quizId: string | undefined = route.params?.quizId;
   const quiz = useMemo(() => getQuizById(quizId), [quizId]);
 
+  const dispatch = useDispatch();
+  const globalHints = useSelector((s: RootState) => s.app.hints);
+
   const [index, setIndex] = useState(0);
-  const [freeHintsLeft, setFreeHintsLeft] = useState(2);
-  const [results, setResults] = useState<{ id: string; text: string; correctAnswer: string; chosenAnswer?: string; isCorrect: boolean }[]>([]);
   const [hintSheetOpen, setHintSheetOpen] = useState(false);
   const [eliminatedIds, setEliminatedIds] = useState<Set<string>>(new Set());
   const [revealCorrect, setRevealCorrect] = useState(false);
+  const [usedHintsThisQuestion, setUsedHintsThisQuestion] = useState(0);
   const translateX = useSharedValue(0);
 
   const timerRef = useRef<number>(0);
@@ -28,6 +33,8 @@ export default function QuizScreen() {
   }, []);
 
   const q = quiz?.questions[index];
+
+  const [results, setResults] = useState<{ id: string; text: string; correctAnswer: string; chosenAnswer?: string; isCorrect: boolean }[]>([]);
 
   const goNext = (chosen?: string) => {
     if (!quiz || !q) return;
@@ -42,34 +49,34 @@ export default function QuizScreen() {
     });
 
     const nextIndex = index + 1;
-    const isDone = nextIndex >= quiz.questions.length;
+    const isDone = nextIndex >= (quiz?.questions.length ?? 0);
     if (isDone) {
       if (intervalRef.current) clearInterval(intervalRef.current);
       const score = newResults.reduce((acc, r) => acc + (r.isCorrect ? 1 : 0), 0);
       navigation.replace('QuizResults', {
         score,
-        total: quiz.questions.length,
+        total: quiz?.questions.length ?? 0,
         timeSeconds: timerRef.current,
         results: newResults,
       });
     } else {
       setIndex(nextIndex);
-      setFreeHintsLeft(2);
       setEliminatedIds(new Set());
       setRevealCorrect(false);
+      setUsedHintsThisQuestion(0);
     }
   };
 
   const openHintSheet = () => {
-    if (freeHintsLeft <= 0) return;
+    // Always open; hint options themselves can be disabled if unavailable
     setHintSheetOpen(true);
   };
 
   const applyHint = (type: '50-50' | 'reveal') => {
-    if (!q || freeHintsLeft <= 0) return;
+    const canUse = globalHints > 0 && usedHintsThisQuestion < 2;
+    if (!q || !canUse) return;
     if (type === '50-50') {
       const wrong = q.answers.filter((a) => !a.isCorrect && !eliminatedIds.has(a.id));
-      // pick two wrong answers
       const shuffled = [...wrong].sort(() => Math.random() - 0.5);
       const chosen = shuffled.slice(0, 2).map((a) => a.id);
       const nextSet = new Set(eliminatedIds);
@@ -78,7 +85,8 @@ export default function QuizScreen() {
     } else if (type === 'reveal') {
       setRevealCorrect(true);
     }
-    setFreeHintsLeft((v) => Math.max(0, v - 1));
+    dispatch(consumeHint());
+    setUsedHintsThisQuestion((v) => v + 1);
     setHintSheetOpen(false);
   };
 
@@ -92,11 +100,13 @@ export default function QuizScreen() {
     );
   }
 
+  const hintAvailable = globalHints > 0 && usedHintsThisQuestion < 2;
+
   return (
     <View style={styles.container}>
       <View style={styles.topRow}>
         <Text style={styles.progress}>Question {index + 1} / {quiz.questions.length}</Text>
-        <Text style={styles.progress}>Hints: {freeHintsLeft}</Text>
+        <Text style={styles.progress}>Hints: {globalHints || 0}</Text>
       </View>
 
       <Animated.View style={[styles.questionContainer, animatedStyle]}>
@@ -113,15 +123,8 @@ export default function QuizScreen() {
       </Animated.View>
 
       <View style={styles.footerRow}>
-        <TouchableOpacity
-          style={[styles.hintBtn, freeHintsLeft <= 0 && { opacity: 0.5 }]}
-          disabled={freeHintsLeft <= 0}
-          onPress={openHintSheet}
-        >
-          <Text style={styles.hintText}>Use hint ({freeHintsLeft} left)</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.skipBtn} onPress={() => goNext(undefined)}>
-          <Text style={styles.skipText}>Skip</Text>
+        <TouchableOpacity style={styles.hintBtn} onPress={openHintSheet}>
+          <Text style={styles.hintText}>Use hint ({globalHints || 0} left)</Text>
         </TouchableOpacity>
       </View>
 
@@ -129,10 +132,13 @@ export default function QuizScreen() {
         <Pressable style={styles.backdrop} onPress={() => setHintSheetOpen(false)} />
         <View style={styles.sheet}>
           <Text style={styles.sheetTitle}>Choose a hint</Text>
-          <TouchableOpacity style={styles.sheetItem} onPress={() => applyHint('50-50')}>
+          {!hintAvailable && (
+            <Text style={{ marginBottom: 8, color: '#666' }}>No hints available or limit reached (2 per question).</Text>
+          )}
+          <TouchableOpacity style={[styles.sheetItem, !hintAvailable && { opacity: 0.5 }]} disabled={!hintAvailable} onPress={() => applyHint('50-50')}>
             <Text style={styles.sheetItemText}>Eliminate 2 incorrect answers</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.sheetItem} onPress={() => applyHint('reveal')}>
+          <TouchableOpacity style={[styles.sheetItem, !hintAvailable && { opacity: 0.5 }]} disabled={!hintAvailable} onPress={() => applyHint('reveal')}>
             <Text style={styles.sheetItemText}>Highlight the correct answer</Text>
           </TouchableOpacity>
         </View>
@@ -163,11 +169,9 @@ const styles = StyleSheet.create({
   },
   answerDisabled: { backgroundColor: '#F2F2F7' },
   answerReveal: { borderWidth: 2, borderColor: '#34C759' },
-  footerRow: { flexDirection: 'row', gap: 12, marginTop: 8 },
-  hintBtn: { flex: 1, backgroundColor: '#34C759', padding: 14, borderRadius: 12, alignItems: 'center' },
+  footerRow: { marginTop: 8 },
+  hintBtn: { backgroundColor: '#34C759', padding: 14, borderRadius: 12, alignItems: 'center' },
   hintText: { color: '#fff', fontWeight: '700' },
-  skipBtn: { backgroundColor: '#E9ECEF', padding: 14, borderRadius: 12 },
-  skipText: { fontWeight: '700' },
   backdrop: { position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.25)' },
   sheet: { position: 'absolute', left: 0, right: 0, bottom: 0, backgroundColor: '#fff', padding: 16, borderTopLeftRadius: 20, borderTopRightRadius: 20 },
   sheetTitle: { fontSize: 18, fontWeight: '800', marginBottom: 8 },

@@ -5,6 +5,8 @@ type AppState = {
   soundEffectsEnabled: boolean;
   hapticsEnabled: boolean;
   theme: 'light' | 'dark' | 'system';
+  hints: number;
+  hintsSeeded: boolean;
 };
 
 const initialState: AppState = {
@@ -12,6 +14,8 @@ const initialState: AppState = {
   soundEffectsEnabled: true,
   hapticsEnabled: true,
   theme: 'system',
+  hints: 20,
+  hintsSeeded: false,
 };
 
 const appSlice = createSlice({
@@ -20,6 +24,19 @@ const appSlice = createSlice({
   reducers: {
     setPremium(state, action: PayloadAction<boolean>) {
       state.isPremium = action.payload;
+    },
+    addHints(state, action: PayloadAction<number>) {
+      const delta = Math.max(0, action.payload);
+      state.hints += delta;
+    },
+    setHints(state, action: PayloadAction<number>) {
+      state.hints = Math.max(0, action.payload);
+    },
+    consumeHint(state) {
+      state.hints = Math.max(0, state.hints - 1);
+    },
+    markHintsSeeded(state) {
+      state.hintsSeeded = true;
     },
     toggleSoundEffects(state) {
       state.soundEffectsEnabled = !state.soundEffectsEnabled;
@@ -33,6 +50,6 @@ const appSlice = createSlice({
   },
 });
 
-export const { setPremium, toggleSoundEffects, toggleHaptics, setTheme } = appSlice.actions;
+export const { setPremium, addHints, setHints, consumeHint, markHintsSeeded, toggleSoundEffects, toggleHaptics, setTheme } = appSlice.actions;
 export default appSlice.reducer;
 

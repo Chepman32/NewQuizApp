@@ -4,24 +4,20 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/RootNavigator';
-
-const mockQuizzes = [
-  { id: 'q1', title: 'Basics' },
-  { id: 'q2', title: 'Intermediate' },
-  { id: 'q3', title: 'Advanced' },
-];
+import { getQuizzesForCategory } from '../data/catalog';
 
 export default function CategoryDetailScreen() {
   const route = useRoute<any>();
   const { categoryId } = route.params ?? {};
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const quizzes = getQuizzesForCategory(categoryId);
 
   return (
     <SafeAreaView style={styles.safe} edges={['bottom', 'left', 'right']}>
       <View style={styles.container}>
         <Text style={styles.title}>Category: {categoryId}</Text>
         <FlatList
-          data={mockQuizzes}
+          data={quizzes}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
             <TouchableOpacity

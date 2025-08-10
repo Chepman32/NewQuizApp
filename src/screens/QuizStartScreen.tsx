@@ -6,7 +6,7 @@ import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/RootNavigator';
 import Animated, { FadeInUp } from 'react-native-reanimated';
 import Icon from 'react-native-vector-icons/Feather';
-import { getQuizById } from '../data/mockQuizzes';
+import { getQuizById } from '../data/catalog';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../state/store';
 
