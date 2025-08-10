@@ -7,6 +7,7 @@ type AppState = {
   theme: 'light' | 'dark' | 'system';
   hints: number;
   hintsSeeded: boolean;
+  requireAnswerConfirm: boolean;
 };
 
 const initialState: AppState = {
@@ -16,6 +17,7 @@ const initialState: AppState = {
   theme: 'system',
   hints: 20,
   hintsSeeded: false,
+  requireAnswerConfirm: false,
 };
 
 const appSlice = createSlice({
@@ -47,9 +49,12 @@ const appSlice = createSlice({
     setTheme(state, action: PayloadAction<AppState['theme']>) {
       state.theme = action.payload;
     },
+    toggleRequireAnswerConfirm(state) {
+      state.requireAnswerConfirm = !state.requireAnswerConfirm;
+    },
   },
 });
 
-export const { setPremium, addHints, setHints, consumeHint, markHintsSeeded, toggleSoundEffects, toggleHaptics, setTheme } = appSlice.actions;
+export const { setPremium, addHints, setHints, consumeHint, markHintsSeeded, toggleSoundEffects, toggleHaptics, setTheme, toggleRequireAnswerConfirm } = appSlice.actions;
 export default appSlice.reducer;
 

@@ -2,12 +2,12 @@ import React from 'react';
 import { View, Text, StyleSheet, Switch, TouchableOpacity } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../state/store';
-import { toggleHaptics, toggleSoundEffects, addHints } from '../state/slices/appSlice';
+import { toggleHaptics, toggleSoundEffects, addHints, toggleRequireAnswerConfirm } from '../state/slices/appSlice';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function SettingsScreen() {
   const dispatch = useDispatch();
-  const { soundEffectsEnabled, hapticsEnabled, hints } = useSelector((s: RootState) => s.app);
+  const { soundEffectsEnabled, hapticsEnabled, hints, requireAnswerConfirm } = useSelector((s: RootState) => s.app);
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}>
       <View style={styles.container}>
@@ -18,6 +18,10 @@ export default function SettingsScreen() {
         <View style={styles.row}>
           <Text style={styles.label}>Haptic Feedback</Text>
           <Switch value={hapticsEnabled} onValueChange={() => dispatch(toggleHaptics())} />
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Require answer confirmation</Text>
+          <Switch value={requireAnswerConfirm} onValueChange={() => dispatch(toggleRequireAnswerConfirm())} />
         </View>
 
         <View style={[styles.card]}>

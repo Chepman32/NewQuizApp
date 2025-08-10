@@ -17,12 +17,14 @@ export default function QuizScreen() {
 
   const dispatch = useDispatch();
   const globalHints = useSelector((s: RootState) => s.app.hints);
+  const requireConfirm = useSelector((s: RootState) => s.app.requireAnswerConfirm);
 
   const [index, setIndex] = useState(0);
   const [hintSheetOpen, setHintSheetOpen] = useState(false);
   const [eliminatedIds, setEliminatedIds] = useState<Set<string>>(new Set());
   const [revealCorrect, setRevealCorrect] = useState(false);
   const [usedHintsThisQuestion, setUsedHintsThisQuestion] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState<string | undefined>(undefined);
   const translateX = useSharedValue(0);
 
   const timerRef = useRef<number>(0);
@@ -36,7 +38,7 @@ export default function QuizScreen() {
 
   const [results, setResults] = useState<{ id: string; text: string; correctAnswer: string; chosenAnswer?: string; isCorrect: boolean }[]>([]);
 
-  const goNext = (chosen?: string) => {
+  const submitAnswer = (chosen?: string) => {
     if (!quiz || !q) return;
     const correct = q.answers.find((a) => a.isCorrect)?.text ?? '';
     const isCorrect = chosen ? chosen === correct : false;
@@ -64,11 +66,19 @@ export default function QuizScreen() {
       setEliminatedIds(new Set());
       setRevealCorrect(false);
       setUsedHintsThisQuestion(0);
+      setSelectedAnswer(undefined);
+    }
+  };
+
+  const onAnswerPress = (text: string) => {
+    if (requireConfirm) {
+      setSelectedAnswer(text);
+    } else {
+      submitAnswer(text);
     }
   };
 
   const openHintSheet = () => {
-    // Always open; hint options themselves can be disabled if unavailable
     setHintSheetOpen(true);
   };
 
@@ -114,8 +124,9 @@ export default function QuizScreen() {
         {q.answers.map((a) => {
           const disabled = eliminatedIds.has(a.id);
           const isReveal = revealCorrect && a.isCorrect;
+          const isSelected = selectedAnswer === a.text;
           return (
-            <TouchableOpacity key={a.id} style={[styles.answer, disabled && styles.answerDisabled, isReveal && styles.answerReveal]} disabled={disabled} onPress={() => goNext(a.text)}>
+            <TouchableOpacity key={a.id} style={[styles.answer, disabled && styles.answerDisabled, isReveal && styles.answerReveal, isSelected && styles.answerSelected]} disabled={disabled} onPress={() => onAnswerPress(a.text)}>
               <Text style={[disabled && { opacity: 0.5 }]}>{a.text}</Text>
             </TouchableOpacity>
           );
@@ -126,6 +137,11 @@ export default function QuizScreen() {
         <TouchableOpacity style={styles.hintBtn} onPress={openHintSheet}>
           <Text style={styles.hintText}>Use hint ({globalHints || 0} left)</Text>
         </TouchableOpacity>
+        {requireConfirm && (
+          <TouchableOpacity style={[styles.confirmBtn, !selectedAnswer && { opacity: 0.5 }]} disabled={!selectedAnswer} onPress={() => submitAnswer(selectedAnswer)}>
+            <Text style={styles.confirmText}>Confirm answer</Text>
+          </TouchableOpacity>
+        )}
       </View>
 
       <Modal transparent visible={hintSheetOpen} animationType="slide" onRequestClose={() => setHintSheetOpen(false)}>
@@ -169,9 +185,12 @@ const styles = StyleSheet.create({
   },
   answerDisabled: { backgroundColor: '#F2F2F7' },
   answerReveal: { borderWidth: 2, borderColor: '#34C759' },
+  answerSelected: { borderWidth: 2, borderColor: '#1C69D4' },
   footerRow: { marginTop: 8 },
-  hintBtn: { backgroundColor: '#34C759', padding: 14, borderRadius: 12, alignItems: 'center' },
+  hintBtn: { backgroundColor: '#34C759', padding: 14, borderRadius: 12, alignItems: 'center', marginBottom: 8 },
   hintText: { color: '#fff', fontWeight: '700' },
+  confirmBtn: { backgroundColor: '#1C69D4', padding: 14, borderRadius: 12, alignItems: 'center' },
+  confirmText: { color: '#fff', fontWeight: '700' },
   backdrop: { position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.25)' },
   sheet: { position: 'absolute', left: 0, right: 0, bottom: 0, backgroundColor: '#fff', padding: 16, borderTopLeftRadius: 20, borderTopRightRadius: 20 },
   sheetTitle: { fontSize: 18, fontWeight: '800', marginBottom: 8 },
