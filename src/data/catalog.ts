@@ -89,13 +89,57 @@ const A = (id: string, correct: string, others: string[]): Answer[] => {
   return all.sort(() => Math.random() - 0.5);
 };
 
-const SAMPLE_QUESTIONS: Question[] = [
-  { id: 'q1', text: 'Which of these is a prime number?', answers: A('q1', '17', ['12', '21', '20']) },
-  { id: 'q2', text: 'SI unit of force is…', answers: A('q2', 'Newton', ['Watt', 'Joule', 'Ampere']) },
-  { id: 'q3', text: 'Which symbol represents potassium?', answers: A('q3', 'K', ['P', 'Pt', 'Po']) },
-  { id: 'q4', text: 'Which city is the capital of France?', answers: A('q4', 'Paris', ['Lyon', 'Marseille', 'Toulouse']) },
-  { id: 'q5', text: 'In programming, what does const declare?', answers: A('q5', 'A read‑only binding', ['A constant object', 'An immutable value', 'A global variable']) },
-];
+// Category-specific question banks (short sets, reused across many quizzes)
+const BANK: Record<string, Question[]> = {
+  math: [
+    { id: 'm1', text: '2 + 2 = ?', answers: A('m1', '4', ['3', '5', '6']) },
+    { id: 'm2', text: '9 − 4 = ?', answers: A('m2', '5', ['6', '4', '3']) },
+    { id: 'm3', text: '3 × 5 = ?', answers: A('m3', '15', ['8', '10', '20']) },
+    { id: 'm4', text: '12 ÷ 3 = ?', answers: A('m4', '4', ['3', '2', '6']) },
+    { id: 'm5', text: 'Prime number:', answers: A('m5', '17', ['12', '21', '20']) },
+  ],
+  physics: [
+    { id: 'p1', text: 'SI unit of force?', answers: A('p1', 'Newton', ['Joule', 'Pascal', 'Watt']) },
+    { id: 'p2', text: 'Speed = distance / …', answers: A('p2', 'time', ['mass', 'force', 'energy']) },
+    { id: 'p3', text: 'Acceleration due to gravity near Earth (approx)?', answers: A('p3', '9.8 m/s²', ['1 g', '98 m/s', '6.67×10⁻¹¹']) },
+    { id: 'p4', text: 'Work = force × …', answers: A('p4', 'displacement', ['time', 'mass', 'power']) },
+    { id: 'p5', text: 'SI unit of energy?', answers: A('p5', 'Joule', ['Newton', 'Ampere', 'Volt']) },
+  ],
+  chemistry: [
+    { id: 'c1', text: 'Chemical symbol for Sodium?', answers: A('c1', 'Na', ['So', 'S', 'Sn']) },
+    { id: 'c2', text: 'H₂O is …', answers: A('c2', 'Water', ['Hydrogen Peroxide', 'Hydrogen', 'Oxygen']) },
+    { id: 'c3', text: 'Atomic number of Carbon?', answers: A('c3', '6', ['8', '12', '14']) },
+    { id: 'c4', text: 'Symbol for Potassium?', answers: A('c4', 'K', ['P', 'Po', 'Pt']) },
+    { id: 'c5', text: 'NaCl commonly known as …', answers: A('c5', 'Salt', ['Soda', 'Lime', 'Chalk']) },
+  ],
+  javascript: [
+    { id: 'j1', text: 'typeof null is …', answers: A('j1', 'object', ['null', 'undefined', 'string']) },
+    { id: 'j2', text: 'Array.isArray([]) returns …', answers: A('j2', 'true', ['false', '[]', 'undefined']) },
+    { id: 'j3', text: 'Strict equality operator is …', answers: A('j3', '===', ['==', '=>', '!==']) },
+    { id: 'j4', text: 'JSON.parse("\"hi\"") returns …', answers: A('j4', '"hi"', ['hi', 'null', 'undefined']) },
+    { id: 'j5', text: 'NaN === NaN evaluates to …', answers: A('j5', 'false', ['true', 'TypeError', '0']) },
+  ],
+  geography: [
+    { id: 'g1', text: 'Capital of France is …', answers: A('g1', 'Paris', ['Lyon', 'Marseille', 'Nice']) },
+    { id: 'g2', text: 'The Nile flows into which sea?', answers: A('g2', 'Mediterranean', ['Black Sea', 'Red Sea', 'Arabian Sea']) },
+    { id: 'g3', text: 'Mount Everest lies in …', answers: A('g3', 'Himalayas', ['Andes', 'Alps', 'Rockies']) },
+    { id: 'g4', text: 'The Sahara is a …', answers: A('g4', 'desert', ['river', 'lake', 'plateau']) },
+    { id: 'g5', text: 'Largest ocean is …', answers: A('g5', 'Pacific', ['Atlantic', 'Indian', 'Arctic']) },
+  ],
+};
+
+function questionsForCategory(categoryId: string): Question[] {
+  const base = BANK[categoryId];
+  if (base) return base;
+  // Generic fallback tailored by category id/name
+  return [
+    { id: `${categoryId}-1`, text: `Intro fact about ${categoryId}?`, answers: A(`${categoryId}-1`, 'Yes', ['No', 'Maybe', 'Unknown']) },
+    { id: `${categoryId}-2`, text: `Which relates to ${categoryId}?`, answers: A(`${categoryId}-2`, categoryId, ['Math', 'Physics', 'Art']) },
+    { id: `${categoryId}-3`, text: `Common term in ${categoryId}?`, answers: A(`${categoryId}-3`, 'Basics', ['Random', 'Noise', 'None']) },
+    { id: `${categoryId}-4`, text: `Choose a valid concept in ${categoryId}`, answers: A(`${categoryId}-4`, 'Core', ['Edge', 'Null', 'Gap']) },
+    { id: `${categoryId}-5`, text: `${categoryId}: pick the correct option`, answers: A(`${categoryId}-5`, 'Correct', ['Wrong 1', 'Wrong 2', 'Wrong 3']) },
+  ];
+}
 
 function buildThemes(categoryName: string): QuizTheme[] {
   return [
@@ -106,6 +150,7 @@ function buildThemes(categoryName: string): QuizTheme[] {
 
 function makeQuiz(categoryId: string, categoryName: string, subtopic: string, index: number): Quiz {
   const qid = `${categoryId}-${index + 1}`;
+  const baseQs = questionsForCategory(categoryId);
   return {
     id: qid,
     title: `${categoryName}: ${subtopic}`,
@@ -116,7 +161,7 @@ function makeQuiz(categoryId: string, categoryName: string, subtopic: string, in
     actions: ['Single-choice questions'],
     themes: buildThemes(categoryName),
     estimatedTimeMin: 10 + Math.round(Math.random() * 8),
-    questions: SAMPLE_QUESTIONS.map((q, i) => ({
+    questions: baseQs.map((q, i) => ({
       ...q,
       id: `${qid}-q${i + 1}`,
       answers: q.answers.map((a, j) => ({ ...a, id: `${qid}-q${i + 1}-a${j + 1}` })),

@@ -159,7 +159,7 @@ export default function QuizStartScreen() {
             <TouchableOpacity
               style={styles.cta}
               activeOpacity={0.9}
-              onPress={() => navigation.navigate('Quiz', { quizId: quiz?.id ?? 'q1' })}
+              onPress={() => navigation.navigate('Quiz', { quizId: quiz?.id ?? 'q1', categoryId: quiz?.categoryId ?? 'c1' })}
             >
         <Text style={styles.ctaText}>Start Quiz</Text>
             </TouchableOpacity>

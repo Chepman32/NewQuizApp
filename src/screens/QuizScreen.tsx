@@ -14,6 +14,7 @@ export default function QuizScreen() {
   const route = useRoute<any>();
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const quizId: string | undefined = route.params?.quizId;
+  const categoryId: string | undefined = route.params?.categoryId;
   const quiz = useMemo(() => getQuizById(quizId), [quizId]);
 
   const dispatch = useDispatch();
@@ -61,6 +62,8 @@ export default function QuizScreen() {
         total: quiz?.questions.length ?? 0,
         timeSeconds: timerRef.current,
         results: newResults,
+        quizId: quiz?.id,
+        categoryId: quiz?.categoryId ?? categoryId,
       });
     } else {
       setIndex(nextIndex);

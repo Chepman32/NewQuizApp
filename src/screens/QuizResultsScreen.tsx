@@ -7,6 +7,8 @@ import ScoreCircle from '../components/ScoreCircle';
 import { theme } from '../styles/theme';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/RootNavigator';
+import { useDispatch } from 'react-redux';
+import { addAttempt } from '../state/slices/progressSlice';
 
 type ResultItem = {
   id: string;
@@ -21,13 +23,32 @@ type Params = {
   total: number;
   timeSeconds: number;
   results: ResultItem[];
+  quizId?: string;
+  categoryId?: string;
 };
 
 export default function QuizResultsScreen() {
   const route = useRoute<any>();
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  const { score = 0, total = 0, timeSeconds = 0, results = [] } = (route.params as Params) ?? {};
+  const dispatch = useDispatch();
+  const { score = 0, total = 0, timeSeconds = 0, results = [], quizId, categoryId } = (route.params as Params) ?? {};
   const percent = total > 0 ? Math.round((score / total) * 100) : 0;
+
+  // Fire-and-forget store of this attempt (id with timestamp)
+  React.useEffect(() => {
+    const id = `${quizId ?? 'quiz'}-${Date.now()}`;
+    dispatch(
+      addAttempt({
+        id,
+        quizId: quizId ?? 'unknown',
+        categoryId: categoryId ?? 'unknown',
+        score,
+        total,
+        timeSeconds,
+        createdAt: new Date().toISOString(),
+      })
+    );
+  }, [dispatch, quizId, categoryId, score, total, timeSeconds]);
 
   const correctCount = score;
   const incorrectCount = Math.max(0, total - score);
