@@ -11,6 +11,9 @@ import ProgressScreen from '../screens/ProgressScreen';
 import StoreScreen from '../screens/StoreScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import Icon from 'react-native-vector-icons/Feather';
+import Feather from 'react-native-vector-icons/Feather';
+
+Feather.loadFont();
 
 export type RootStackParamList = {
   Splash: undefined;
@@ -29,6 +32,7 @@ function MainTabs() {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
+        tabBarShowLabel: true,
         tabBarIcon: ({ color, size }) => {
           const name =
             route.name === 'Quizzes'
@@ -52,13 +56,13 @@ function MainTabs() {
 
 export default function RootNavigator() {
   return (
-    <RootStack.Navigator screenOptions={{ headerShown: false }}>
-      <RootStack.Screen name="Splash" component={SplashScreen} />
-      <RootStack.Screen name="Main" component={MainTabs} />
-      <RootStack.Screen name="CategoryDetail" component={CategoryDetailScreen} />
-      <RootStack.Screen name="QuizStart" component={QuizStartScreen} />
-      <RootStack.Screen name="Quiz" component={QuizScreen} />
-      <RootStack.Screen name="QuizResults" component={QuizResultsScreen} />
+    <RootStack.Navigator>
+      <RootStack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }} />
+      <RootStack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} />
+      <RootStack.Screen name="CategoryDetail" component={CategoryDetailScreen} options={{ title: 'Category' }} />
+      <RootStack.Screen name="QuizStart" component={QuizStartScreen} options={{ title: 'Start Quiz' }} />
+      <RootStack.Screen name="Quiz" component={QuizScreen} options={{ title: 'Quiz' }} />
+      <RootStack.Screen name="QuizResults" component={QuizResultsScreen} options={{ title: 'Results' }} />
     </RootStack.Navigator>
   );
 }
