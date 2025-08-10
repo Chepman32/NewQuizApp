@@ -1,6 +1,30 @@
-# QuizApp QuizApp
+# QuizApp
 
-A premium, offline‑first quiz experience for iOS built with React Native and TypeScript. This README is the canonical guide for developers and stakeholders. It covers product vision, UX/UI, architecture, implemented vs. pending features, setup instructions, troubleshooting, and an actionable roadmap.
+Premium, offline‑first quiz app (iOS, React Native + TS). Polished dark UI, smooth animations, and real curated quizzes across Math, Physics, Chemistry, and JavaScript. This README summarizes what the app does today and what’s next; detailed design specs follow below.
+
+---
+
+## Implemented (Core)
+- Dark theme across all screens with consistent tokens
+- Navigation: tab bar + stacks, headers for back navigation
+- Home → Category → Start → Quiz → Results flow
+- Difficulty carousel (8 levels), Professor gated behind Premium
+- Centralized data in `src/data/catalog.ts`
+- Global hints model with modal (50‑50, reveal); 2 hints/question; numeric counter
+- Settings: sound, haptics, require answer confirmation, developer “Add 20 hints”
+- Quiz: selectable answers, optional confirm button, hint system, timer
+- Results: redesigned card with tiles and table; animated gradient ScoreCircle
+- Safe areas, gestures, vector icons; iPhone 15 Pro target
+
+## TODO / Roadmap
+- Premium & IAP: unlock Professor + hint packs; restore purchases
+- Store screen and CTA from Professor gate
+- Progress tab with overall stats and history
+- WatermelonDB: bundled data hydration + user progress tracking
+- Rich motion: shared elements, parallax, confetti on 90%+
+- Design system extraction (tokens/components), dark/light modes
+- Analytics, crash reporting, deep links
+- Tests: more unit coverage + Detox E2E, CI builds
 
 ---
 
