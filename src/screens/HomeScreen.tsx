@@ -8,7 +8,7 @@ import type { RootStackParamList } from '../navigation/RootNavigator';
 
 const mockCategories = [
   { id: 'cat1', name: 'Science', isPremium: false },
-  { id: 'cat2', name: 'History', isPremium: true },
+  { id: 'cat2', name: 'History', isPremium: false },
   { id: 'cat3', name: 'Programming', isPremium: false },
 ];
 

@@ -7,6 +7,8 @@ import type { RootStackParamList } from '../navigation/RootNavigator';
 import Animated, { FadeInUp } from 'react-native-reanimated';
 import Icon from 'react-native-vector-icons/Feather';
 import { getQuizById } from '../data/mockQuizzes';
+import { useSelector } from 'react-redux';
+import type { RootState } from '../state/store';
 
 const DIFFICULTIES = [
   'very easy',
@@ -40,6 +42,8 @@ export default function QuizStartScreen() {
   const [difficulty, setDifficulty] = useState<Difficulty>((quiz?.difficulty as Difficulty) ?? 'normal');
   const totalQuestions = questionCountForDifficulty[difficulty];
   const estTime = Math.max(10, Math.round(totalQuestions * 1.2));
+  const isPremium = useSelector((s: RootState) => s.app.isPremium);
+  const isProfessorLocked = difficulty === 'professor' && !isPremium;
 
   return (
     <SafeAreaView style={styles.safe} edges={['bottom', 'left', 'right']}>
@@ -144,13 +148,19 @@ export default function QuizStartScreen() {
         </ScrollView>
 
         <View style={styles.footer}>
-          <TouchableOpacity
-            style={styles.cta}
-            activeOpacity={0.9}
-            onPress={() => navigation.navigate('Quiz', { quizId: quiz?.id ?? 'q1' })}
-          >
-            <Text style={styles.ctaText}>Start Quiz</Text>
-          </TouchableOpacity>
+          {isProfessorLocked ? (
+            <View style={[styles.cta, { backgroundColor: '#E9ECEF' }]}>
+              <Text style={[styles.ctaText, { color: '#111' }]}>Premium required for Professor</Text>
+            </View>
+          ) : (
+            <TouchableOpacity
+              style={styles.cta}
+              activeOpacity={0.9}
+              onPress={() => navigation.navigate('Quiz', { quizId: quiz?.id ?? 'q1' })}
+            >
+              <Text style={styles.ctaText}>Start Quiz</Text>
+            </TouchableOpacity>
+          )}
         </View>
       </View>
     </SafeAreaView>
