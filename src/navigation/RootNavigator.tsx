@@ -13,6 +13,7 @@ import SettingsScreen from '../screens/SettingsScreen';
 import Icon from 'react-native-vector-icons/Feather';
 import Feather from 'react-native-vector-icons/Feather';
 import { theme } from '../styles/theme';
+import { useT } from '../i18n';
 
 Feather.loadFont();
 
@@ -29,6 +30,7 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator();
 
 function MainTabs() {
+  const t = useT();
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -50,15 +52,16 @@ function MainTabs() {
         },
       })}
     >
-      <Tab.Screen name="Quizzes" component={HomeScreen} />
-      <Tab.Screen name="Progress" component={ProgressScreen} />
-      <Tab.Screen name="Premium" component={StoreScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen name="Quizzes" component={HomeScreen} options={{ title: t('quizzes'), tabBarLabel: t('quizzes') }} />
+      <Tab.Screen name="Progress" component={ProgressScreen} options={{ title: t('progress'), tabBarLabel: t('progress') }} />
+      <Tab.Screen name="Premium" component={StoreScreen} options={{ title: t('premium'), tabBarLabel: t('premium') }} />
+      <Tab.Screen name="Settings" component={SettingsScreen} options={{ title: t('settings_tab'), tabBarLabel: t('settings_tab') }} />
     </Tab.Navigator>
   );
 }
 
 export default function RootNavigator() {
+  const t = useT();
   return (
     <RootStack.Navigator
       screenOptions={{
@@ -69,10 +72,10 @@ export default function RootNavigator() {
     >
       <RootStack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }} />
       <RootStack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} />
-      <RootStack.Screen name="CategoryDetail" component={CategoryDetailScreen} options={{ title: 'Category' }} />
-      <RootStack.Screen name="QuizStart" component={QuizStartScreen} options={{ title: 'Start Quiz' }} />
-      <RootStack.Screen name="Quiz" component={QuizScreen} options={{ title: 'Quiz' }} />
-      <RootStack.Screen name="QuizResults" component={QuizResultsScreen} options={{ title: 'Results' }} />
+      <RootStack.Screen name="CategoryDetail" component={CategoryDetailScreen} options={{ title: t('category') }} />
+      <RootStack.Screen name="QuizStart" component={QuizStartScreen} options={{ title: t('start_quiz_title') }} />
+      <RootStack.Screen name="Quiz" component={QuizScreen} options={{ title: t('quiz_title') }} />
+      <RootStack.Screen name="QuizResults" component={QuizResultsScreen} options={{ title: t('results_title') }} />
     </RootStack.Navigator>
   );
 }

@@ -7,12 +7,17 @@ import type { RootStackParamList } from '../navigation/RootNavigator';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../state/store';
 import { theme } from '../styles/theme';
-import { CATEGORIES, getQuizzesForCategory } from '../data/catalog';
+import { getCategories, getQuizzesForCategoryLocalized } from '../data/catalog';
+import { useT } from '../i18n';
 
 export default function ProgressScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const { hints } = useSelector((s: RootState) => s.app);
   const progress = useSelector((s: RootState) => s.progress);
+  const lang = useSelector((s: RootState) => s.app.language);
+  const t = useT();
+
+  const cats = React.useMemo(() => getCategories(lang as any), [lang]);
 
   const overall = useMemo(() => {
     const completed = progress.attempts.length;
@@ -20,49 +25,48 @@ export default function ProgressScreen() {
     const correct = progress.totals.correctAnswers;
     const timeMinutes = Math.round(progress.totals.totalTimeSeconds / 60);
     const accuracy = questions > 0 ? Math.round((correct / questions) * 100) : 0;
-    const totalQuizzes = CATEGORIES.reduce((acc, c) => acc + getQuizzesForCategory(c.id).length, 0);
-    return { completed, questions, accuracy, timeMinutes, totalQuizzes, hintsUsed: questions - correct };
+    return { completed, questions, accuracy, timeMinutes, hintsUsed: questions - correct };
   }, [progress]);
 
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}> 
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
-        <Text style={styles.title}>Progress</Text>
+        <Text style={styles.title}>{t('progress')}</Text>
 
         <View style={styles.statsRow}>
           <View style={styles.statCard}>
-            <Text style={styles.statLabel}>Quizzes Completed</Text>
+            <Text style={styles.statLabel}>{t('quizzes_completed')}</Text>
             <Text style={styles.statValue}>{overall.completed}</Text>
           </View>
           <View style={styles.statCard}>
-            <Text style={styles.statLabel}>Questions Answered</Text>
+            <Text style={styles.statLabel}>{t('questions_answered')}</Text>
             <Text style={styles.statValue}>{overall.questions}</Text>
           </View>
         </View>
         <View style={styles.statsRow}>
           <View style={styles.statCard}>
-            <Text style={styles.statLabel}>Accuracy</Text>
+            <Text style={styles.statLabel}>{t('accuracy')}</Text>
             <Text style={styles.statValue}>{overall.accuracy}%</Text>
           </View>
           <View style={styles.statCard}>
-            <Text style={styles.statLabel}>Time Played</Text>
+            <Text style={styles.statLabel}>{t('time_played')}</Text>
             <Text style={styles.statValue}>{overall.timeMinutes}m</Text>
           </View>
         </View>
 
         <View style={styles.hintsCard}>
-          <Text style={styles.sectionTitle}>Hints</Text>
-          <Text style={styles.hintsText}>Balance: {hints}</Text>
+          <Text style={styles.sectionTitle}>{t('hints')}</Text>
+          <Text style={styles.hintsText}>{t('hints_balance')}: {Number.isFinite(hints as number) ? hints : 0}</Text>
           <Text style={styles.hintsSub}>Used: {overall.hintsUsed} · Avg/quiz: {overall.completed ? (overall.hintsUsed / overall.completed).toFixed(1) : 0}</Text>
         </View>
 
-        <Text style={[styles.sectionTitle, { marginTop: 12 }]}>Categories</Text>
+        <Text style={[styles.sectionTitle, { marginTop: 12 }]}>{t('category')}</Text>
         <FlatList
-          data={CATEGORIES}
+          data={cats}
           keyExtractor={(c) => c.id}
           contentContainerStyle={{ paddingBottom: 12 }}
           renderItem={({ item }) => {
-            const quizzes = getQuizzesForCategory(item.id);
+            const quizzes = getQuizzesForCategoryLocalized(item.id, lang as any);
             const totalAnswers = quizzes.reduce((sum, q) => sum + q.questions.length, 0);
             const completedQuizIds = new Set(
               progress.attempts.filter((a) => a.categoryId === item.id).map((a) => a.quizId)

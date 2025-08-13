@@ -9,6 +9,7 @@ import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/RootNavigator';
 import { useDispatch } from 'react-redux';
 import { addAttempt } from '../state/slices/progressSlice';
+import { t } from '../i18n';
 
 type ResultItem = {
   id: string;
@@ -57,7 +58,7 @@ export default function QuizResultsScreen() {
     <SafeAreaView style={styles.safe}>
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         <View style={styles.cardLarge}>
-          <Text style={styles.headline}>{percent >= 90 ? 'Great job!' : 'Completed!'}</Text>
+          <Text style={styles.headline}>{percent >= 90 ? t('your_results') : t('your_results')}</Text>
           <View style={styles.centerRow}>
             <ScoreCircle percent={percent} gradientColors={["#30C8CA", "#2E7BFF"]} />
           </View>
@@ -66,21 +67,21 @@ export default function QuizResultsScreen() {
             <View style={styles.tile}> 
               <View style={styles.tileHeader}> 
                 <Icon name="check-circle" size={16} color={theme.colors.success} />
-                <Text style={styles.tileHeaderText}>Correct</Text>
+                <Text style={styles.tileHeaderText}>{t('correct')}</Text>
               </View>
               <Text style={styles.tileValue}>{correctCount}</Text>
             </View>
             <View style={styles.tile}> 
               <View style={styles.tileHeader}> 
                 <Icon name="x-circle" size={16} color="#FF4D4F" />
-                <Text style={styles.tileHeaderText}>Incorrect</Text>
+                <Text style={styles.tileHeaderText}>{t('incorrect')}</Text>
               </View>
               <Text style={styles.tileValue}>{incorrectCount}</Text>
             </View>
             <View style={styles.tile}> 
               <View style={styles.tileHeader}> 
                 <Icon name="clock" size={16} color="#F5A623" />
-                <Text style={styles.tileHeaderText}>Time</Text>
+                <Text style={styles.tileHeaderText}>{t('time')}</Text>
               </View>
               <Text style={styles.tileValue}>{String(Math.floor(timeSeconds/60)).padStart(2,'0')}:{String(timeSeconds%60).padStart(2,'0')}</Text>
             </View>
@@ -89,9 +90,9 @@ export default function QuizResultsScreen() {
 
         <View style={styles.tableCard}>
           <View style={styles.tableHeader}> 
-            <Text style={[styles.th, { flex: 1.2 }]}>Question</Text>
-            <Text style={[styles.th, { flex: 1 }]}>Chosen answer</Text>
-            <Text style={[styles.th, { flex: 1 }]}>Correct answer</Text>
+            <Text style={[styles.th, { flex: 1.2 }]}>{t('sample_questions')}</Text>
+            <Text style={[styles.th, { flex: 1 }]}>{t('confirm_answer')}</Text>
+            <Text style={[styles.th, { flex: 1 }]}>{t('correct')}</Text>
           </View>
           {results.map((r, idx) => (
             <View key={r.id} style={[styles.tr, idx === results.length - 1 && { borderBottomWidth: 0 }]}> 
@@ -104,10 +105,10 @@ export default function QuizResultsScreen() {
 
         <View style={styles.ctaRow}>
           <TouchableOpacity style={styles.primaryBtn} onPress={() => navigation.replace('Quiz', { quizId: route.params?.quizId })}>
-            <Text style={styles.primaryBtnText}>Play Again</Text>
+            <Text style={styles.primaryBtnText}>{t('play_again')}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.secondaryBtn} onPress={() => navigation.popToTop()}>
-            <Text style={styles.secondaryBtnText}>Back to Category</Text>
+            <Text style={styles.secondaryBtnText}>{t('back_to_category')}</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

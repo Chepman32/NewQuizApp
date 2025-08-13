@@ -6,10 +6,11 @@ import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/RootNavigator';
 import Animated, { FadeInUp } from 'react-native-reanimated';
 import Icon from 'react-native-vector-icons/Feather';
-import { getQuizById } from '../data/catalog';
+import { getQuizByIdLocalized } from '../data/catalog';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../state/store';
 import { theme } from '../styles/theme';
+import { useT } from '../i18n';
 
 const DIFFICULTIES = [
   'very easy',
@@ -38,9 +39,11 @@ const questionCountForDifficulty: Record<Difficulty, number> = {
 export default function QuizStartScreen() {
   const route = useRoute<any>();
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const t = useT();
+  const lang = useSelector((s: RootState) => s.app.language);
   const quizId: string | undefined = route.params?.quizId;
-  const quiz = useMemo(() => getQuizById(quizId), [quizId]);
-  const [difficulty, setDifficulty] = useState<Difficulty>((quiz?.difficulty as Difficulty) ?? 'normal');
+  const quiz = useMemo(() => getQuizByIdLocalized(quizId, lang as any), [quizId, lang]);
+  const [difficulty, setDifficulty] = useState((quiz?.difficulty as any) ?? 'normal');
   const totalQuestions = questionCountForDifficulty[difficulty];
   const estTime = Math.max(10, Math.round(totalQuestions * 1.2));
   const isPremium = useSelector((s: RootState) => s.app.isPremium);
@@ -70,7 +73,7 @@ export default function QuizStartScreen() {
           </Animated.View>
 
           <Animated.View entering={FadeInUp.delay(90)} style={styles.card}>
-            <Text style={styles.cardTitle}>Select difficulty</Text>
+            <Text style={styles.cardTitle}>{t('select_difficulty')}</Text>
             <FlatList
               horizontal
               showsHorizontalScrollIndicator={false}
@@ -98,35 +101,25 @@ export default function QuizStartScreen() {
           </Animated.View>
 
           <Animated.View entering={FadeInUp.delay(120)} style={styles.card}>
-            <Text style={styles.cardTitle}>Overview</Text>
+            <Text style={styles.cardTitle}>{t('overview')}</Text>
             <Text style={styles.paragraph}>{quiz?.description}</Text>
           </Animated.View>
 
           <Animated.View entering={FadeInUp.delay(180)} style={styles.card}>
-            <Text style={styles.cardTitle}>Themes</Text>
-            {quiz?.themes.map((t) => (
-              <View key={t.id} style={styles.row}>
+            <Text style={styles.cardTitle}>{t('themes')}</Text>
+            {quiz?.themes.map((tTheme) => (
+              <View key={tTheme.id} style={styles.row}>
                 <Icon name="check-circle" size={18} color={theme.colors.success} />
                 <View style={{ flex: 1 }}>
-                  <Text style={styles.rowTitle}>{t.title}</Text>
-                  <Text style={styles.rowDesc}>{t.description}</Text>
+                  <Text style={styles.rowTitle}>{tTheme.title}</Text>
+                  <Text style={styles.rowDesc}>{tTheme.description}</Text>
                 </View>
               </View>
             ))}
           </Animated.View>
 
           <Animated.View entering={FadeInUp.delay(240)} style={styles.card}>
-            <Text style={styles.cardTitle}>What you will do</Text>
-            {quiz?.actions.map((a, idx) => (
-              <View key={idx} style={styles.row}>
-                <Icon name="activity" size={18} color={theme.colors.premium || '#F5A623'} />
-                <Text style={styles.rowTitle}>{a}</Text>
-              </View>
-            ))}
-          </Animated.View>
-
-          <Animated.View entering={FadeInUp.delay(300)} style={styles.card}>
-            <Text style={styles.cardTitle}>Requirements to pass</Text>
+            <Text style={styles.cardTitle}>{t('requirements_to_pass')}</Text>
             {quiz?.requirements.map((r, idx) => (
               <View key={idx} style={styles.row}>
                 <Icon name="shield" size={18} color="#8B9AF2" />
@@ -135,8 +128,8 @@ export default function QuizStartScreen() {
             ))}
           </Animated.View>
 
-          <Animated.View entering={FadeInUp.delay(360)} style={styles.card}>
-            <Text style={styles.cardTitle}>Sample Questions</Text>
+          <Animated.View entering={FadeInUp.delay(300)} style={styles.card}>
+            <Text style={styles.cardTitle}>{t('sample_questions')}</Text>
             {quiz?.questions.slice(0, 3).map((q) => (
               <View key={q.id} style={styles.sampleQ}>
                 <Text style={styles.sampleQText}>{q.text}</Text>
@@ -161,7 +154,7 @@ export default function QuizStartScreen() {
               activeOpacity={0.9}
               onPress={() => navigation.navigate('Quiz', { quizId: quiz?.id ?? 'q1', categoryId: quiz?.categoryId ?? 'c1' })}
             >
-        <Text style={styles.ctaText}>Start Quiz</Text>
+              <Text style={styles.ctaText}>{t('start_quiz')}</Text>
             </TouchableOpacity>
           )}
         </View>

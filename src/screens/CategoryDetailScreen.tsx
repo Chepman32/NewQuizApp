@@ -4,19 +4,23 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/RootNavigator';
-import { getQuizzesForCategory } from '../data/catalog';
+import { getQuizzesForCategoryLocalized, getCategories } from '../data/catalog';
 import { theme } from '../styles/theme';
+import { useSelector } from 'react-redux';
+import type { RootState } from '../state/store';
 
 export default function CategoryDetailScreen() {
   const route = useRoute<any>();
   const { categoryId } = route.params ?? {};
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  const quizzes = getQuizzesForCategory(categoryId);
+  const lang = useSelector((s: RootState) => s.app.language);
+  const quizzes = getQuizzesForCategoryLocalized(categoryId, lang as any);
+  const cat = getCategories(lang as any).find((c) => c.id === categoryId);
 
   return (
     <SafeAreaView style={styles.safe} edges={['bottom', 'left', 'right']}>
       <View style={styles.container}>
-        <Text style={styles.title}>Category</Text>
+        <Text style={styles.title}>{cat?.name || 'Category'}</Text>
         <FlatList
           data={quizzes}
           keyExtractor={(item) => item.id}

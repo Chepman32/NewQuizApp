@@ -4,22 +4,26 @@ import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-na
 import { useRoute, useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/RootNavigator';
-import { getQuizById } from '../data/catalog';
+import { getQuizByIdLocalized } from '../data/catalog';
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from '../state/store';
 import { consumeHint } from '../state/slices/appSlice';
 import { theme } from '../styles/theme';
+import { useT, useTf } from '../i18n';
 
 export default function QuizScreen() {
   const route = useRoute<any>();
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const quizId: string | undefined = route.params?.quizId;
   const categoryId: string | undefined = route.params?.categoryId;
-  const quiz = useMemo(() => getQuizById(quizId), [quizId]);
+  const lang = useSelector((s: RootState) => s.app.language);
+  const quiz = useMemo(() => getQuizByIdLocalized(quizId, lang as any), [quizId, lang]);
 
   const dispatch = useDispatch();
   const globalHints = useSelector((s: RootState) => s.app.hints);
   const requireConfirm = useSelector((s: RootState) => s.app.requireAnswerConfirm);
+  const tt = useT();
+  const tf = useTf();
 
   const [index, setIndex] = useState(0);
   const [hintSheetOpen, setHintSheetOpen] = useState(false);
@@ -119,8 +123,8 @@ export default function QuizScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.topRow}>
-        <Text style={styles.progress}>Question {index + 1} / {quiz.questions.length}</Text>
-        <Text style={styles.progress}>Hints: {globalHints || 0}</Text>
+        <Text style={styles.progress}>{tf('question_progress', index + 1, quiz.questions.length)}</Text>
+        <Text style={styles.progress}>{tt('hints')}: {globalHints || 0}</Text>
       </View>
 
       <Animated.View style={[styles.questionContainer, animatedStyle]}>
@@ -139,11 +143,11 @@ export default function QuizScreen() {
 
       <View style={styles.footerRow}>
         <TouchableOpacity style={styles.hintBtn} onPress={openHintSheet}>
-          <Text style={styles.hintText}>Use hint ({globalHints || 0} left)</Text>
+          <Text style={styles.hintText}>{tt('use_hint')} ({globalHints || 0} {tt('hints')})</Text>
         </TouchableOpacity>
         {requireConfirm && (
           <TouchableOpacity style={[styles.confirmBtn, !selectedAnswer && { opacity: 0.5 }]} disabled={!selectedAnswer} onPress={() => submitAnswer(selectedAnswer)}>
-            <Text style={styles.confirmText}>Confirm answer</Text>
+            <Text style={styles.confirmText}>{tt('confirm_answer')}</Text>
           </TouchableOpacity>
         )}
       </View>
@@ -151,7 +155,7 @@ export default function QuizScreen() {
       <Modal transparent visible={hintSheetOpen} animationType="slide" onRequestClose={() => setHintSheetOpen(false)}>
         <Pressable style={styles.backdrop} onPress={() => setHintSheetOpen(false)} />
         <View style={styles.sheet}>
-          <Text style={styles.sheetTitle}>Choose a hint</Text>
+          <Text style={styles.sheetTitle}>{tt('use_hint')}</Text>
           {!hintAvailable && (
             <Text style={{ marginBottom: 8, color: theme.colors.textSecondary }}>No hints available or limit reached (2 per question).</Text>
           )}

@@ -8,6 +8,7 @@ type AppState = {
   hints: number;
   hintsSeeded: boolean;
   requireAnswerConfirm: boolean;
+  language: string;
 };
 
 const initialState: AppState = {
@@ -18,6 +19,7 @@ const initialState: AppState = {
   hints: 20,
   hintsSeeded: false,
   requireAnswerConfirm: false,
+  language: 'en',
 };
 
 const appSlice = createSlice({
@@ -52,9 +54,12 @@ const appSlice = createSlice({
     toggleRequireAnswerConfirm(state) {
       state.requireAnswerConfirm = !state.requireAnswerConfirm;
     },
+    setLanguage(state, action: PayloadAction<string>) {
+      state.language = action.payload;
+    },
   },
 });
 
-export const { setPremium, addHints, setHints, consumeHint, markHintsSeeded, toggleSoundEffects, toggleHaptics, setTheme, toggleRequireAnswerConfirm } = appSlice.actions;
+export const { setPremium, addHints, setHints, consumeHint, markHintsSeeded, toggleSoundEffects, toggleHaptics, setTheme, toggleRequireAnswerConfirm, setLanguage } = appSlice.actions;
 export default appSlice.reducer;
 

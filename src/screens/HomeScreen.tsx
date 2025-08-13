@@ -5,13 +5,16 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/RootNavigator';
-import { CATEGORIES } from '../data/catalog';
+import { getCategories } from '../data/catalog';
 import { categoryColor, theme } from '../styles/theme';
 import MathIcon from '../assets/icons/MathIcon';
 import PhysicsIcon from '../assets/icons/PhysicsIcon';
 import ChemistryIcon from '../assets/icons/ChemistryIcon';
 import JavaScriptIcon from '../assets/icons/JavaScriptIcon';
 import Feather from 'react-native-vector-icons/Feather';
+import { useT } from '../i18n';
+import { useSelector } from 'react-redux';
+import type { RootState } from '../state/store';
 
 Feather.loadFont();
 
@@ -32,14 +35,17 @@ function renderCategoryIcon(id: string, color: string) {
 
 export default function HomeScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const t = useT();
+  const lang = useSelector((s: RootState) => s.app.language);
+  const data = React.useMemo(() => getCategories(lang as any), [lang]);
 
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}>
       <View style={styles.container}>
-        <Text style={styles.title}>Home</Text>
-        <Text style={styles.subtitle}>Welcome back</Text>
+        <Text style={styles.title}>{t('home_title')}</Text>
+        <Text style={styles.subtitle}>{t('welcome_back')}</Text>
         <FlatList
-          data={CATEGORIES}
+          data={data}
           keyExtractor={(item) => item.id}
           contentContainerStyle={{ paddingVertical: 16 }}
           renderItem={({ item, index }) => (
