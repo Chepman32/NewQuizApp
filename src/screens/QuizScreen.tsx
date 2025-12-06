@@ -15,7 +15,7 @@ import Animated, {
 import { useRoute, useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/RootNavigator';
-import { getQuizByIdLocalized } from '../data/catalog';
+import { getQuizByIdLocalized, getQuestionsForDifficulty, type Difficulty } from '../data/catalog';
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from '../state/store';
 import { consumeHint } from '../state/slices/appSlice';
@@ -28,11 +28,19 @@ export default function QuizScreen() {
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const quizId: string | undefined = route.params?.quizId;
   const categoryId: string | undefined = route.params?.categoryId;
+  const difficulty: Difficulty = route.params?.difficulty ?? 'normal';
   const lang = useSelector((s: RootState) => s.app.language);
   const quiz = useMemo(
     () => getQuizByIdLocalized(quizId, lang as any),
     [quizId, lang],
   );
+
+  // Get questions filtered by difficulty
+  const questions = useMemo(() => {
+    if (!quiz) return [];
+    return getQuestionsForDifficulty(quiz.categoryId, difficulty, lang as any);
+  }, [quiz, difficulty, lang]);
+
   const theme = useTheme();
 
   const dispatch = useDispatch();
@@ -62,7 +70,7 @@ export default function QuizScreen() {
     };
   }, []);
 
-  const q = quiz?.questions[index];
+  const q = questions[index];
   const [results, setResults] = useState<
     {
       id: string;
@@ -95,7 +103,7 @@ export default function QuizScreen() {
     });
 
     const nextIndex = index + 1;
-    const isDone = nextIndex >= (quiz?.questions.length ?? 0);
+    const isDone = nextIndex >= questions.length;
     if (isDone) {
       if (intervalRef.current) clearInterval(intervalRef.current);
       const score = newResults.reduce(
@@ -104,7 +112,7 @@ export default function QuizScreen() {
       );
       navigation.replace('QuizResults', {
         score,
-        total: quiz?.questions.length ?? 0,
+        total: questions.length,
         timeSeconds: timerRef.current,
         results: newResults,
         quizId: quiz?.id,
@@ -230,7 +238,7 @@ export default function QuizScreen() {
     sheetItemText: { fontWeight: '600', color: theme.colors.textPrimary },
   });
 
-  if (!quiz || !q) {
+  if (!quiz || questions.length === 0 || !q) {
     return (
       <View
         style={[
@@ -249,7 +257,7 @@ export default function QuizScreen() {
     <View style={styles.container}>
       <View style={styles.topRow}>
         <Text style={styles.progress}>
-          {tf('question_progress', index + 1, quiz.questions.length)}
+          {tf('question_progress', index + 1, questions.length)}
         </Text>
         <Text style={styles.progress}>
           {tt('hints')}: {globalHints || 0}

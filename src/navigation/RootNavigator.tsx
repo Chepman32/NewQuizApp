@@ -30,7 +30,7 @@ export type RootStackParamList = {
   Main: undefined;
   CategoryDetail: { categoryId: string };
   QuizStart: { quizId: string };
-  Quiz: { quizId: string; categoryId?: string };
+  Quiz: { quizId: string; categoryId?: string; difficulty?: string };
   QuizResults: {
     quizId?: string;
     categoryId?: string;

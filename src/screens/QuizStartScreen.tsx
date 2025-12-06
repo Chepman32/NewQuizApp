@@ -328,6 +328,7 @@ export default function QuizStartScreen() {
                 navigation.navigate('Quiz', {
                   quizId: quiz?.id ?? 'q1',
                   categoryId: quiz?.categoryId ?? 'c1',
+                  difficulty,
                 })
               }
             >

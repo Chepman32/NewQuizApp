@@ -52,7 +52,7 @@ export type Category = {
 export type QuizTheme = { id: string; title: string; description: string };
 
 export type Answer = { id: string; text: string; isCorrect: boolean };
-export type Question = { id: string; text: string; answers: Answer[] };
+export type Question = { id: string; text: string; answers: Answer[]; level?: number };
 
 export type Quiz = {
   id: string;
@@ -1123,130 +1123,137 @@ const A = (id: string, correct: string, others: string[]): Answer[] => {
   return all.sort(() => Math.random() - 0.5);
 };
 
-// English banks
+// English banks with difficulty levels (1=easiest, 8=hardest)
 const BANK_EN: Record<string, Question[]> = {
   math: [
-    { id: 'm1', text: '2 + 2 = ?', answers: A('m1', '4', ['3', '5', '6']) },
-    { id: 'm2', text: '9 − 4 = ?', answers: A('m2', '5', ['6', '4', '3']) },
-    { id: 'm3', text: '3 × 5 = ?', answers: A('m3', '15', ['8', '10', '20']) },
-    { id: 'm4', text: '12 ÷ 3 = ?', answers: A('m4', '4', ['3', '2', '6']) },
-    {
-      id: 'm5',
-      text: 'Prime number:',
-      answers: A('m5', '17', ['12', '21', '20']),
-    },
+    // Level 1-2: Very Easy / Easy
+    { id: 'm1', text: '2 + 2 = ?', answers: A('m1', '4', ['3', '5', '6']), level: 1 },
+    { id: 'm2', text: '9 − 4 = ?', answers: A('m2', '5', ['6', '4', '3']), level: 1 },
+    { id: 'm3', text: '3 × 5 = ?', answers: A('m3', '15', ['8', '10', '20']), level: 1 },
+    { id: 'm4', text: '12 ÷ 3 = ?', answers: A('m4', '4', ['3', '2', '6']), level: 2 },
+    { id: 'm5', text: '7 + 8 = ?', answers: A('m5', '15', ['14', '16', '13']), level: 1 },
+    // Level 3-4: Intermediate / Normal
+    { id: 'm6', text: 'Prime number:', answers: A('m6', '17', ['12', '21', '20']), level: 3 },
+    { id: 'm7', text: '√144 = ?', answers: A('m7', '12', ['14', '11', '13']), level: 3 },
+    { id: 'm8', text: '15% of 200 = ?', answers: A('m8', '30', ['25', '35', '20']), level: 4 },
+    { id: 'm9', text: '2³ = ?', answers: A('m9', '8', ['6', '9', '12']), level: 3 },
+    { id: 'm10', text: 'GCD of 12 and 18?', answers: A('m10', '6', ['3', '9', '12']), level: 4 },
+    // Level 5-6: Hard / Very Hard
+    { id: 'm11', text: 'log₁₀(1000) = ?', answers: A('m11', '3', ['2', '4', '10']), level: 5 },
+    { id: 'm12', text: 'sin(90°) = ?', answers: A('m12', '1', ['0', '0.5', '−1']), level: 5 },
+    { id: 'm13', text: '∫x dx = ?', answers: A('m13', 'x²/2 + C', ['x + C', '2x + C', 'x²']), level: 6 },
+    { id: 'm14', text: 'lim(x→0) sin(x)/x = ?', answers: A('m14', '1', ['0', '∞', 'undefined']), level: 6 },
+    { id: 'm15', text: 'd/dx(eˣ) = ?', answers: A('m15', 'eˣ', ['xeˣ⁻¹', 'ln(x)', '1']), level: 5 },
+    // Level 7-8: Legendary / Professor
+    { id: 'm16', text: '∫eˣsin(x)dx uses which method?', answers: A('m16', 'Integration by parts', ['Substitution', 'Partial fractions', 'L\'Hôpital']), level: 7 },
+    { id: 'm17', text: 'Euler\'s identity: eⁱᵖ + 1 = ?', answers: A('m17', '0', ['1', '−1', 'i']), level: 7 },
+    { id: 'm18', text: 'The Riemann zeta function ζ(2) = ?', answers: A('m18', 'π²/6', ['π/2', 'π²/4', '1']), level: 8 },
+    { id: 'm19', text: 'Gödel\'s incompleteness theorem applies to:', answers: A('m19', 'Sufficiently powerful formal systems', ['All logical systems', 'Only arithmetic', 'Set theory only']), level: 8 },
+    { id: 'm20', text: 'The cardinality of ℝ is:', answers: A('m20', '2^ℵ₀', ['ℵ₀', 'ℵ₁', '∞']), level: 8 },
   ],
   physics: [
-    {
-      id: 'p1',
-      text: 'SI unit of force?',
-      answers: A('p1', 'Newton', ['Joule', 'Pascal', 'Watt']),
-    },
-    {
-      id: 'p2',
-      text: 'Speed = distance / …',
-      answers: A('p2', 'time', ['mass', 'force', 'energy']),
-    },
-    {
-      id: 'p3',
-      text: 'Acceleration due to gravity near Earth (approx)?',
-      answers: A('p3', '9.8 m/s²', ['1 g', '98 m/s', '6.67×10⁻¹¹']),
-    },
-    {
-      id: 'p4',
-      text: 'Work = force × …',
-      answers: A('p4', 'displacement', ['time', 'mass', 'power']),
-    },
-    {
-      id: 'p5',
-      text: 'SI unit of energy?',
-      answers: A('p5', 'Joule', ['Newton', 'Ampere', 'Volt']),
-    },
+    // Level 1-2
+    { id: 'p1', text: 'SI unit of force?', answers: A('p1', 'Newton', ['Joule', 'Pascal', 'Watt']), level: 1 },
+    { id: 'p2', text: 'Speed = distance / …', answers: A('p2', 'time', ['mass', 'force', 'energy']), level: 1 },
+    { id: 'p3', text: 'SI unit of energy?', answers: A('p3', 'Joule', ['Newton', 'Ampere', 'Volt']), level: 2 },
+    { id: 'p4', text: 'Water boils at (sea level)?', answers: A('p4', '100°C', ['90°C', '110°C', '80°C']), level: 1 },
+    { id: 'p5', text: 'Light travels faster than sound?', answers: A('p5', 'True', ['False', 'Equal', 'Depends']), level: 1 },
+    // Level 3-4
+    { id: 'p6', text: 'Acceleration due to gravity ≈ ?', answers: A('p6', '9.8 m/s²', ['10.8 m/s²', '8.8 m/s²', '6.67 m/s²']), level: 3 },
+    { id: 'p7', text: 'Work = force × …', answers: A('p7', 'displacement', ['time', 'mass', 'power']), level: 3 },
+    { id: 'p8', text: 'Ohm\'s law: V = ?', answers: A('p8', 'IR', ['I/R', 'R/I', 'I+R']), level: 4 },
+    { id: 'p9', text: 'Power = Work / ?', answers: A('p9', 'time', ['force', 'distance', 'mass']), level: 3 },
+    { id: 'p10', text: 'Frequency unit is?', answers: A('p10', 'Hertz', ['Watt', 'Joule', 'Ampere']), level: 4 },
+    // Level 5-6
+    { id: 'p11', text: 'E = mc² describes?', answers: A('p11', 'Mass-energy equivalence', ['Kinetic energy', 'Potential energy', 'Thermal energy']), level: 5 },
+    { id: 'p12', text: 'Planck\'s constant h ≈ ?', answers: A('p12', '6.63×10⁻³⁴ J·s', ['6.67×10⁻¹¹', '3×10⁸', '1.6×10⁻¹⁹']), level: 6 },
+    { id: 'p13', text: 'Heisenberg uncertainty principle limits:', answers: A('p13', 'Position & momentum precision', ['Energy only', 'Time only', 'Speed only']), level: 6 },
+    { id: 'p14', text: 'Black body radiation peak (Wien\'s law) depends on:', answers: A('p14', 'Temperature', ['Mass', 'Volume', 'Pressure']), level: 5 },
+    { id: 'p15', text: 'Photoelectric effect proves light is:', answers: A('p15', 'Quantized', ['Continuous', 'A wave only', 'Massless']), level: 5 },
+    // Level 7-8
+    { id: 'p16', text: 'The fine-structure constant α ≈ ?', answers: A('p16', '1/137', ['1/100', '1/10', '1/1000']), level: 7 },
+    { id: 'p17', text: 'Hawking radiation is emitted by:', answers: A('p17', 'Black holes', ['White dwarfs', 'Neutron stars', 'Quasars']), level: 7 },
+    { id: 'p18', text: 'The Chandrasekhar limit is about:', answers: A('p18', '1.4 solar masses', ['3 solar masses', '0.5 solar masses', '10 solar masses']), level: 8 },
+    { id: 'p19', text: 'CPT symmetry involves:', answers: A('p19', 'Charge, Parity, Time', ['Color, Phase, Temp', 'Current, Power, Time', 'Charge, Photon, Tachyon']), level: 8 },
+    { id: 'p20', text: 'Gravitational waves were first detected in:', answers: A('p20', '2015', ['2010', '2005', '2020']), level: 7 },
   ],
   chemistry: [
-    {
-      id: 'c1',
-      text: 'Chemical symbol for Sodium?',
-      answers: A('c1', 'Na', ['So', 'S', 'Sn']),
-    },
-    {
-      id: 'c2',
-      text: 'H₂O is …',
-      answers: A('c2', 'Water', ['Hydrogen Peroxide', 'Hydrogen', 'Oxygen']),
-    },
-    {
-      id: 'c3',
-      text: 'Atomic number of Carbon?',
-      answers: A('c3', '6', ['8', '12', '14']),
-    },
-    {
-      id: 'c4',
-      text: 'Symbol for Potassium?',
-      answers: A('c4', 'K', ['P', 'Po', 'Pt']),
-    },
-    {
-      id: 'c5',
-      text: 'NaCl commonly known as …',
-      answers: A('c5', 'Salt', ['Soda', 'Lime', 'Chalk']),
-    },
+    // Level 1-2
+    { id: 'c1', text: 'Chemical symbol for Sodium?', answers: A('c1', 'Na', ['So', 'S', 'Sn']), level: 1 },
+    { id: 'c2', text: 'H₂O is …', answers: A('c2', 'Water', ['Hydrogen Peroxide', 'Hydrogen', 'Oxygen']), level: 1 },
+    { id: 'c3', text: 'Symbol for Potassium?', answers: A('c3', 'K', ['P', 'Po', 'Pt']), level: 2 },
+    { id: 'c4', text: 'NaCl commonly known as …', answers: A('c4', 'Salt', ['Soda', 'Lime', 'Chalk']), level: 1 },
+    { id: 'c5', text: 'CO₂ is …', answers: A('c5', 'Carbon dioxide', ['Carbon monoxide', 'Oxygen', 'Methane']), level: 1 },
+    // Level 3-4
+    { id: 'c6', text: 'Atomic number of Carbon?', answers: A('c6', '6', ['8', '12', '14']), level: 3 },
+    { id: 'c7', text: 'pH of neutral solution?', answers: A('c7', '7', ['0', '14', '1']), level: 3 },
+    { id: 'c8', text: 'Noble gases are in group:', answers: A('c8', '18', ['1', '8', '17']), level: 4 },
+    { id: 'c9', text: 'Avogadro\'s number ≈ ?', answers: A('c9', '6.02×10²³', ['3.14×10²³', '6.67×10²³', '1.6×10¹⁹']), level: 4 },
+    { id: 'c10', text: 'Covalent bonds share:', answers: A('c10', 'Electrons', ['Protons', 'Neutrons', 'Ions']), level: 3 },
+    // Level 5-6
+    { id: 'c11', text: 'Oxidation state of O in H₂O?', answers: A('c11', '-2', ['+2', '0', '-1']), level: 5 },
+    { id: 'c12', text: 'Le Chatelier\'s principle applies to:', answers: A('c12', 'Equilibrium systems', ['Kinetics only', 'Thermodynamics only', 'Nuclear reactions']), level: 5 },
+    { id: 'c13', text: 'sp³ hybridization gives what geometry?', answers: A('c13', 'Tetrahedral', ['Linear', 'Trigonal planar', 'Octahedral']), level: 6 },
+    { id: 'c14', text: 'ΔG < 0 means the reaction is:', answers: A('c14', 'Spontaneous', ['Non-spontaneous', 'At equilibrium', 'Impossible']), level: 6 },
+    { id: 'c15', text: 'Hund\'s rule describes:', answers: A('c15', 'Electron filling order', ['Nuclear decay', 'Bond angles', 'Reaction rates']), level: 5 },
+    // Level 7-8
+    { id: 'c16', text: 'The Diels-Alder reaction is a:', answers: A('c16', '[4+2] cycloaddition', ['[2+2] cycloaddition', 'Elimination', 'Substitution']), level: 7 },
+    { id: 'c17', text: 'Chirality requires:', answers: A('c17', 'Non-superimposable mirror images', ['Symmetry', 'Double bonds', 'Ionic bonds']), level: 7 },
+    { id: 'c18', text: 'The Born-Oppenheimer approximation assumes:', answers: A('c18', 'Nuclei are stationary', ['Electrons are stationary', 'No interaction', 'Classical mechanics']), level: 8 },
+    { id: 'c19', text: 'Marcus theory describes:', answers: A('c19', 'Electron transfer rates', ['Proton transfer', 'Nuclear reactions', 'Diffusion']), level: 8 },
+    { id: 'c20', text: 'Woodward-Hoffmann rules predict:', answers: A('c20', 'Pericyclic reaction outcomes', ['Acid-base equilibria', 'Redox potentials', 'Solubility']), level: 8 },
   ],
   javascript: [
-    {
-      id: 'j1',
-      text: 'typeof null is …',
-      answers: A('j1', 'object', ['null', 'undefined', 'string']),
-    },
-    {
-      id: 'j2',
-      text: 'Array.isArray([]) returns …',
-      answers: A('j2', 'true', ['false', '[]', 'undefined']),
-    },
-    {
-      id: 'j3',
-      text: 'Strict equality operator is …',
-      answers: A('j3', '===', ['==', '=>', '!==']),
-    },
-    {
-      id: 'j4',
-      text: 'JSON.parse(""hi"") returns …',
-      answers: A('j4', '"hi"', ['hi', 'null', 'undefined']),
-    },
-    {
-      id: 'j5',
-      text: 'NaN === NaN evaluates to …',
-      answers: A('j5', 'false', ['true', 'TypeError', '0']),
-    },
+    // Level 1-2
+    { id: 'j1', text: 'typeof "hello" is …', answers: A('j1', 'string', ['text', 'String', 'char']), level: 1 },
+    { id: 'j2', text: 'Array.isArray([]) returns …', answers: A('j2', 'true', ['false', '[]', 'undefined']), level: 2 },
+    { id: 'j3', text: 'Strict equality operator is …', answers: A('j3', '===', ['==', '=>', '!==']), level: 2 },
+    { id: 'j4', text: 'console.log outputs to:', answers: A('j4', 'Console', ['Screen', 'File', 'Network']), level: 1 },
+    { id: 'j5', text: 'let vs var: let is:', answers: A('j5', 'Block-scoped', ['Function-scoped', 'Global', 'Constant']), level: 2 },
+    // Level 3-4
+    { id: 'j6', text: 'typeof null is …', answers: A('j6', 'object', ['null', 'undefined', 'string']), level: 3 },
+    { id: 'j7', text: 'NaN === NaN evaluates to …', answers: A('j7', 'false', ['true', 'TypeError', '0']), level: 4 },
+    { id: 'j8', text: '"use strict" enables:', answers: A('j8', 'Strict mode', ['ES6', 'TypeScript', 'Debugging']), level: 3 },
+    { id: 'j9', text: 'Promise.all resolves when:', answers: A('j9', 'All promises resolve', ['First resolves', 'Any resolves', 'Last resolves']), level: 4 },
+    { id: 'j10', text: 'Arrow functions don\'t have their own:', answers: A('j10', 'this', ['return', 'arguments only', 'scope']), level: 4 },
+    // Level 5-6
+    { id: 'j11', text: 'Event loop processes:', answers: A('j11', 'Callback queue after stack empties', ['Stack first always', 'Queue first always', 'Randomly']), level: 5 },
+    { id: 'j12', text: 'WeakMap keys must be:', answers: A('j12', 'Objects', ['Strings', 'Numbers', 'Any type']), level: 5 },
+    { id: 'j13', text: 'Proxy can intercept:', answers: A('j13', 'Object operations', ['Only get/set', 'Only functions', 'Primitives']), level: 6 },
+    { id: 'j14', text: 'Symbol.iterator is used for:', answers: A('j14', 'Custom iteration', ['Symbol creation', 'Type checking', 'Comparison']), level: 6 },
+    { id: 'j15', text: 'Generator functions use:', answers: A('j15', 'yield keyword', ['return only', 'async only', 'await only']), level: 5 },
+    // Level 7-8
+    { id: 'j16', text: 'Tail call optimization requires:', answers: A('j16', 'Return to be the call', ['Recursion depth', 'Strict mode only', 'Arrow functions']), level: 7 },
+    { id: 'j17', text: 'SharedArrayBuffer is used for:', answers: A('j17', 'Shared memory between workers', ['File sharing', 'Network buffers', 'DOM manipulation']), level: 7 },
+    { id: 'j18', text: 'Reflect.construct vs new:', answers: A('j18', 'Can specify newTarget', ['Identical', 'Faster', 'For classes only']), level: 8 },
+    { id: 'j19', text: 'FinalizationRegistry is for:', answers: A('j19', 'Cleanup after GC', ['Memory allocation', 'Promise handling', 'Event cleanup']), level: 8 },
+    { id: 'j20', text: 'Atomics.wait is used for:', answers: A('j20', 'Thread synchronization', ['Async waiting', 'Promise chaining', 'Event handling']), level: 8 },
   ],
   geography: [
-    {
-      id: 'g1',
-      text: 'Capital of France is …',
-      answers: A('g1', 'Paris', ['Lyon', 'Marseille', 'Nice']),
-    },
-    {
-      id: 'g2',
-      text: 'The Nile flows into which sea?',
-      answers: A('g2', 'Mediterranean', [
-        'Black Sea',
-        'Red Sea',
-        'Arabian Sea',
-      ]),
-    },
-    {
-      id: 'g3',
-      text: 'Mount Everest lies in …',
-      answers: A('g3', 'Himalayas', ['Andes', 'Alps', 'Rockies']),
-    },
-    {
-      id: 'g4',
-      text: 'The Sahara is a …',
-      answers: A('g4', 'desert', ['river', 'lake', 'plateau']),
-    },
-    {
-      id: 'g5',
-      text: 'Largest ocean is …',
-      answers: A('g5', 'Pacific', ['Atlantic', 'Indian', 'Arctic']),
-    },
+    // Level 1-2
+    { id: 'g1', text: 'Capital of France is …', answers: A('g1', 'Paris', ['Lyon', 'Marseille', 'Nice']), level: 1 },
+    { id: 'g2', text: 'Largest ocean is …', answers: A('g2', 'Pacific', ['Atlantic', 'Indian', 'Arctic']), level: 1 },
+    { id: 'g3', text: 'The Sahara is a …', answers: A('g3', 'desert', ['river', 'lake', 'plateau']), level: 1 },
+    { id: 'g4', text: 'How many continents?', answers: A('g4', '7', ['5', '6', '8']), level: 1 },
+    { id: 'g5', text: 'Longest river in the world?', answers: A('g5', 'Nile', ['Amazon', 'Yangtze', 'Mississippi']), level: 2 },
+    // Level 3-4
+    { id: 'g6', text: 'The Nile flows into which sea?', answers: A('g6', 'Mediterranean', ['Black Sea', 'Red Sea', 'Arabian Sea']), level: 3 },
+    { id: 'g7', text: 'Mount Everest lies in …', answers: A('g7', 'Himalayas', ['Andes', 'Alps', 'Rockies']), level: 3 },
+    { id: 'g8', text: 'Capital of Australia?', answers: A('g8', 'Canberra', ['Sydney', 'Melbourne', 'Brisbane']), level: 4 },
+    { id: 'g9', text: 'Smallest country by area?', answers: A('g9', 'Vatican City', ['Monaco', 'San Marino', 'Liechtenstein']), level: 4 },
+    { id: 'g10', text: 'The Amazon rainforest is mostly in:', answers: A('g10', 'Brazil', ['Peru', 'Colombia', 'Venezuela']), level: 3 },
+    // Level 5-6
+    { id: 'g11', text: 'Deepest ocean trench?', answers: A('g11', 'Mariana Trench', ['Java Trench', 'Puerto Rico Trench', 'Philippine Trench']), level: 5 },
+    { id: 'g12', text: 'The Tigris and Euphrates are in:', answers: A('g12', 'Mesopotamia/Iraq', ['Egypt', 'India', 'China']), level: 5 },
+    { id: 'g13', text: 'The Ring of Fire is:', answers: A('g13', 'Pacific volcanic belt', ['Atlantic ridge', 'Arctic circle', 'Saharan region']), level: 6 },
+    { id: 'g14', text: 'Pangaea was:', answers: A('g14', 'A supercontinent', ['An ocean', 'A mountain range', 'A desert']), level: 5 },
+    { id: 'g15', text: 'The Coriolis effect causes:', answers: A('g15', 'Wind deflection', ['Tides', 'Earthquakes', 'Volcanic eruptions']), level: 6 },
+    // Level 7-8
+    { id: 'g16', text: 'The Laurentide Ice Sheet covered:', answers: A('g16', 'North America', ['Europe', 'Asia', 'Antarctica']), level: 7 },
+    { id: 'g17', text: 'Isostatic rebound occurs after:', answers: A('g17', 'Ice sheet melting', ['Earthquakes', 'Volcanic eruptions', 'Tsunamis']), level: 7 },
+    { id: 'g18', text: 'The Hadley cell extends to about:', answers: A('g18', '30° latitude', ['60° latitude', '90° latitude', '15° latitude']), level: 8 },
+    { id: 'g19', text: 'Milankovitch cycles affect:', answers: A('g19', 'Earth\'s climate via orbital variations', ['Tides', 'Magnetic field', 'Plate tectonics']), level: 8 },
+    { id: 'g20', text: 'The ITCZ is:', answers: A('g20', 'Intertropical Convergence Zone', ['A tectonic plate', 'An ocean current', 'A mountain belt']), level: 7 },
   ],
 };
 
@@ -1339,6 +1346,7 @@ function bankFor(categoryId: string, l: Locale): Question[] {
     id: q.id,
     text: translate(q.text, l),
     answers: q.answers.map(a => ({ ...a, text: translate(a.text, l) })),
+    level: q.level,
   }));
 }
 
@@ -1560,5 +1568,63 @@ export const QUIZZES: Quiz[] = CATEGORY_DEFS.flatMap(cat =>
     makeQuiz(cat.id, cat.name, sub, i, 'en'),
   ),
 );
+
+// Difficulty to question level mapping
+const DIFFICULTY_LEVEL_RANGE: Record<Difficulty, { min: number; max: number }> = {
+  'very easy': { min: 1, max: 2 },
+  'easy': { min: 1, max: 3 },
+  'intermediate': { min: 2, max: 4 },
+  'normal': { min: 3, max: 5 },
+  'hard': { min: 4, max: 6 },
+  'very hard': { min: 5, max: 7 },
+  'legendary': { min: 6, max: 8 },
+  'professor': { min: 7, max: 8 },
+};
+
+// Question count per difficulty
+const DIFFICULTY_QUESTION_COUNT: Record<Difficulty, number> = {
+  'very easy': 10,
+  'easy': 20,
+  'intermediate': 30,
+  'normal': 40,
+  'hard': 50,
+  'very hard': 60,
+  'legendary': 70,
+  'professor': 100,
+};
+
+// Get questions filtered by difficulty level
+export function getQuestionsForDifficulty(
+  categoryId: string,
+  difficulty: Difficulty,
+  l: Locale = lang(),
+): Question[] {
+  const range = DIFFICULTY_LEVEL_RANGE[difficulty];
+  const count = DIFFICULTY_QUESTION_COUNT[difficulty];
+  const allQuestions = bankFor(categoryId, l);
+
+  // Filter questions by level range
+  const filtered = allQuestions.filter(q => {
+    const level = q.level ?? 1;
+    return level >= range.min && level <= range.max;
+  });
+
+  // Shuffle and take required count (or all if not enough)
+  const shuffled = [...filtered].sort(() => Math.random() - 0.5);
+
+  // If we don't have enough questions, repeat them to fill the count
+  const result: Question[] = [];
+  while (result.length < count) {
+    const remaining = count - result.length;
+    const batch = shuffled.slice(0, Math.min(remaining, shuffled.length));
+    result.push(...batch.map((q, i) => ({
+      ...q,
+      id: `${q.id}-${result.length + i}`,
+    })));
+    if (batch.length === 0) break; // Safety: prevent infinite loop if no questions
+  }
+
+  return result;
+}
 
 export { CATEGORIES };

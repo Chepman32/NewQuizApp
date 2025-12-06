@@ -66,7 +66,7 @@ export default function CategoryDetailScreen() {
             >
               <Text style={styles.itemText}>{item.title}</Text>
               <Text style={styles.itemSub} numberOfLines={1}>
-                Difficulty: {item.difficulty}
+                {item.description}
               </Text>
             </TouchableOpacity>
           )}
