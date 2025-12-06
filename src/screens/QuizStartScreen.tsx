@@ -45,7 +45,7 @@ export default function QuizStartScreen() {
   const quiz = useMemo(() => getQuizByIdLocalized(quizId, lang as any), [quizId, lang]);
   const [difficulty, setDifficulty] = useState((quiz?.difficulty as any) ?? 'normal');
   const totalQuestions = questionCountForDifficulty[difficulty];
-  const estTime = Math.max(10, Math.round(totalQuestions * 1.2));
+  const estTime = Math.max(1, Math.round(totalQuestions * 0.3));
   const isPremium = useSelector((s: RootState) => s.app.isPremium);
   const isProfessorLocked = difficulty === 'professor' && !isPremium;
 
@@ -235,4 +235,3 @@ const styles = StyleSheet.create({
   diffPillText: { color: theme.colors.textPrimary, textTransform: 'capitalize', fontWeight: '600' },
   diffPillTextActive: { color: '#fff' },
 });
-
