@@ -148,7 +148,7 @@ Key files:
 ### Implemented
 - Safe area + gesture setup (`App.tsx`, `index.js`)
 - Reanimated plugin (`babel.config.js`)
-- Vector icons fonts registered in `ios/NewQuizApp/Info.plist`
+- Vector icons fonts registered in `ios/QuizSprint/Info.plist`
 - Navigation with headers/back buttons for detail screens
 - Home → Category Detail → Quiz Start → Quiz → Results flow
 - Difficulty carousel with Premium‑gated “Professor”
@@ -226,7 +226,7 @@ yarn test
 - Reanimated build errors (xcodebuild 65):
   - Confirm babel plugin in `babel.config.js` and re‑install Pods.
 - Icons not visible:
-  - Confirm `UIAppFonts` entries exist in `ios/NewQuizApp/Info.plist` for vector icon fonts.
+  - Confirm `UIAppFonts` entries exist in `ios/QuizSprint/Info.plist` for vector icon fonts.
 - Buttons not responding / gesture conflicts:
   - Verify `import 'react-native-gesture-handler';` is the first line of `index.js`.
 
@@ -284,7 +284,7 @@ TBD (proprietary/internal during development).
 ---
 
 ## Credits
-Original Software Design Document inspiration provided by an AI System Architect; this README reflects the current implementation and concrete plans for NewQuizApp.
+Original Software Design Document inspiration provided by an AI System Architect; this README reflects the current implementation and concrete plans for QuizSprint.
 
 ---
 
