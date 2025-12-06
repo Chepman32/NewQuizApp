@@ -1,12 +1,19 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
 import Animated, { FadeInUp } from 'react-native-reanimated';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/RootNavigator';
 import { getCategories } from '../data/catalog';
-import { categoryColor, theme } from '../styles/theme';
+import { categoryColor } from '../styles/theme';
+import { useTheme } from '../styles/ThemeContext';
 import MathIcon from '../assets/icons/MathIcon';
 import PhysicsIcon from '../assets/icons/PhysicsIcon';
 import ChemistryIcon from '../assets/icons/ChemistryIcon';
@@ -34,10 +41,48 @@ function renderCategoryIcon(id: string, color: string) {
 }
 
 export default function HomeScreen() {
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const t = useT();
+  const theme = useTheme();
   const lang = useSelector((s: RootState) => s.app.language);
   const data = React.useMemo(() => getCategories(lang as any), [lang]);
+
+  const styles = StyleSheet.create({
+    safe: { flex: 1, backgroundColor: theme.colors.background },
+    container: { flex: 1, paddingHorizontal: 16, paddingTop: 0 },
+    title: {
+      fontSize: 28,
+      fontWeight: '800',
+      color: theme.colors.textPrimary,
+      marginBottom: 6,
+    },
+    subtitle: { color: theme.colors.textSecondary, marginBottom: 8 },
+    card: {
+      backgroundColor: theme.colors.surface,
+      borderRadius: 16,
+      padding: 16,
+      marginBottom: 12,
+      borderWidth: 1,
+      borderColor: theme.colors.hairline,
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 12,
+    },
+    iconWrap: {
+      width: 56,
+      height: 56,
+      borderRadius: 14,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    cardTitle: {
+      fontSize: 18,
+      fontWeight: '700',
+      color: theme.colors.textPrimary,
+    },
+    cardDesc: { color: theme.colors.textSecondary, marginTop: 2 },
+  });
 
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}>
@@ -46,23 +91,38 @@ export default function HomeScreen() {
         <Text style={styles.subtitle}>{t('welcome_back')}</Text>
         <FlatList
           data={data}
-          keyExtractor={(item) => item.id}
+          keyExtractor={item => item.id}
           contentContainerStyle={{ paddingVertical: 16 }}
           renderItem={({ item, index }) => (
             <Animated.View entering={FadeInUp.delay(index * 50)}>
               <TouchableOpacity
-                style={[styles.card, { borderColor: theme.colors.hairline }]}
+                style={styles.card}
                 activeOpacity={0.85}
-                onPress={() => navigation.navigate('CategoryDetail', { categoryId: item.id })}
+                onPress={() =>
+                  navigation.navigate('CategoryDetail', { categoryId: item.id })
+                }
               >
-                <View style={[styles.iconWrap, { backgroundColor: categoryColor(item.id) + '33' }] }>
+                <View
+                  style={[
+                    styles.iconWrap,
+                    { backgroundColor: categoryColor(item.id) + '33' },
+                  ]}
+                >
                   {renderCategoryIcon(item.id, categoryColor(item.id))}
                 </View>
                 <View style={{ flex: 1 }}>
                   <Text style={styles.cardTitle}>{item.name}</Text>
-                  {!!item.description && <Text style={styles.cardDesc} numberOfLines={2}>{item.description}</Text>}
+                  {!!item.description && (
+                    <Text style={styles.cardDesc} numberOfLines={2}>
+                      {item.description}
+                    </Text>
+                  )}
                 </View>
-                <Feather name="chevron-right" size={20} color={theme.colors.textSecondary} />
+                <Feather
+                  name="chevron-right"
+                  size={20}
+                  color={theme.colors.textSecondary}
+                />
               </TouchableOpacity>
             </Animated.View>
           )}
@@ -71,30 +131,3 @@ export default function HomeScreen() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: theme.colors.background },
-  container: { flex: 1, paddingHorizontal: 16, paddingTop: 0 },
-  title: { fontSize: 28, fontWeight: '800', color: theme.colors.textPrimary, marginBottom: 6 },
-  subtitle: { color: theme.colors.textSecondary, marginBottom: 8 },
-  card: {
-    backgroundColor: theme.colors.surface,
-    borderRadius: 16,
-    padding: 16,
-    marginBottom: 12,
-    borderWidth: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
-  },
-  iconWrap: {
-    width: 56,
-    height: 56,
-    borderRadius: 14,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  cardTitle: { fontSize: 18, fontWeight: '700', color: theme.colors.textPrimary },
-  cardDesc: { color: theme.colors.textSecondary, marginTop: 2 },
-});
-

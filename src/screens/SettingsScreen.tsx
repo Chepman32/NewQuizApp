@@ -1,54 +1,206 @@
 import React from 'react';
-import { View, Text, StyleSheet, Switch, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Switch,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../state/store';
-import { toggleHaptics, toggleSoundEffects, addHints, toggleRequireAnswerConfirm, setLanguage } from '../state/slices/appSlice';
+import {
+  toggleHaptics,
+  toggleSoundEffects,
+  addHints,
+  toggleRequireAnswerConfirm,
+  setLanguage,
+  setTheme,
+  ThemeType,
+} from '../state/slices/appSlice';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { theme } from '../styles/theme';
+import { useTheme } from '../styles/ThemeContext';
 import { useT } from '../i18n';
+
+const THEMES: { key: ThemeType; labelKey: string }[] = [
+  { key: 'light', labelKey: 'theme_light' },
+  { key: 'dark', labelKey: 'theme_dark' },
+  { key: 'solar', labelKey: 'theme_solar' },
+  { key: 'mono', labelKey: 'theme_mono' },
+];
 
 const LANGS = [
   { code: 'en', label: 'English' },
-  { code: 'ru', label: 'Русский' },
-  { code: 'de', label: 'Deutsch' },
-  { code: 'ko', label: '한국어' },
-  { code: 'pt', label: 'Português' },
-  { code: 'es', label: 'Español' },
-  { code: 'fr', label: 'Français' },
   { code: 'zh', label: '中文' },
+  { code: 'ja', label: '日本語' },
+  { code: 'ko', label: '한국어' },
+  { code: 'de', label: 'Deutsch' },
+  { code: 'fr', label: 'Français' },
+  { code: 'es', label: 'Español' },
+  { code: 'pt', label: 'Português' },
+  { code: 'ar', label: 'العربية' },
+  { code: 'ru', label: 'Русский' },
+  { code: 'it', label: 'Italiano' },
+  { code: 'nl', label: 'Nederlands' },
+  { code: 'tr', label: 'Türkçe' },
+  { code: 'th', label: 'ไทย' },
+  { code: 'vi', label: 'Tiếng Việt' },
+  { code: 'id', label: 'Indonesia' },
+  { code: 'pl', label: 'Polski' },
+  { code: 'uk', label: 'Українська' },
+  { code: 'hi', label: 'हिन्दी' },
+  { code: 'he', label: 'עברית' },
+  { code: 'sv', label: 'Svenska' },
+  { code: 'no', label: 'Norsk' },
+  { code: 'da', label: 'Dansk' },
+  { code: 'fi', label: 'Suomi' },
+  { code: 'cs', label: 'Čeština' },
+  { code: 'hu', label: 'Magyar' },
+  { code: 'ro', label: 'Română' },
+  { code: 'el', label: 'Ελληνικά' },
+  { code: 'ms', label: 'Bahasa Melayu' },
+  { code: 'fil', label: 'Filipino' },
 ];
 
 export default function SettingsScreen() {
   const dispatch = useDispatch();
   const t = useT();
-  const { soundEffectsEnabled, hapticsEnabled, hints, requireAnswerConfirm, language } = useSelector((s: RootState) => s.app);
+  const theme = useTheme();
+  const {
+    soundEffectsEnabled,
+    hapticsEnabled,
+    hints,
+    requireAnswerConfirm,
+    language,
+    theme: currentTheme,
+  } = useSelector((s: RootState) => s.app);
+
+  const styles = StyleSheet.create({
+    safe: { flex: 1, backgroundColor: theme.colors.background },
+    container: { flex: 1, padding: 16 },
+    title: {
+      color: theme.colors.textPrimary,
+      fontSize: 24,
+      fontWeight: '800',
+      marginBottom: 12,
+    },
+    section: {
+      backgroundColor: theme.colors.surface,
+      borderRadius: 16,
+      padding: 16,
+      marginBottom: 16,
+      borderWidth: 1,
+      borderColor: theme.colors.hairline,
+    },
+    sectionTitle: {
+      color: theme.colors.textSecondary,
+      fontWeight: '700',
+      marginBottom: 8,
+    },
+    row: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      paddingVertical: 12,
+      borderBottomWidth: StyleSheet.hairlineWidth,
+      borderBottomColor: theme.colors.hairline,
+    },
+    label: { fontSize: 16, color: theme.colors.textPrimary },
+    pill: {
+      paddingVertical: 8,
+      paddingHorizontal: 12,
+      borderRadius: 999,
+      borderWidth: 1,
+      borderColor: theme.colors.hairline,
+    },
+    pillActive: {
+      backgroundColor: theme.colors.primary,
+      borderColor: theme.colors.primary,
+    },
+    pillText: { color: theme.colors.textPrimary },
+    pillTextActive: { color: '#fff', fontWeight: '700' },
+    devText: { color: theme.colors.textSecondary, marginBottom: 8 },
+    devBtn: {
+      backgroundColor: theme.colors.primary,
+      padding: 12,
+      borderRadius: 10,
+      alignItems: 'center',
+    },
+    devBtnText: { color: '#fff', fontWeight: '700' },
+  });
+
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'left', 'right']}>
-      <View style={styles.container}>
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         <Text style={styles.title}>{t('settings')}</Text>
+
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>{t('theme')}</Text>
+          <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
+            {THEMES.map(th => (
+              <TouchableOpacity
+                key={th.key}
+                style={[
+                  styles.pill,
+                  currentTheme === th.key && styles.pillActive,
+                ]}
+                onPress={() => dispatch(setTheme(th.key))}
+              >
+                <Text
+                  style={[
+                    styles.pillText,
+                    currentTheme === th.key && styles.pillTextActive,
+                  ]}
+                >
+                  {t(th.labelKey)}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>{t('preferences')}</Text>
           <View style={styles.row}>
             <Text style={styles.label}>{t('sound_effects')}</Text>
-            <Switch value={soundEffectsEnabled} onValueChange={() => dispatch(toggleSoundEffects())} />
+            <Switch
+              value={!!soundEffectsEnabled}
+              onValueChange={() => dispatch(toggleSoundEffects())}
+            />
           </View>
           <View style={styles.row}>
             <Text style={styles.label}>{t('haptic_feedback')}</Text>
-            <Switch value={hapticsEnabled} onValueChange={() => dispatch(toggleHaptics())} />
+            <Switch
+              value={!!hapticsEnabled}
+              onValueChange={() => dispatch(toggleHaptics())}
+            />
           </View>
-          <View style={styles.row}>
+          <View style={[styles.row, { borderBottomWidth: 0 }]}>
             <Text style={styles.label}>{t('require_answer_confirmation')}</Text>
-            <Switch value={requireAnswerConfirm} onValueChange={() => dispatch(toggleRequireAnswerConfirm())} />
+            <Switch
+              value={!!requireAnswerConfirm}
+              onValueChange={() => dispatch(toggleRequireAnswerConfirm())}
+            />
           </View>
         </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>{t('language')}</Text>
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
-            {LANGS.map((l) => (
-              <TouchableOpacity key={l.code} style={[styles.langPill, language === l.code && styles.langPillActive]} onPress={() => dispatch(setLanguage(l.code))}>
-                <Text style={[styles.langText, language === l.code && styles.langTextActive]}>{l.label}</Text>
+            {LANGS.map(l => (
+              <TouchableOpacity
+                key={l.code}
+                style={[styles.pill, language === l.code && styles.pillActive]}
+                onPress={() => dispatch(setLanguage(l.code))}
+              >
+                <Text
+                  style={[
+                    styles.pillText,
+                    language === l.code && styles.pillTextActive,
+                  ]}
+                >
+                  {l.label}
+                </Text>
               </TouchableOpacity>
             ))}
           </View>
@@ -56,37 +208,17 @@ export default function SettingsScreen() {
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>{t('developer_tools')}</Text>
-          <Text style={styles.devText}>{t('hints_balance')}: {Number.isFinite(hints as number) ? hints : 0}</Text>
-          <TouchableOpacity style={styles.devBtn} onPress={() => dispatch(addHints(20))}>
+          <Text style={styles.devText}>
+            {t('hints_balance')}: {Number.isFinite(hints as number) ? hints : 0}
+          </Text>
+          <TouchableOpacity
+            style={styles.devBtn}
+            onPress={() => dispatch(addHints(20))}
+          >
             <Text style={styles.devBtnText}>{t('add_20_hints')}</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: theme.colors.background },
-  container: { flex: 1, padding: 16 },
-  title: { color: theme.colors.textPrimary, fontSize: 24, fontWeight: '800', marginBottom: 12 },
-  section: { backgroundColor: theme.colors.surface, borderRadius: 16, padding: 16, marginBottom: 16, borderWidth: 1, borderColor: theme.colors.hairline },
-  sectionTitle: { color: theme.colors.textSecondary, fontWeight: '700', marginBottom: 8 },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingVertical: 12,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: theme.colors.hairline,
-  },
-  label: { fontSize: 16, color: theme.colors.textPrimary },
-  langPill: { paddingVertical: 8, paddingHorizontal: 12, borderRadius: 999, borderWidth: 1, borderColor: theme.colors.hairline },
-  langPillActive: { backgroundColor: theme.colors.primary, borderColor: theme.colors.primary },
-  langText: { color: theme.colors.textPrimary },
-  langTextActive: { color: '#fff', fontWeight: '700' },
-  devText: { color: theme.colors.textSecondary, marginBottom: 8 },
-  devBtn: { backgroundColor: theme.colors.primary, padding: 12, borderRadius: 10, alignItems: 'center' },
-  devBtnText: { color: '#fff', fontWeight: '700' },
-});
-

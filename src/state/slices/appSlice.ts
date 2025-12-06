@@ -1,10 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+export type ThemeType = 'light' | 'dark' | 'solar' | 'mono';
+
 type AppState = {
   isPremium: boolean;
   soundEffectsEnabled: boolean;
   hapticsEnabled: boolean;
-  theme: 'light' | 'dark' | 'system';
+  theme: ThemeType;
   hints: number;
   hintsSeeded: boolean;
   requireAnswerConfirm: boolean;
@@ -15,7 +17,7 @@ const initialState: AppState = {
   isPremium: false,
   soundEffectsEnabled: true,
   hapticsEnabled: true,
-  theme: 'system',
+  theme: 'dark',
   hints: 20,
   hintsSeeded: false,
   requireAnswerConfirm: false,
@@ -60,6 +62,16 @@ const appSlice = createSlice({
   },
 });
 
-export const { setPremium, addHints, setHints, consumeHint, markHintsSeeded, toggleSoundEffects, toggleHaptics, setTheme, toggleRequireAnswerConfirm, setLanguage } = appSlice.actions;
+export const {
+  setPremium,
+  addHints,
+  setHints,
+  consumeHint,
+  markHintsSeeded,
+  toggleSoundEffects,
+  toggleHaptics,
+  setTheme,
+  toggleRequireAnswerConfirm,
+  setLanguage,
+} = appSlice.actions;
 export default appSlice.reducer;
-
