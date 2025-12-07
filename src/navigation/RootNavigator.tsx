@@ -1,4 +1,5 @@
 import React from 'react';
+import { TouchableOpacity, Text, Platform } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SplashScreen from '../screens/SplashScreen';
@@ -116,17 +117,40 @@ export default function RootNavigator() {
       <RootStack.Screen
         name="Main"
         component={MainTabs}
-        options={{ headerShown: false }}
+        options={{ headerShown: false, headerBackTitle: t('quizzes') }}
       />
       <RootStack.Screen
         name="CategoryDetail"
         component={CategoryDetailScreen}
-        options={{ title: t('category') }}
+        options={({ navigation }) => ({
+          title: t('category'),
+          headerBackTitle: t('category'),
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              style={{ flexDirection: 'row', alignItems: 'center', marginLeft: Platform.OS === 'ios' ? 0 : -8 }}
+            >
+              <Icon name="chevron-left" size={28} color={theme.colors.textPrimary} />
+              <Text style={{ color: theme.colors.textPrimary, fontSize: 17 }}>{t('quizzes')}</Text>
+            </TouchableOpacity>
+          ),
+        })}
       />
       <RootStack.Screen
         name="QuizStart"
         component={QuizStartScreen}
-        options={{ title: t('start_quiz_title') }}
+        options={({ navigation }) => ({
+          title: t('start_quiz_title'),
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              style={{ flexDirection: 'row', alignItems: 'center', marginLeft: Platform.OS === 'ios' ? 0 : -8 }}
+            >
+              <Icon name="chevron-left" size={28} color={theme.colors.textPrimary} />
+              <Text style={{ color: theme.colors.textPrimary, fontSize: 17 }}>{t('category')}</Text>
+            </TouchableOpacity>
+          ),
+        })}
       />
       <RootStack.Screen
         name="Quiz"

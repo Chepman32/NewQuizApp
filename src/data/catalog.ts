@@ -4734,21 +4734,8 @@ export function getQuestionsForDifficulty(
   // Shuffle and take required count (or all if not enough)
   const shuffled = [...filtered].sort(() => Math.random() - 0.5);
 
-  // If we don't have enough questions, repeat them to fill the count
-  const result: Question[] = [];
-  while (result.length < count) {
-    const remaining = count - result.length;
-    const batch = shuffled.slice(0, Math.min(remaining, shuffled.length));
-    result.push(
-      ...batch.map((q, i) => ({
-        ...q,
-        id: `${q.id}-${result.length + i}`,
-      })),
-    );
-    if (batch.length === 0) break; // Safety: prevent infinite loop if no questions
-  }
-
-  return result;
+  // Return up to 'count' questions, never repeating
+  return shuffled.slice(0, count);
 }
 
 export { CATEGORIES };
