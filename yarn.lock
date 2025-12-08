@@ -2991,9 +2991,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"QuizSprint@workspace:.":
+"Quizoryx@workspace:.":
   version: 0.0.0-use.local
-  resolution: "QuizSprint@workspace:."
+  resolution: "Quizoryx@workspace:."
   dependencies:
     "@babel/core": "npm:^7.25.2"
     "@babel/preset-env": "npm:^7.25.3"
