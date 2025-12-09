@@ -8,17 +8,24 @@ import Animated, {
   runOnJS,
 } from 'react-native-reanimated';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { useSelector } from 'react-redux';
 import { RootStackParamList } from '../navigation/RootNavigator';
 import { useTheme } from '../styles/ThemeContext';
+import type { RootState } from '../state/store';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Splash'>;
 
 export default function SplashScreen({ navigation }: Props) {
   const theme = useTheme();
+  const hasSeenOnboarding = useSelector(
+    (state: RootState) => state.app.hasSeenOnboarding
+  );
   const scale = useSharedValue(0);
   const opacity = useSharedValue(0);
 
   useEffect(() => {
+    const destination = hasSeenOnboarding ? 'Main' : 'Onboarding';
+
     scale.value = withSpring(1.2, { damping: 10 }, () => {
       scale.value = withSpring(1);
     });
@@ -26,12 +33,12 @@ export default function SplashScreen({ navigation }: Props) {
 
     const timeout = setTimeout(() => {
       opacity.value = withTiming(0, { duration: 400 }, () => {
-        runOnJS(navigation.replace)('Main');
+        runOnJS(navigation.replace)(destination);
       });
     }, 1000);
 
     return () => clearTimeout(timeout);
-  }, [navigation, opacity, scale]);
+  }, [navigation, opacity, scale, hasSeenOnboarding]);
 
   const animatedStyle = useAnimatedStyle(() => ({
     transform: [{ scale: scale.value }],

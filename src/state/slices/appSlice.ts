@@ -8,6 +8,7 @@ type AppState = {
   theme: ThemeType;
   requireAnswerConfirm: boolean;
   language: string;
+  hasSeenOnboarding: boolean;
 };
 
 const initialState: AppState = {
@@ -16,6 +17,7 @@ const initialState: AppState = {
   theme: 'dark',
   requireAnswerConfirm: false,
   language: 'en',
+  hasSeenOnboarding: false,
 };
 
 const appSlice = createSlice({
@@ -37,6 +39,9 @@ const appSlice = createSlice({
     setLanguage(state, action: PayloadAction<string>) {
       state.language = action.payload;
     },
+    setOnboardingComplete(state) {
+      state.hasSeenOnboarding = true;
+    },
   },
 });
 
@@ -46,5 +51,6 @@ export const {
   setTheme,
   toggleRequireAnswerConfirm,
   setLanguage,
+  setOnboardingComplete,
 } = appSlice.actions;
 export default appSlice.reducer;

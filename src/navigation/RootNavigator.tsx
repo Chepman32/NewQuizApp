@@ -3,6 +3,7 @@ import { TouchableOpacity, Text, Platform } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SplashScreen from '../screens/SplashScreen';
+import OnboardingScreen from '../screens/OnboardingScreen';
 import HomeScreen from '../screens/HomeScreen';
 import CategoryDetailScreen from '../screens/CategoryDetailScreen';
 import QuizStartScreen from '../screens/QuizStartScreen';
@@ -29,6 +30,7 @@ type ResultItem = {
 
 export type RootStackParamList = {
   Splash: undefined;
+  Onboarding: undefined;
   Main: undefined;
   CategoryDetail: { categoryId: string };
   QuizStart: { quizId: string };
@@ -114,6 +116,11 @@ export default function RootNavigator() {
       <RootStack.Screen
         name="Splash"
         component={SplashScreen}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen
+        name="Onboarding"
+        component={OnboardingScreen}
         options={{ headerShown: false }}
       />
       <RootStack.Screen
