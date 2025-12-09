@@ -42,6 +42,9 @@ const appSlice = createSlice({
     setOnboardingComplete(state) {
       state.hasSeenOnboarding = true;
     },
+    resetOnboarding(state) {
+      state.hasSeenOnboarding = false;
+    },
   },
 });
 
@@ -52,5 +55,6 @@ export const {
   toggleRequireAnswerConfirm,
   setLanguage,
   setOnboardingComplete,
+  resetOnboarding,
 } = appSlice.actions;
 export default appSlice.reducer;

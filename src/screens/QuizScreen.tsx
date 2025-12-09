@@ -292,7 +292,7 @@ export default function QuizScreen() {
           { justifyContent: 'center', alignItems: 'center' },
         ]}
       >
-        <Text style={{ color: theme.colors.textSecondary }}>Loading…</Text>
+        <Text style={{ color: theme.colors.textSecondary }}>{tt('loading')}</Text>
       </View>
     );
   }

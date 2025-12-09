@@ -15,6 +15,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/RootNavigator';
 import { setOnboardingComplete } from '../state/slices/appSlice';
 import { useTheme } from '../styles/ThemeContext';
+import { useT } from '../i18n';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Onboarding'>;
 
@@ -31,6 +32,7 @@ const images = [
 export default function OnboardingScreen({ navigation }: Props) {
   const dispatch = useDispatch();
   const theme = useTheme();
+  const t = useT();
   const flatListRef = useRef<FlatList>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -85,7 +87,7 @@ export default function OnboardingScreen({ navigation }: Props) {
         {!isLastSlide && (
           <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
             <Text style={[styles.skipText, { color: theme.colors.textPrimary }]}>
-              Skip
+              {t('skip')}
             </Text>
           </TouchableOpacity>
         )}
@@ -114,7 +116,7 @@ export default function OnboardingScreen({ navigation }: Props) {
             onPress={handleNext}
           >
             <Text style={styles.buttonText}>
-              {isLastSlide ? 'Get Started' : 'Next'}
+              {isLastSlide ? t('get_started') : t('next')}
             </Text>
           </TouchableOpacity>
         </View>
@@ -145,6 +147,10 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   bottomContainer: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
     paddingHorizontal: 24,
     paddingBottom: 20,
     alignItems: 'center',

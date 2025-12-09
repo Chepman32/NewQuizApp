@@ -145,6 +145,20 @@ const en: Dict = {
   category_mastery: 'Category Mastery',
   mastered: 'mastered',
   remaining: 'remaining',
+
+  // Onboarding
+  skip: 'Skip',
+  get_started: 'Get Started',
+  next: 'Next',
+
+  // Settings
+  reset_onboarding: 'Reset Onboarding',
+
+  // Loading
+  loading: 'Loading…',
+
+  // Progress
+  score: 'Score',
 };
 
 // Chinese (Simplified)
@@ -231,6 +245,12 @@ const zh: Dict = {
   premium_bullet_prof: '解锁教授难度',
   premium_bullet_all: '访问所有高级测验',
   premium_bullet_future: '未来提示包和特权',
+  skip: '跳过',
+  get_started: '开始',
+  next: '下一步',
+  reset_onboarding: '重置引导',
+  loading: '加载中…',
+  score: '得分',
 };
 
 // Japanese
@@ -318,6 +338,12 @@ const ja: Dict = {
   premium_bullet_prof: 'プロフェッサー難易度解除',
   premium_bullet_all: 'すべてのプレミアムクイズにアクセス',
   premium_bullet_future: '将来のヒントパックと特典',
+  skip: 'スキップ',
+  get_started: '始める',
+  next: '次へ',
+  reset_onboarding: 'オンボーディングをリセット',
+  loading: '読み込み中…',
+  score: 'スコア',
 };
 
 // Korean
@@ -397,6 +423,12 @@ const ko: Dict = {
   premium_bullet_prof: '교수 난이도 해제',
   premium_bullet_all: '모든 프리미엄 퀴즈 접근',
   premium_bullet_future: '향후 힌트 팩과 특전',
+  skip: '건너뛰기',
+  get_started: '시작하기',
+  next: '다음',
+  reset_onboarding: '온보딩 초기화',
+  loading: '로딩 중…',
+  score: '점수',
 };
 
 // German
@@ -478,6 +510,12 @@ const de: Dict = {
   premium_bullet_prof: 'Professor-Schwierigkeit freigeschaltet',
   premium_bullet_all: 'Zugang zu allen Premium-Quizzen',
   premium_bullet_future: 'Zukünftige Hinweis-Pakete und Extras',
+  skip: 'Überspringen',
+  get_started: "Los geht's",
+  next: 'Weiter',
+  reset_onboarding: 'Einführung zurücksetzen',
+  loading: 'Laden…',
+  score: 'Punktzahl',
 };
 
 // French
@@ -559,6 +597,12 @@ const fr: Dict = {
   premium_bullet_prof: 'Difficulté Professeur débloquée',
   premium_bullet_all: 'Accès à tous les quiz premium',
   premium_bullet_future: "Futurs packs d'indices et avantages",
+  skip: 'Passer',
+  get_started: 'Commencer',
+  next: 'Suivant',
+  reset_onboarding: "Réinitialiser l'introduction",
+  loading: 'Chargement…',
+  score: 'Score',
 };
 
 // Spanish
@@ -640,6 +684,12 @@ const es: Dict = {
   premium_bullet_prof: 'Dificultad Profesor desbloqueada',
   premium_bullet_all: 'Acceso a todos los cuestionarios premium',
   premium_bullet_future: 'Futuros paquetes de pistas y ventajas',
+  skip: 'Omitir',
+  get_started: 'Empezar',
+  next: 'Siguiente',
+  reset_onboarding: 'Restablecer introducción',
+  loading: 'Cargando…',
+  score: 'Puntuación',
 };
 
 // Portuguese (Brazilian)
@@ -720,6 +770,12 @@ const pt: Dict = {
   premium_bullet_prof: 'Dificuldade Professor desbloqueada',
   premium_bullet_all: 'Acesso a todos os questionários premium',
   premium_bullet_future: 'Futuros pacotes de dicas e benefícios',
+  skip: 'Pular',
+  get_started: 'Começar',
+  next: 'Próximo',
+  reset_onboarding: 'Redefinir introdução',
+  loading: 'Carregando…',
+  score: 'Pontuação',
 };
 
 // Arabic
@@ -799,6 +855,12 @@ const ar: Dict = {
   premium_bullet_prof: 'فتح صعوبة الأستاذ',
   premium_bullet_all: 'الوصول لجميع الاختبارات المميزة',
   premium_bullet_future: 'حزم تلميحات ومزايا مستقبلية',
+  skip: 'تخطي',
+  get_started: 'ابدأ',
+  next: 'التالي',
+  reset_onboarding: 'إعادة تعيين المقدمة',
+  loading: 'جارٍ التحميل…',
+  score: 'النتيجة',
 };
 
 // Russian
@@ -885,6 +947,12 @@ const ru: Dict = {
   premium_bullet_prof: 'Доступ к уровню Профессор',
   premium_bullet_all: 'Все премиум-викторины',
   premium_bullet_future: 'Будущие пакеты подсказок и бонусы',
+  skip: 'Пропустить',
+  get_started: 'Начать',
+  next: 'Далее',
+  reset_onboarding: 'Сбросить введение',
+  loading: 'Загрузка…',
+  score: 'Счёт',
 };
 
 // Italian
@@ -966,6 +1034,12 @@ const it: Dict = {
   premium_bullet_prof: 'Difficoltà Professore sbloccata',
   premium_bullet_all: 'Accesso a tutti i quiz premium',
   premium_bullet_future: 'Futuri pacchetti suggerimenti e vantaggi',
+  skip: 'Salta',
+  get_started: 'Inizia',
+  next: 'Avanti',
+  reset_onboarding: 'Reimposta introduzione',
+  loading: 'Caricamento…',
+  score: 'Punteggio',
 };
 
 // Dutch
@@ -1046,6 +1120,12 @@ const nl: Dict = {
   premium_bullet_prof: 'Professor moeilijkheid ontgrendeld',
   premium_bullet_all: 'Toegang tot alle premium quizzen',
   premium_bullet_future: 'Toekomstige hint pakketten en voordelen',
+  skip: 'Overslaan',
+  get_started: 'Aan de slag',
+  next: 'Volgende',
+  reset_onboarding: 'Introductie resetten',
+  loading: 'Laden…',
+  score: 'Score',
 };
 
 // Turkish
@@ -1125,6 +1205,12 @@ const tr: Dict = {
   premium_bullet_prof: 'Profesör zorluğu açıldı',
   premium_bullet_all: 'Tüm premium testlere erişim',
   premium_bullet_future: 'Gelecek ipucu paketleri ve avantajlar',
+  skip: 'Atla',
+  get_started: 'Başla',
+  next: 'İleri',
+  reset_onboarding: 'Tanıtımı sıfırla',
+  loading: 'Yükleniyor…',
+  score: 'Puan',
 };
 
 // Thai
@@ -1204,6 +1290,12 @@ const th: Dict = {
   premium_bullet_prof: 'ปลดล็อคระดับศาสตราจารย์',
   premium_bullet_all: 'เข้าถึงแบบทดสอบพรีเมียมทั้งหมด',
   premium_bullet_future: 'แพ็คคำใบ้และสิทธิพิเศษในอนาคต',
+  skip: 'ข้าม',
+  get_started: 'เริ่มต้น',
+  next: 'ถัดไป',
+  reset_onboarding: 'รีเซ็ตการแนะนำ',
+  loading: 'กำลังโหลด…',
+  score: 'คะแนน',
 };
 
 // Vietnamese
@@ -1284,6 +1376,12 @@ const vi: Dict = {
   premium_bullet_prof: 'Mở khóa độ khó Giáo sư',
   premium_bullet_all: 'Truy cập tất cả câu đố premium',
   premium_bullet_future: 'Gói gợi ý và đặc quyền tương lai',
+  skip: 'Bỏ qua',
+  get_started: 'Bắt đầu',
+  next: 'Tiếp theo',
+  reset_onboarding: 'Đặt lại giới thiệu',
+  loading: 'Đang tải…',
+  score: 'Điểm',
 };
 
 // Indonesian
@@ -1363,6 +1461,12 @@ const id: Dict = {
   premium_bullet_prof: 'Kesulitan Profesor terbuka',
   premium_bullet_all: 'Akses ke semua kuis premium',
   premium_bullet_future: 'Paket petunjuk dan keuntungan masa depan',
+  skip: 'Lewati',
+  get_started: 'Mulai',
+  next: 'Berikutnya',
+  reset_onboarding: 'Reset pengenalan',
+  loading: 'Memuat…',
+  score: 'Skor',
 };
 
 // Polish
@@ -1442,6 +1546,12 @@ const pl: Dict = {
   premium_bullet_prof: 'Trudność Profesor odblokowana',
   premium_bullet_all: 'Dostęp do wszystkich quizów premium',
   premium_bullet_future: 'Przyszłe pakiety podpowiedzi i korzyści',
+  skip: 'Pomiń',
+  get_started: 'Rozpocznij',
+  next: 'Dalej',
+  reset_onboarding: 'Zresetuj wprowadzenie',
+  loading: 'Ładowanie…',
+  score: 'Wynik',
 };
 
 // Ukrainian
@@ -1521,6 +1631,12 @@ const uk: Dict = {
   premium_bullet_prof: 'Доступ до рівня Професор',
   premium_bullet_all: 'Усі преміум-вікторини',
   premium_bullet_future: 'Майбутні пакети підказок та бонуси',
+  skip: 'Пропустити',
+  get_started: 'Почати',
+  next: 'Далі',
+  reset_onboarding: 'Скинути вступ',
+  loading: 'Завантаження…',
+  score: 'Рахунок',
 };
 
 // Hindi
@@ -1600,6 +1716,12 @@ const hi: Dict = {
   premium_bullet_prof: 'प्रोफेसर कठिनाई अनलॉक',
   premium_bullet_all: 'सभी प्रीमियम क्विज़ तक पहुंच',
   premium_bullet_future: 'भविष्य के संकेत पैक और लाभ',
+  skip: 'छोड़ें',
+  get_started: 'शुरू करें',
+  next: 'अगला',
+  reset_onboarding: 'परिचय रीसेट करें',
+  loading: 'लोड हो रहा है…',
+  score: 'स्कोर',
 };
 
 // Hebrew
@@ -1679,6 +1801,12 @@ const he: Dict = {
   premium_bullet_prof: 'רמת פרופסור נפתחה',
   premium_bullet_all: 'גישה לכל החידונים הפרימיום',
   premium_bullet_future: 'חבילות רמזים והטבות עתידיות',
+  skip: 'דלג',
+  get_started: 'התחל',
+  next: 'הבא',
+  reset_onboarding: 'אפס הקדמה',
+  loading: 'טוען…',
+  score: 'ניקוד',
 };
 
 // Swedish
@@ -1759,6 +1887,12 @@ const sv: Dict = {
   premium_bullet_prof: 'Professor-svårighetsgrad upplåst',
   premium_bullet_all: 'Tillgång till alla premiumquiz',
   premium_bullet_future: 'Framtida ledtrådspaket och förmåner',
+  skip: 'Hoppa över',
+  get_started: 'Kom igång',
+  next: 'Nästa',
+  reset_onboarding: 'Återställ introduktion',
+  loading: 'Laddar…',
+  score: 'Poäng',
 };
 
 // Norwegian
@@ -1839,6 +1973,12 @@ const no: Dict = {
   premium_bullet_prof: 'Professor-vanskelighetsgrad låst opp',
   premium_bullet_all: 'Tilgang til alle premiumquiz',
   premium_bullet_future: 'Fremtidige hintpakker og fordeler',
+  skip: 'Hopp over',
+  get_started: 'Kom i gang',
+  next: 'Neste',
+  reset_onboarding: 'Tilbakestill introduksjon',
+  loading: 'Laster…',
+  score: 'Poeng',
 };
 
 // Danish
@@ -1918,6 +2058,12 @@ const da: Dict = {
   premium_bullet_prof: 'Professor-sværhedsgrad låst op',
   premium_bullet_all: 'Adgang til alle premiumquiz',
   premium_bullet_future: 'Fremtidige hintpakker og fordele',
+  skip: 'Spring over',
+  get_started: 'Kom i gang',
+  next: 'Næste',
+  reset_onboarding: 'Nulstil introduktion',
+  loading: 'Indlæser…',
+  score: 'Score',
 };
 
 // Finnish
@@ -1997,6 +2143,12 @@ const fi: Dict = {
   premium_bullet_prof: 'Professor-vaikeustaso avattu',
   premium_bullet_all: 'Pääsy kaikkiin premium-visailuihin',
   premium_bullet_future: 'Tulevat vihjepaketit ja edut',
+  skip: 'Ohita',
+  get_started: 'Aloita',
+  next: 'Seuraava',
+  reset_onboarding: 'Nollaa esittely',
+  loading: 'Ladataan…',
+  score: 'Pisteet',
 };
 
 // Czech
@@ -2076,6 +2228,12 @@ const cs: Dict = {
   premium_bullet_prof: 'Obtížnost Profesor odemčena',
   premium_bullet_all: 'Přístup ke všem prémiovým kvízům',
   premium_bullet_future: 'Budoucí balíčky nápověd a výhody',
+  skip: 'Přeskočit',
+  get_started: 'Začít',
+  next: 'Další',
+  reset_onboarding: 'Resetovat úvod',
+  loading: 'Načítání…',
+  score: 'Skóre',
 };
 
 // Hungarian
@@ -2157,6 +2315,12 @@ const hu: Dict = {
   premium_bullet_prof: 'Professzor nehézség feloldva',
   premium_bullet_all: 'Hozzáférés az összes prémium kvízhez',
   premium_bullet_future: 'Jövőbeli tipp csomagok és előnyök',
+  skip: 'Kihagyás',
+  get_started: 'Kezdés',
+  next: 'Következő',
+  reset_onboarding: 'Bevezetés visszaállítása',
+  loading: 'Betöltés…',
+  score: 'Pontszám',
 };
 
 // Romanian
@@ -2237,6 +2401,12 @@ const ro: Dict = {
   premium_bullet_prof: 'Dificultate Profesor deblocată',
   premium_bullet_all: 'Acces la toate chestionarele premium',
   premium_bullet_future: 'Pachete de indicii și avantaje viitoare',
+  skip: 'Sari peste',
+  get_started: 'Începe',
+  next: 'Următorul',
+  reset_onboarding: 'Resetează introducerea',
+  loading: 'Se încarcă…',
+  score: 'Scor',
 };
 
 // Greek
@@ -2317,6 +2487,12 @@ const el: Dict = {
   premium_bullet_prof: 'Δυσκολία Καθηγητή ξεκλειδωμένη',
   premium_bullet_all: 'Πρόσβαση σε όλα τα premium κουίζ',
   premium_bullet_future: 'Μελλοντικά πακέτα υποδείξεων και προνόμια',
+  skip: 'Παράλειψη',
+  get_started: 'Ξεκίνα',
+  next: 'Επόμενο',
+  reset_onboarding: 'Επαναφορά εισαγωγής',
+  loading: 'Φόρτωση…',
+  score: 'Βαθμολογία',
 };
 
 // Malay
@@ -2396,6 +2572,12 @@ const ms: Dict = {
   premium_bullet_prof: 'Kesukaran Profesor dibuka',
   premium_bullet_all: 'Akses ke semua kuiz premium',
   premium_bullet_future: 'Pakej petunjuk dan faedah masa depan',
+  skip: 'Langkau',
+  get_started: 'Mula',
+  next: 'Seterusnya',
+  reset_onboarding: 'Set semula pengenalan',
+  loading: 'Memuatkan…',
+  score: 'Skor',
 };
 
 // Filipino
@@ -2477,6 +2659,12 @@ const fil: Dict = {
   premium_bullet_prof: 'Na-unlock ang Professor difficulty',
   premium_bullet_all: 'Access sa lahat ng premium quiz',
   premium_bullet_future: 'Mga hint pack at perks sa hinaharap',
+  skip: 'Laktawan',
+  get_started: 'Magsimula',
+  next: 'Susunod',
+  reset_onboarding: 'I-reset ang pagpapakilala',
+  loading: 'Naglo-load…',
+  score: 'Puntos',
 };
 
 type Bundle = Record<Locale, Dict>;

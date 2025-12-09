@@ -15,6 +15,7 @@ import {
   toggleRequireAnswerConfirm,
   setLanguage,
   setTheme,
+  resetOnboarding,
   ThemeType,
 } from '../state/slices/appSlice';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -210,6 +211,23 @@ export default function SettingsScreen() {
             ))}
           </View>
         </View>
+
+        <TouchableOpacity
+          style={{
+            backgroundColor: theme.colors.surface,
+            borderRadius: 16,
+            padding: isTablet ? 20 : 16,
+            marginBottom: 16,
+            borderWidth: 1,
+            borderColor: theme.colors.hairline,
+            alignItems: 'center',
+          }}
+          onPress={() => dispatch(resetOnboarding())}
+        >
+          <Text style={{ color: theme.colors.primary, fontSize: responsiveFontSize(16, isTablet), fontWeight: '600' }}>
+            {t('reset_onboarding')}
+          </Text>
+        </TouchableOpacity>
 
       </ScrollView>
     </SafeAreaView>

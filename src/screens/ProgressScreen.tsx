@@ -228,7 +228,7 @@ export default function ProgressScreen() {
                   {a.quizId}
                 </Text>
                 <Text style={{ color: theme.colors.textSecondary }}>
-                  Score: {Math.round((a.score / a.total) * 100)}% · Time:{' '}
+                  {t('score')}: {Math.round((a.score / a.total) * 100)}% · {t('time')}:{' '}
                   {Math.floor(a.timeSeconds / 60)}m {a.timeSeconds % 60}s ·{' '}
                   {new Date(a.createdAt).toLocaleDateString()}
                 </Text>

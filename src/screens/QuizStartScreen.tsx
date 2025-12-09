@@ -224,7 +224,7 @@ export default function QuizStartScreen() {
           showsVerticalScrollIndicator={false}
         >
           <Animated.Text entering={FadeInUp} style={styles.title}>
-            {quiz?.title ?? 'Quiz'}
+            {quiz?.title ?? t('quiz_title')}
           </Animated.Text>
 
           <Animated.View entering={FadeInUp.delay(60)} style={styles.metaRow}>

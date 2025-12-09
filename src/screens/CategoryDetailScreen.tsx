@@ -15,6 +15,7 @@ import { useTheme } from '../styles/ThemeContext';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../state/store';
 import { useResponsive, responsiveFontSize } from '../styles/useResponsive';
+import { useT } from '../i18n';
 
 export default function CategoryDetailScreen() {
   const route = useRoute<any>();
@@ -23,6 +24,7 @@ export default function CategoryDetailScreen() {
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const lang = useSelector((s: RootState) => s.app.language);
   const theme = useTheme();
+  const t = useT();
   const quizzes = getQuizzesForCategoryLocalized(categoryId, lang as any);
   const cat = getCategories(lang as any).find(c => c.id === categoryId);
   const { isTablet, numColumns, horizontalPadding, cardWidth } =
@@ -66,7 +68,7 @@ export default function CategoryDetailScreen() {
   return (
     <SafeAreaView style={styles.safe} edges={['bottom', 'left', 'right']}>
       <View style={styles.container}>
-        <Text style={styles.title}>{cat?.name || 'Category'}</Text>
+        <Text style={styles.title}>{cat?.name || t('category')}</Text>
         <FlatList
           data={quizzes}
           keyExtractor={item => item.id}
