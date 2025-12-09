@@ -99,16 +99,27 @@ export const themes: Record<ThemeType, Theme> = {
 export const theme = themes.dark;
 
 export function categoryColor(id: string): string {
-  switch (id) {
-    case 'math':
-      return '#1E9E67';
-    case 'physics':
-      return '#3AA1F2';
-    case 'chemistry':
-      return '#F2994A';
-    case 'javascript':
-      return '#F2C94C';
-    default:
-      return '#7B61FF';
-  }
+  const colors: Record<string, string> = {
+    'math': '#1E9E67',
+    'physics': '#3AA1F2',
+    'chemistry': '#F2994A',
+    'javascript': '#F2C94C',
+    'biology': '#27AE60',
+    'astronomy': '#9B51E0',
+    'geography': '#2D9CDB',
+    'history': '#8B6914',
+    'literature': '#6B4C9A',
+    'art': '#E91E63',
+    'music': '#FF6B6B',
+    'computer-science': '#607D8B',
+    'programming': '#4FC3F7',
+    'algorithms': '#26A69A',
+    'data-structures': '#5C6BC0',
+    'economics': '#66BB6A',
+    'psychology': '#AB47BC',
+    'philosophy': '#00BCD4',
+    'anatomy': '#EB5757',
+    'sports': '#FF7043',
+  };
+  return colors[id] || '#7B61FF';
 }

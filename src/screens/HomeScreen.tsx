@@ -18,6 +18,22 @@ import MathIcon from '../assets/icons/MathIcon';
 import PhysicsIcon from '../assets/icons/PhysicsIcon';
 import ChemistryIcon from '../assets/icons/ChemistryIcon';
 import JavaScriptIcon from '../assets/icons/JavaScriptIcon';
+import BiologyIcon from '../assets/icons/BiologyIcon';
+import AstronomyIcon from '../assets/icons/AstronomyIcon';
+import GeographyIcon from '../assets/icons/GeographyIcon';
+import HistoryIcon from '../assets/icons/HistoryIcon';
+import LiteratureIcon from '../assets/icons/LiteratureIcon';
+import ArtIcon from '../assets/icons/ArtIcon';
+import MusicIcon from '../assets/icons/MusicIcon';
+import ComputerScienceIcon from '../assets/icons/ComputerScienceIcon';
+import ProgrammingIcon from '../assets/icons/ProgrammingIcon';
+import AlgorithmsIcon from '../assets/icons/AlgorithmsIcon';
+import DataStructuresIcon from '../assets/icons/DataStructuresIcon';
+import EconomicsIcon from '../assets/icons/EconomicsIcon';
+import PsychologyIcon from '../assets/icons/PsychologyIcon';
+import PhilosophyIcon from '../assets/icons/PhilosophyIcon';
+import AnatomyIcon from '../assets/icons/AnatomyIcon';
+import SportsIcon from '../assets/icons/SportsIcon';
 import Feather from 'react-native-vector-icons/Feather';
 import { useT } from '../i18n';
 import { useSelector } from 'react-redux';
@@ -25,19 +41,32 @@ import type { RootState } from '../state/store';
 
 Feather.loadFont();
 
+const iconMap: Record<string, (color: string) => React.ReactNode> = {
+  'math': (color) => <MathIcon color={color} />,
+  'physics': (color) => <PhysicsIcon color={color} />,
+  'chemistry': (color) => <ChemistryIcon color={color} />,
+  'javascript': (color) => <JavaScriptIcon color={color} />,
+  'biology': (color) => <BiologyIcon color={color} />,
+  'astronomy': (color) => <AstronomyIcon color={color} />,
+  'geography': (color) => <GeographyIcon color={color} />,
+  'history': (color) => <HistoryIcon color={color} />,
+  'literature': (color) => <LiteratureIcon color={color} />,
+  'art': (color) => <ArtIcon color={color} />,
+  'music': (color) => <MusicIcon color={color} />,
+  'computer-science': (color) => <ComputerScienceIcon color={color} />,
+  'programming': (color) => <ProgrammingIcon color={color} />,
+  'algorithms': (color) => <AlgorithmsIcon color={color} />,
+  'data-structures': (color) => <DataStructuresIcon color={color} />,
+  'economics': (color) => <EconomicsIcon color={color} />,
+  'psychology': (color) => <PsychologyIcon color={color} />,
+  'philosophy': (color) => <PhilosophyIcon color={color} />,
+  'anatomy': (color) => <AnatomyIcon color={color} />,
+  'sports': (color) => <SportsIcon color={color} />,
+};
+
 function renderCategoryIcon(id: string, color: string) {
-  switch (id) {
-    case 'math':
-      return <MathIcon color={color} />;
-    case 'physics':
-      return <PhysicsIcon color={color} />;
-    case 'chemistry':
-      return <ChemistryIcon color={color} />;
-    case 'javascript':
-      return <JavaScriptIcon color={color} />;
-    default:
-      return <Feather name="grid" size={24} color={color} />;
-  }
+  const iconRenderer = iconMap[id];
+  return iconRenderer ? iconRenderer(color) : <Feather name="grid" size={24} color={color} />;
 }
 
 export default function HomeScreen() {
