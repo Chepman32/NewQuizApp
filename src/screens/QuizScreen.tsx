@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Modal,
   Pressable,
+  ScrollView,
 } from 'react-native';
 import Animated, {
   useSharedValue,
@@ -15,12 +16,17 @@ import Animated, {
 import { useRoute, useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/RootNavigator';
-import { getQuizByIdLocalized, getQuestionsForDifficulty, type Difficulty } from '../data/catalog';
+import {
+  getQuizByIdLocalized,
+  getQuestionsForDifficulty,
+  type Difficulty,
+} from '../data/catalog';
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from '../state/store';
 import { consumeHint } from '../state/slices/appSlice';
 import { useTheme } from '../styles/ThemeContext';
 import { useT, useTf } from '../i18n';
+import { useResponsive, responsiveFontSize } from '../styles/useResponsive';
 
 export default function QuizScreen() {
   const route = useRoute<any>();
@@ -42,6 +48,8 @@ export default function QuizScreen() {
   }, [quiz, difficulty, lang]);
 
   const theme = useTheme();
+  const { isTablet, contentMaxWidth, horizontalPadding, isLandscape } =
+    useResponsive();
 
   const dispatch = useDispatch();
   const globalHints = useSelector((s: RootState) => s.app.hints);
@@ -162,52 +170,78 @@ export default function QuizScreen() {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      padding: 16,
+      padding: horizontalPadding,
       backgroundColor: theme.colors.background,
+    },
+    innerContainer: {
+      flex: 1,
+      maxWidth: contentMaxWidth,
+      alignSelf: 'center',
+      width: '100%',
     },
     topRow: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      marginBottom: 8,
+      marginBottom: isTablet ? 16 : 8,
     },
-    progress: { fontWeight: '700', color: theme.colors.textSecondary },
+    progress: {
+      fontWeight: '700',
+      fontSize: responsiveFontSize(14, isTablet),
+      color: theme.colors.textSecondary,
+    },
     questionContainer: { flex: 1 },
     question: {
-      fontSize: 22,
+      fontSize: responsiveFontSize(22, isTablet, 1.2),
       fontWeight: '800',
-      marginBottom: 12,
+      marginBottom: isTablet ? 24 : 12,
       color: theme.colors.textPrimary,
+    },
+    answersContainer: {
+      flexDirection: isTablet && isLandscape ? 'row' : 'column',
+      flexWrap: isTablet && isLandscape ? 'wrap' : 'nowrap',
+      gap: 12,
     },
     answer: {
       backgroundColor: theme.colors.surface,
-      padding: 16,
+      padding: isTablet ? 20 : 16,
       borderRadius: 12,
-      marginBottom: 12,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
+      width: isTablet && isLandscape ? '48%' : '100%',
     },
-    answerText: { color: theme.colors.textPrimary },
+    answerText: {
+      color: theme.colors.textPrimary,
+      fontSize: responsiveFontSize(16, isTablet),
+    },
     answerDisabled: { backgroundColor: theme.colors.surfaceAlt, opacity: 0.5 },
     answerReveal: { borderWidth: 2, borderColor: theme.colors.success },
     answerSelected: { borderWidth: 2, borderColor: theme.colors.primary },
-    footerRow: { marginTop: 8 },
+    footerRow: { marginTop: isTablet ? 16 : 8 },
     hintBtn: {
       backgroundColor: theme.colors.surfaceAlt,
-      padding: 14,
+      padding: isTablet ? 18 : 14,
       borderRadius: 12,
       alignItems: 'center',
       marginBottom: 8,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
     },
-    hintText: { color: theme.colors.textPrimary, fontWeight: '700' },
+    hintText: {
+      color: theme.colors.textPrimary,
+      fontWeight: '700',
+      fontSize: responsiveFontSize(14, isTablet),
+    },
     confirmBtn: {
       backgroundColor: theme.colors.primary,
-      padding: 14,
+      padding: isTablet ? 18 : 14,
       borderRadius: 12,
       alignItems: 'center',
     },
-    confirmText: { color: '#fff', fontWeight: '700' },
+    confirmText: {
+      color: '#fff',
+      fontWeight: '700',
+      fontSize: responsiveFontSize(14, isTablet),
+    },
     backdrop: {
       position: 'absolute',
       left: 0,
@@ -218,24 +252,30 @@ export default function QuizScreen() {
     },
     sheet: {
       position: 'absolute',
-      left: 0,
-      right: 0,
-      bottom: 0,
+      left: isTablet ? '20%' : 0,
+      right: isTablet ? '20%' : 0,
+      bottom: isTablet ? '20%' : 0,
       backgroundColor: theme.colors.surface,
-      padding: 16,
+      padding: isTablet ? 24 : 16,
+      borderRadius: isTablet ? 20 : 0,
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
+      borderWidth: isTablet ? 1 : 0,
       borderTopWidth: 1,
       borderColor: theme.colors.hairline,
     },
     sheetTitle: {
-      fontSize: 18,
+      fontSize: responsiveFontSize(18, isTablet),
       fontWeight: '800',
       marginBottom: 8,
       color: theme.colors.textPrimary,
     },
-    sheetItem: { paddingVertical: 14 },
-    sheetItemText: { fontWeight: '600', color: theme.colors.textPrimary },
+    sheetItem: { paddingVertical: isTablet ? 18 : 14 },
+    sheetItemText: {
+      fontWeight: '600',
+      color: theme.colors.textPrimary,
+      fontSize: responsiveFontSize(16, isTablet),
+    },
   });
 
   if (!quiz || questions.length === 0 || !q) {
@@ -255,65 +295,76 @@ export default function QuizScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.topRow}>
-        <Text style={styles.progress}>
-          {tf('question_progress', index + 1, questions.length)}
-        </Text>
-        <Text style={styles.progress}>
-          {tt('hints')}: {globalHints || 0}
-        </Text>
-      </View>
-
-      <Animated.View style={[styles.questionContainer, animatedStyle]}>
-        <Text style={styles.question}>{q.text}</Text>
-        {q.answers.map(a => {
-          const disabled = eliminatedIds.has(a.id);
-          const isReveal = revealCorrect && a.isCorrect;
-          const isSelected = selectedAnswer === a.text;
-          return (
-            <TouchableOpacity
-              key={a.id}
-              style={[
-                styles.answer,
-                disabled && styles.answerDisabled,
-                isReveal && styles.answerReveal,
-                isSelected && styles.answerSelected,
-              ]}
-              disabled={disabled}
-              onPress={() => onAnswerPress(a.text)}
-            >
-              <Text style={[styles.answerText, disabled && { opacity: 0.5 }]}>
-                {a.text}
-              </Text>
-            </TouchableOpacity>
-          );
-        })}
-      </Animated.View>
-
-      <View style={styles.footerRow}>
-        <TouchableOpacity
-          style={styles.hintBtn}
-          onPress={() => setHintSheetOpen(true)}
-        >
-          <Text style={styles.hintText}>
-            {tt('use_hint')} ({globalHints || 0} {tt('hints')})
+      <View style={styles.innerContainer}>
+        <View style={styles.topRow}>
+          <Text style={styles.progress}>
+            {tf('question_progress', index + 1, questions.length)}
           </Text>
-        </TouchableOpacity>
-        {requireConfirm && (
+          <Text style={styles.progress}>
+            {tt('hints')}: {globalHints || 0}
+          </Text>
+        </View>
+
+        <ScrollView
+          style={styles.questionContainer}
+          showsVerticalScrollIndicator={false}
+        >
+          <Animated.View style={animatedStyle}>
+            <Text style={styles.question}>{q.text}</Text>
+            <View style={styles.answersContainer}>
+              {q.answers.map(a => {
+                const disabled = eliminatedIds.has(a.id);
+                const isReveal = revealCorrect && a.isCorrect;
+                const isSelected = selectedAnswer === a.text;
+                return (
+                  <TouchableOpacity
+                    key={a.id}
+                    style={[
+                      styles.answer,
+                      disabled && styles.answerDisabled,
+                      isReveal && styles.answerReveal,
+                      isSelected && styles.answerSelected,
+                    ]}
+                    disabled={disabled}
+                    onPress={() => onAnswerPress(a.text)}
+                  >
+                    <Text
+                      style={[styles.answerText, disabled && { opacity: 0.5 }]}
+                    >
+                      {a.text}
+                    </Text>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+          </Animated.View>
+        </ScrollView>
+
+        <View style={styles.footerRow}>
           <TouchableOpacity
-            style={[styles.confirmBtn, !selectedAnswer && { opacity: 0.5 }]}
-            disabled={!selectedAnswer}
-            onPress={() => submitAnswer(selectedAnswer)}
+            style={styles.hintBtn}
+            onPress={() => setHintSheetOpen(true)}
           >
-            <Text style={styles.confirmText}>{tt('confirm_answer')}</Text>
+            <Text style={styles.hintText}>
+              {tt('use_hint')} ({globalHints || 0} {tt('hints')})
+            </Text>
           </TouchableOpacity>
-        )}
+          {requireConfirm && (
+            <TouchableOpacity
+              style={[styles.confirmBtn, !selectedAnswer && { opacity: 0.5 }]}
+              disabled={!selectedAnswer}
+              onPress={() => submitAnswer(selectedAnswer)}
+            >
+              <Text style={styles.confirmText}>{tt('confirm_answer')}</Text>
+            </TouchableOpacity>
+          )}
+        </View>
       </View>
 
       <Modal
         transparent
         visible={hintSheetOpen}
-        animationType="slide"
+        animationType={isTablet ? 'fade' : 'slide'}
         onRequestClose={() => setHintSheetOpen(false)}
       >
         <Pressable

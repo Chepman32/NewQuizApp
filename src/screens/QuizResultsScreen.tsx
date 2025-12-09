@@ -16,6 +16,7 @@ import type { RootStackParamList } from '../navigation/RootNavigator';
 import { useDispatch } from 'react-redux';
 import { addAttempt } from '../state/slices/progressSlice';
 import { useT } from '../i18n';
+import { useResponsive, responsiveFontSize } from '../styles/useResponsive';
 
 type ResultItem = {
   id: string;
@@ -40,6 +41,7 @@ export default function QuizResultsScreen() {
   const dispatch = useDispatch();
   const theme = useTheme();
   const t = useT();
+  const { isTablet, contentMaxWidth, horizontalPadding } = useResponsive();
   const {
     score = 0,
     total = 0,
@@ -70,33 +72,42 @@ export default function QuizResultsScreen() {
 
   const styles = StyleSheet.create({
     safe: { flex: 1, backgroundColor: theme.colors.background },
-    container: { padding: 16 },
+    container: {
+      padding: horizontalPadding,
+      maxWidth: contentMaxWidth,
+      alignSelf: 'center',
+      width: '100%',
+    },
     cardLarge: {
       backgroundColor: theme.colors.surface,
       borderRadius: 20,
-      padding: 16,
+      padding: isTablet ? 24 : 16,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
       marginBottom: 16,
     },
     headline: {
-      fontSize: 32,
+      fontSize: responsiveFontSize(32, isTablet),
       fontWeight: '900',
       color: theme.colors.textPrimary,
       textAlign: 'center',
-      marginBottom: 8,
+      marginBottom: isTablet ? 16 : 8,
     },
     centerRow: {
       alignItems: 'center',
       justifyContent: 'center',
-      paddingVertical: 8,
+      paddingVertical: isTablet ? 16 : 8,
     },
-    tilesRow: { flexDirection: 'row', gap: 12, marginTop: 8 },
+    tilesRow: {
+      flexDirection: 'row',
+      gap: isTablet ? 16 : 12,
+      marginTop: isTablet ? 16 : 8,
+    },
     tile: {
       flex: 1,
       backgroundColor: theme.colors.surfaceAlt,
       borderRadius: 14,
-      padding: 12,
+      padding: isTablet ? 16 : 12,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
     },
@@ -106,53 +117,85 @@ export default function QuizResultsScreen() {
       gap: 8,
       marginBottom: 8,
     },
-    tileHeaderText: { color: theme.colors.textSecondary, fontWeight: '700' },
+    tileHeaderText: {
+      color: theme.colors.textSecondary,
+      fontWeight: '700',
+      fontSize: responsiveFontSize(14, isTablet),
+    },
     tileValue: {
       color: theme.colors.textPrimary,
-      fontSize: 28,
+      fontSize: responsiveFontSize(28, isTablet),
       fontWeight: '800',
     },
     tableCard: {
       backgroundColor: theme.colors.surface,
       borderRadius: 20,
-      padding: 12,
+      padding: isTablet ? 16 : 12,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
     },
     tableHeader: {
       flexDirection: 'row',
-      paddingVertical: 10,
+      paddingVertical: isTablet ? 14 : 10,
       borderBottomWidth: 1,
       borderBottomColor: theme.colors.hairline,
     },
-    th: { color: theme.colors.textSecondary, fontWeight: '700' },
+    th: {
+      color: theme.colors.textSecondary,
+      fontWeight: '700',
+      fontSize: responsiveFontSize(14, isTablet),
+    },
     tr: {
       flexDirection: 'row',
-      paddingVertical: 12,
+      paddingVertical: isTablet ? 16 : 12,
       borderBottomWidth: 1,
       borderBottomColor: theme.colors.hairline,
     },
-    tdQ: { color: theme.colors.textPrimary, fontWeight: '700' },
-    tdChosen: { color: theme.colors.textPrimary },
-    tdCorrect: { color: theme.colors.primary, fontWeight: '700' },
-    ctaRow: { flexDirection: 'row', gap: 12, marginTop: 16, marginBottom: 24 },
+    tdQ: {
+      color: theme.colors.textPrimary,
+      fontWeight: '700',
+      fontSize: responsiveFontSize(14, isTablet),
+    },
+    tdChosen: {
+      color: theme.colors.textPrimary,
+      fontSize: responsiveFontSize(14, isTablet),
+    },
+    tdCorrect: {
+      color: theme.colors.primary,
+      fontWeight: '700',
+      fontSize: responsiveFontSize(14, isTablet),
+    },
+    ctaRow: {
+      flexDirection: 'row',
+      gap: isTablet ? 16 : 12,
+      marginTop: isTablet ? 24 : 16,
+      marginBottom: 24,
+    },
     primaryBtn: {
       flex: 1,
       backgroundColor: '#FF8A26',
-      paddingVertical: 16,
+      paddingVertical: isTablet ? 20 : 16,
       borderRadius: 16,
       alignItems: 'center',
     },
-    primaryBtnText: { color: '#1E1E2A', fontWeight: '900', fontSize: 16 },
+    primaryBtnText: {
+      color: '#1E1E2A',
+      fontWeight: '900',
+      fontSize: responsiveFontSize(16, isTablet),
+    },
     secondaryBtn: {
       flex: 1,
       borderWidth: 2,
       borderColor: '#FF8A26',
-      paddingVertical: 16,
+      paddingVertical: isTablet ? 20 : 16,
       borderRadius: 16,
       alignItems: 'center',
     },
-    secondaryBtnText: { color: '#FF8A26', fontWeight: '900', fontSize: 16 },
+    secondaryBtnText: {
+      color: '#FF8A26',
+      fontWeight: '900',
+      fontSize: responsiveFontSize(16, isTablet),
+    },
   });
 
   return (

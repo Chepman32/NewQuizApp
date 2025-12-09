@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import CrownIcon from '../assets/icons/CrownIcon';
 import { useT } from '../i18n';
@@ -17,15 +11,18 @@ import Svg, {
   Rect,
   Path,
 } from 'react-native-svg';
-
-const { width, height } = Dimensions.get('window');
-const CARD_MAX_W = 360;
+import { useResponsive, responsiveFontSize } from '../styles/useResponsive';
+const CARD_MAX_W = 420;
 
 export default function StoreScreen() {
   const t = useT();
   const theme = useTheme();
-  const cardWidth = Math.min(CARD_MAX_W, width - 32);
-  const cardHeight = Math.max(520, Math.min(640, height * 0.72));
+  const { width, height, isTablet } = useResponsive();
+  const cardWidth = Math.min(isTablet ? CARD_MAX_W : 360, width - 32);
+  const cardHeight = Math.max(
+    520,
+    Math.min(isTablet ? 700 : 640, height * 0.72),
+  );
 
   const styles = StyleSheet.create({
     safe: { flex: 1, backgroundColor: theme.colors.background },
@@ -45,17 +42,17 @@ export default function StoreScreen() {
     },
     title: {
       color: '#FFF4E8',
-      fontSize: 34,
+      fontSize: responsiveFontSize(34, isTablet),
       fontWeight: '900',
-      marginTop: 12,
+      marginTop: isTablet ? 16 : 12,
       textAlign: 'center',
     },
     subtitle: {
       color: '#F6E8F5',
-      fontSize: 18,
+      fontSize: responsiveFontSize(18, isTablet),
       textAlign: 'center',
-      marginTop: 14,
-      lineHeight: 26,
+      marginTop: isTablet ? 18 : 14,
+      lineHeight: isTablet ? 30 : 26,
     },
     cta: {
       alignSelf: 'center',

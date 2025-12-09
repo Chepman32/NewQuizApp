@@ -16,6 +16,7 @@ import type { RootState } from '../state/store';
 import { useTheme } from '../styles/ThemeContext';
 import { getCategories, getQuizzesForCategoryLocalized } from '../data/catalog';
 import { useT } from '../i18n';
+import { useResponsive, responsiveFontSize } from '../styles/useResponsive';
 
 export default function ProgressScreen() {
   const navigation =
@@ -25,6 +26,7 @@ export default function ProgressScreen() {
   const lang = useSelector((s: RootState) => s.app.language);
   const t = useT();
   const theme = useTheme();
+  const { isTablet, contentMaxWidth, horizontalPadding } = useResponsive();
 
   const cats = React.useMemo(() => getCategories(lang as any), [lang]);
 
@@ -46,33 +48,46 @@ export default function ProgressScreen() {
 
   const styles = StyleSheet.create({
     safe: { flex: 1, backgroundColor: theme.colors.background },
-    container: { padding: 16 },
+    container: {
+      padding: horizontalPadding,
+      maxWidth: contentMaxWidth,
+      alignSelf: 'center',
+      width: '100%',
+    },
     title: {
       color: theme.colors.textPrimary,
-      fontSize: 28,
+      fontSize: responsiveFontSize(28, isTablet),
       fontWeight: '800',
-      marginBottom: 8,
+      marginBottom: isTablet ? 12 : 8,
     },
-    statsRow: { flexDirection: 'row', gap: 12, marginBottom: 12 },
+    statsRow: {
+      flexDirection: 'row',
+      gap: isTablet ? 16 : 12,
+      marginBottom: isTablet ? 16 : 12,
+    },
     statCard: {
       flex: 1,
       backgroundColor: theme.colors.surface,
       borderRadius: 16,
-      padding: 16,
+      padding: isTablet ? 20 : 16,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
     },
-    statLabel: { color: theme.colors.textSecondary, fontWeight: '700' },
+    statLabel: {
+      color: theme.colors.textSecondary,
+      fontWeight: '700',
+      fontSize: responsiveFontSize(14, isTablet),
+    },
     statValue: {
       color: theme.colors.textPrimary,
-      fontSize: 24,
+      fontSize: responsiveFontSize(24, isTablet),
       fontWeight: '800',
       marginTop: 6,
     },
     hintsCard: {
       backgroundColor: theme.colors.surface,
       borderRadius: 16,
-      padding: 16,
+      padding: isTablet ? 20 : 16,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
     },
@@ -80,21 +95,38 @@ export default function ProgressScreen() {
       color: theme.colors.textSecondary,
       fontWeight: '800',
       marginBottom: 8,
+      fontSize: responsiveFontSize(14, isTablet),
     },
-    hintsText: { color: theme.colors.textPrimary, fontWeight: '800' },
-    hintsSub: { color: theme.colors.textSecondary, marginTop: 2 },
+    hintsText: {
+      color: theme.colors.textPrimary,
+      fontWeight: '800',
+      fontSize: responsiveFontSize(16, isTablet),
+    },
+    hintsSub: {
+      color: theme.colors.textSecondary,
+      marginTop: 2,
+      fontSize: responsiveFontSize(14, isTablet),
+    },
     catCard: {
       backgroundColor: theme.colors.surface,
       borderRadius: 16,
-      padding: 16,
+      padding: isTablet ? 20 : 16,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
       marginBottom: 10,
     },
-    catTitle: { color: theme.colors.textPrimary, fontWeight: '800' },
-    catMeta: { color: theme.colors.textSecondary, marginTop: 2 },
+    catTitle: {
+      color: theme.colors.textPrimary,
+      fontWeight: '800',
+      fontSize: responsiveFontSize(16, isTablet),
+    },
+    catMeta: {
+      color: theme.colors.textSecondary,
+      marginTop: 2,
+      fontSize: responsiveFontSize(14, isTablet),
+    },
     barTrack: {
-      height: 8,
+      height: isTablet ? 10 : 8,
       backgroundColor: theme.colors.surfaceAlt,
       borderRadius: 999,
       marginTop: 8,
@@ -104,12 +136,15 @@ export default function ProgressScreen() {
     card: {
       backgroundColor: theme.colors.surface,
       borderRadius: 16,
-      padding: 16,
+      padding: isTablet ? 20 : 16,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
       marginTop: 12,
     },
-    muted: { color: theme.colors.textSecondary },
+    muted: {
+      color: theme.colors.textSecondary,
+      fontSize: responsiveFontSize(14, isTablet),
+    },
   });
 
   return (

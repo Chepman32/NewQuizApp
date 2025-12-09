@@ -18,6 +18,7 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '../state/store';
 import { useTheme } from '../styles/ThemeContext';
 import { useT } from '../i18n';
+import { useResponsive, responsiveFontSize } from '../styles/useResponsive';
 
 const DIFFICULTIES = [
   'very easy',
@@ -60,6 +61,7 @@ export default function QuizStartScreen() {
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const t = useT();
   const theme = useTheme();
+  const { isTablet, contentMaxWidth, horizontalPadding } = useResponsive();
   const lang = useSelector((s: RootState) => s.app.language);
   const quizId: string | undefined = route.params?.quizId;
   const quiz = useMemo(
@@ -77,21 +79,31 @@ export default function QuizStartScreen() {
   const styles = StyleSheet.create({
     safe: { flex: 1, backgroundColor: theme.colors.background },
     container: { flex: 1 },
-    content: { padding: 16, paddingBottom: 24 },
+    content: {
+      padding: horizontalPadding,
+      paddingBottom: 24,
+      maxWidth: contentMaxWidth,
+      alignSelf: 'center',
+      width: '100%',
+    },
     title: {
-      fontSize: 28,
+      fontSize: responsiveFontSize(28, isTablet),
       fontWeight: '800',
-      marginBottom: 8,
+      marginBottom: isTablet ? 12 : 8,
       color: theme.colors.textPrimary,
     },
-    metaRow: { flexDirection: 'row', gap: 8, marginBottom: 12 },
+    metaRow: {
+      flexDirection: 'row',
+      gap: isTablet ? 12 : 8,
+      marginBottom: isTablet ? 16 : 12,
+    },
     metaPill: {
       flexDirection: 'row',
       alignItems: 'center',
       gap: 6,
       backgroundColor: theme.colors.surfaceAlt,
-      paddingHorizontal: 10,
-      paddingVertical: 6,
+      paddingHorizontal: isTablet ? 14 : 10,
+      paddingVertical: isTablet ? 8 : 6,
       borderRadius: 999,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
@@ -100,37 +112,46 @@ export default function QuizStartScreen() {
       color: theme.colors.textPrimary,
       fontWeight: '600',
       textTransform: 'capitalize',
+      fontSize: responsiveFontSize(14, isTablet),
     },
     card: {
       backgroundColor: theme.colors.surface,
       borderRadius: 16,
-      padding: 16,
-      marginBottom: 12,
+      padding: isTablet ? 20 : 16,
+      marginBottom: isTablet ? 16 : 12,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
     },
     cardTitle: {
-      fontSize: 18,
+      fontSize: responsiveFontSize(18, isTablet),
       fontWeight: '700',
-      marginBottom: 8,
+      marginBottom: isTablet ? 12 : 8,
       color: theme.colors.textPrimary,
     },
-    paragraph: { color: theme.colors.textSecondary },
+    paragraph: {
+      color: theme.colors.textSecondary,
+      fontSize: responsiveFontSize(14, isTablet),
+      lineHeight: isTablet ? 24 : 20,
+    },
     row: {
       flexDirection: 'row',
       alignItems: 'flex-start',
       gap: 10,
-      marginBottom: 8,
+      marginBottom: isTablet ? 12 : 8,
     },
     rowTitle: {
-      fontSize: 15,
+      fontSize: responsiveFontSize(15, isTablet),
       fontWeight: '600',
       flexShrink: 1,
       color: theme.colors.textPrimary,
     },
-    rowDesc: { color: theme.colors.textSecondary, marginTop: 2 },
+    rowDesc: {
+      color: theme.colors.textSecondary,
+      marginTop: 2,
+      fontSize: responsiveFontSize(14, isTablet),
+    },
     sampleQ: {
-      paddingVertical: 8,
+      paddingVertical: isTablet ? 12 : 8,
       borderBottomWidth: StyleSheet.hairlineWidth,
       borderBottomColor: theme.colors.hairline,
     },
@@ -138,31 +159,45 @@ export default function QuizStartScreen() {
       fontWeight: '600',
       marginBottom: 6,
       color: theme.colors.textPrimary,
+      fontSize: responsiveFontSize(14, isTablet),
     },
     answerChip: {
       alignSelf: 'flex-start',
       backgroundColor: theme.colors.surfaceAlt,
-      paddingHorizontal: 10,
-      paddingVertical: 6,
+      paddingHorizontal: isTablet ? 14 : 10,
+      paddingVertical: isTablet ? 8 : 6,
       borderRadius: 10,
       marginRight: 8,
       marginBottom: 6,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
     },
-    answerChipText: { color: theme.colors.textPrimary },
-    footer: { padding: 16, backgroundColor: theme.colors.background },
+    answerChipText: {
+      color: theme.colors.textPrimary,
+      fontSize: responsiveFontSize(14, isTablet),
+    },
+    footer: {
+      padding: horizontalPadding,
+      backgroundColor: theme.colors.background,
+      maxWidth: contentMaxWidth,
+      alignSelf: 'center',
+      width: '100%',
+    },
     cta: {
       backgroundColor: theme.colors.primary,
-      padding: 16,
+      padding: isTablet ? 20 : 16,
       borderRadius: 16,
       alignItems: 'center',
     },
-    ctaText: { color: 'white', fontWeight: '700' },
+    ctaText: {
+      color: 'white',
+      fontWeight: '700',
+      fontSize: responsiveFontSize(16, isTablet),
+    },
     diffPill: {
       backgroundColor: theme.colors.surfaceAlt,
-      paddingVertical: 10,
-      paddingHorizontal: 14,
+      paddingVertical: isTablet ? 12 : 10,
+      paddingHorizontal: isTablet ? 18 : 14,
       borderRadius: 999,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
@@ -178,6 +213,7 @@ export default function QuizStartScreen() {
       color: theme.colors.textPrimary,
       textTransform: 'capitalize',
       fontWeight: '600',
+      fontSize: responsiveFontSize(14, isTablet),
     },
     diffPillTextActive: { color: '#fff' },
   });

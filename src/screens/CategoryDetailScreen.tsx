@@ -14,6 +14,7 @@ import { getQuizzesForCategoryLocalized, getCategories } from '../data/catalog';
 import { useTheme } from '../styles/ThemeContext';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../state/store';
+import { useResponsive, responsiveFontSize } from '../styles/useResponsive';
 
 export default function CategoryDetailScreen() {
   const route = useRoute<any>();
@@ -24,30 +25,42 @@ export default function CategoryDetailScreen() {
   const theme = useTheme();
   const quizzes = getQuizzesForCategoryLocalized(categoryId, lang as any);
   const cat = getCategories(lang as any).find(c => c.id === categoryId);
+  const { isTablet, numColumns, horizontalPadding, cardWidth } =
+    useResponsive();
 
   const styles = StyleSheet.create({
     safe: { flex: 1, backgroundColor: theme.colors.background },
-    container: { flex: 1, padding: 16 },
+    container: { flex: 1, padding: horizontalPadding },
+    contentContainer: {
+      paddingVertical: 8,
+      ...(numColumns > 1 && { gap: 12 }),
+    },
+    columnWrapper: numColumns > 1 ? { gap: 12 } : undefined,
     title: {
-      fontSize: 24,
+      fontSize: responsiveFontSize(24, isTablet),
       fontWeight: '800',
       marginBottom: 12,
       color: theme.colors.textPrimary,
     },
     item: {
       backgroundColor: theme.colors.surface,
-      padding: 16,
+      padding: isTablet ? 20 : 16,
       borderRadius: 12,
-      marginBottom: 10,
+      marginBottom: numColumns > 1 ? 0 : 10,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
+      width: numColumns > 1 ? cardWidth : undefined,
     },
     itemText: {
-      fontSize: 16,
+      fontSize: responsiveFontSize(16, isTablet),
       fontWeight: '700',
       color: theme.colors.textPrimary,
     },
-    itemSub: { color: theme.colors.textSecondary, marginTop: 4 },
+    itemSub: {
+      fontSize: responsiveFontSize(14, isTablet),
+      color: theme.colors.textSecondary,
+      marginTop: 4,
+    },
   });
 
   return (
@@ -57,6 +70,10 @@ export default function CategoryDetailScreen() {
         <FlatList
           data={quizzes}
           keyExtractor={item => item.id}
+          numColumns={numColumns}
+          key={numColumns}
+          contentContainerStyle={styles.contentContainer}
+          columnWrapperStyle={numColumns > 1 ? styles.columnWrapper : undefined}
           renderItem={({ item }) => (
             <TouchableOpacity
               style={styles.item}
@@ -65,7 +82,10 @@ export default function CategoryDetailScreen() {
               }
             >
               <Text style={styles.itemText}>{item.title}</Text>
-              <Text style={styles.itemSub} numberOfLines={1}>
+              <Text
+                style={styles.itemSub}
+                numberOfLines={numColumns > 1 ? 2 : 1}
+              >
                 {item.description}
               </Text>
             </TouchableOpacity>

@@ -21,6 +21,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../styles/ThemeContext';
 import { useT } from '../i18n';
+import { useResponsive, responsiveFontSize } from '../styles/useResponsive';
 
 const THEMES: { key: ThemeType; labelKey: string }[] = [
   { key: 'light', labelKey: 'theme_light' },
@@ -66,6 +67,7 @@ export default function SettingsScreen() {
   const dispatch = useDispatch();
   const t = useT();
   const theme = useTheme();
+  const { isTablet, contentMaxWidth, horizontalPadding } = useResponsive();
   const {
     soundEffectsEnabled,
     hapticsEnabled,
@@ -77,17 +79,23 @@ export default function SettingsScreen() {
 
   const styles = StyleSheet.create({
     safe: { flex: 1, backgroundColor: theme.colors.background },
-    container: { flex: 1, padding: 16 },
+    container: {
+      flex: 1,
+      padding: horizontalPadding,
+      maxWidth: contentMaxWidth,
+      alignSelf: 'center',
+      width: '100%',
+    },
     title: {
       color: theme.colors.textPrimary,
-      fontSize: 24,
+      fontSize: responsiveFontSize(24, isTablet),
       fontWeight: '800',
-      marginBottom: 12,
+      marginBottom: isTablet ? 16 : 12,
     },
     section: {
       backgroundColor: theme.colors.surface,
       borderRadius: 16,
-      padding: 16,
+      padding: isTablet ? 20 : 16,
       marginBottom: 16,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
@@ -95,20 +103,24 @@ export default function SettingsScreen() {
     sectionTitle: {
       color: theme.colors.textSecondary,
       fontWeight: '700',
-      marginBottom: 8,
+      marginBottom: isTablet ? 12 : 8,
+      fontSize: responsiveFontSize(14, isTablet),
     },
     row: {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
-      paddingVertical: 12,
+      paddingVertical: isTablet ? 16 : 12,
       borderBottomWidth: StyleSheet.hairlineWidth,
       borderBottomColor: theme.colors.hairline,
     },
-    label: { fontSize: 16, color: theme.colors.textPrimary },
+    label: {
+      fontSize: responsiveFontSize(16, isTablet),
+      color: theme.colors.textPrimary,
+    },
     pill: {
-      paddingVertical: 8,
-      paddingHorizontal: 12,
+      paddingVertical: isTablet ? 10 : 8,
+      paddingHorizontal: isTablet ? 16 : 12,
       borderRadius: 999,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
@@ -117,16 +129,27 @@ export default function SettingsScreen() {
       backgroundColor: theme.colors.primary,
       borderColor: theme.colors.primary,
     },
-    pillText: { color: theme.colors.textPrimary },
+    pillText: {
+      color: theme.colors.textPrimary,
+      fontSize: responsiveFontSize(14, isTablet),
+    },
     pillTextActive: { color: '#fff', fontWeight: '700' },
-    devText: { color: theme.colors.textSecondary, marginBottom: 8 },
+    devText: {
+      color: theme.colors.textSecondary,
+      marginBottom: 8,
+      fontSize: responsiveFontSize(14, isTablet),
+    },
     devBtn: {
       backgroundColor: theme.colors.primary,
-      padding: 12,
+      padding: isTablet ? 16 : 12,
       borderRadius: 10,
       alignItems: 'center',
     },
-    devBtnText: { color: '#fff', fontWeight: '700' },
+    devBtnText: {
+      color: '#fff',
+      fontWeight: '700',
+      fontSize: responsiveFontSize(14, isTablet),
+    },
   });
 
   return (

@@ -14,6 +14,7 @@ import type { RootStackParamList } from '../navigation/RootNavigator';
 import { getCategories } from '../data/catalog';
 import { categoryColor } from '../styles/theme';
 import { useTheme } from '../styles/ThemeContext';
+import { useResponsive, responsiveFontSize } from '../styles/useResponsive';
 import MathIcon from '../assets/icons/MathIcon';
 import PhysicsIcon from '../assets/icons/PhysicsIcon';
 import ChemistryIcon from '../assets/icons/ChemistryIcon';
@@ -42,31 +43,35 @@ import type { RootState } from '../state/store';
 Feather.loadFont();
 
 const iconMap: Record<string, (color: string) => React.ReactNode> = {
-  'math': (color) => <MathIcon color={color} />,
-  'physics': (color) => <PhysicsIcon color={color} />,
-  'chemistry': (color) => <ChemistryIcon color={color} />,
-  'javascript': (color) => <JavaScriptIcon color={color} />,
-  'biology': (color) => <BiologyIcon color={color} />,
-  'astronomy': (color) => <AstronomyIcon color={color} />,
-  'geography': (color) => <GeographyIcon color={color} />,
-  'history': (color) => <HistoryIcon color={color} />,
-  'literature': (color) => <LiteratureIcon color={color} />,
-  'art': (color) => <ArtIcon color={color} />,
-  'music': (color) => <MusicIcon color={color} />,
-  'computer-science': (color) => <ComputerScienceIcon color={color} />,
-  'programming': (color) => <ProgrammingIcon color={color} />,
-  'algorithms': (color) => <AlgorithmsIcon color={color} />,
-  'data-structures': (color) => <DataStructuresIcon color={color} />,
-  'economics': (color) => <EconomicsIcon color={color} />,
-  'psychology': (color) => <PsychologyIcon color={color} />,
-  'philosophy': (color) => <PhilosophyIcon color={color} />,
-  'anatomy': (color) => <AnatomyIcon color={color} />,
-  'sports': (color) => <SportsIcon color={color} />,
+  math: color => <MathIcon color={color} />,
+  physics: color => <PhysicsIcon color={color} />,
+  chemistry: color => <ChemistryIcon color={color} />,
+  javascript: color => <JavaScriptIcon color={color} />,
+  biology: color => <BiologyIcon color={color} />,
+  astronomy: color => <AstronomyIcon color={color} />,
+  geography: color => <GeographyIcon color={color} />,
+  history: color => <HistoryIcon color={color} />,
+  literature: color => <LiteratureIcon color={color} />,
+  art: color => <ArtIcon color={color} />,
+  music: color => <MusicIcon color={color} />,
+  'computer-science': color => <ComputerScienceIcon color={color} />,
+  programming: color => <ProgrammingIcon color={color} />,
+  algorithms: color => <AlgorithmsIcon color={color} />,
+  'data-structures': color => <DataStructuresIcon color={color} />,
+  economics: color => <EconomicsIcon color={color} />,
+  psychology: color => <PsychologyIcon color={color} />,
+  philosophy: color => <PhilosophyIcon color={color} />,
+  anatomy: color => <AnatomyIcon color={color} />,
+  sports: color => <SportsIcon color={color} />,
 };
 
 function renderCategoryIcon(id: string, color: string) {
   const iconRenderer = iconMap[id];
-  return iconRenderer ? iconRenderer(color) : <Feather name="grid" size={24} color={color} />;
+  return iconRenderer ? (
+    iconRenderer(color)
+  ) : (
+    <Feather name="grid" size={24} color={color} />
+  );
 }
 
 export default function HomeScreen() {
@@ -76,41 +81,60 @@ export default function HomeScreen() {
   const theme = useTheme();
   const lang = useSelector((s: RootState) => s.app.language);
   const data = React.useMemo(() => getCategories(lang as any), [lang]);
+  const { isTablet, numColumns, horizontalPadding, cardWidth } =
+    useResponsive();
 
   const styles = StyleSheet.create({
     safe: { flex: 1, backgroundColor: theme.colors.background },
-    container: { flex: 1, paddingHorizontal: 16, paddingTop: 0 },
+    container: { flex: 1, paddingHorizontal: horizontalPadding, paddingTop: 0 },
+    contentContainer: {
+      paddingVertical: 16,
+      ...(numColumns > 1 && { gap: 12 }),
+    },
+    columnWrapper: numColumns > 1 ? { gap: 12 } : undefined,
     title: {
-      fontSize: 28,
+      fontSize: responsiveFontSize(28, isTablet),
       fontWeight: '800',
       color: theme.colors.textPrimary,
       marginBottom: 6,
     },
-    subtitle: { color: theme.colors.textSecondary, marginBottom: 8 },
+    subtitle: {
+      fontSize: responsiveFontSize(14, isTablet),
+      color: theme.colors.textSecondary,
+      marginBottom: 8,
+    },
     card: {
       backgroundColor: theme.colors.surface,
       borderRadius: 16,
-      padding: 16,
-      marginBottom: 12,
+      padding: isTablet ? 20 : 16,
+      marginBottom: numColumns > 1 ? 0 : 12,
       borderWidth: 1,
       borderColor: theme.colors.hairline,
-      flexDirection: 'row',
-      alignItems: 'center',
+      flexDirection: numColumns > 1 ? 'column' : 'row',
+      alignItems: numColumns > 1 ? 'flex-start' : 'center',
       gap: 12,
+      width: numColumns > 1 ? cardWidth : undefined,
     },
     iconWrap: {
-      width: 56,
-      height: 56,
+      width: isTablet ? 64 : 56,
+      height: isTablet ? 64 : 56,
       borderRadius: 14,
       alignItems: 'center',
       justifyContent: 'center',
     },
     cardTitle: {
-      fontSize: 18,
+      fontSize: responsiveFontSize(18, isTablet),
       fontWeight: '700',
       color: theme.colors.textPrimary,
     },
-    cardDesc: { color: theme.colors.textSecondary, marginTop: 2 },
+    cardDesc: {
+      fontSize: responsiveFontSize(14, isTablet),
+      color: theme.colors.textSecondary,
+      marginTop: 2,
+    },
+    cardContent: {
+      flex: numColumns > 1 ? undefined : 1,
+    },
   });
 
   return (
@@ -121,7 +145,10 @@ export default function HomeScreen() {
         <FlatList
           data={data}
           keyExtractor={item => item.id}
-          contentContainerStyle={{ paddingVertical: 16 }}
+          numColumns={numColumns}
+          key={numColumns}
+          contentContainerStyle={styles.contentContainer}
+          columnWrapperStyle={numColumns > 1 ? styles.columnWrapper : undefined}
           renderItem={({ item, index }) => (
             <Animated.View entering={FadeInUp.delay(index * 50)}>
               <TouchableOpacity
@@ -139,19 +166,24 @@ export default function HomeScreen() {
                 >
                   {renderCategoryIcon(item.id, categoryColor(item.id))}
                 </View>
-                <View style={{ flex: 1 }}>
+                <View style={styles.cardContent}>
                   <Text style={styles.cardTitle}>{item.name}</Text>
                   {!!item.description && (
-                    <Text style={styles.cardDesc} numberOfLines={2}>
+                    <Text
+                      style={styles.cardDesc}
+                      numberOfLines={numColumns > 1 ? 3 : 2}
+                    >
                       {item.description}
                     </Text>
                   )}
                 </View>
-                <Feather
-                  name="chevron-right"
-                  size={20}
-                  color={theme.colors.textSecondary}
-                />
+                {numColumns === 1 && (
+                  <Feather
+                    name="chevron-right"
+                    size={20}
+                    color={theme.colors.textSecondary}
+                  />
+                )}
               </TouchableOpacity>
             </Animated.View>
           )}
