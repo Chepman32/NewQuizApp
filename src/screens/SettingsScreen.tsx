@@ -12,7 +12,6 @@ import { RootState } from '../state/store';
 import {
   toggleHaptics,
   toggleSoundEffects,
-  addHints,
   toggleRequireAnswerConfirm,
   setLanguage,
   setTheme,
@@ -71,7 +70,6 @@ export default function SettingsScreen() {
   const {
     soundEffectsEnabled,
     hapticsEnabled,
-    hints,
     requireAnswerConfirm,
     language,
     theme: currentTheme,
@@ -134,22 +132,6 @@ export default function SettingsScreen() {
       fontSize: responsiveFontSize(14, isTablet),
     },
     pillTextActive: { color: '#fff', fontWeight: '700' },
-    devText: {
-      color: theme.colors.textSecondary,
-      marginBottom: 8,
-      fontSize: responsiveFontSize(14, isTablet),
-    },
-    devBtn: {
-      backgroundColor: theme.colors.primary,
-      padding: isTablet ? 16 : 12,
-      borderRadius: 10,
-      alignItems: 'center',
-    },
-    devBtnText: {
-      color: '#fff',
-      fontWeight: '700',
-      fontSize: responsiveFontSize(14, isTablet),
-    },
   });
 
   return (
@@ -229,18 +211,6 @@ export default function SettingsScreen() {
           </View>
         </View>
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>{t('developer_tools')}</Text>
-          <Text style={styles.devText}>
-            {t('hints_balance')}: {Number.isFinite(hints as number) ? hints : 0}
-          </Text>
-          <TouchableOpacity
-            style={styles.devBtn}
-            onPress={() => dispatch(addHints(20))}
-          >
-            <Text style={styles.devBtnText}>{t('add_20_hints')}</Text>
-          </TouchableOpacity>
-        </View>
       </ScrollView>
     </SafeAreaView>
   );

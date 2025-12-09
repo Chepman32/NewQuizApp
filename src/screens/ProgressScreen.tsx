@@ -21,7 +21,6 @@ import { useResponsive, responsiveFontSize } from '../styles/useResponsive';
 export default function ProgressScreen() {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  const { hints } = useSelector((s: RootState) => s.app);
   const progress = useSelector((s: RootState) => s.progress);
   const lang = useSelector((s: RootState) => s.app.language);
   const t = useT();
@@ -42,7 +41,6 @@ export default function ProgressScreen() {
       questions,
       accuracy,
       timeMinutes,
-      hintsUsed: questions - correct,
     };
   }, [progress]);
 
@@ -84,27 +82,10 @@ export default function ProgressScreen() {
       fontWeight: '800',
       marginTop: 6,
     },
-    hintsCard: {
-      backgroundColor: theme.colors.surface,
-      borderRadius: 16,
-      padding: isTablet ? 20 : 16,
-      borderWidth: 1,
-      borderColor: theme.colors.hairline,
-    },
     sectionTitle: {
       color: theme.colors.textSecondary,
       fontWeight: '800',
       marginBottom: 8,
-      fontSize: responsiveFontSize(14, isTablet),
-    },
-    hintsText: {
-      color: theme.colors.textPrimary,
-      fontWeight: '800',
-      fontSize: responsiveFontSize(16, isTablet),
-    },
-    hintsSub: {
-      color: theme.colors.textSecondary,
-      marginTop: 2,
       fontSize: responsiveFontSize(14, isTablet),
     },
     catCard: {
@@ -176,18 +157,6 @@ export default function ProgressScreen() {
           </View>
         </View>
 
-        <View style={styles.hintsCard}>
-          <Text style={styles.sectionTitle}>{t('hints')}</Text>
-          <Text style={styles.hintsText}>
-            {t('hints_balance')}: {Number.isFinite(hints as number) ? hints : 0}
-          </Text>
-          <Text style={styles.hintsSub}>
-            Used: {overall.hintsUsed} · Avg/quiz:{' '}
-            {overall.completed
-              ? (overall.hintsUsed / overall.completed).toFixed(1)
-              : 0}
-          </Text>
-        </View>
 
         <Text style={[styles.sectionTitle, { marginTop: 12 }]}>
           {t('category')}

@@ -13,10 +13,14 @@ import ScoreCircle from '../components/ScoreCircle';
 import { useTheme } from '../styles/ThemeContext';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/RootNavigator';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import type { RootState } from '../state/store';
 import { addAttempt } from '../state/slices/progressSlice';
+import { recordAnswer } from '../state/slices/learningSlice';
+import { determineAnswerQuality } from '../learning/algorithm';
 import { useT } from '../i18n';
 import { useResponsive, responsiveFontSize } from '../styles/useResponsive';
+import type { Difficulty } from '../data/catalog';
 
 type ResultItem = {
   id: string;
@@ -24,6 +28,7 @@ type ResultItem = {
   correctAnswer: string;
   chosenAnswer?: string;
   isCorrect: boolean;
+  hintUsed?: boolean;
 };
 type Params = {
   score: number;
@@ -32,6 +37,7 @@ type Params = {
   results: ResultItem[];
   quizId?: string;
   categoryId?: string;
+  difficulty?: Difficulty;
 };
 
 export default function QuizResultsScreen() {
@@ -49,11 +55,17 @@ export default function QuizResultsScreen() {
     results = [],
     quizId,
     categoryId,
+    difficulty = 'normal',
   } = (route.params as Params) ?? {};
   const percent = total > 0 ? Math.round((score / total) * 100) : 0;
 
+  // Average time per question in ms
+  const avgTimePerQuestion = total > 0 ? (timeSeconds * 1000) / total : 5000;
+
   React.useEffect(() => {
     const id = `${quizId ?? 'quiz'}-${Date.now()}`;
+
+    // Record progress attempt
     dispatch(
       addAttempt({
         id,
@@ -65,7 +77,25 @@ export default function QuizResultsScreen() {
         createdAt: new Date().toISOString(),
       }),
     );
-  }, [dispatch, quizId, categoryId, score, total, timeSeconds]);
+
+    // Record learning data for each question (only if no hint was used)
+    results.forEach(result => {
+      // Skip hint-assisted answers for learning tracking
+      // They already don't count as correct in progress
+      if (result.hintUsed) return;
+
+      const quality = determineAnswerQuality(result.isCorrect, avgTimePerQuestion);
+      dispatch(
+        recordAnswer({
+          questionId: result.id,
+          categoryId: categoryId ?? 'unknown',
+          difficulty: difficulty as Difficulty,
+          quality,
+          responseTimeMs: avgTimePerQuestion,
+        }),
+      );
+    });
+  }, [dispatch, quizId, categoryId, score, total, timeSeconds, results, difficulty, avgTimePerQuestion]);
 
   const correctCount = score;
   const incorrectCount = Math.max(0, total - score);

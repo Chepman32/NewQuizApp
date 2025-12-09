@@ -16,6 +16,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import { getQuizByIdLocalized } from '../data/catalog';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../state/store';
+// Premium features removed - all difficulties now free
 import { useTheme } from '../styles/ThemeContext';
 import { useT } from '../i18n';
 import { useResponsive, responsiveFontSize } from '../styles/useResponsive';
@@ -73,8 +74,6 @@ export default function QuizStartScreen() {
   );
   const totalQuestions = questionCountForDifficulty[difficulty];
   const estTime = Math.max(1, Math.round(totalQuestions * 0.3));
-  const isPremium = useSelector((s: RootState) => s.app.isPremium);
-  const isProfessorLocked = difficulty === 'professor' && !isPremium;
 
   const styles = StyleSheet.create({
     safe: { flex: 1, backgroundColor: theme.colors.background },
@@ -204,7 +203,6 @@ export default function QuizStartScreen() {
       flexDirection: 'row',
       alignItems: 'center',
     },
-    diffPillLocked: { borderColor: '#F5A623' },
     diffPillActive: {
       backgroundColor: theme.colors.primary,
       borderColor: theme.colors.primary,
@@ -265,13 +263,11 @@ export default function QuizStartScreen() {
               ItemSeparatorComponent={() => <View style={{ width: 8 }} />}
               renderItem={({ item }) => {
                 const active = item === difficulty;
-                const locked = item === 'professor' && !isPremium;
                 return (
                   <TouchableOpacity
                     style={[
                       styles.diffPill,
                       active && styles.diffPillActive,
-                      locked && styles.diffPillLocked,
                     ]}
                     onPress={() => setDifficulty(item as Difficulty)}
                     activeOpacity={0.9}
@@ -284,14 +280,6 @@ export default function QuizStartScreen() {
                     >
                       {t(DIFFICULTY_KEYS[item as Difficulty])}
                     </Text>
-                    {locked && (
-                      <Icon
-                        name="lock"
-                        size={14}
-                        color={theme.colors.textSecondary}
-                        style={{ marginLeft: 6 }}
-                      />
-                    )}
                   </TouchableOpacity>
                 );
               }}
@@ -346,31 +334,19 @@ export default function QuizStartScreen() {
         </ScrollView>
 
         <View style={styles.footer}>
-          {isProfessorLocked ? (
-            <View
-              style={[styles.cta, { backgroundColor: theme.colors.surfaceAlt }]}
-            >
-              <Text
-                style={[styles.ctaText, { color: theme.colors.textSecondary }]}
-              >
-                {t('premium_required_prof')}
-              </Text>
-            </View>
-          ) : (
-            <TouchableOpacity
-              style={styles.cta}
-              activeOpacity={0.9}
-              onPress={() =>
-                navigation.navigate('Quiz', {
-                  quizId: quiz?.id ?? 'q1',
-                  categoryId: quiz?.categoryId ?? 'c1',
-                  difficulty,
-                })
-              }
-            >
-              <Text style={styles.ctaText}>{t('start_quiz')}</Text>
-            </TouchableOpacity>
-          )}
+          <TouchableOpacity
+            style={styles.cta}
+            activeOpacity={0.9}
+            onPress={() =>
+              navigation.navigate('Quiz', {
+                quizId: quiz?.id ?? 'q1',
+                categoryId: quiz?.categoryId ?? 'c1',
+                difficulty,
+              })
+            }
+          >
+            <Text style={styles.ctaText}>{t('start_quiz')}</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>

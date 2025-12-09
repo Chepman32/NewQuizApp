@@ -21,9 +21,9 @@ import {
   getQuestionsForDifficulty,
   type Difficulty,
 } from '../data/catalog';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import type { RootState } from '../state/store';
-import { consumeHint } from '../state/slices/appSlice';
+// Hints are now unlimited - no consumeHint needed
 import { useTheme } from '../styles/ThemeContext';
 import { useT, useTf } from '../i18n';
 import { useResponsive, responsiveFontSize } from '../styles/useResponsive';
@@ -51,8 +51,6 @@ export default function QuizScreen() {
   const { isTablet, contentMaxWidth, horizontalPadding, isLandscape } =
     useResponsive();
 
-  const dispatch = useDispatch();
-  const globalHints = useSelector((s: RootState) => s.app.hints);
   const requireConfirm = useSelector(
     (s: RootState) => s.app.requireAnswerConfirm,
   );
@@ -64,6 +62,7 @@ export default function QuizScreen() {
   const [eliminatedIds, setEliminatedIds] = useState<Set<string>>(new Set());
   const [revealCorrect, setRevealCorrect] = useState(false);
   const [usedHintsThisQuestion, setUsedHintsThisQuestion] = useState(0);
+  const [hintUsedThisQuestion, setHintUsedThisQuestion] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState<string | undefined>(
     undefined,
   );
@@ -86,13 +85,16 @@ export default function QuizScreen() {
       correctAnswer: string;
       chosenAnswer?: string;
       isCorrect: boolean;
+      hintUsed?: boolean;
     }[]
   >([]);
 
   const submitAnswer = (chosen?: string) => {
     if (!quiz || !q) return;
     const correct = q.answers.find(a => a.isCorrect)?.text ?? '';
-    const isCorrect = chosen ? chosen === correct : false;
+    // Hint-assisted answers do NOT count as correct in progress
+    const answeredCorrectly = chosen ? chosen === correct : false;
+    const isCorrect = answeredCorrectly && !hintUsedThisQuestion;
     const newResults = [
       ...results,
       {
@@ -101,6 +103,7 @@ export default function QuizScreen() {
         correctAnswer: correct,
         chosenAnswer: chosen,
         isCorrect,
+        hintUsed: hintUsedThisQuestion,
       },
     ];
     setResults(newResults);
@@ -125,12 +128,14 @@ export default function QuizScreen() {
         results: newResults,
         quizId: quiz?.id,
         categoryId: quiz?.categoryId ?? categoryId,
+        difficulty,
       });
     } else {
       setIndex(nextIndex);
       setEliminatedIds(new Set());
       setRevealCorrect(false);
       setUsedHintsThisQuestion(0);
+      setHintUsedThisQuestion(false);
       setSelectedAnswer(undefined);
     }
   };
@@ -144,7 +149,8 @@ export default function QuizScreen() {
   };
 
   const applyHint = (type: '50-50' | 'reveal') => {
-    const canUse = globalHints > 0 && usedHintsThisQuestion < 2;
+    // Hints are unlimited, but max 2 per question
+    const canUse = usedHintsThisQuestion < 2;
     if (!q || !canUse) return;
     if (type === '50-50') {
       const wrong = q.answers.filter(
@@ -158,7 +164,7 @@ export default function QuizScreen() {
     } else if (type === 'reveal') {
       setRevealCorrect(true);
     }
-    dispatch(consumeHint());
+    setHintUsedThisQuestion(true);
     setUsedHintsThisQuestion(v => v + 1);
     setHintSheetOpen(false);
   };
@@ -291,7 +297,8 @@ export default function QuizScreen() {
     );
   }
 
-  const hintAvailable = globalHints > 0 && usedHintsThisQuestion < 2;
+  // Hints are unlimited, but max 2 per question
+  const hintAvailable = usedHintsThisQuestion < 2;
 
   return (
     <View style={styles.container}>
@@ -299,9 +306,6 @@ export default function QuizScreen() {
         <View style={styles.topRow}>
           <Text style={styles.progress}>
             {tf('question_progress', index + 1, questions.length)}
-          </Text>
-          <Text style={styles.progress}>
-            {tt('hints')}: {globalHints || 0}
           </Text>
         </View>
 
@@ -346,7 +350,7 @@ export default function QuizScreen() {
             onPress={() => setHintSheetOpen(true)}
           >
             <Text style={styles.hintText}>
-              {tt('use_hint')} ({globalHints || 0} {tt('hints')})
+              {tt('use_hint')} ({2 - usedHintsThisQuestion} {tt('remaining')})
             </Text>
           </TouchableOpacity>
           {requireConfirm && (

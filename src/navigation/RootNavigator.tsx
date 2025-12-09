@@ -9,7 +9,7 @@ import QuizStartScreen from '../screens/QuizStartScreen';
 import QuizScreen from '../screens/QuizScreen';
 import QuizResultsScreen from '../screens/QuizResultsScreen';
 import ProgressScreen from '../screens/ProgressScreen';
-import StoreScreen from '../screens/StoreScreen';
+import LearningScreen from '../screens/LearningScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import Icon from 'react-native-vector-icons/Feather';
 import Feather from 'react-native-vector-icons/Feather';
@@ -24,6 +24,7 @@ type ResultItem = {
   correctAnswer: string;
   chosenAnswer?: string;
   isCorrect: boolean;
+  hintUsed?: boolean;
 };
 
 export type RootStackParamList = {
@@ -39,6 +40,7 @@ export type RootStackParamList = {
     total: number;
     timeSeconds: number;
     results: ResultItem[];
+    difficulty?: string;
   };
 };
 
@@ -66,8 +68,8 @@ function MainTabs() {
               ? 'home'
               : route.name === 'Progress'
               ? 'bar-chart-2'
-              : route.name === 'Premium'
-              ? 'star'
+              : route.name === 'Learning'
+              ? 'book-open'
               : 'settings';
           return <Icon name={name} size={size} color={color} />;
         },
@@ -84,9 +86,9 @@ function MainTabs() {
         options={{ title: t('progress'), tabBarLabel: t('progress') }}
       />
       <Tab.Screen
-        name="Premium"
-        component={StoreScreen}
-        options={{ title: t('premium'), tabBarLabel: t('premium') }}
+        name="Learning"
+        component={LearningScreen}
+        options={{ title: t('learning'), tabBarLabel: t('learning') }}
       />
       <Tab.Screen
         name="Settings"
