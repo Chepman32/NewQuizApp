@@ -79,11 +79,11 @@ export default function OnboardingScreen({ navigation }: Props) {
         onViewableItemsChanged={onViewableItemsChanged}
         viewabilityConfig={viewabilityConfig}
         renderItem={({ item }) => (
-          <Image source={item} style={styles.image} resizeMode="cover" />
+          <Image source={item} style={styles.image} resizeMode="contain" />
         )}
       />
 
-      <SafeAreaView style={styles.overlay} edges={['top', 'bottom']}>
+      <SafeAreaView style={styles.overlay} edges={['top', 'bottom']} pointerEvents="box-none">
         {!isLastSlide && (
           <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
             <Text style={[styles.skipText, { color: theme.colors.textPrimary }]}>
