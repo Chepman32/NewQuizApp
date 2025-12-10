@@ -11,7 +11,6 @@ import LinearGradient from 'react-native-linear-gradient';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
-  withRepeat,
   withTiming,
   withSpring,
   Easing,
@@ -151,15 +150,12 @@ export default function OrbitButton({
   const scale = useSharedValue(1);
 
   // Start infinite orbit animation on mount
+  // Using a very large target value for seamless looping (no reset stutter)
   useEffect(() => {
-    theta.value = withRepeat(
-      withTiming(2 * Math.PI, {
-        duration: orbitDurationMs,
-        easing: Easing.linear,
-      }),
-      -1, // infinite repeat
-      false // no reverse
-    );
+    theta.value = withTiming(2 * Math.PI * 10000, {
+      duration: orbitDurationMs * 10000,
+      easing: Easing.linear,
+    });
   }, [orbitDurationMs, theta]);
 
   // Animated wrapper style for press scale effect
