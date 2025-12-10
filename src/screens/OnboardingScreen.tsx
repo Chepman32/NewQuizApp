@@ -16,6 +16,7 @@ import { RootStackParamList } from '../navigation/RootNavigator';
 import { setOnboardingComplete } from '../state/slices/appSlice';
 import { useTheme } from '../styles/ThemeContext';
 import { useT } from '../i18n';
+import OrbitButton from '../components/OrbitButton';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Onboarding'>;
 
@@ -111,14 +112,19 @@ export default function OnboardingScreen({ navigation }: Props) {
             ))}
           </View>
 
-          <TouchableOpacity
-            style={[styles.button, { backgroundColor: theme.colors.primary }]}
-            onPress={handleNext}
-          >
-            <Text style={styles.buttonText}>
-              {isLastSlide ? t('get_started') : t('next')}
-            </Text>
-          </TouchableOpacity>
+          {isLastSlide ? (
+            <OrbitButton
+              label={t('get_started').toUpperCase()}
+              onPress={handleComplete}
+            />
+          ) : (
+            <TouchableOpacity
+              style={[styles.button, { backgroundColor: theme.colors.primary }]}
+              onPress={handleNext}
+            >
+              <Text style={styles.buttonText}>{t('next')}</Text>
+            </TouchableOpacity>
+          )}
         </View>
       </SafeAreaView>
     </View>
