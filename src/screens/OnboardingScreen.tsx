@@ -59,7 +59,7 @@ export default function OnboardingScreen({ navigation }: Props) {
       if (viewableItems.length > 0 && viewableItems[0].index !== null) {
         setCurrentIndex(viewableItems[0].index);
       }
-    }
+    },
   ).current;
 
   const viewabilityConfig = useRef({
@@ -69,7 +69,9 @@ export default function OnboardingScreen({ navigation }: Props) {
   const isLastSlide = currentIndex === images.length - 1;
 
   return (
-    <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
+    <View
+      style={[styles.container, { backgroundColor: theme.colors.background }]}
+    >
       <FlatList
         ref={flatListRef}
         data={images}
@@ -84,10 +86,16 @@ export default function OnboardingScreen({ navigation }: Props) {
         )}
       />
 
-      <SafeAreaView style={styles.overlay} edges={['top', 'bottom']} pointerEvents="box-none">
+      <SafeAreaView
+        style={styles.overlay}
+        edges={['top', 'bottom']}
+        pointerEvents="box-none"
+      >
         {!isLastSlide && (
           <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
-            <Text style={[styles.skipText, { color: theme.colors.textPrimary }]}>
+            <Text
+              style={[styles.skipText, { color: theme.colors.textPrimary }]}
+            >
               {t('skip')}
             </Text>
           </TouchableOpacity>
@@ -113,10 +121,13 @@ export default function OnboardingScreen({ navigation }: Props) {
           </View>
 
           {isLastSlide ? (
-            <OrbitButton
-              label={t('get_started').toUpperCase()}
-              onPress={handleComplete}
-            />
+            <View style={styles.orbitButtonWrapper}>
+              <OrbitButton
+                label={t('get_started').toUpperCase()}
+                onPress={handleComplete}
+                width={300}
+              />
+            </View>
           ) : (
             <TouchableOpacity
               style={[styles.button, { backgroundColor: theme.colors.primary }]}
@@ -165,6 +176,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginBottom: 24,
   },
+  orbitButtonWrapper: {
+    marginTop: -12,
+  },
   dot: {
     width: 8,
     height: 8,
@@ -175,10 +189,11 @@ const styles = StyleSheet.create({
     width: 24,
   },
   button: {
-    width: '100%',
+    width: 300,
     paddingVertical: 16,
-    borderRadius: 12,
+    borderRadius: 28,
     alignItems: 'center',
+    marginBottom: 12,
   },
   buttonText: {
     color: 'white',
