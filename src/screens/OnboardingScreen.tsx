@@ -125,7 +125,7 @@ export default function OnboardingScreen({ navigation }: Props) {
               <OrbitButton
                 label={t('get_started').toUpperCase()}
                 onPress={handleComplete}
-                width={300}
+                width={340}
               />
             </View>
           ) : (
