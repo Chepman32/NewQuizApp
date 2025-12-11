@@ -2495,4 +2495,492 @@ export const philosophyQuestions: Question[] = [
     ]),
     level: 8,
   },
+  {
+    id: 'phi251',
+    text: 'Who wrote "The Republic"?',
+    answers: A('phi251', 'Plato', ['Aristotle', 'Socrates', 'Xenophon']),
+    level: 2,
+  },
+  {
+    id: 'phi252',
+    text: 'Who wrote "Nicomachean Ethics"?',
+    answers: A('phi252', 'Aristotle', ['Plato', 'Socrates', 'Epicurus']),
+    level: 3,
+  },
+  {
+    id: 'phi253',
+    text: 'Who wrote "Meditations"?',
+    answers: A('phi253', 'Marcus Aurelius', ['Seneca', 'Epictetus', 'Cicero']),
+    level: 3,
+  },
+  {
+    id: 'phi254',
+    text: 'Who wrote "Confessions"?',
+    answers: A('phi254', 'Augustine of Hippo', [
+      'Thomas Aquinas',
+      'Boethius',
+      'Anselm',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'phi255',
+    text: 'Who wrote "Summa Theologica"?',
+    answers: A('phi255', 'Thomas Aquinas', [
+      'Augustine',
+      'Anselm',
+      'Duns Scotus',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'phi256',
+    text: 'Who wrote "Discourse on Method"?',
+    answers: A('phi256', 'René Descartes', [
+      'Baruch Spinoza',
+      'Gottfried Leibniz',
+      'John Locke',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'phi257',
+    text: 'Who wrote "Ethics"?',
+    answers: A('phi257', 'Baruch Spinoza', [
+      'René Descartes',
+      'Gottfried Leibniz',
+      'Immanuel Kant',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'phi258',
+    text: 'Who wrote "Monadology"?',
+    answers: A('phi258', 'Gottfried Leibniz', [
+      'Baruch Spinoza',
+      'René Descartes',
+      'Christian Wolff',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'phi259',
+    text: 'Who wrote "An Essay Concerning Human Understanding"?',
+    answers: A('phi259', 'John Locke', [
+      'George Berkeley',
+      'David Hume',
+      'Thomas Hobbes',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'phi260',
+    text: 'Who wrote "A Treatise Concerning the Principles of Human Knowledge"?',
+    answers: A('phi260', 'George Berkeley', [
+      'John Locke',
+      'David Hume',
+      'Thomas Reid',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'phi261',
+    text: 'Who wrote "An Enquiry Concerning Human Understanding"?',
+    answers: A('phi261', 'David Hume', [
+      'John Locke',
+      'George Berkeley',
+      'Immanuel Kant',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'phi262',
+    text: 'Who wrote "Leviathan"?',
+    answers: A('phi262', 'Thomas Hobbes', [
+      'John Locke',
+      'Jean-Jacques Rousseau',
+      'John Stuart Mill',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'phi263',
+    text: 'Who wrote "The Social Contract"?',
+    answers: A('phi263', 'Jean-Jacques Rousseau', [
+      'Thomas Hobbes',
+      'John Locke',
+      'Voltaire',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'phi264',
+    text: 'Who wrote "Candide"?',
+    answers: A('phi264', 'Voltaire', [
+      'Jean-Jacques Rousseau',
+      'Denis Diderot',
+      'Montesquieu',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'phi265',
+    text: 'Who wrote "Critique of Pure Reason"?',
+    answers: A('phi265', 'Immanuel Kant', [
+      'Georg Wilhelm Friedrich Hegel',
+      'Arthur Schopenhauer',
+      'Johann Gottlieb Fichte',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'phi266',
+    text: 'Who wrote "Phenomenology of Spirit"?',
+    answers: A('phi266', 'Georg Wilhelm Friedrich Hegel', [
+      'Immanuel Kant',
+      'Friedrich Schelling',
+      'Karl Marx',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'phi267',
+    text: 'Who wrote "The World as Will and Representation"?',
+    answers: A('phi267', 'Arthur Schopenhauer', [
+      'Friedrich Nietzsche',
+      'Søren Kierkegaard',
+      'Immanuel Kant',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'phi268',
+    text: 'Who wrote "Either/Or"?',
+    answers: A('phi268', 'Søren Kierkegaard', [
+      'Friedrich Nietzsche',
+      'Arthur Schopenhauer',
+      'Martin Heidegger',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'phi269',
+    text: 'Who wrote "Fear and Trembling"?',
+    answers: A('phi269', 'Søren Kierkegaard', [
+      'Friedrich Nietzsche',
+      'Martin Heidegger',
+      'Jean-Paul Sartre',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'phi270',
+    text: 'Who wrote "Thus Spoke Zarathustra"?',
+    answers: A('phi270', 'Friedrich Nietzsche', [
+      'Arthur Schopenhauer',
+      'Søren Kierkegaard',
+      'Martin Heidegger',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'phi271',
+    text: 'Who wrote "Beyond Good and Evil"?',
+    answers: A('phi271', 'Friedrich Nietzsche', [
+      'Arthur Schopenhauer',
+      'Søren Kierkegaard',
+      'Friedrich Schelling',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'phi272',
+    text: 'Who wrote "The Communist Manifesto"?',
+    answers: A('phi272', 'Karl Marx and Friedrich Engels', [
+      'Vladimir Lenin',
+      'Leon Trotsky',
+      'Rosa Luxemburg',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'phi273',
+    text: 'Who wrote "Das Kapital"?',
+    answers: A('phi273', 'Karl Marx', [
+      'Friedrich Engels',
+      'Vladimir Lenin',
+      'Adam Smith',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'phi274',
+    text: 'Who wrote "On Liberty"?',
+    answers: A('phi274', 'John Stuart Mill', [
+      'Jeremy Bentham',
+      'John Locke',
+      'Thomas Hobbes',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'phi275',
+    text: 'Who wrote "Utilitarianism"?',
+    answers: A('phi275', 'John Stuart Mill', [
+      'Jeremy Bentham',
+      'Henry Sidgwick',
+      'Peter Singer',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'phi276',
+    text: 'Who wrote "Being and Time"?',
+    answers: A('phi276', 'Martin Heidegger', [
+      'Jean-Paul Sartre',
+      'Edmund Husserl',
+      'Maurice Merleau-Ponty',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'phi277',
+    text: 'Who wrote "Being and Nothingness"?',
+    answers: A('phi277', 'Jean-Paul Sartre', [
+      'Martin Heidegger',
+      'Albert Camus',
+      'Simone de Beauvoir',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'phi278',
+    text: 'Who wrote "The Second Sex"?',
+    answers: A('phi278', 'Simone de Beauvoir', [
+      'Jean-Paul Sartre',
+      'Hannah Arendt',
+      'Judith Butler',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'phi279',
+    text: 'Who wrote "The Myth of Sisyphus"?',
+    answers: A('phi279', 'Albert Camus', [
+      'Jean-Paul Sartre',
+      'Martin Heidegger',
+      'Søren Kierkegaard',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'phi280',
+    text: 'Who wrote "Tractatus Logico-Philosophicus"?',
+    answers: A('phi280', 'Ludwig Wittgenstein', [
+      'Bertrand Russell',
+      'Gottlob Frege',
+      'Rudolf Carnap',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'phi281',
+    text: 'Who wrote "Philosophical Investigations"?',
+    answers: A('phi281', 'Ludwig Wittgenstein', [
+      'Bertrand Russell',
+      'Gilbert Ryle',
+      'J.L. Austin',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'phi282',
+    text: 'Who wrote "Principia Mathematica"?',
+    answers: A('phi282', 'Bertrand Russell and Alfred North Whitehead', [
+      'Ludwig Wittgenstein',
+      'Gottlob Frege',
+      'Kurt Gödel',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'phi283',
+    text: 'Who wrote "The Problems of Philosophy"?',
+    answers: A('phi283', 'Bertrand Russell', [
+      'Ludwig Wittgenstein',
+      'A.J. Ayer',
+      'Gilbert Ryle',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'phi284',
+    text: 'Who wrote "Language, Truth and Logic"?',
+    answers: A('phi284', 'A.J. Ayer', [
+      'Bertrand Russell',
+      'Ludwig Wittgenstein',
+      'Rudolf Carnap',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'phi285',
+    text: 'Who wrote "The Concept of Mind"?',
+    answers: A('phi285', 'Gilbert Ryle', [
+      'Ludwig Wittgenstein',
+      'J.L. Austin',
+      'P.F. Strawson',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'phi286',
+    text: 'Who wrote "A Theory of Justice"?',
+    answers: A('phi286', 'John Rawls', [
+      'Robert Nozick',
+      'Ronald Dworkin',
+      'Michael Sandel',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'phi287',
+    text: 'Who wrote "Anarchy, State, and Utopia"?',
+    answers: A('phi287', 'Robert Nozick', [
+      'John Rawls',
+      'Ronald Dworkin',
+      'Michael Walzer',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'phi288',
+    text: 'Who wrote "Naming and Necessity"?',
+    answers: A('phi288', 'Saul Kripke', [
+      'Hilary Putnam',
+      'David Lewis',
+      'W.V.O. Quine',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'phi289',
+    text: 'Who wrote "Word and Object"?',
+    answers: A('phi289', 'W.V.O. Quine', [
+      'Donald Davidson',
+      'Hilary Putnam',
+      'Saul Kripke',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'phi290',
+    text: 'Who wrote "The Structure of Scientific Revolutions"?',
+    answers: A('phi290', 'Thomas Kuhn', [
+      'Karl Popper',
+      'Imre Lakatos',
+      'Paul Feyerabend',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'phi291',
+    text: 'Who wrote "The Logic of Scientific Discovery"?',
+    answers: A('phi291', 'Karl Popper', [
+      'Thomas Kuhn',
+      'Imre Lakatos',
+      'Carl Hempel',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'phi292',
+    text: 'Who wrote "The Order of Things"?',
+    answers: A('phi292', 'Michel Foucault', [
+      'Jacques Derrida',
+      'Gilles Deleuze',
+      'Jean-François Lyotard',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'phi293',
+    text: 'Who wrote "Discipline and Punish"?',
+    answers: A('phi293', 'Michel Foucault', [
+      'Jacques Derrida',
+      'Pierre Bourdieu',
+      'Louis Althusser',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'phi294',
+    text: 'Who wrote "Of Grammatology"?',
+    answers: A('phi294', 'Jacques Derrida', [
+      'Michel Foucault',
+      'Gilles Deleuze',
+      'Jean-François Lyotard',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'phi295',
+    text: 'Who wrote "Difference and Repetition"?',
+    answers: A('phi295', 'Gilles Deleuze', [
+      'Jacques Derrida',
+      'Michel Foucault',
+      'Félix Guattari',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'phi296',
+    text: 'Who wrote "Anti-Oedipus"?',
+    answers: A('phi296', 'Gilles Deleuze and Félix Guattari', [
+      'Jacques Lacan',
+      'Michel Foucault',
+      'Jacques Derrida',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'phi297',
+    text: 'Who wrote "The Postmodern Condition"?',
+    answers: A('phi297', 'Jean-François Lyotard', [
+      'Jean Baudrillard',
+      'Fredric Jameson',
+      'Jacques Derrida',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'phi298',
+    text: 'Who wrote "Simulacra and Simulation"?',
+    answers: A('phi298', 'Jean Baudrillard', [
+      'Jean-François Lyotard',
+      'Guy Debord',
+      'Umberto Eco',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'phi299',
+    text: 'Who wrote "Gender Trouble"?',
+    answers: A('phi299', 'Judith Butler', [
+      'Simone de Beauvoir',
+      'bell hooks',
+      'Donna Haraway',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'phi300',
+    text: 'Who wrote "The Human Condition"?',
+    answers: A('phi300', 'Hannah Arendt', [
+      'Simone de Beauvoir',
+      'Simone Weil',
+      'Iris Murdoch',
+    ]),
+    level: 5,
+  },
 ];

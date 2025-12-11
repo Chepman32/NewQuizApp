@@ -2469,4 +2469,492 @@ export const artQuestions: Question[] = [
     ]),
     level: 3,
   },
+  {
+    id: 'art251',
+    text: 'Who painted "American Gothic"?',
+    answers: A('art251', 'Grant Wood', [
+      'Edward Hopper',
+      'Norman Rockwell',
+      'Andrew Wyeth',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art252',
+    text: 'Who painted "Nighthawks"?',
+    answers: A('art252', 'Edward Hopper', [
+      'Grant Wood',
+      'Norman Rockwell',
+      'Andrew Wyeth',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art253',
+    text: 'Who painted "Christina\'s World"?',
+    answers: A('art253', 'Andrew Wyeth', [
+      'Edward Hopper',
+      'Grant Wood',
+      'Norman Rockwell',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art254',
+    text: 'Who painted "No. 5, 1948"?',
+    answers: A('art254', 'Jackson Pollock', [
+      'Mark Rothko',
+      'Willem de Kooning',
+      'Franz Kline',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art255',
+    text: 'What technique is Jackson Pollock known for?',
+    answers: A('art255', 'Drip painting', [
+      'Pointillism',
+      'Impasto',
+      'Glazing',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art256',
+    text: 'Who painted color field paintings with rectangles?',
+    answers: A('art256', 'Mark Rothko', [
+      'Jackson Pollock',
+      'Barnett Newman',
+      'Clyfford Still',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art257',
+    text: 'Who created "Campbell\'s Soup Cans"?',
+    answers: A('art257', 'Andy Warhol', [
+      'Roy Lichtenstein',
+      'Jasper Johns',
+      'Robert Rauschenberg',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art258',
+    text: 'Who created comic book style pop art?',
+    answers: A('art258', 'Roy Lichtenstein', [
+      'Andy Warhol',
+      'Keith Haring',
+      'Jean-Michel Basquiat',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art259',
+    text: 'Who painted "Flag"?',
+    answers: A('art259', 'Jasper Johns', [
+      'Andy Warhol',
+      'Roy Lichtenstein',
+      'Robert Rauschenberg',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art260',
+    text: 'Who created graffiti-inspired art in 1980s NYC?',
+    answers: A('art260', 'Jean-Michel Basquiat', [
+      'Keith Haring',
+      'Andy Warhol',
+      'Roy Lichtenstein',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art261',
+    text: 'Who created radiant baby and barking dog symbols?',
+    answers: A('art261', 'Keith Haring', [
+      'Jean-Michel Basquiat',
+      'Kenny Scharf',
+      'Futura 2000',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art262',
+    text: 'Who painted "The Treachery of Images" (This is not a pipe)?',
+    answers: A('art262', 'René Magritte', [
+      'Salvador Dalí',
+      'Max Ernst',
+      'Joan Miró',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art263',
+    text: 'Who painted "The Son of Man" with apple face?',
+    answers: A('art263', 'René Magritte', [
+      'Salvador Dalí',
+      'Max Ernst',
+      'Giorgio de Chirico',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art264',
+    text: 'Who painted "The Elephants" with long legs?',
+    answers: A('art264', 'Salvador Dalí', [
+      'René Magritte',
+      'Max Ernst',
+      'Yves Tanguy',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art265',
+    text: 'Who painted "The Burning Giraffe"?',
+    answers: A('art265', 'Salvador Dalí', [
+      'René Magritte',
+      'Max Ernst',
+      'Joan Miró',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art266',
+    text: 'Who painted abstract works with primary colors and black lines?',
+    answers: A('art266', 'Piet Mondrian', [
+      'Kazimir Malevich',
+      'Wassily Kandinsky',
+      'Paul Klee',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art267',
+    text: 'Who painted "Black Square"?',
+    answers: A('art267', 'Kazimir Malevich', [
+      'Piet Mondrian',
+      'Wassily Kandinsky',
+      'El Lissitzky',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art268',
+    text: 'Who is considered the father of abstract art?',
+    answers: A('art268', 'Wassily Kandinsky', [
+      'Piet Mondrian',
+      'Kazimir Malevich',
+      'Paul Klee',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art269',
+    text: 'Who painted "The Twittering Machine"?',
+    answers: A('art269', 'Paul Klee', [
+      'Wassily Kandinsky',
+      'Joan Miró',
+      'Max Ernst',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art270',
+    text: 'Who painted "Blue Nude" series?',
+    answers: A('art270', 'Henri Matisse', [
+      'Pablo Picasso',
+      'Amedeo Modigliani',
+      'Fernand Léger',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art271',
+    text: 'What art movement was Henri Matisse associated with?',
+    answers: A('art271', 'Fauvism', ['Cubism', 'Surrealism', 'Expressionism']),
+    level: 5,
+  },
+  {
+    id: 'art272',
+    text: 'Who painted "The Dance"?',
+    answers: A('art272', 'Henri Matisse', [
+      'Pablo Picasso',
+      'Marc Chagall',
+      'Fernand Léger',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art273',
+    text: 'Who painted elongated portraits with long necks?',
+    answers: A('art273', 'Amedeo Modigliani', [
+      'Henri Matisse',
+      'Pablo Picasso',
+      'Marc Chagall',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art274',
+    text: 'Who painted dreamlike scenes with floating figures?',
+    answers: A('art274', 'Marc Chagall', [
+      'Joan Miró',
+      'Paul Klee',
+      'Wassily Kandinsky',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art275',
+    text: 'Who painted "I and the Village"?',
+    answers: A('art275', 'Marc Chagall', [
+      'Joan Miró',
+      'Paul Klee',
+      'Max Ernst',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art276',
+    text: 'Who painted "The Harlequin\'s Carnival"?',
+    answers: A('art276', 'Joan Miró', [
+      'Marc Chagall',
+      'Paul Klee',
+      'Wassily Kandinsky',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art277',
+    text: 'Who painted "The Farm"?',
+    answers: A('art277', 'Joan Miró', [
+      'Marc Chagall',
+      'Pablo Picasso',
+      'Georges Braque',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art278',
+    text: 'Who co-founded Cubism with Picasso?',
+    answers: A('art278', 'Georges Braque', [
+      'Juan Gris',
+      'Fernand Léger',
+      'Robert Delaunay',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art279',
+    text: 'Who painted "The Portuguese"?',
+    answers: A('art279', 'Georges Braque', [
+      'Pablo Picasso',
+      'Juan Gris',
+      'Fernand Léger',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'art280',
+    text: 'Who painted "The City Rises"?',
+    answers: A('art280', 'Umberto Boccioni', [
+      'Giacomo Balla',
+      'Carlo Carrà',
+      'Gino Severini',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'art281',
+    text: 'What art movement emphasized speed and technology?',
+    answers: A('art281', 'Futurism', ['Cubism', 'Surrealism', 'Dadaism']),
+    level: 5,
+  },
+  {
+    id: 'art282',
+    text: 'Who created "Fountain" (urinal as art)?',
+    answers: A('art282', 'Marcel Duchamp', [
+      'Man Ray',
+      'Francis Picabia',
+      'Kurt Schwitters',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art283',
+    text: 'Who painted "Nude Descending a Staircase"?',
+    answers: A('art283', 'Marcel Duchamp', [
+      'Francis Picabia',
+      'Man Ray',
+      'Fernand Léger',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art284',
+    text: 'What is a "readymade" in art?',
+    answers: A('art284', 'Everyday object presented as art', [
+      'Handmade sculpture',
+      'Oil painting',
+      'Watercolor',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art285',
+    text: 'Who painted "The Two Fridas"?',
+    answers: A('art285', 'Frida Kahlo', [
+      'Diego Rivera',
+      'Leonora Carrington',
+      'Remedios Varo',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art286',
+    text: 'Who was Frida Kahlo married to?',
+    answers: A('art286', 'Diego Rivera', [
+      'David Alfaro Siqueiros',
+      'José Clemente Orozco',
+      'Rufino Tamayo',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art287',
+    text: 'Who painted murals of Mexican history?',
+    answers: A('art287', 'Diego Rivera', [
+      'José Clemente Orozco',
+      'David Alfaro Siqueiros',
+      'Rufino Tamayo',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art288',
+    text: 'Who painted "The Great Wave off Kanagawa"?',
+    answers: A('art288', 'Katsushika Hokusai', [
+      'Utagawa Hiroshige',
+      'Kitagawa Utamaro',
+      'Katsushika Hokusai',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art289',
+    text: 'What is Japanese woodblock printing called?',
+    answers: A('art289', 'Ukiyo-e', ['Sumi-e', 'Nihonga', 'Yamato-e']),
+    level: 6,
+  },
+  {
+    id: 'art290',
+    text: 'Who painted "Thirty-Six Views of Mount Fuji"?',
+    answers: A('art290', 'Katsushika Hokusai', [
+      'Utagawa Hiroshige',
+      'Ando Hiroshige',
+      'Kitagawa Utamaro',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art291',
+    text: 'Who painted "The Fifty-Three Stations of the Tōkaidō"?',
+    answers: A('art291', 'Utagawa Hiroshige', [
+      'Katsushika Hokusai',
+      'Kitagawa Utamaro',
+      'Katsukawa Shunshō',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art292',
+    text: 'Who is known for portraits of beautiful women (bijin-ga)?',
+    answers: A('art292', 'Kitagawa Utamaro', [
+      'Katsushika Hokusai',
+      'Utagawa Hiroshige',
+      'Tōshūsai Sharaku',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'art293',
+    text: 'Who painted "The Hay Wain"?',
+    answers: A('art293', 'John Constable', [
+      'J.M.W. Turner',
+      'Thomas Gainsborough',
+      'Joshua Reynolds',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art294',
+    text: 'Who painted "The Fighting Temeraire"?',
+    answers: A('art294', 'J.M.W. Turner', [
+      'John Constable',
+      'Thomas Gainsborough',
+      'William Blake',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art295',
+    text: 'Who painted "The Blue Boy"?',
+    answers: A('art295', 'Thomas Gainsborough', [
+      'Joshua Reynolds',
+      'John Constable',
+      'George Romney',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art296',
+    text: 'Who painted "The Ancient of Days"?',
+    answers: A('art296', 'William Blake', [
+      'J.M.W. Turner',
+      'John Martin',
+      'Samuel Palmer',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'art297',
+    text: 'Who painted "The Nightmare"?',
+    answers: A('art297', 'Henry Fuseli', [
+      'William Blake',
+      'John Martin',
+      'Caspar David Friedrich',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art298',
+    text: 'Who painted "Wanderer above the Sea of Fog"?',
+    answers: A('art298', 'Caspar David Friedrich', [
+      'J.M.W. Turner',
+      'John Constable',
+      'Carl Blechen',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art299',
+    text: 'Who painted "The Monk by the Sea"?',
+    answers: A('art299', 'Caspar David Friedrich', [
+      'J.M.W. Turner',
+      'Philipp Otto Runge',
+      'Carl Gustav Carus',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art300',
+    text: 'What is chiaroscuro?',
+    answers: A('art300', 'Strong contrast between light and dark', [
+      'Bright colors',
+      'Soft blending',
+      'Flat colors',
+    ]),
+    level: 5,
+  },
 ];

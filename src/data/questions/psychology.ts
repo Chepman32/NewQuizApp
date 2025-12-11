@@ -2511,4 +2511,508 @@ export const psychologyQuestions: Question[] = [
     ]),
     level: 7,
   },
+  {
+    id: 'psy251',
+    text: 'Who is considered the father of psychoanalysis?',
+    answers: A('psy251', 'Sigmund Freud', [
+      'Carl Jung',
+      'Alfred Adler',
+      'Erik Erikson',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy252',
+    text: 'Who developed the theory of collective unconscious?',
+    answers: A('psy252', 'Carl Jung', [
+      'Sigmund Freud',
+      'Alfred Adler',
+      'Karen Horney',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy253',
+    text: 'Who developed the hierarchy of needs?',
+    answers: A('psy253', 'Abraham Maslow', [
+      'Carl Rogers',
+      'Rollo May',
+      'Viktor Frankl',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy254',
+    text: 'Who founded behaviorism?',
+    answers: A('psy254', 'John B. Watson', [
+      'B.F. Skinner',
+      'Ivan Pavlov',
+      'Edward Thorndike',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy255',
+    text: 'Who developed operant conditioning?',
+    answers: A('psy255', 'B.F. Skinner', [
+      'Ivan Pavlov',
+      'John B. Watson',
+      'Edward Thorndike',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy256',
+    text: 'Who discovered classical conditioning?',
+    answers: A('psy256', 'Ivan Pavlov', [
+      'B.F. Skinner',
+      'John B. Watson',
+      'Edward Thorndike',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy257',
+    text: 'Who developed social learning theory?',
+    answers: A('psy257', 'Albert Bandura', [
+      'B.F. Skinner',
+      'John B. Watson',
+      'Ivan Pavlov',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy258',
+    text: 'Who conducted the Bobo doll experiment?',
+    answers: A('psy258', 'Albert Bandura', [
+      'Stanley Milgram',
+      'Philip Zimbardo',
+      'Solomon Asch',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy259',
+    text: 'Who conducted the obedience experiments?',
+    answers: A('psy259', 'Stanley Milgram', [
+      'Philip Zimbardo',
+      'Solomon Asch',
+      'Albert Bandura',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy260',
+    text: 'Who conducted the Stanford prison experiment?',
+    answers: A('psy260', 'Philip Zimbardo', [
+      'Stanley Milgram',
+      'Solomon Asch',
+      'Albert Bandura',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy261',
+    text: 'Who conducted conformity experiments with line judgments?',
+    answers: A('psy261', 'Solomon Asch', [
+      'Stanley Milgram',
+      'Philip Zimbardo',
+      'Muzafer Sherif',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy262',
+    text: 'Who developed client-centered therapy?',
+    answers: A('psy262', 'Carl Rogers', [
+      'Abraham Maslow',
+      'Rollo May',
+      'Fritz Perls',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy263',
+    text: 'Who developed rational emotive behavior therapy?',
+    answers: A('psy263', 'Albert Ellis', [
+      'Aaron Beck',
+      'Carl Rogers',
+      'Fritz Perls',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy264',
+    text: 'Who developed cognitive therapy?',
+    answers: A('psy264', 'Aaron Beck', [
+      'Albert Ellis',
+      'Carl Rogers',
+      'Sigmund Freud',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy265',
+    text: 'Who developed Gestalt therapy?',
+    answers: A('psy265', 'Fritz Perls', [
+      'Carl Rogers',
+      'Abraham Maslow',
+      'Rollo May',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy266',
+    text: 'Who developed logotherapy?',
+    answers: A('psy266', 'Viktor Frankl', [
+      'Rollo May',
+      'Abraham Maslow',
+      'Carl Rogers',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy267',
+    text: 'Who developed the theory of multiple intelligences?',
+    answers: A('psy267', 'Howard Gardner', [
+      'Robert Sternberg',
+      'Daniel Goleman',
+      'Alfred Binet',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy268',
+    text: 'Who developed the triarchic theory of intelligence?',
+    answers: A('psy268', 'Robert Sternberg', [
+      'Howard Gardner',
+      'Daniel Goleman',
+      'Charles Spearman',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy269',
+    text: 'Who popularized emotional intelligence?',
+    answers: A('psy269', 'Daniel Goleman', [
+      'Howard Gardner',
+      'Robert Sternberg',
+      'Peter Salovey',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy270',
+    text: 'Who developed the first intelligence test?',
+    answers: A('psy270', 'Alfred Binet', [
+      'Lewis Terman',
+      'David Wechsler',
+      'Charles Spearman',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy271',
+    text: 'Who developed the concept of g factor?',
+    answers: A('psy271', 'Charles Spearman', [
+      'Louis Thurstone',
+      'Howard Gardner',
+      'Robert Sternberg',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy272',
+    text: 'Who developed the stages of moral development?',
+    answers: A('psy272', 'Lawrence Kohlberg', [
+      'Jean Piaget',
+      'Erik Erikson',
+      'Carol Gilligan',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy273',
+    text: 'Who developed the stages of cognitive development?',
+    answers: A('psy273', 'Jean Piaget', [
+      'Lev Vygotsky',
+      'Erik Erikson',
+      'Lawrence Kohlberg',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy274',
+    text: 'Who developed the sociocultural theory?',
+    answers: A('psy274', 'Lev Vygotsky', [
+      'Jean Piaget',
+      'Erik Erikson',
+      'Urie Bronfenbrenner',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy275',
+    text: 'Who developed the psychosocial stages of development?',
+    answers: A('psy275', 'Erik Erikson', [
+      'Sigmund Freud',
+      'Jean Piaget',
+      'Lawrence Kohlberg',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy276',
+    text: 'Who developed attachment theory?',
+    answers: A('psy276', 'John Bowlby', [
+      'Mary Ainsworth',
+      'Harry Harlow',
+      'Erik Erikson',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy277',
+    text: 'Who developed the Strange Situation procedure?',
+    answers: A('psy277', 'Mary Ainsworth', [
+      'John Bowlby',
+      'Harry Harlow',
+      'Diana Baumrind',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy278',
+    text: 'Who conducted monkey attachment experiments?',
+    answers: A('psy278', 'Harry Harlow', [
+      'John Bowlby',
+      'Mary Ainsworth',
+      'Ivan Pavlov',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy279',
+    text: 'Who identified parenting styles?',
+    answers: A('psy279', 'Diana Baumrind', [
+      'Mary Ainsworth',
+      'John Bowlby',
+      'Erik Erikson',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy280',
+    text: 'What are the three parenting styles identified by Baumrind?',
+    answers: A('psy280', 'Authoritative, authoritarian, permissive', [
+      'Strict, lenient, balanced',
+      'Good, bad, neutral',
+      'Active, passive, mixed',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy281',
+    text: 'Who developed the concept of flow?',
+    answers: A('psy281', 'Mihaly Csikszentmihalyi', [
+      'Martin Seligman',
+      'Abraham Maslow',
+      'Carl Rogers',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy282',
+    text: 'Who founded positive psychology?',
+    answers: A('psy282', 'Martin Seligman', [
+      'Mihaly Csikszentmihalyi',
+      'Abraham Maslow',
+      'Carl Rogers',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy283',
+    text: 'Who developed the concept of learned optimism?',
+    answers: A('psy283', 'Martin Seligman', [
+      'Aaron Beck',
+      'Albert Ellis',
+      'Carol Dweck',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy284',
+    text: 'Who developed the concept of growth mindset?',
+    answers: A('psy284', 'Carol Dweck', [
+      'Martin Seligman',
+      'Angela Duckworth',
+      'Albert Bandura',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy285',
+    text: 'Who developed the concept of grit?',
+    answers: A('psy285', 'Angela Duckworth', [
+      'Carol Dweck',
+      'Martin Seligman',
+      'Albert Bandura',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy286',
+    text: 'Who developed the Big Five personality traits?',
+    answers: A('psy286', 'Multiple researchers (Costa & McCrae prominent)', [
+      'Carl Jung',
+      'Hans Eysenck',
+      'Raymond Cattell',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy287',
+    text: 'What are the Big Five personality traits?',
+    answers: A(
+      'psy287',
+      'Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism',
+      [
+        'Happy, Sad, Angry, Calm, Excited',
+        'Smart, Kind, Brave, Honest, Loyal',
+        'Active, Passive, Neutral, Mixed, Random',
+      ],
+    ),
+    level: 5,
+  },
+  {
+    id: 'psy288',
+    text: 'Who developed the Myers-Briggs Type Indicator?',
+    answers: A('psy288', 'Isabel Briggs Myers and Katharine Cook Briggs', [
+      'Carl Jung',
+      'Hans Eysenck',
+      'Raymond Cattell',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy289',
+    text: 'Who developed the theory of psychological types?',
+    answers: A('psy289', 'Carl Jung', [
+      'Sigmund Freud',
+      'Alfred Adler',
+      'Karen Horney',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy290',
+    text: 'Who developed the concept of archetypes?',
+    answers: A('psy290', 'Carl Jung', [
+      'Sigmund Freud',
+      'Joseph Campbell',
+      'Claude Lévi-Strauss',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy291',
+    text: 'Who developed the inferiority complex concept?',
+    answers: A('psy291', 'Alfred Adler', [
+      'Sigmund Freud',
+      'Carl Jung',
+      'Karen Horney',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy292',
+    text: 'Who developed the concept of basic anxiety?',
+    answers: A('psy292', 'Karen Horney', [
+      'Sigmund Freud',
+      'Carl Jung',
+      'Alfred Adler',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy293',
+    text: 'Who developed the personal construct theory?',
+    answers: A('psy293', 'George Kelly', [
+      'Carl Rogers',
+      'Abraham Maslow',
+      'Gordon Allport',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'psy294',
+    text: 'Who developed the trait theory of personality?',
+    answers: A('psy294', 'Gordon Allport', [
+      'Raymond Cattell',
+      'Hans Eysenck',
+      'Walter Mischel',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy295',
+    text: 'Who challenged trait theory with situationism?',
+    answers: A('psy295', 'Walter Mischel', [
+      'Gordon Allport',
+      'Raymond Cattell',
+      'Hans Eysenck',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'psy296',
+    text: 'Who developed the two-factor theory of emotion?',
+    answers: A('psy296', 'Stanley Schachter and Jerome Singer', [
+      'William James',
+      'Carl Lange',
+      'Walter Cannon',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy297',
+    text: 'Who developed the James-Lange theory of emotion?',
+    answers: A('psy297', 'William James and Carl Lange', [
+      'Walter Cannon',
+      'Philip Bard',
+      'Stanley Schachter',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy298',
+    text: 'Who developed the Cannon-Bard theory of emotion?',
+    answers: A('psy298', 'Walter Cannon and Philip Bard', [
+      'William James',
+      'Carl Lange',
+      'Stanley Schachter',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy299',
+    text: 'Who developed the facial feedback hypothesis?',
+    answers: A('psy299', 'Multiple researchers (Tomkins, Izard prominent)', [
+      'Paul Ekman',
+      'Carroll Izard',
+      'William James',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'psy300',
+    text: 'Who identified universal facial expressions?',
+    answers: A('psy300', 'Paul Ekman', [
+      'Carroll Izard',
+      'Silvan Tomkins',
+      'William James',
+    ]),
+    level: 5,
+  },
 ];
