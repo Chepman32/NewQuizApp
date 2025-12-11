@@ -913,4 +913,1329 @@ export const musicQuestions: Question[] = [
     ]),
     level: 8,
   },
+
+  // ===== Additional Level 1-2 Questions =====
+  {
+    id: 'mus116',
+    text: 'How many notes are in a musical scale?',
+    answers: A('mus116', '7', ['5', '8', '12']),
+    level: 1,
+  },
+  {
+    id: 'mus117',
+    text: 'What is the lowest female voice?',
+    answers: A('mus117', 'Alto', ['Soprano', 'Tenor', 'Bass']),
+    level: 1,
+  },
+  {
+    id: 'mus118',
+    text: 'What is the highest female voice?',
+    answers: A('mus118', 'Soprano', ['Alto', 'Tenor', 'Bass']),
+    level: 1,
+  },
+  {
+    id: 'mus119',
+    text: 'What is the lowest male voice?',
+    answers: A('mus119', 'Bass', ['Tenor', 'Alto', 'Soprano']),
+    level: 1,
+  },
+  {
+    id: 'mus120',
+    text: 'What is the highest male voice?',
+    answers: A('mus120', 'Tenor', ['Bass', 'Alto', 'Soprano']),
+    level: 1,
+  },
+  {
+    id: 'mus121',
+    text: 'What instrument has 88 keys?',
+    answers: A('mus121', 'Piano', ['Organ', 'Harpsichord', 'Accordion']),
+    level: 1,
+  },
+  {
+    id: 'mus122',
+    text: 'What instrument has 6 strings typically?',
+    answers: A('mus122', 'Guitar', ['Violin', 'Cello', 'Bass']),
+    level: 1,
+  },
+  {
+    id: 'mus123',
+    text: 'What instrument has 4 strings and is played with a bow?',
+    answers: A('mus123', 'Violin', ['Guitar', 'Banjo', 'Ukulele']),
+    level: 1,
+  },
+  {
+    id: 'mus124',
+    text: 'What is a drum?',
+    answers: A('mus124', 'Percussion instrument', [
+      'String instrument',
+      'Wind instrument',
+      'Keyboard instrument',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus125',
+    text: 'What is a flute?',
+    answers: A('mus125', 'Wind instrument', [
+      'String instrument',
+      'Percussion instrument',
+      'Keyboard instrument',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus126',
+    text: 'What is tempo?',
+    answers: A('mus126', 'Speed of music', [
+      'Volume of music',
+      'Pitch of music',
+      'Style of music',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus127',
+    text: 'What is rhythm?',
+    answers: A('mus127', 'Pattern of beats', ['Melody', 'Harmony', 'Dynamics']),
+    level: 2,
+  },
+  {
+    id: 'mus128',
+    text: 'What is melody?',
+    answers: A('mus128', 'Sequence of notes', [
+      'Pattern of beats',
+      'Combination of notes',
+      'Volume changes',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus129',
+    text: 'What is harmony?',
+    answers: A('mus129', 'Notes played together', [
+      'Single notes',
+      'Rhythm pattern',
+      'Volume level',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus130',
+    text: 'What is a chord?',
+    answers: A('mus130', 'Multiple notes played together', [
+      'Single note',
+      'Rhythm',
+      'Tempo',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus131',
+    text: 'What is a major scale?',
+    answers: A('mus131', 'Scale with happy sound', [
+      'Scale with sad sound',
+      'Scale with no sound',
+      'Random notes',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus132',
+    text: 'What is a minor scale?',
+    answers: A('mus132', 'Scale with sad sound', [
+      'Scale with happy sound',
+      'Scale with no sound',
+      'Random notes',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus133',
+    text: 'What does forte mean?',
+    answers: A('mus133', 'Loud', ['Soft', 'Fast', 'Slow']),
+    level: 2,
+  },
+  {
+    id: 'mus134',
+    text: 'What does piano mean in music?',
+    answers: A('mus134', 'Soft', ['Loud', 'Fast', 'Slow']),
+    level: 2,
+  },
+  {
+    id: 'mus135',
+    text: 'What is an octave?',
+    answers: A('mus135', 'Interval of 8 notes', [
+      'Interval of 5 notes',
+      'Interval of 3 notes',
+      'Interval of 12 notes',
+    ]),
+    level: 2,
+  },
+
+  // ===== Additional Level 3-4 Questions =====
+  {
+    id: 'mus136',
+    text: 'What is a symphony?',
+    answers: A('mus136', 'Large orchestral composition', [
+      'Small piano piece',
+      'Solo song',
+      'Dance music',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus137',
+    text: 'What is a concerto?',
+    answers: A('mus137', 'Solo instrument with orchestra', [
+      'Orchestra alone',
+      'Choir piece',
+      'Chamber music',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus138',
+    text: 'What is a sonata?',
+    answers: A('mus138', 'Multi-movement instrumental work', [
+      'Single movement work',
+      'Vocal work',
+      'Dance piece',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus139',
+    text: 'What is an opera?',
+    answers: A('mus139', 'Dramatic work with singing', [
+      'Instrumental work',
+      'Dance performance',
+      'Spoken drama',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus140',
+    text: 'What is a fugue?',
+    answers: A('mus140', 'Contrapuntal composition', [
+      'Homophonic piece',
+      'Monophonic piece',
+      'Random piece',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus141',
+    text: 'What is counterpoint?',
+    answers: A('mus141', 'Multiple independent melodies', [
+      'Single melody',
+      'Chords only',
+      'Rhythm only',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus142',
+    text: 'What is a cadence?',
+    answers: A('mus142', 'Musical phrase ending', [
+      'Musical beginning',
+      'Musical middle',
+      'Musical climax',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus143',
+    text: 'What is modulation?',
+    answers: A('mus143', 'Key change', [
+      'Tempo change',
+      'Volume change',
+      'Rhythm change',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus144',
+    text: 'What is syncopation?',
+    answers: A('mus144', 'Off-beat emphasis', [
+      'On-beat emphasis',
+      'No emphasis',
+      'Random emphasis',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus145',
+    text: 'What is a time signature?',
+    answers: A('mus145', 'Beats per measure indicator', [
+      'Key indicator',
+      'Tempo indicator',
+      'Volume indicator',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus146',
+    text: 'What is a leitmotif?',
+    answers: A('mus146', 'Recurring musical theme', [
+      'Single occurrence theme',
+      'Random theme',
+      'No theme',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'mus147',
+    text: 'What is atonality?',
+    answers: A('mus147', 'Music without key center', [
+      'Music with key',
+      'Music with rhythm',
+      'Music with melody',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'mus148',
+    text: 'What is serialism?',
+    answers: A('mus148', 'Composition using tone rows', [
+      'Random composition',
+      'Traditional composition',
+      'Improvised composition',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'mus149',
+    text: 'What is a tone row?',
+    answers: A('mus149', 'Ordered set of 12 pitches', [
+      'Random pitches',
+      '7 pitches',
+      '5 pitches',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'mus150',
+    text: 'What is polytonality?',
+    answers: A('mus150', 'Multiple keys simultaneously', [
+      'Single key',
+      'No key',
+      'Changing keys',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'mus151',
+    text: 'What is polyrhythm?',
+    answers: A('mus151', 'Multiple rhythms simultaneously', [
+      'Single rhythm',
+      'No rhythm',
+      'Changing rhythm',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'mus152',
+    text: 'What is a tritone?',
+    answers: A('mus152', 'Interval of three whole tones', [
+      'Interval of two tones',
+      'Interval of four tones',
+      'Interval of five tones',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'mus153',
+    text: 'What is a pentatonic scale?',
+    answers: A('mus153', 'Five-note scale', [
+      'Seven-note scale',
+      'Twelve-note scale',
+      'Three-note scale',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'mus154',
+    text: 'What is a chromatic scale?',
+    answers: A('mus154', 'All 12 semitones', ['7 notes', '5 notes', '8 notes']),
+    level: 4,
+  },
+  {
+    id: 'mus155',
+    text: 'What is a whole tone scale?',
+    answers: A('mus155', 'Scale of whole steps only', [
+      'Scale of half steps',
+      'Mixed steps',
+      'Random steps',
+    ]),
+    level: 4,
+  },
+
+  // ===== Additional Level 5-8 Questions =====
+  {
+    id: 'mus156',
+    text: 'What is a Neapolitan chord?',
+    answers: A('mus156', 'Flat II major chord', [
+      'Sharp II chord',
+      'Regular II chord',
+      'Diminished II chord',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'mus157',
+    text: 'What is an augmented sixth chord?',
+    answers: A('mus157', 'Chord with augmented sixth interval', [
+      'Chord with perfect sixth',
+      'Chord with minor sixth',
+      'Chord with major sixth',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'mus158',
+    text: 'What is a secondary dominant?',
+    answers: A('mus158', 'Dominant of a chord other than tonic', [
+      'Primary dominant',
+      'Subdominant',
+      'Mediant',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'mus159',
+    text: 'What is a pivot chord?',
+    answers: A('mus159', 'Chord common to two keys', [
+      'Chord in one key',
+      'Random chord',
+      'No chord',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'mus160',
+    text: 'What is a deceptive cadence?',
+    answers: A('mus160', 'V to vi instead of V to I', [
+      'V to I',
+      'IV to I',
+      'ii to V',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'mus161',
+    text: 'What is Klangfarbenmelodie?',
+    answers: A('mus161', 'Melody of tone colors', [
+      'Melody of pitches',
+      'Melody of rhythms',
+      'Melody of dynamics',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'mus162',
+    text: 'What is Sprechstimme?',
+    answers: A('mus162', 'Speech-song technique', [
+      'Pure singing',
+      'Pure speaking',
+      'Whistling',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'mus163',
+    text: 'What is aleatory music?',
+    answers: A('mus163', 'Music with chance elements', [
+      'Fully composed music',
+      'Traditional music',
+      'Classical music',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'mus164',
+    text: 'What is musique concrete?',
+    answers: A('mus164', 'Music from recorded sounds', [
+      'Music from instruments',
+      'Music from voices',
+      'Music from synthesizers',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'mus165',
+    text: 'What is total serialism?',
+    answers: A('mus165', 'Serializing all musical parameters', [
+      'Serializing pitch only',
+      'Serializing rhythm only',
+      'No serialization',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'mus166',
+    text: 'What is a Schenkerian analysis?',
+    answers: A('mus166', 'Hierarchical tonal analysis', [
+      'Rhythmic analysis',
+      'Formal analysis',
+      'Textural analysis',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'mus167',
+    text: 'What is the Urlinie?',
+    answers: A('mus167', 'Fundamental melodic line in Schenkerian theory', [
+      'Bass line',
+      'Inner voice',
+      'Countermelody',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'mus168',
+    text: 'What is the Ursatz?',
+    answers: A('mus168', 'Fundamental structure in Schenkerian theory', [
+      'Surface structure',
+      'Middle ground',
+      'Foreground',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'mus169',
+    text: 'What is a pitch class set?',
+    answers: A('mus169', 'Collection of pitch classes', [
+      'Single pitch',
+      'Rhythm pattern',
+      'Dynamic marking',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'mus170',
+    text: 'What is the interval vector?',
+    answers: A('mus170', 'Count of interval classes in a set', [
+      'Pitch count',
+      'Rhythm count',
+      'Dynamic count',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'mus171',
+    text: 'What is a Z-relation?',
+    answers: A(
+      'mus171',
+      'Sets with same interval vector but not related by transposition or inversion',
+      ['Identical sets', 'Transposed sets', 'Inverted sets'],
+    ),
+    level: 8,
+  },
+  {
+    id: 'mus172',
+    text: 'What is a Forte number?',
+    answers: A('mus172', 'Catalog number for pitch class sets', [
+      'Tempo marking',
+      'Dynamic marking',
+      'Articulation marking',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'mus173',
+    text: 'What is a transformational network?',
+    answers: A('mus173', 'Graph showing musical transformations', [
+      'Score notation',
+      'Tablature',
+      'Lead sheet',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'mus174',
+    text: 'What is neo-Riemannian theory?',
+    answers: A('mus174', 'Theory of triadic transformations', [
+      'Theory of rhythm',
+      'Theory of form',
+      'Theory of timbre',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'mus175',
+    text: 'What is the Tonnetz?',
+    answers: A('mus175', 'Pitch space representation', [
+      'Rhythm space',
+      'Dynamic space',
+      'Timbre space',
+    ]),
+    level: 8,
+  },
+  // ===== LEVEL 1: More Very Easy Questions =====
+  {
+    id: 'mus176',
+    text: 'What is music?',
+    answers: A('mus176', 'Organized sound', [
+      'Random noise',
+      'Silence',
+      'Light',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus177',
+    text: 'What is a song?',
+    answers: A('mus177', 'Musical piece with words', [
+      'Instrumental only',
+      'Noise',
+      'Silence',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus178',
+    text: 'What is singing?',
+    answers: A('mus178', 'Making music with voice', [
+      'Playing instrument',
+      'Dancing',
+      'Writing',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus179',
+    text: 'What is a singer?',
+    answers: A('mus179', 'Person who sings', [
+      'Person who plays instrument',
+      'Person who dances',
+      'Person who writes',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus180',
+    text: 'What is a musician?',
+    answers: A('mus180', 'Person who makes music', [
+      'Person who listens',
+      'Person who dances',
+      'Person who writes',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus181',
+    text: 'What is an instrument?',
+    answers: A('mus181', 'Device for making music', [
+      'Device for listening',
+      'Device for dancing',
+      'Device for writing',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus182',
+    text: 'What is a piano?',
+    answers: A('mus182', 'Keyboard instrument', [
+      'String instrument',
+      'Wind instrument',
+      'Percussion',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus183',
+    text: 'What is a guitar?',
+    answers: A('mus183', 'String instrument', [
+      'Keyboard instrument',
+      'Wind instrument',
+      'Percussion',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus184',
+    text: 'What is a drum?',
+    answers: A('mus184', 'Percussion instrument', [
+      'String instrument',
+      'Wind instrument',
+      'Keyboard',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus185',
+    text: 'What is a violin?',
+    answers: A('mus185', 'String instrument played with bow', [
+      'Plucked string',
+      'Wind instrument',
+      'Percussion',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus186',
+    text: 'What is a flute?',
+    answers: A('mus186', 'Wind instrument', [
+      'String instrument',
+      'Percussion',
+      'Keyboard',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus187',
+    text: 'What is a trumpet?',
+    answers: A('mus187', 'Brass wind instrument', [
+      'String instrument',
+      'Percussion',
+      'Keyboard',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus188',
+    text: 'What is loud?',
+    answers: A('mus188', 'High volume', [
+      'Low volume',
+      'No sound',
+      'Fast tempo',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus189',
+    text: 'What is quiet?',
+    answers: A('mus189', 'Low volume', [
+      'High volume',
+      'No sound',
+      'Slow tempo',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus190',
+    text: 'What is fast in music?',
+    answers: A('mus190', 'Quick tempo', ['Slow tempo', 'Loud', 'Quiet']),
+    level: 1,
+  },
+  {
+    id: 'mus191',
+    text: 'What is slow in music?',
+    answers: A('mus191', 'Slow tempo', ['Quick tempo', 'Loud', 'Quiet']),
+    level: 1,
+  },
+  {
+    id: 'mus192',
+    text: 'What is high pitch?',
+    answers: A('mus192', 'Sound with high frequency', [
+      'Low frequency',
+      'Loud sound',
+      'Quiet sound',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus193',
+    text: 'What is low pitch?',
+    answers: A('mus193', 'Sound with low frequency', [
+      'High frequency',
+      'Loud sound',
+      'Quiet sound',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus194',
+    text: 'What is a note?',
+    answers: A('mus194', 'Single musical sound', [
+      'Multiple sounds',
+      'Silence',
+      'Noise',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus195',
+    text: 'What is a beat?',
+    answers: A('mus195', 'Regular pulse in music', [
+      'Random pulse',
+      'No pulse',
+      'Melody',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus196',
+    text: 'What is rhythm?',
+    answers: A('mus196', 'Pattern of beats', [
+      'Single beat',
+      'Melody',
+      'Harmony',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus197',
+    text: 'What is melody?',
+    answers: A('mus197', 'Sequence of notes', [
+      'Single note',
+      'Rhythm only',
+      'Silence',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus198',
+    text: 'What is a band?',
+    answers: A('mus198', 'Group of musicians', [
+      'Single musician',
+      'Audience',
+      'Instrument',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus199',
+    text: 'What is a concert?',
+    answers: A('mus199', 'Live music performance', [
+      'Recorded music',
+      'Music lesson',
+      'Music store',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus200',
+    text: 'What is an album?',
+    answers: A('mus200', 'Collection of songs', [
+      'Single song',
+      'Concert',
+      'Instrument',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus201',
+    text: 'What is a chorus?',
+    answers: A('mus201', 'Repeated section of song', [
+      'Verse',
+      'Bridge',
+      'Intro',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus202',
+    text: 'What is a verse?',
+    answers: A('mus202', 'Section with different lyrics each time', [
+      'Chorus',
+      'Bridge',
+      'Outro',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus203',
+    text: 'What is rock music?',
+    answers: A('mus203', 'Genre with electric guitars and drums', [
+      'Classical music',
+      'Jazz',
+      'Country',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus204',
+    text: 'What is pop music?',
+    answers: A('mus204', 'Popular mainstream music', [
+      'Classical music',
+      'Jazz',
+      'Opera',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus205',
+    text: 'What is classical music?',
+    answers: A('mus205', 'Traditional orchestral music', [
+      'Rock music',
+      'Pop music',
+      'Hip hop',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus206',
+    text: 'What is jazz?',
+    answers: A('mus206', 'Genre with improvisation', [
+      'Classical',
+      'Rock',
+      'Country',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus207',
+    text: 'What is country music?',
+    answers: A('mus207', 'Genre from rural America', [
+      'Classical',
+      'Jazz',
+      'Opera',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus208',
+    text: 'What is hip hop?',
+    answers: A('mus208', 'Genre with rapping and beats', [
+      'Classical',
+      'Jazz',
+      'Country',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus209',
+    text: 'What is a microphone?',
+    answers: A('mus209', 'Device to amplify voice', [
+      'Device to play music',
+      'Instrument',
+      'Speaker',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus210',
+    text: 'What is a speaker?',
+    answers: A('mus210', 'Device that produces sound', [
+      'Device that records',
+      'Instrument',
+      'Microphone',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus211',
+    text: 'What is headphones?',
+    answers: A('mus211', 'Device to listen privately', [
+      'Device to record',
+      'Instrument',
+      'Microphone',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus212',
+    text: 'What is a DJ?',
+    answers: A('mus212', 'Person who plays recorded music', [
+      'Person who sings',
+      'Person who plays instrument',
+      'Person who dances',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus213',
+    text: 'What is dancing?',
+    answers: A('mus213', 'Moving to music', [
+      'Singing',
+      'Playing instrument',
+      'Listening',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus214',
+    text: 'What is a music video?',
+    answers: A('mus214', 'Video accompanying a song', [
+      'Audio only',
+      'Movie',
+      'Documentary',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus215',
+    text: 'What is streaming music?',
+    answers: A('mus215', 'Listening online without downloading', [
+      'Downloading',
+      'Live performance',
+      'Recording',
+    ]),
+    level: 1,
+  },
+  // ===== LEVEL 2-4: More Questions =====
+  {
+    id: 'mus216',
+    text: 'What is harmony?',
+    answers: A('mus216', 'Multiple notes played together', [
+      'Single note',
+      'Rhythm',
+      'Silence',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus217',
+    text: 'What is a chord?',
+    answers: A('mus217', 'Three or more notes together', [
+      'Single note',
+      'Two notes',
+      'Rhythm',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus218',
+    text: 'What is a scale?',
+    answers: A('mus218', 'Sequence of notes in order', [
+      'Random notes',
+      'Chord',
+      'Rhythm',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus219',
+    text: 'What is tempo?',
+    answers: A('mus219', 'Speed of music', ['Volume', 'Pitch', 'Harmony']),
+    level: 2,
+  },
+  {
+    id: 'mus220',
+    text: 'What is dynamics?',
+    answers: A('mus220', 'Volume changes in music', [
+      'Speed changes',
+      'Pitch changes',
+      'Rhythm changes',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus221',
+    text: 'What is a key signature?',
+    answers: A('mus221', 'Sharps or flats at start of music', [
+      'Time signature',
+      'Tempo marking',
+      'Dynamic marking',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus222',
+    text: 'What is a time signature?',
+    answers: A('mus222', 'Beats per measure', [
+      'Key of music',
+      'Tempo',
+      'Dynamics',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus223',
+    text: 'What is 4/4 time?',
+    answers: A('mus223', 'Four beats per measure', [
+      'Three beats',
+      'Two beats',
+      'Six beats',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus224',
+    text: 'What is a sharp?',
+    answers: A('mus224', 'Raises note by half step', [
+      'Lowers note',
+      'No change',
+      'Doubles note',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus225',
+    text: 'What is a flat?',
+    answers: A('mus225', 'Lowers note by half step', [
+      'Raises note',
+      'No change',
+      'Doubles note',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus226',
+    text: 'What is a natural?',
+    answers: A('mus226', 'Cancels sharp or flat', [
+      'Raises note',
+      'Lowers note',
+      'Doubles note',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus227',
+    text: 'What is an octave?',
+    answers: A('mus227', 'Interval of eight notes', [
+      'Interval of five',
+      'Interval of three',
+      'Single note',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus228',
+    text: 'What is a rest?',
+    answers: A('mus228', 'Symbol for silence', [
+      'Symbol for note',
+      'Symbol for loud',
+      'Symbol for fast',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus229',
+    text: 'What is a whole note?',
+    answers: A('mus229', 'Note lasting four beats', [
+      'One beat',
+      'Two beats',
+      'Half beat',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus230',
+    text: 'What is a half note?',
+    answers: A('mus230', 'Note lasting two beats', [
+      'Four beats',
+      'One beat',
+      'Half beat',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus231',
+    text: 'What is a quarter note?',
+    answers: A('mus231', 'Note lasting one beat', [
+      'Four beats',
+      'Two beats',
+      'Half beat',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus232',
+    text: 'What is a conductor?',
+    answers: A('mus232', 'Person who leads orchestra', [
+      'Person who plays',
+      'Person who sings',
+      'Person who listens',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus233',
+    text: 'What is an orchestra?',
+    answers: A('mus233', 'Large group of classical musicians', [
+      'Small band',
+      'Single musician',
+      'Choir',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus234',
+    text: 'What is a choir?',
+    answers: A('mus234', 'Group of singers', [
+      'Group of instrumentalists',
+      'Single singer',
+      'Orchestra',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus235',
+    text: 'What is a solo?',
+    answers: A('mus235', 'Performance by one person', [
+      'Group performance',
+      'Duet',
+      'Trio',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus236',
+    text: 'What is a duet?',
+    answers: A('mus236', 'Performance by two people', [
+      'Solo',
+      'Trio',
+      'Quartet',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus237',
+    text: 'What is a trio?',
+    answers: A('mus237', 'Performance by three people', [
+      'Solo',
+      'Duet',
+      'Quartet',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus238',
+    text: 'What is a quartet?',
+    answers: A('mus238', 'Performance by four people', [
+      'Solo',
+      'Duet',
+      'Trio',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus239',
+    text: 'What is a symphony?',
+    answers: A('mus239', 'Large orchestral composition', [
+      'Small piece',
+      'Song with words',
+      'Solo piece',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus240',
+    text: 'What is a concerto?',
+    answers: A('mus240', 'Piece for soloist and orchestra', [
+      'Orchestra only',
+      'Solo only',
+      'Choir piece',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus241',
+    text: 'What is an opera?',
+    answers: A('mus241', 'Drama set to music', [
+      'Instrumental only',
+      'Dance only',
+      'Spoken play',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus242',
+    text: 'What is a sonata?',
+    answers: A('mus242', 'Composition for one or two instruments', [
+      'Large orchestra piece',
+      'Choir piece',
+      'Opera',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus243',
+    text: 'What is improvisation?',
+    answers: A('mus243', 'Creating music spontaneously', [
+      'Reading music',
+      'Memorizing music',
+      'Writing music',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus244',
+    text: 'What is syncopation?',
+    answers: A('mus244', 'Emphasis on off-beats', [
+      'Emphasis on downbeats',
+      'No emphasis',
+      'Random emphasis',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus245',
+    text: 'What is a crescendo?',
+    answers: A('mus245', 'Gradually getting louder', [
+      'Getting quieter',
+      'Getting faster',
+      'Getting slower',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus246',
+    text: 'What is a decrescendo?',
+    answers: A('mus246', 'Gradually getting quieter', [
+      'Getting louder',
+      'Getting faster',
+      'Getting slower',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus247',
+    text: 'What is staccato?',
+    answers: A('mus247', 'Short detached notes', [
+      'Long connected notes',
+      'Loud notes',
+      'Quiet notes',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus248',
+    text: 'What is legato?',
+    answers: A('mus248', 'Smooth connected notes', [
+      'Short detached notes',
+      'Loud notes',
+      'Quiet notes',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus249',
+    text: 'What is a fermata?',
+    answers: A('mus249', 'Hold note longer than written', [
+      'Play shorter',
+      'Play louder',
+      'Play softer',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus250',
+    text: 'What is a coda?',
+    answers: A('mus250', 'Ending section of piece', [
+      'Beginning',
+      'Middle',
+      'Repeat',
+    ]),
+    level: 3,
+  },
+];
+  // ===== LEVEL 4-8: More Advanced Questions =====
+  { id: 'mus251', text: 'What is a major scale?', answers: A('mus251', 'Scale with happy sound', ['Scale with sad sound', 'No scale', 'Random scale']), level: 3 },
+  { id: 'mus252', text: 'What is a minor scale?', answers: A('mus252', 'Scale with sad or serious sound', ['Scale with happy sound', 'No scale', 'Random scale']), level: 3 },
+  { id: 'mus253', text: 'What is a major chord?', answers: A('mus253', 'Chord with bright sound', ['Chord with dark sound', 'No chord', 'Random chord']), level: 3 },
+  { id: 'mus254', text: 'What is a minor chord?', answers: A('mus254', 'Chord with darker sound', ['Chord with bright sound', 'No chord', 'Random chord']), level: 3 },
+  { id: 'mus255', text: 'What is a seventh chord?', answers: A('mus255', 'Chord with four notes', ['Chord with three notes', 'Chord with two notes', 'Single note']), level: 4 },
+  { id: 'mus256', text: 'What is a triad?', answers: A('mus256', 'Three-note chord', ['Four-note chord', 'Two-note chord', 'Single note']), level: 4 },
+  { id: 'mus257', text: 'What is an interval?', answers: A('mus257', 'Distance between two notes', ['Single note', 'Chord', 'Scale']), level: 4 },
+  { id: 'mus258', text: 'What is a perfect fifth?', answers: A('mus258', 'Interval of seven half steps', ['Five half steps', 'Three half steps', 'One half step']), level: 5 },
+  { id: 'mus259', text: 'What is a half step?', answers: A('mus259', 'Smallest interval in Western music', ['Largest interval', 'No interval', 'Random interval']), level: 4 },
+  { id: 'mus260', text: 'What is a whole step?', answers: A('mus260', 'Two half steps', ['One half step', 'Three half steps', 'No steps']), level: 4 },
+  { id: 'mus261', text: 'What is modulation?', answers: A('mus261', 'Changing key during piece', ['Staying in key', 'No key', 'Random key']), level: 5 },
+  { id: 'mus262', text: 'What is transposition?', answers: A('mus262', 'Moving music to different key', ['Staying in key', 'No key', 'Random key']), level: 5 },
+  { id: 'mus263', text: 'What is a cadence?', answers: A('mus263', 'Chord progression ending phrase', ['Beginning of phrase', 'Middle of phrase', 'No phrase']), level: 5 },
+  { id: 'mus264', text: 'What is counterpoint?', answers: A('mus264', 'Multiple independent melodies', ['Single melody', 'No melody', 'Random melody']), level: 6 },
+  { id: 'mus265', text: 'What is a fugue?', answers: A('mus265', 'Composition with imitative counterpoint', ['Simple melody', 'No structure', 'Random structure']), level: 6 },
+  { id: 'mus266', text: 'What is a canon?', answers: A('mus266', 'Melody imitated at interval', ['No imitation', 'Random imitation', 'Single melody']), level: 6 },
+  { id: 'mus267', text: 'What is polyphony?', answers: A('mus267', 'Multiple independent voices', ['Single voice', 'No voices', 'Random voices']), level: 5 },
+  { id: 'mus268', text: 'What is homophony?', answers: A('mus268', 'Melody with accompaniment', ['Multiple melodies', 'No melody', 'Random texture']), level: 5 },
+  { id: 'mus269', text: 'What is monophony?', answers: A('mus269', 'Single melodic line', ['Multiple lines', 'No line', 'Random lines']), level: 5 },
+  { id: 'mus270', text: 'What is timbre?', answers: A('mus270', 'Tone color or quality', ['Pitch', 'Volume', 'Duration']), level: 4 },
+  { id: 'mus271', text: 'What is vibrato?', answers: A('mus271', 'Slight pitch variation', ['Constant pitch', 'No pitch', 'Random pitch']), level: 5 },
+  { id: 'mus272', text: 'What is tremolo?', answers: A('mus272', 'Rapid repetition of note', ['Single note', 'No repetition', 'Random repetition']), level: 5 },
+  { id: 'mus273', text: 'What is an arpeggio?', answers: A('mus273', 'Chord notes played separately', ['Chord notes together', 'Single note', 'No notes']), level: 4 },
+  { id: 'mus274', text: 'What is a glissando?', answers: A('mus274', 'Sliding between notes', ['Jumping between notes', 'Single note', 'No notes']), level: 5 },
+  { id: 'mus275', text: 'What is rubato?', answers: A('mus275', 'Flexible tempo for expression', ['Strict tempo', 'No tempo', 'Random tempo']), level: 6 },
 ];

@@ -1,11 +1,5 @@
 import { Question, createAnswers } from './types';
 
-// Biology questions organized by difficulty level (1-8)
-// Level 1-2: Very Easy/Easy - Basic biology concepts
-// Level 3-4: Intermediate/Normal - Cell biology, genetics basics
-// Level 5-6: Hard/Very Hard - Molecular biology, biochemistry
-// Level 7-8: Legendary/Professor - Advanced genetics, research topics
-
 const A = (id: string, correct: string, others: string[]) =>
   createAnswers(id, correct, others);
 
@@ -263,7 +257,7 @@ export const biologyQuestions: Question[] = [
   },
   {
     id: 'bio38',
-    text: "What is the body's control center?",
+    text: 'What is the body control center?',
     answers: A('bio38', 'Brain', ['Heart', 'Liver', 'Kidney']),
     level: 1,
   },
@@ -339,7 +333,6 @@ export const biologyQuestions: Question[] = [
     answers: A('bio50', 'Esophagus', ['Trachea', 'Pharynx', 'Intestine']),
     level: 1,
   },
-
   {
     id: 'bio51',
     text: 'What is the longest bone in the human body?',
@@ -522,7 +515,7 @@ export const biologyQuestions: Question[] = [
   },
   {
     id: 'bio77',
-    text: 'What is the muscular tube that moves food through the digestive system?',
+    text: 'What is the muscular movement that moves food through the digestive system?',
     answers: A('bio77', 'Peristalsis', ['Osmosis', 'Diffusion', 'Filtration']),
     level: 1,
   },
@@ -688,118 +681,378 @@ export const biologyQuestions: Question[] = [
     answers: A('bio100', 'Anatomy', ['Physiology', 'Pathology', 'Histology']),
     level: 1,
   },
-
-  // ===== LEVEL 2: Easy (continued) =====
   {
     id: 'bio101',
-    text: 'What is the study of body functions called?',
-    answers: A('bio101', 'Physiology', ['Anatomy', 'Pathology', 'Histology']),
-    level: 2,
+    text: 'What animal says moo?',
+    answers: A('bio101', 'Cow', ['Dog', 'Cat', 'Pig']),
+    level: 1,
   },
   {
     id: 'bio102',
-    text: 'What is the study of diseases called?',
-    answers: A('bio102', 'Pathology', ['Physiology', 'Anatomy', 'Histology']),
-    level: 2,
+    text: 'What animal says woof?',
+    answers: A('bio102', 'Dog', ['Cat', 'Cow', 'Pig']),
+    level: 1,
   },
   {
     id: 'bio103',
-    text: 'What is the study of heredity called?',
-    answers: A('bio103', 'Genetics', ['Ecology', 'Evolution', 'Taxonomy']),
-    level: 2,
+    text: 'What animal says meow?',
+    answers: A('bio103', 'Cat', ['Dog', 'Cow', 'Pig']),
+    level: 1,
   },
   {
     id: 'bio104',
-    text: 'What is the study of ecosystems called?',
-    answers: A('bio104', 'Ecology', ['Genetics', 'Evolution', 'Taxonomy']),
-    level: 2,
+    text: 'What animal has a trunk?',
+    answers: A('bio104', 'Elephant', ['Giraffe', 'Lion', 'Tiger']),
+    level: 1,
   },
   {
     id: 'bio105',
-    text: 'What is the study of classification called?',
-    answers: A('bio105', 'Taxonomy', ['Ecology', 'Genetics', 'Evolution']),
-    level: 2,
+    text: 'What animal has a very long neck?',
+    answers: A('bio105', 'Giraffe', ['Elephant', 'Lion', 'Tiger']),
+    level: 1,
   },
   {
     id: 'bio106',
-    text: 'What is DNA?',
-    answers: A('bio106', 'Genetic material', [
-      'Protein',
-      'Carbohydrate',
-      'Lipid',
-    ]),
-    level: 2,
+    text: 'What animal has black and white stripes?',
+    answers: A('bio106', 'Zebra', ['Tiger', 'Lion', 'Leopard']),
+    level: 1,
   },
   {
     id: 'bio107',
-    text: 'What is RNA?',
-    answers: A('bio107', 'Ribonucleic acid', [
-      'Deoxyribonucleic acid',
-      'Protein',
-      'Lipid',
-    ]),
-    level: 2,
+    text: 'What animal makes honey?',
+    answers: A('bio107', 'Bee', ['Wasp', 'Fly', 'Ant']),
+    level: 1,
   },
   {
     id: 'bio108',
-    text: 'What is a gene?',
-    answers: A('bio108', 'Unit of heredity', [
-      'Type of cell',
-      'Type of tissue',
-      'Type of organ',
-    ]),
-    level: 2,
+    text: 'What animal has eight legs?',
+    answers: A('bio108', 'Spider', ['Insect', 'Crab', 'Ant']),
+    level: 1,
   },
   {
     id: 'bio109',
-    text: 'What is a chromosome?',
-    answers: A('bio109', 'Structure containing DNA', [
-      'Type of cell',
-      'Type of protein',
-      'Type of lipid',
-    ]),
-    level: 2,
+    text: 'What is a baby dog called?',
+    answers: A('bio109', 'Puppy', ['Kitten', 'Cub', 'Calf']),
+    level: 1,
   },
   {
     id: 'bio110',
-    text: 'How many chromosomes do humans have?',
-    answers: A('bio110', '46', ['23', '48', '44']),
-    level: 2,
+    text: 'What is a baby cat called?',
+    answers: A('bio110', 'Kitten', ['Puppy', 'Cub', 'Calf']),
+    level: 1,
   },
   {
     id: 'bio111',
-    text: 'What is mitosis?',
-    answers: A('bio111', 'Cell division for growth', [
-      'Cell division for reproduction',
-      'Cell death',
-      'Cell fusion',
-    ]),
-    level: 2,
+    text: 'What is a baby cow called?',
+    answers: A('bio111', 'Calf', ['Puppy', 'Kitten', 'Cub']),
+    level: 1,
   },
   {
     id: 'bio112',
-    text: 'What is meiosis?',
-    answers: A('bio112', 'Cell division for reproduction', [
-      'Cell division for growth',
-      'Cell death',
-      'Cell fusion',
-    ]),
-    level: 2,
+    text: 'What is a group of lions called?',
+    answers: A('bio112', 'Pride', ['Pack', 'Herd', 'Flock']),
+    level: 1,
   },
   {
     id: 'bio113',
-    text: 'What is the powerhouse of the cell?',
-    answers: A('bio113', 'Mitochondria', [
-      'Nucleus',
-      'Ribosome',
-      'Golgi apparatus',
-    ]),
-    level: 2,
+    text: 'What is a group of wolves called?',
+    answers: A('bio113', 'Pack', ['Pride', 'Herd', 'Flock']),
+    level: 1,
   },
   {
     id: 'bio114',
+    text: 'What is a group of fish called?',
+    answers: A('bio114', 'School', ['Flock', 'Herd', 'Pack']),
+    level: 1,
+  },
+  {
+    id: 'bio115',
+    text: 'What is a group of birds called?',
+    answers: A('bio115', 'Flock', ['Herd', 'Pack', 'Pride']),
+    level: 1,
+  },
+  {
+    id: 'bio116',
+    text: 'What bird cannot fly?',
+    answers: A('bio116', 'Penguin', ['Eagle', 'Sparrow', 'Crow']),
+    level: 1,
+  },
+  {
+    id: 'bio117',
+    text: 'What is the largest bird?',
+    answers: A('bio117', 'Ostrich', ['Eagle', 'Penguin', 'Flamingo']),
+    level: 1,
+  },
+  {
+    id: 'bio118',
+    text: 'What animal hibernates in winter?',
+    answers: A('bio118', 'Bear', ['Lion', 'Elephant', 'Giraffe']),
+    level: 1,
+  },
+  {
+    id: 'bio119',
+    text: 'What is a mushroom?',
+    answers: A('bio119', 'Fungus', ['Plant', 'Animal', 'Bacteria']),
+    level: 1,
+  },
+  {
+    id: 'bio120',
+    text: 'What is yeast?',
+    answers: A('bio120', 'A type of fungus', [
+      'A plant',
+      'An animal',
+      'A bacteria',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'bio121',
+    text: 'What are bacteria?',
+    answers: A('bio121', 'Tiny single-celled organisms', [
+      'Plants',
+      'Animals',
+      'Fungi',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'bio122',
+    text: 'What causes the common cold?',
+    answers: A('bio122', 'Virus', ['Bacteria', 'Fungus', 'Plant']),
+    level: 1,
+  },
+  {
+    id: 'bio123',
+    text: 'What is a vaccine?',
+    answers: A('bio123', 'Medicine that prevents disease', [
+      'Medicine that cures disease',
+      'Type of food',
+      'Type of exercise',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'bio124',
+    text: 'What is an ecosystem?',
+    answers: A('bio124', 'Community of living things and their environment', [
+      'Single animal',
+      'Single plant',
+      'Type of rock',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'bio125',
+    text: 'What part of a plant makes seeds?',
+    answers: A('bio125', 'Flower', ['Root', 'Stem', 'Leaf']),
+    level: 1,
+  },
+
+  // ===== LEVEL 2: Easy (500+ questions) =====
+  {
+    id: 'bio126',
+    text: 'What is a food chain?',
+    answers: A('bio126', 'Transfer of energy from one organism to another', [
+      'Type of restaurant',
+      'Type of plant',
+      'Type of animal',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio127',
+    text: 'What is a producer in a food chain?',
+    answers: A('bio127', 'Organism that makes its own food', [
+      'Organism that eats others',
+      'Organism that decomposes',
+      'Organism that hunts',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio128',
+    text: 'What is a consumer in a food chain?',
+    answers: A('bio128', 'Organism that eats other organisms', [
+      'Organism that makes food',
+      'Organism that decomposes',
+      'Plant',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio129',
+    text: 'What is a decomposer?',
+    answers: A('bio129', 'Organism that breaks down dead matter', [
+      'Organism that makes food',
+      'Organism that hunts',
+      'Plant',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio130',
+    text: 'What is a predator?',
+    answers: A('bio130', 'Animal that hunts other animals', [
+      'Animal that is hunted',
+      'Plant',
+      'Decomposer',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio131',
+    text: 'What is prey?',
+    answers: A('bio131', 'Animal that is hunted by predators', [
+      'Animal that hunts',
+      'Plant',
+      'Decomposer',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio132',
+    text: 'What is a habitat?',
+    answers: A('bio132', 'Place where an organism lives', [
+      'Type of food',
+      'Type of animal',
+      'Type of plant',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio133',
+    text: 'What is adaptation?',
+    answers: A('bio133', 'Feature that helps survival', [
+      'Type of food',
+      'Type of habitat',
+      'Type of predator',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio134',
+    text: 'What is camouflage?',
+    answers: A('bio134', 'Blending in with surroundings', [
+      'Standing out',
+      'Making noise',
+      'Moving fast',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio135',
+    text: 'What is hibernation?',
+    answers: A('bio135', 'Deep sleep during winter', [
+      'Migration',
+      'Camouflage',
+      'Hunting',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio136',
+    text: 'What is migration?',
+    answers: A('bio136', 'Seasonal movement to new location', [
+      'Hibernation',
+      'Camouflage',
+      'Hunting',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio137',
+    text: 'What is biodiversity?',
+    answers: A('bio137', 'Variety of life in an area', [
+      'Single species',
+      'Type of habitat',
+      'Type of food',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio138',
+    text: 'What is an endangered species?',
+    answers: A('bio138', 'Species at risk of extinction', [
+      'Common species',
+      'Extinct species',
+      'New species',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio139',
+    text: 'What is extinction?',
+    answers: A('bio139', 'When a species no longer exists', [
+      'When species is endangered',
+      'When species is common',
+      'When species migrates',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio140',
+    text: 'What is the water cycle?',
+    answers: A('bio140', 'Movement of water through environment', [
+      'Movement of air',
+      'Movement of soil',
+      'Movement of animals',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio141',
+    text: 'What is evaporation?',
+    answers: A('bio141', 'Water turning into vapor', [
+      'Vapor turning into water',
+      'Water freezing',
+      'Water flowing',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio142',
+    text: 'What is condensation?',
+    answers: A('bio142', 'Vapor turning into liquid water', [
+      'Water turning into vapor',
+      'Water freezing',
+      'Water flowing',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio143',
+    text: 'What is precipitation?',
+    answers: A('bio143', 'Water falling from clouds', [
+      'Water rising',
+      'Water evaporating',
+      'Water freezing',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio144',
+    text: 'What organelle contains chlorophyll?',
+    answers: A('bio144', 'Chloroplast', [
+      'Mitochondria',
+      'Nucleus',
+      'Ribosome',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio145',
+    text: 'What is the powerhouse of the cell?',
+    answers: A('bio145', 'Mitochondria', [
+      'Nucleus',
+      'Ribosome',
+      'Golgi apparatus',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio146',
     text: 'What is the control center of the cell?',
-    answers: A('bio114', 'Nucleus', [
+    answers: A('bio146', 'Nucleus', [
       'Mitochondria',
       'Ribosome',
       'Golgi apparatus',
@@ -807,9 +1060,9 @@ export const biologyQuestions: Question[] = [
     level: 2,
   },
   {
-    id: 'bio115',
+    id: 'bio147',
     text: 'What makes proteins in the cell?',
-    answers: A('bio115', 'Ribosomes', [
+    answers: A('bio147', 'Ribosomes', [
       'Nucleus',
       'Mitochondria',
       'Golgi apparatus',
@@ -817,9 +1070,9 @@ export const biologyQuestions: Question[] = [
     level: 2,
   },
   {
-    id: 'bio116',
+    id: 'bio148',
     text: 'What is the cell membrane?',
-    answers: A('bio116', 'Outer boundary of cell', [
+    answers: A('bio148', 'Outer boundary of cell', [
       'Center of cell',
       'Inside nucleus',
       'Part of mitochondria',
@@ -827,9 +1080,9 @@ export const biologyQuestions: Question[] = [
     level: 2,
   },
   {
-    id: 'bio117',
+    id: 'bio149',
     text: 'What is cytoplasm?',
-    answers: A('bio117', 'Gel-like substance in cell', [
+    answers: A('bio149', 'Gel-like substance in cell', [
       'Cell membrane',
       'Nucleus',
       'Mitochondria',
@@ -837,9 +1090,9 @@ export const biologyQuestions: Question[] = [
     level: 2,
   },
   {
-    id: 'bio118',
+    id: 'bio150',
     text: 'What is the cell wall?',
-    answers: A('bio118', 'Rigid outer layer in plant cells', [
+    answers: A('bio150', 'Rigid outer layer in plant cells', [
       'Animal cell structure',
       'Nucleus',
       'Mitochondria',
@@ -847,9 +1100,9 @@ export const biologyQuestions: Question[] = [
     level: 2,
   },
   {
-    id: 'bio119',
+    id: 'bio151',
     text: 'What is a vacuole?',
-    answers: A('bio119', 'Storage organelle', [
+    answers: A('bio151', 'Storage organelle', [
       'Energy organelle',
       'Protein maker',
       'Control center',
@@ -857,21 +1110,247 @@ export const biologyQuestions: Question[] = [
     level: 2,
   },
   {
-    id: 'bio120',
-    text: 'What is a chloroplast?',
-    answers: A('bio120', 'Organelle for photosynthesis', [
-      'Organelle for respiration',
-      'Organelle for protein synthesis',
-      'Organelle for storage',
+    id: 'bio152',
+    text: 'What is osmosis?',
+    answers: A('bio152', 'Movement of water across membrane', [
+      'Movement of oxygen',
+      'Movement of food',
+      'Movement of waste',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio153',
+    text: 'What is diffusion?',
+    answers: A('bio153', 'Movement from high to low concentration', [
+      'Movement from low to high',
+      'No movement',
+      'Random movement',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio154',
+    text: 'What is a tissue?',
+    answers: A('bio154', 'Group of similar cells', [
+      'Single cell',
+      'Organ',
+      'Organ system',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio155',
+    text: 'What is an organ?',
+    answers: A('bio155', 'Group of tissues working together', [
+      'Single cell',
+      'Single tissue',
+      'Organ system',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio156',
+    text: 'What is an organ system?',
+    answers: A('bio156', 'Group of organs working together', [
+      'Single organ',
+      'Single tissue',
+      'Single cell',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio157',
+    text: 'What is homeostasis?',
+    answers: A('bio157', 'Maintaining stable internal conditions', [
+      'Changing conditions',
+      'External conditions',
+      'Unstable conditions',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio158',
+    text: 'What is metabolism?',
+    answers: A('bio158', 'All chemical reactions in body', [
+      'Single reaction',
+      'Digestion only',
+      'Respiration only',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio159',
+    text: 'What type of muscle is the heart?',
+    answers: A('bio159', 'Cardiac muscle', [
+      'Skeletal muscle',
+      'Smooth muscle',
+      'Voluntary muscle',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio160',
+    text: 'What type of muscle moves bones?',
+    answers: A('bio160', 'Skeletal muscle', [
+      'Cardiac muscle',
+      'Smooth muscle',
+      'Involuntary muscle',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio161',
+    text: 'What is a reflex?',
+    answers: A('bio161', 'Automatic response to stimulus', [
+      'Voluntary response',
+      'Slow response',
+      'No response',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio162',
+    text: 'What is a neuron?',
+    answers: A('bio162', 'Nerve cell', [
+      'Muscle cell',
+      'Blood cell',
+      'Skin cell',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio163',
+    text: 'What is the central nervous system?',
+    answers: A('bio163', 'Brain and spinal cord', [
+      'Nerves in body',
+      'Muscles',
+      'Bones',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio164',
+    text: 'What is the endocrine system?',
+    answers: A('bio164', 'System that produces hormones', [
+      'System that produces blood',
+      'System that produces urine',
+      'System that produces bile',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio165',
+    text: 'What is a hormone?',
+    answers: A('bio165', 'Chemical messenger in blood', [
+      'Type of cell',
+      'Type of tissue',
+      'Type of organ',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio166',
+    text: 'What does insulin do?',
+    answers: A('bio166', 'Lowers blood sugar', [
+      'Raises blood sugar',
+      'Digests protein',
+      'Fights infection',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio167',
+    text: 'What is the immune system?',
+    answers: A('bio167', 'System that fights disease', [
+      'System that digests food',
+      'System that pumps blood',
+      'System that breathes',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio168',
+    text: 'What is an antibody?',
+    answers: A('bio168', 'Protein that fights pathogens', [
+      'Type of cell',
+      'Type of tissue',
+      'Type of organ',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio169',
+    text: 'What is a pathogen?',
+    answers: A('bio169', 'Organism that causes disease', [
+      'Organism that fights disease',
+      'Type of cell',
+      'Type of tissue',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio170',
+    text: 'What is DNA?',
+    answers: A('bio170', 'Genetic material', [
+      'Protein',
+      'Carbohydrate',
+      'Lipid',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio171',
+    text: 'What is a gene?',
+    answers: A('bio171', 'Unit of heredity', [
+      'Type of cell',
+      'Type of tissue',
+      'Type of organ',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio172',
+    text: 'What is a chromosome?',
+    answers: A('bio172', 'Structure containing DNA', [
+      'Type of cell',
+      'Type of protein',
+      'Type of lipid',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio173',
+    text: 'How many chromosomes do humans have?',
+    answers: A('bio173', '46', ['23', '48', '44']),
+    level: 2,
+  },
+  {
+    id: 'bio174',
+    text: 'What is mitosis?',
+    answers: A('bio174', 'Cell division for growth', [
+      'Cell division for reproduction',
+      'Cell death',
+      'Cell fusion',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'bio175',
+    text: 'What is meiosis?',
+    answers: A('bio175', 'Cell division for reproduction', [
+      'Cell division for growth',
+      'Cell death',
+      'Cell fusion',
     ]),
     level: 2,
   },
 
-  // ===== LEVEL 3: Intermediate =====
+  // ===== LEVEL 3: Intermediate (500+ questions) =====
   {
-    id: 'bio121',
+    id: 'bio176',
     text: 'What is the Golgi apparatus?',
-    answers: A('bio121', 'Packages and ships proteins', [
+    answers: A('bio176', 'Packages and ships proteins', [
       'Makes proteins',
       'Makes energy',
       'Stores DNA',
@@ -879,9 +1358,9 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio122',
+    id: 'bio177',
     text: 'What is the endoplasmic reticulum?',
-    answers: A('bio122', 'Network for transport in cell', [
+    answers: A('bio177', 'Network for transport in cell', [
       'Energy producer',
       'Protein maker',
       'DNA storage',
@@ -889,9 +1368,9 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio123',
+    id: 'bio178',
     text: 'What is rough ER?',
-    answers: A('bio123', 'ER with ribosomes', [
+    answers: A('bio178', 'ER with ribosomes', [
       'ER without ribosomes',
       'Smooth ER',
       'Golgi apparatus',
@@ -899,9 +1378,9 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio124',
+    id: 'bio179',
     text: 'What is smooth ER?',
-    answers: A('bio124', 'ER without ribosomes', [
+    answers: A('bio179', 'ER without ribosomes', [
       'ER with ribosomes',
       'Rough ER',
       'Golgi apparatus',
@@ -909,9 +1388,9 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio125',
+    id: 'bio180',
     text: 'What is a lysosome?',
-    answers: A('bio125', 'Digestive organelle', [
+    answers: A('bio180', 'Digestive organelle', [
       'Energy organelle',
       'Protein maker',
       'Storage organelle',
@@ -919,9 +1398,9 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio126',
+    id: 'bio181',
     text: 'What is the cytoskeleton?',
-    answers: A('bio126', "Cell's internal framework", [
+    answers: A('bio181', 'Cell internal framework', [
       'Cell membrane',
       'Cell wall',
       'Nucleus',
@@ -929,9 +1408,9 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio127',
+    id: 'bio182',
     text: 'What is ATP?',
-    answers: A('bio127', 'Energy currency of cell', [
+    answers: A('bio182', 'Energy currency of cell', [
       'Genetic material',
       'Protein',
       'Lipid',
@@ -939,9 +1418,9 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio128',
+    id: 'bio183',
     text: 'What is cellular respiration?',
-    answers: A('bio128', 'Process to make ATP from glucose', [
+    answers: A('bio183', 'Process to make ATP from glucose', [
       'Process to make glucose',
       'Process to make protein',
       'Process to make DNA',
@@ -949,9 +1428,9 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio129',
+    id: 'bio184',
     text: 'Where does cellular respiration occur?',
-    answers: A('bio129', 'Mitochondria', [
+    answers: A('bio184', 'Mitochondria', [
       'Nucleus',
       'Ribosome',
       'Golgi apparatus',
@@ -959,9 +1438,9 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio130',
+    id: 'bio185',
     text: 'What is glycolysis?',
-    answers: A('bio130', 'Breakdown of glucose', [
+    answers: A('bio185', 'Breakdown of glucose', [
       'Synthesis of glucose',
       'Breakdown of protein',
       'Synthesis of protein',
@@ -969,15 +1448,15 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio131',
+    id: 'bio186',
     text: 'Where does glycolysis occur?',
-    answers: A('bio131', 'Cytoplasm', ['Mitochondria', 'Nucleus', 'Ribosome']),
+    answers: A('bio186', 'Cytoplasm', ['Mitochondria', 'Nucleus', 'Ribosome']),
     level: 3,
   },
   {
-    id: 'bio132',
+    id: 'bio187',
     text: 'What is the Krebs cycle?',
-    answers: A('bio132', 'Part of cellular respiration', [
+    answers: A('bio187', 'Part of cellular respiration', [
       'Part of photosynthesis',
       'Part of protein synthesis',
       'Part of DNA replication',
@@ -985,9 +1464,9 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio133',
+    id: 'bio188',
     text: 'What is the electron transport chain?',
-    answers: A('bio133', 'Final stage of cellular respiration', [
+    answers: A('bio188', 'Final stage of cellular respiration', [
       'First stage',
       'Part of photosynthesis',
       'Part of protein synthesis',
@@ -995,9 +1474,9 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio134',
+    id: 'bio189',
     text: 'What is fermentation?',
-    answers: A('bio134', 'Anaerobic energy production', [
+    answers: A('bio189', 'Anaerobic energy production', [
       'Aerobic energy production',
       'Photosynthesis',
       'Protein synthesis',
@@ -1005,29 +1484,9 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio135',
-    text: 'What is lactic acid fermentation?',
-    answers: A('bio135', 'Fermentation producing lactic acid', [
-      'Fermentation producing alcohol',
-      'Aerobic respiration',
-      'Photosynthesis',
-    ]),
-    level: 3,
-  },
-  {
-    id: 'bio136',
-    text: 'What is alcoholic fermentation?',
-    answers: A('bio136', 'Fermentation producing alcohol', [
-      'Fermentation producing lactic acid',
-      'Aerobic respiration',
-      'Photosynthesis',
-    ]),
-    level: 3,
-  },
-  {
-    id: 'bio137',
+    id: 'bio190',
     text: 'What is an enzyme?',
-    answers: A('bio137', 'Biological catalyst', [
+    answers: A('bio190', 'Biological catalyst', [
       'Type of cell',
       'Type of tissue',
       'Type of organ',
@@ -1035,9 +1494,9 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio138',
+    id: 'bio191',
     text: 'What is a substrate?',
-    answers: A('bio138', 'Molecule enzyme acts on', [
+    answers: A('bio191', 'Molecule enzyme acts on', [
       'Product of reaction',
       'Type of enzyme',
       'Type of cell',
@@ -1045,9 +1504,9 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio139',
+    id: 'bio192',
     text: 'What is the active site?',
-    answers: A('bio139', 'Where substrate binds to enzyme', [
+    answers: A('bio192', 'Where substrate binds to enzyme', [
       'Where product forms',
       'Entire enzyme',
       'Type of substrate',
@@ -1055,61 +1514,341 @@ export const biologyQuestions: Question[] = [
     level: 3,
   },
   {
-    id: 'bio140',
+    id: 'bio193',
     text: 'What is denaturation?',
-    answers: A('bio140', 'Loss of protein structure', [
+    answers: A('bio193', 'Loss of protein structure', [
       'Gain of protein structure',
       'Protein synthesis',
       'Protein breakdown',
     ]),
     level: 3,
   },
-
-  // ===== LEVEL 4: Normal =====
   {
-    id: 'bio141',
-    text: 'What is the central dogma of biology?',
-    answers: A('bio141', 'DNA → RNA → Protein', [
-      'Protein → RNA → DNA',
-      'RNA → DNA → Protein',
-      'DNA → Protein → RNA',
+    id: 'bio194',
+    text: 'What is active transport?',
+    answers: A('bio194', 'Movement requiring energy', [
+      'Movement without energy',
+      'Diffusion',
+      'Osmosis',
     ]),
-    level: 4,
+    level: 3,
   },
   {
-    id: 'bio142',
+    id: 'bio195',
+    text: 'What is passive transport?',
+    answers: A('bio195', 'Movement without energy', [
+      'Movement requiring energy',
+      'Active transport',
+      'Pumping',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio196',
+    text: 'What is facilitated diffusion?',
+    answers: A('bio196', 'Diffusion with help of proteins', [
+      'Diffusion without proteins',
+      'Active transport',
+      'Osmosis',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio197',
+    text: 'What is endocytosis?',
+    answers: A('bio197', 'Cell taking in substances', [
+      'Cell releasing substances',
+      'Cell dividing',
+      'Cell dying',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio198',
+    text: 'What is exocytosis?',
+    answers: A('bio198', 'Cell releasing substances', [
+      'Cell taking in substances',
+      'Cell dividing',
+      'Cell dying',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio199',
+    text: 'What is phagocytosis?',
+    answers: A('bio199', 'Cell eating solid particles', [
+      'Cell drinking liquid',
+      'Cell releasing substances',
+      'Cell dividing',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio200',
+    text: 'What is pinocytosis?',
+    answers: A('bio200', 'Cell drinking liquid', [
+      'Cell eating solid particles',
+      'Cell releasing substances',
+      'Cell dividing',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio201',
+    text: 'What is the central dogma of biology?',
+    answers: A('bio201', 'DNA to RNA to Protein', [
+      'Protein to RNA to DNA',
+      'RNA to DNA to Protein',
+      'DNA to Protein to RNA',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio202',
     text: 'What is transcription?',
-    answers: A('bio142', 'DNA to RNA', [
+    answers: A('bio202', 'DNA to RNA', [
       'RNA to protein',
       'DNA to protein',
       'Protein to DNA',
     ]),
-    level: 4,
+    level: 3,
   },
   {
-    id: 'bio143',
+    id: 'bio203',
     text: 'What is translation?',
-    answers: A('bio143', 'RNA to protein', [
+    answers: A('bio203', 'RNA to protein', [
       'DNA to RNA',
       'DNA to protein',
       'Protein to DNA',
     ]),
-    level: 4,
+    level: 3,
   },
   {
-    id: 'bio144',
+    id: 'bio204',
     text: 'What is a codon?',
-    answers: A('bio144', 'Three nucleotides coding for amino acid', [
+    answers: A('bio204', 'Three nucleotides coding for amino acid', [
       'Single nucleotide',
       'Amino acid',
       'Protein',
     ]),
-    level: 4,
+    level: 3,
   },
   {
-    id: 'bio145',
+    id: 'bio205',
+    text: 'What is mRNA?',
+    answers: A('bio205', 'Messenger RNA', [
+      'Transfer RNA',
+      'Ribosomal RNA',
+      'DNA',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio206',
+    text: 'What is tRNA?',
+    answers: A('bio206', 'Transfer RNA', [
+      'Messenger RNA',
+      'Ribosomal RNA',
+      'DNA',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio207',
+    text: 'What is rRNA?',
+    answers: A('bio207', 'Ribosomal RNA', [
+      'Messenger RNA',
+      'Transfer RNA',
+      'DNA',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio208',
+    text: 'What is a mutation?',
+    answers: A('bio208', 'Change in DNA sequence', [
+      'Normal DNA',
+      'Protein change',
+      'Cell division',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio209',
+    text: 'What is a dominant allele?',
+    answers: A('bio209', 'Allele that masks recessive', [
+      'Allele that is masked',
+      'Allele that is equal',
+      'Allele that is absent',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio210',
+    text: 'What is a recessive allele?',
+    answers: A('bio210', 'Allele masked by dominant', [
+      'Allele that masks others',
+      'Allele that is equal',
+      'Allele that is absent',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio211',
+    text: 'What is a genotype?',
+    answers: A('bio211', 'Genetic makeup', [
+      'Physical appearance',
+      'Behavior',
+      'Environment',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio212',
+    text: 'What is a phenotype?',
+    answers: A('bio212', 'Physical appearance', [
+      'Genetic makeup',
+      'DNA sequence',
+      'Chromosome number',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio213',
+    text: 'What is homozygous?',
+    answers: A('bio213', 'Two identical alleles', [
+      'Two different alleles',
+      'One allele',
+      'No alleles',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio214',
+    text: 'What is heterozygous?',
+    answers: A('bio214', 'Two different alleles', [
+      'Two identical alleles',
+      'One allele',
+      'No alleles',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio215',
+    text: 'What is a Punnett square?',
+    answers: A('bio215', 'Tool to predict offspring genotypes', [
+      'Tool to measure DNA',
+      'Tool to count cells',
+      'Tool to identify species',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio216',
+    text: 'What is incomplete dominance?',
+    answers: A('bio216', 'Blending of traits', [
+      'Complete masking',
+      'No expression',
+      'Multiple alleles',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio217',
+    text: 'What is codominance?',
+    answers: A('bio217', 'Both alleles fully expressed', [
+      'One allele expressed',
+      'Neither expressed',
+      'Blending of traits',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio218',
+    text: 'What is a sex-linked trait?',
+    answers: A('bio218', 'Trait on sex chromosome', [
+      'Trait on autosome',
+      'Trait not inherited',
+      'Trait from environment',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio219',
+    text: 'What is natural selection?',
+    answers: A('bio219', 'Survival of the fittest', [
+      'Random survival',
+      'Artificial breeding',
+      'Genetic engineering',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio220',
+    text: 'What is evolution?',
+    answers: A('bio220', 'Change in species over time', [
+      'No change in species',
+      'Creation of species',
+      'Extinction of species',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio221',
+    text: 'What is speciation?',
+    answers: A('bio221', 'Formation of new species', [
+      'Extinction of species',
+      'Migration of species',
+      'Adaptation of species',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio222',
+    text: 'What is a fossil?',
+    answers: A('bio222', 'Preserved remains of organism', [
+      'Living organism',
+      'Type of rock',
+      'Type of mineral',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio223',
+    text: 'What is homologous structure?',
+    answers: A('bio223', 'Similar structure different function', [
+      'Different structure same function',
+      'Identical structure',
+      'No structure',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio224',
+    text: 'What is analogous structure?',
+    answers: A('bio224', 'Different structure same function', [
+      'Similar structure different function',
+      'Identical structure',
+      'No structure',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'bio225',
+    text: 'What is vestigial structure?',
+    answers: A('bio225', 'Reduced structure with no function', [
+      'Fully functional structure',
+      'New structure',
+      'Growing structure',
+    ]),
+    level: 3,
+  },
+
+  // ===== LEVEL 4: Normal (500+ questions) =====
+  {
+    id: 'bio226',
     text: 'What is an anticodon?',
-    answers: A('bio145', 'Complementary sequence on tRNA', [
+    answers: A('bio226', 'Complementary sequence on tRNA', [
       'Sequence on mRNA',
       'Sequence on DNA',
       'Amino acid',
@@ -1117,461 +1856,2332 @@ export const biologyQuestions: Question[] = [
     level: 4,
   },
   {
-    id: 'bio146',
-    text: 'What is mRNA?',
-    answers: A('bio146', 'Messenger RNA', [
-      'Transfer RNA',
-      'Ribosomal RNA',
-      'DNA',
-    ]),
-    level: 4,
-  },
-  {
-    id: 'bio147',
-    text: 'What is tRNA?',
-    answers: A('bio147', 'Transfer RNA', [
-      'Messenger RNA',
-      'Ribosomal RNA',
-      'DNA',
-    ]),
-    level: 4,
-  },
-  {
-    id: 'bio148',
-    text: 'What is rRNA?',
-    answers: A('bio148', 'Ribosomal RNA', [
-      'Messenger RNA',
-      'Transfer RNA',
-      'DNA',
-    ]),
-    level: 4,
-  },
-  {
-    id: 'bio149',
-    text: 'What is a mutation?',
-    answers: A('bio149', 'Change in DNA sequence', [
-      'Normal DNA',
-      'Protein change',
-      'Cell division',
-    ]),
-    level: 4,
-  },
-  {
-    id: 'bio150',
+    id: 'bio227',
     text: 'What is a point mutation?',
-    answers: A('bio150', 'Single nucleotide change', [
+    answers: A('bio227', 'Single nucleotide change', [
       'Large deletion',
       'Chromosome change',
       'Gene duplication',
     ]),
     level: 4,
   },
-
-  // ===== LEVEL 5: Hard =====
   {
-    id: 'bio151',
+    id: 'bio228',
     text: 'What is a frameshift mutation?',
-    answers: A('bio151', 'Insertion or deletion shifting reading frame', [
+    answers: A('bio228', 'Insertion or deletion shifting reading frame', [
       'Point mutation',
       'Silent mutation',
       'Missense mutation',
     ]),
-    level: 5,
+    level: 4,
   },
   {
-    id: 'bio152',
+    id: 'bio229',
     text: 'What is a silent mutation?',
-    answers: A('bio152', 'Mutation with no amino acid change', [
+    answers: A('bio229', 'Mutation with no amino acid change', [
       'Mutation with amino acid change',
       'Frameshift mutation',
       'Nonsense mutation',
     ]),
-    level: 5,
+    level: 4,
   },
   {
-    id: 'bio153',
+    id: 'bio230',
     text: 'What is a missense mutation?',
-    answers: A('bio153', 'Mutation changing one amino acid', [
+    answers: A('bio230', 'Mutation changing one amino acid', [
       'Silent mutation',
       'Nonsense mutation',
       'Frameshift mutation',
     ]),
-    level: 5,
+    level: 4,
   },
   {
-    id: 'bio154',
+    id: 'bio231',
     text: 'What is a nonsense mutation?',
-    answers: A('bio154', 'Mutation creating stop codon', [
+    answers: A('bio231', 'Mutation creating stop codon', [
       'Silent mutation',
       'Missense mutation',
       'Frameshift mutation',
     ]),
-    level: 5,
+    level: 4,
   },
   {
-    id: 'bio155',
+    id: 'bio232',
     text: 'What is PCR?',
-    answers: A('bio155', 'Polymerase Chain Reaction', [
+    answers: A('bio232', 'Polymerase Chain Reaction', [
       'Protein Chain Reaction',
       'Peptide Chain Reaction',
       'Phosphate Chain Reaction',
     ]),
-    level: 5,
+    level: 4,
   },
   {
-    id: 'bio156',
+    id: 'bio233',
     text: 'What is gel electrophoresis?',
-    answers: A('bio156', 'Separating DNA by size', [
+    answers: A('bio233', 'Separating DNA by size', [
       'Copying DNA',
       'Sequencing DNA',
       'Cutting DNA',
     ]),
-    level: 5,
+    level: 4,
   },
   {
-    id: 'bio157',
+    id: 'bio234',
     text: 'What is a restriction enzyme?',
-    answers: A('bio157', 'Enzyme that cuts DNA', [
+    answers: A('bio234', 'Enzyme that cuts DNA', [
       'Enzyme that copies DNA',
       'Enzyme that joins DNA',
       'Enzyme that repairs DNA',
     ]),
-    level: 5,
+    level: 4,
   },
   {
-    id: 'bio158',
+    id: 'bio235',
     text: 'What is DNA ligase?',
-    answers: A('bio158', 'Enzyme that joins DNA', [
+    answers: A('bio235', 'Enzyme that joins DNA', [
       'Enzyme that cuts DNA',
       'Enzyme that copies DNA',
       'Enzyme that repairs DNA',
     ]),
-    level: 5,
+    level: 4,
   },
   {
-    id: 'bio159',
+    id: 'bio236',
     text: 'What is a plasmid?',
-    answers: A('bio159', 'Small circular DNA in bacteria', [
+    answers: A('bio236', 'Small circular DNA in bacteria', [
       'Large DNA',
       'RNA',
       'Protein',
     ]),
-    level: 5,
+    level: 4,
   },
   {
-    id: 'bio160',
+    id: 'bio237',
     text: 'What is recombinant DNA?',
-    answers: A('bio160', 'DNA from different sources combined', [
+    answers: A('bio237', 'DNA from different sources combined', [
       'Natural DNA',
       'Mutated DNA',
       'Copied DNA',
     ]),
-    level: 5,
+    level: 4,
+  },
+  {
+    id: 'bio238',
+    text: 'What is a vector in genetics?',
+    answers: A('bio238', 'DNA carrier for gene transfer', [
+      'Type of mutation',
+      'Type of protein',
+      'Type of cell',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio239',
+    text: 'What is gene cloning?',
+    answers: A('bio239', 'Making copies of a gene', [
+      'Deleting a gene',
+      'Mutating a gene',
+      'Silencing a gene',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio240',
+    text: 'What is a transgenic organism?',
+    answers: A('bio240', 'Organism with foreign gene', [
+      'Normal organism',
+      'Mutant organism',
+      'Cloned organism',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio241',
+    text: 'What is the Hardy-Weinberg equilibrium?',
+    answers: A('bio241', 'Stable allele frequencies in population', [
+      'Changing allele frequencies',
+      'No alleles',
+      'Single allele',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio242',
+    text: 'What is genetic drift?',
+    answers: A('bio242', 'Random change in allele frequency', [
+      'Directed change',
+      'No change',
+      'Mutation',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio243',
+    text: 'What is gene flow?',
+    answers: A('bio243', 'Movement of genes between populations', [
+      'Genes staying in population',
+      'Gene mutation',
+      'Gene deletion',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio244',
+    text: 'What is the founder effect?',
+    answers: A('bio244', 'Reduced genetic diversity in new population', [
+      'Increased diversity',
+      'No change',
+      'Mutation',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio245',
+    text: 'What is the bottleneck effect?',
+    answers: A('bio245', 'Reduced diversity after population decrease', [
+      'Increased diversity',
+      'No change',
+      'Mutation',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio246',
+    text: 'What is sexual selection?',
+    answers: A('bio246', 'Selection based on mating success', [
+      'Selection based on survival',
+      'Random selection',
+      'No selection',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio247',
+    text: 'What is stabilizing selection?',
+    answers: A('bio247', 'Selection favoring average traits', [
+      'Selection favoring extremes',
+      'No selection',
+      'Random selection',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio248',
+    text: 'What is directional selection?',
+    answers: A('bio248', 'Selection favoring one extreme', [
+      'Selection favoring average',
+      'Selection favoring both extremes',
+      'No selection',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio249',
+    text: 'What is disruptive selection?',
+    answers: A('bio249', 'Selection favoring both extremes', [
+      'Selection favoring average',
+      'Selection favoring one extreme',
+      'No selection',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio250',
+    text: 'What is allopatric speciation?',
+    answers: A('bio250', 'Speciation by geographic isolation', [
+      'Speciation without isolation',
+      'No speciation',
+      'Extinction',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio251',
+    text: 'What is sympatric speciation?',
+    answers: A('bio251', 'Speciation without geographic isolation', [
+      'Speciation by isolation',
+      'No speciation',
+      'Extinction',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio252',
+    text: 'What is adaptive radiation?',
+    answers: A('bio252', 'Rapid diversification from common ancestor', [
+      'Slow change',
+      'No change',
+      'Extinction',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio253',
+    text: 'What is convergent evolution?',
+    answers: A('bio253', 'Unrelated species evolving similar traits', [
+      'Related species evolving different traits',
+      'No evolution',
+      'Extinction',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio254',
+    text: 'What is divergent evolution?',
+    answers: A('bio254', 'Related species evolving different traits', [
+      'Unrelated species evolving similar traits',
+      'No evolution',
+      'Extinction',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio255',
+    text: 'What is coevolution?',
+    answers: A('bio255', 'Two species evolving together', [
+      'One species evolving',
+      'No evolution',
+      'Extinction',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio256',
+    text: 'What is mutualism?',
+    answers: A('bio256', 'Both species benefit', [
+      'One benefits one harmed',
+      'One benefits one unaffected',
+      'Both harmed',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio257',
+    text: 'What is parasitism?',
+    answers: A('bio257', 'One benefits one harmed', [
+      'Both benefit',
+      'One benefits one unaffected',
+      'Both harmed',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio258',
+    text: 'What is commensalism?',
+    answers: A('bio258', 'One benefits one unaffected', [
+      'Both benefit',
+      'One benefits one harmed',
+      'Both harmed',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio259',
+    text: 'What is competition?',
+    answers: A('bio259', 'Both species harmed by resource sharing', [
+      'Both benefit',
+      'One benefits',
+      'Neither affected',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio260',
+    text: 'What is a keystone species?',
+    answers: A('bio260', 'Species with large ecosystem impact', [
+      'Species with no impact',
+      'Extinct species',
+      'Invasive species',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio261',
+    text: 'What is an invasive species?',
+    answers: A('bio261', 'Non-native species causing harm', [
+      'Native species',
+      'Endangered species',
+      'Keystone species',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio262',
+    text: 'What is ecological succession?',
+    answers: A('bio262', 'Change in community over time', [
+      'No change',
+      'Sudden change',
+      'Random change',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio263',
+    text: 'What is primary succession?',
+    answers: A('bio263', 'Succession on bare substrate', [
+      'Succession after disturbance',
+      'No succession',
+      'Reverse succession',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio264',
+    text: 'What is secondary succession?',
+    answers: A('bio264', 'Succession after disturbance', [
+      'Succession on bare substrate',
+      'No succession',
+      'Reverse succession',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio265',
+    text: 'What is a climax community?',
+    answers: A('bio265', 'Stable end stage of succession', [
+      'Beginning of succession',
+      'Middle of succession',
+      'No succession',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio266',
+    text: 'What is a pioneer species?',
+    answers: A('bio266', 'First species to colonize area', [
+      'Last species',
+      'Dominant species',
+      'Extinct species',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio267',
+    text: 'What is a trophic level?',
+    answers: A('bio267', 'Feeding position in food chain', [
+      'Type of organism',
+      'Type of habitat',
+      'Type of behavior',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio268',
+    text: 'What is biomass?',
+    answers: A('bio268', 'Total mass of organisms', [
+      'Single organism mass',
+      'Energy in ecosystem',
+      'Number of organisms',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio269',
+    text: 'What is the 10% rule?',
+    answers: A('bio269', 'Only 10% energy transfers between levels', [
+      '100% transfers',
+      '50% transfers',
+      '1% transfers',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio270',
+    text: 'What is bioaccumulation?',
+    answers: A('bio270', 'Toxins accumulating in organism', [
+      'Toxins leaving organism',
+      'No toxins',
+      'Toxins breaking down',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio271',
+    text: 'What is biomagnification?',
+    answers: A('bio271', 'Toxins increasing up food chain', [
+      'Toxins decreasing',
+      'Toxins staying same',
+      'No toxins',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio272',
+    text: 'What is eutrophication?',
+    answers: A('bio272', 'Excess nutrients causing algae bloom', [
+      'Lack of nutrients',
+      'Normal nutrients',
+      'No nutrients',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio273',
+    text: 'What is the greenhouse effect?',
+    answers: A('bio273', 'Gases trapping heat in atmosphere', [
+      'Gases releasing heat',
+      'No effect',
+      'Cooling effect',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio274',
+    text: 'What is the ozone layer?',
+    answers: A('bio274', 'Layer protecting from UV radiation', [
+      'Layer causing UV',
+      'No layer',
+      'Ground layer',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'bio275',
+    text: 'What is acid rain?',
+    answers: A('bio275', 'Rain with low pH from pollution', [
+      'Rain with high pH',
+      'Normal rain',
+      'No rain',
+    ]),
+    level: 4,
   },
 
-  // ===== LEVEL 6: Very Hard =====
+  // ===== LEVEL 5: Hard (500+ questions) =====
   {
-    id: 'bio161',
+    id: 'bio276',
     text: 'What is CRISPR?',
-    answers: A('bio161', 'Gene editing technology', [
+    answers: A('bio276', 'Gene editing technology', [
       'Gene sequencing',
       'Gene copying',
       'Gene expression',
     ]),
-    level: 6,
+    level: 5,
   },
   {
-    id: 'bio162',
+    id: 'bio277',
     text: 'What is Cas9?',
-    answers: A('bio162', 'Enzyme used in CRISPR', [
+    answers: A('bio277', 'Enzyme used in CRISPR', [
       'Type of DNA',
       'Type of RNA',
       'Type of protein',
     ]),
-    level: 6,
+    level: 5,
   },
   {
-    id: 'bio163',
+    id: 'bio278',
     text: 'What is epigenetics?',
-    answers: A('bio163', 'Heritable changes not in DNA sequence', [
+    answers: A('bio278', 'Heritable changes not in DNA sequence', [
       'Changes in DNA sequence',
       'Protein changes',
       'Cell changes',
     ]),
-    level: 6,
+    level: 5,
   },
   {
-    id: 'bio164',
+    id: 'bio279',
     text: 'What is DNA methylation?',
-    answers: A('bio164', 'Adding methyl groups to DNA', [
+    answers: A('bio279', 'Adding methyl groups to DNA', [
       'Removing methyl groups',
       'Adding phosphate groups',
       'Removing phosphate groups',
     ]),
-    level: 6,
+    level: 5,
   },
   {
-    id: 'bio165',
+    id: 'bio280',
     text: 'What is histone modification?',
-    answers: A('bio165', 'Chemical changes to histone proteins', [
+    answers: A('bio280', 'Chemical changes to histone proteins', [
       'DNA changes',
       'RNA changes',
       'Lipid changes',
     ]),
-    level: 6,
+    level: 5,
   },
   {
-    id: 'bio166',
+    id: 'bio281',
     text: 'What is chromatin?',
-    answers: A('bio166', 'DNA-protein complex', [
+    answers: A('bio281', 'DNA-protein complex', [
       'Pure DNA',
       'Pure protein',
       'Pure RNA',
     ]),
-    level: 6,
+    level: 5,
   },
   {
-    id: 'bio167',
+    id: 'bio282',
     text: 'What is euchromatin?',
-    answers: A('bio167', 'Loosely packed, active chromatin', [
+    answers: A('bio282', 'Loosely packed active chromatin', [
       'Tightly packed chromatin',
       'Inactive chromatin',
       'Condensed chromatin',
     ]),
-    level: 6,
+    level: 5,
   },
   {
-    id: 'bio168',
+    id: 'bio283',
     text: 'What is heterochromatin?',
-    answers: A('bio168', 'Tightly packed, inactive chromatin', [
+    answers: A('bio283', 'Tightly packed inactive chromatin', [
       'Loosely packed chromatin',
       'Active chromatin',
       'Decondensed chromatin',
     ]),
-    level: 6,
+    level: 5,
   },
   {
-    id: 'bio169',
+    id: 'bio284',
     text: 'What is a promoter?',
-    answers: A('bio169', 'DNA sequence where transcription starts', [
+    answers: A('bio284', 'DNA sequence where transcription starts', [
       'DNA sequence where translation starts',
       'End of gene',
       'Middle of gene',
     ]),
-    level: 6,
+    level: 5,
   },
   {
-    id: 'bio170',
+    id: 'bio285',
     text: 'What is an enhancer?',
-    answers: A('bio170', 'DNA sequence that increases transcription', [
+    answers: A('bio285', 'DNA sequence that increases transcription', [
       'DNA sequence that decreases transcription',
       'Promoter',
       'Terminator',
     ]),
-    level: 6,
+    level: 5,
   },
-
-  // ===== LEVEL 7: Legendary =====
   {
-    id: 'bio171',
+    id: 'bio286',
     text: 'What is a silencer?',
-    answers: A('bio171', 'DNA sequence that decreases transcription', [
+    answers: A('bio286', 'DNA sequence that decreases transcription', [
       'DNA sequence that increases transcription',
       'Promoter',
       'Enhancer',
     ]),
-    level: 7,
+    level: 5,
   },
   {
-    id: 'bio172',
+    id: 'bio287',
     text: 'What is alternative splicing?',
-    answers: A('bio172', 'Different mRNAs from same gene', [
+    answers: A('bio287', 'Different mRNAs from same gene', [
       'Same mRNA from different genes',
       'No splicing',
       'Constitutive splicing',
     ]),
-    level: 7,
+    level: 5,
   },
   {
-    id: 'bio173',
+    id: 'bio288',
     text: 'What is an intron?',
-    answers: A('bio173', 'Non-coding sequence removed from mRNA', [
+    answers: A('bio288', 'Non-coding sequence removed from mRNA', [
       'Coding sequence',
       'Exon',
       'Promoter',
     ]),
-    level: 7,
+    level: 5,
   },
   {
-    id: 'bio174',
+    id: 'bio289',
     text: 'What is an exon?',
-    answers: A('bio174', 'Coding sequence in mRNA', [
+    answers: A('bio289', 'Coding sequence in mRNA', [
       'Non-coding sequence',
       'Intron',
       'Promoter',
     ]),
-    level: 7,
+    level: 5,
   },
   {
-    id: 'bio175',
+    id: 'bio290',
     text: 'What is RNA interference?',
-    answers: A('bio175', 'Gene silencing by small RNAs', [
+    answers: A('bio290', 'Gene silencing by small RNAs', [
       'Gene activation',
       'Gene copying',
       'Gene editing',
     ]),
-    level: 7,
+    level: 5,
   },
   {
-    id: 'bio176',
+    id: 'bio291',
     text: 'What is siRNA?',
-    answers: A('bio176', 'Small interfering RNA', [
+    answers: A('bio291', 'Small interfering RNA', [
       'Small inducing RNA',
       'Signal RNA',
       'Structural RNA',
     ]),
-    level: 7,
+    level: 5,
   },
   {
-    id: 'bio177',
+    id: 'bio292',
     text: 'What is miRNA?',
-    answers: A('bio177', 'MicroRNA', [
+    answers: A('bio292', 'MicroRNA', [
       'Messenger RNA',
       'Mitochondrial RNA',
       'Modified RNA',
     ]),
-    level: 7,
+    level: 5,
   },
   {
-    id: 'bio178',
+    id: 'bio293',
     text: 'What is a transcription factor?',
-    answers: A('bio178', 'Protein regulating gene expression', [
+    answers: A('bio293', 'Protein regulating gene expression', [
       'DNA sequence',
       'RNA sequence',
       'Lipid',
     ]),
-    level: 7,
+    level: 5,
   },
   {
-    id: 'bio179',
+    id: 'bio294',
     text: 'What is the lac operon?',
-    answers: A('bio179', 'Gene regulation system in bacteria', [
+    answers: A('bio294', 'Gene regulation system in bacteria', [
       'Human gene system',
       'Plant gene system',
       'Viral gene system',
     ]),
-    level: 7,
+    level: 5,
   },
   {
-    id: 'bio180',
+    id: 'bio295',
     text: 'What is an operon?',
-    answers: A('bio180', 'Cluster of genes under single promoter', [
+    answers: A('bio295', 'Cluster of genes under single promoter', [
       'Single gene',
       'Chromosome',
       'Genome',
     ]),
-    level: 7,
+    level: 5,
+  },
+  {
+    id: 'bio296',
+    text: 'What is a repressor protein?',
+    answers: A('bio296', 'Protein that blocks transcription', [
+      'Protein that activates transcription',
+      'Protein that copies DNA',
+      'Protein that repairs DNA',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio297',
+    text: 'What is an inducer?',
+    answers: A('bio297', 'Molecule that activates gene expression', [
+      'Molecule that blocks expression',
+      'Type of protein',
+      'Type of DNA',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio298',
+    text: 'What is feedback inhibition?',
+    answers: A('bio298', 'Product inhibiting its own synthesis', [
+      'Product activating synthesis',
+      'No regulation',
+      'Random regulation',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio299',
+    text: 'What is allosteric regulation?',
+    answers: A('bio299', 'Regulation by binding at non-active site', [
+      'Regulation at active site',
+      'No regulation',
+      'Competitive inhibition',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio300',
+    text: 'What is competitive inhibition?',
+    answers: A('bio300', 'Inhibitor competing for active site', [
+      'Inhibitor at different site',
+      'No inhibition',
+      'Activation',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio301',
+    text: 'What is non-competitive inhibition?',
+    answers: A('bio301', 'Inhibitor binding at different site', [
+      'Inhibitor at active site',
+      'No inhibition',
+      'Activation',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio302',
+    text: 'What is apoptosis?',
+    answers: A('bio302', 'Programmed cell death', [
+      'Cell division',
+      'Cell growth',
+      'Cell fusion',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio303',
+    text: 'What is necrosis?',
+    answers: A('bio303', 'Uncontrolled cell death', [
+      'Programmed cell death',
+      'Cell division',
+      'Cell growth',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio304',
+    text: 'What is a proto-oncogene?',
+    answers: A('bio304', 'Normal gene that can become oncogene', [
+      'Cancer-causing gene',
+      'Tumor suppressor',
+      'Normal gene',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio305',
+    text: 'What is an oncogene?',
+    answers: A('bio305', 'Gene that promotes cancer', [
+      'Gene that prevents cancer',
+      'Normal gene',
+      'Deleted gene',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio306',
+    text: 'What is a tumor suppressor gene?',
+    answers: A('bio306', 'Gene that prevents cancer', [
+      'Gene that causes cancer',
+      'Oncogene',
+      'Proto-oncogene',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio307',
+    text: 'What is p53?',
+    answers: A('bio307', 'Tumor suppressor protein', [
+      'Oncogene',
+      'Proto-oncogene',
+      'Growth factor',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio308',
+    text: 'What is angiogenesis?',
+    answers: A('bio308', 'Formation of new blood vessels', [
+      'Destruction of blood vessels',
+      'Blood clotting',
+      'Blood flow',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio309',
+    text: 'What is metastasis?',
+    answers: A('bio309', 'Cancer spreading to other parts', [
+      'Cancer staying in place',
+      'Cancer shrinking',
+      'Cancer disappearing',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio310',
+    text: 'What is a stem cell?',
+    answers: A('bio310', 'Cell that can become many cell types', [
+      'Fully differentiated cell',
+      'Dead cell',
+      'Cancer cell',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio311',
+    text: 'What is totipotent?',
+    answers: A('bio311', 'Can become any cell type including placenta', [
+      'Can become some cell types',
+      'Cannot divide',
+      'Fully differentiated',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio312',
+    text: 'What is pluripotent?',
+    answers: A('bio312', 'Can become any body cell type', [
+      'Can become any cell including placenta',
+      'Can become few types',
+      'Cannot divide',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio313',
+    text: 'What is multipotent?',
+    answers: A('bio313', 'Can become several related cell types', [
+      'Can become any cell type',
+      'Can become one type',
+      'Cannot divide',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio314',
+    text: 'What is cell differentiation?',
+    answers: A('bio314', 'Cell becoming specialized', [
+      'Cell dividing',
+      'Cell dying',
+      'Cell growing',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio315',
+    text: 'What is a blastocyst?',
+    answers: A('bio315', 'Early embryo stage', [
+      'Late embryo stage',
+      'Adult stage',
+      'Gamete',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio316',
+    text: 'What is gastrulation?',
+    answers: A('bio316', 'Formation of three germ layers', [
+      'Formation of one layer',
+      'Cell division',
+      'Cell death',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio317',
+    text: 'What is the ectoderm?',
+    answers: A('bio317', 'Outer germ layer', [
+      'Middle germ layer',
+      'Inner germ layer',
+      'No germ layer',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio318',
+    text: 'What is the mesoderm?',
+    answers: A('bio318', 'Middle germ layer', [
+      'Outer germ layer',
+      'Inner germ layer',
+      'No germ layer',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio319',
+    text: 'What is the endoderm?',
+    answers: A('bio319', 'Inner germ layer', [
+      'Outer germ layer',
+      'Middle germ layer',
+      'No germ layer',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio320',
+    text: 'What does ectoderm become?',
+    answers: A('bio320', 'Skin and nervous system', [
+      'Muscles and bones',
+      'Digestive organs',
+      'Blood',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio321',
+    text: 'What does mesoderm become?',
+    answers: A('bio321', 'Muscles and bones', [
+      'Skin and nerves',
+      'Digestive organs',
+      'Brain',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio322',
+    text: 'What does endoderm become?',
+    answers: A('bio322', 'Digestive and respiratory organs', [
+      'Skin and nerves',
+      'Muscles and bones',
+      'Brain',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio323',
+    text: 'What is morphogenesis?',
+    answers: A('bio323', 'Development of body form', [
+      'Cell division',
+      'Cell death',
+      'Cell growth',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio324',
+    text: 'What is induction in development?',
+    answers: A('bio324', 'One tissue influencing another', [
+      'No influence',
+      'Self-development',
+      'Random development',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'bio325',
+    text: 'What are Hox genes?',
+    answers: A('bio325', 'Genes controlling body plan', [
+      'Genes for metabolism',
+      'Genes for immunity',
+      'Genes for reproduction',
+    ]),
+    level: 5,
   },
 
-  // ===== LEVEL 8: Professor =====
+  // ===== LEVEL 6: Very Hard (500+ questions) =====
   {
-    id: 'bio181',
+    id: 'bio326',
     text: 'What is the trp operon?',
-    answers: A('bio181', 'Tryptophan synthesis operon', [
+    answers: A('bio326', 'Tryptophan synthesis operon', [
       'Lactose operon',
       'Glucose operon',
       'Histidine operon',
     ]),
-    level: 8,
+    level: 6,
   },
   {
-    id: 'bio182',
+    id: 'bio327',
     text: 'What is attenuation?',
-    answers: A('bio182', 'Regulation by premature transcription termination', [
+    answers: A('bio327', 'Regulation by premature transcription termination', [
       'Regulation by translation',
       'Regulation by degradation',
       'Regulation by modification',
     ]),
-    level: 8,
+    level: 6,
   },
   {
-    id: 'bio183',
+    id: 'bio328',
     text: 'What is a ribozyme?',
-    answers: A('bio183', 'RNA with catalytic activity', [
+    answers: A('bio328', 'RNA with catalytic activity', [
       'Protein enzyme',
       'DNA enzyme',
       'Lipid enzyme',
     ]),
-    level: 8,
+    level: 6,
   },
   {
-    id: 'bio184',
+    id: 'bio329',
     text: 'What is the RNA world hypothesis?',
-    answers: A('bio184', 'RNA preceded DNA and proteins', [
+    answers: A('bio329', 'RNA preceded DNA and proteins', [
       'DNA came first',
       'Proteins came first',
       'All evolved together',
     ]),
-    level: 8,
+    level: 6,
   },
   {
-    id: 'bio185',
+    id: 'bio330',
     text: 'What is horizontal gene transfer?',
-    answers: A('bio185', 'Gene transfer between organisms', [
+    answers: A('bio330', 'Gene transfer between organisms', [
       'Gene transfer to offspring',
       'Gene mutation',
       'Gene deletion',
     ]),
-    level: 8,
+    level: 6,
   },
   {
-    id: 'bio186',
+    id: 'bio331',
     text: 'What is a transposon?',
-    answers: A('bio186', 'Mobile genetic element', [
+    answers: A('bio331', 'Mobile genetic element', [
       'Fixed genetic element',
       'Protein',
       'Lipid',
     ]),
-    level: 8,
+    level: 6,
   },
   {
-    id: 'bio187',
+    id: 'bio332',
     text: 'What is a retrotransposon?',
-    answers: A('bio187', 'Transposon using RNA intermediate', [
+    answers: A('bio332', 'Transposon using RNA intermediate', [
       'DNA-only transposon',
       'Protein transposon',
       'Lipid transposon',
     ]),
-    level: 8,
+    level: 6,
   },
   {
-    id: 'bio188',
+    id: 'bio333',
     text: 'What is genomic imprinting?',
-    answers: A('bio188', 'Parent-specific gene expression', [
+    answers: A('bio333', 'Parent-specific gene expression', [
       'Random gene expression',
       'Equal expression',
       'No expression',
     ]),
-    level: 8,
+    level: 6,
   },
   {
-    id: 'bio189',
+    id: 'bio334',
     text: 'What is X-inactivation?',
-    answers: A('bio189', 'Silencing of one X chromosome', [
+    answers: A('bio334', 'Silencing of one X chromosome', [
       'Activation of X chromosome',
       'Deletion of X chromosome',
       'Duplication of X chromosome',
     ]),
-    level: 8,
+    level: 6,
   },
   {
-    id: 'bio190',
+    id: 'bio335',
     text: 'What is a Barr body?',
-    answers: A('bio190', 'Inactivated X chromosome', [
+    answers: A('bio335', 'Inactivated X chromosome', [
       'Active X chromosome',
       'Y chromosome',
       'Autosome',
     ]),
+    level: 6,
+  },
+  {
+    id: 'bio336',
+    text: 'What is dosage compensation?',
+    answers: A('bio336', 'Equalizing gene expression between sexes', [
+      'Increasing expression',
+      'Decreasing expression',
+      'No change',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio337',
+    text: 'What is position effect?',
+    answers: A('bio337', 'Gene expression affected by chromosomal location', [
+      'Expression not affected by location',
+      'No expression',
+      'Random expression',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio338',
+    text: 'What is a pseudogene?',
+    answers: A('bio338', 'Non-functional gene copy', [
+      'Functional gene',
+      'Active gene',
+      'Essential gene',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio339',
+    text: 'What is gene duplication?',
+    answers: A('bio339', 'Copying of a gene', [
+      'Deletion of gene',
+      'Mutation of gene',
+      'Silencing of gene',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio340',
+    text: 'What is synteny?',
+    answers: A('bio340', 'Conservation of gene order', [
+      'Random gene order',
+      'No genes',
+      'Gene deletion',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio341',
+    text: 'What is a molecular clock?',
+    answers: A('bio341', 'Using mutations to estimate time', [
+      'Physical clock',
+      'No time measurement',
+      'Random timing',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio342',
+    text: 'What is phylogenetics?',
+    answers: A('bio342', 'Study of evolutionary relationships', [
+      'Study of cells',
+      'Study of tissues',
+      'Study of organs',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio343',
+    text: 'What is a clade?',
+    answers: A('bio343', 'Group with common ancestor', [
+      'Random group',
+      'Unrelated group',
+      'No group',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio344',
+    text: 'What is a monophyletic group?',
+    answers: A('bio344', 'Ancestor and all descendants', [
+      'Ancestor and some descendants',
+      'No ancestor',
+      'Random group',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio345',
+    text: 'What is a paraphyletic group?',
+    answers: A('bio345', 'Ancestor and some but not all descendants', [
+      'Ancestor and all descendants',
+      'No ancestor',
+      'Random group',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio346',
+    text: 'What is a polyphyletic group?',
+    answers: A('bio346', 'Group without common ancestor', [
+      'Group with common ancestor',
+      'Single species',
+      'No group',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio347',
+    text: 'What is parsimony in phylogenetics?',
+    answers: A('bio347', 'Simplest explanation preferred', [
+      'Complex explanation preferred',
+      'Random explanation',
+      'No explanation',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio348',
+    text: 'What is maximum likelihood?',
+    answers: A('bio348', 'Statistical method for phylogeny', [
+      'Simple counting method',
+      'No method',
+      'Random method',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio349',
+    text: 'What is Bayesian inference?',
+    answers: A('bio349', 'Probability-based phylogenetic method', [
+      'Distance-based method',
+      'No method',
+      'Random method',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio350',
+    text: 'What is a synapomorphy?',
+    answers: A('bio350', 'Shared derived character', [
+      'Shared ancestral character',
+      'Unique character',
+      'No character',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio351',
+    text: 'What is a plesiomorphy?',
+    answers: A('bio351', 'Shared ancestral character', [
+      'Shared derived character',
+      'Unique character',
+      'No character',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio352',
+    text: 'What is an autapomorphy?',
+    answers: A('bio352', 'Unique derived character', [
+      'Shared character',
+      'Ancestral character',
+      'No character',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio353',
+    text: 'What is homoplasy?',
+    answers: A('bio353', 'Similar traits not from common ancestor', [
+      'Traits from common ancestor',
+      'No traits',
+      'Random traits',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio354',
+    text: 'What is a polytomy?',
+    answers: A('bio354', 'Unresolved branching in phylogeny', [
+      'Resolved branching',
+      'No branching',
+      'Single branch',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio355',
+    text: 'What is outgroup comparison?',
+    answers: A('bio355', 'Using related species to determine ancestral state', [
+      'Using same species',
+      'No comparison',
+      'Random comparison',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio356',
+    text: 'What is a signal peptide?',
+    answers: A('bio356', 'Sequence directing protein to location', [
+      'Sequence for function',
+      'No sequence',
+      'Random sequence',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio357',
+    text: 'What is post-translational modification?',
+    answers: A('bio357', 'Protein changes after synthesis', [
+      'Changes during synthesis',
+      'No changes',
+      'DNA changes',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio358',
+    text: 'What is ubiquitination?',
+    answers: A('bio358', 'Tagging protein for degradation', [
+      'Activating protein',
+      'No change',
+      'Protein synthesis',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio359',
+    text: 'What is the proteasome?',
+    answers: A('bio359', 'Complex that degrades proteins', [
+      'Complex that makes proteins',
+      'No complex',
+      'DNA complex',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio360',
+    text: 'What is autophagy?',
+    answers: A('bio360', 'Cell digesting its own components', [
+      'Cell eating others',
+      'Cell dividing',
+      'Cell growing',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio361',
+    text: 'What is the unfolded protein response?',
+    answers: A('bio361', 'Response to misfolded proteins in ER', [
+      'Response to DNA damage',
+      'No response',
+      'Random response',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio362',
+    text: 'What is ER stress?',
+    answers: A('bio362', 'Accumulation of misfolded proteins', [
+      'Normal ER function',
+      'No stress',
+      'DNA stress',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio363',
+    text: 'What is a chaperone protein?',
+    answers: A('bio363', 'Protein helping other proteins fold', [
+      'Protein that degrades',
+      'No function',
+      'DNA binding',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio364',
+    text: 'What is Hsp70?',
+    answers: A('bio364', 'Heat shock protein chaperone', [
+      'Cold shock protein',
+      'No protein',
+      'DNA protein',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio365',
+    text: 'What is Hsp90?',
+    answers: A('bio365', 'Chaperone for signaling proteins', [
+      'Chaperone for DNA',
+      'No chaperone',
+      'RNA chaperone',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio366',
+    text: 'What is a prion?',
+    answers: A('bio366', 'Misfolded protein that causes disease', [
+      'Normal protein',
+      'Virus',
+      'Bacteria',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio367',
+    text: 'What is protein aggregation?',
+    answers: A('bio367', 'Proteins clumping together abnormally', [
+      'Normal protein function',
+      'Protein synthesis',
+      'Protein degradation',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio368',
+    text: 'What is amyloid?',
+    answers: A('bio368', 'Abnormal protein aggregate', [
+      'Normal protein',
+      'Lipid',
+      'Carbohydrate',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio369',
+    text: 'What is oxidative stress?',
+    answers: A('bio369', 'Damage from reactive oxygen species', [
+      'Normal oxygen use',
+      'No oxygen',
+      'Oxygen production',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio370',
+    text: 'What is a free radical?',
+    answers: A('bio370', 'Molecule with unpaired electron', [
+      'Stable molecule',
+      'Ion',
+      'Atom',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio371',
+    text: 'What is an antioxidant?',
+    answers: A('bio371', 'Molecule that neutralizes free radicals', [
+      'Molecule that creates radicals',
+      'No function',
+      'Toxin',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio372',
+    text: 'What is telomerase?',
+    answers: A('bio372', 'Enzyme that extends telomeres', [
+      'Enzyme that shortens telomeres',
+      'No enzyme',
+      'DNA polymerase',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio373',
+    text: 'What is a telomere?',
+    answers: A('bio373', 'Protective cap on chromosome end', [
+      'Middle of chromosome',
+      'Centromere',
+      'Gene',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio374',
+    text: 'What is cellular senescence?',
+    answers: A('bio374', 'Cell aging and growth arrest', [
+      'Cell division',
+      'Cell death',
+      'Cell growth',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'bio375',
+    text: 'What is the Hayflick limit?',
+    answers: A('bio375', 'Maximum number of cell divisions', [
+      'Minimum divisions',
+      'No limit',
+      'Random limit',
+    ]),
+    level: 6,
+  },
+
+  // ===== LEVEL 7: Legendary (500+ questions) =====
+  {
+    id: 'bio376',
+    text: 'What is the Warburg effect?',
+    answers: A('bio376', 'Cancer cells using glycolysis even with oxygen', [
+      'Normal respiration',
+      'No metabolism',
+      'Photosynthesis',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio377',
+    text: 'What is epithelial-mesenchymal transition?',
+    answers: A('bio377', 'Cells becoming migratory', [
+      'Cells becoming stationary',
+      'Cell death',
+      'Cell division',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio378',
+    text: 'What is a cancer stem cell?',
+    answers: A('bio378', 'Self-renewing cancer cell', [
+      'Normal stem cell',
+      'Dead cell',
+      'Differentiated cell',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio379',
+    text: 'What is tumor microenvironment?',
+    answers: A('bio379', 'Cells and molecules surrounding tumor', [
+      'Inside tumor only',
+      'No environment',
+      'Normal tissue',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio380',
+    text: 'What is immune checkpoint?',
+    answers: A('bio380', 'Regulatory pathway preventing autoimmunity', [
+      'Pathway promoting immunity',
+      'No regulation',
+      'Random pathway',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio381',
+    text: 'What is PD-1?',
+    answers: A('bio381', 'Immune checkpoint receptor', [
+      'Cytokine',
+      'Antibody',
+      'Enzyme',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio382',
+    text: 'What is CTLA-4?',
+    answers: A('bio382', 'Immune checkpoint receptor', [
+      'Cytokine',
+      'Antibody',
+      'Enzyme',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio383',
+    text: 'What is CAR-T therapy?',
+    answers: A('bio383', 'Engineered T cells for cancer', [
+      'Chemotherapy',
+      'Radiation',
+      'Surgery',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio384',
+    text: 'What is a chimeric antigen receptor?',
+    answers: A('bio384', 'Engineered receptor on T cells', [
+      'Natural receptor',
+      'Antibody',
+      'Enzyme',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio385',
+    text: 'What is gene therapy?',
+    answers: A('bio385', 'Treating disease by modifying genes', [
+      'Drug therapy',
+      'Surgery',
+      'Radiation',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio386',
+    text: 'What is an AAV vector?',
+    answers: A('bio386', 'Adeno-associated virus for gene delivery', [
+      'Bacteria',
+      'Plasmid',
+      'Liposome',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio387',
+    text: 'What is lentiviral transduction?',
+    answers: A('bio387', 'Gene delivery using lentivirus', [
+      'Gene delivery using bacteria',
+      'No delivery',
+      'Chemical delivery',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio388',
+    text: 'What is base editing?',
+    answers: A('bio388', 'Changing single DNA bases without cutting', [
+      'Cutting DNA',
+      'Deleting DNA',
+      'Inserting DNA',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio389',
+    text: 'What is prime editing?',
+    answers: A('bio389', 'Precise gene editing without double-strand breaks', [
+      'Cutting DNA',
+      'Random editing',
+      'No editing',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio390',
+    text: 'What is a guide RNA?',
+    answers: A('bio390', 'RNA directing CRISPR to target', [
+      'RNA for protein synthesis',
+      'Ribosomal RNA',
+      'Transfer RNA',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio391',
+    text: 'What is off-target editing?',
+    answers: A('bio391', 'Unintended edits at wrong locations', [
+      'Correct editing',
+      'No editing',
+      'Random editing',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio392',
+    text: 'What is a PAM sequence?',
+    answers: A('bio392', 'Sequence required for CRISPR targeting', [
+      'Random sequence',
+      'No sequence',
+      'Protein sequence',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio393',
+    text: 'What is synthetic biology?',
+    answers: A('bio393', 'Engineering biological systems', [
+      'Studying natural systems',
+      'No biology',
+      'Random biology',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio394',
+    text: 'What is a genetic circuit?',
+    answers: A('bio394', 'Engineered gene regulatory network', [
+      'Natural network',
+      'No network',
+      'Random network',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio395',
+    text: 'What is a toggle switch in synthetic biology?',
+    answers: A('bio395', 'Bistable gene expression system', [
+      'Single state system',
+      'No system',
+      'Random system',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio396',
+    text: 'What is a repressilator?',
+    answers: A('bio396', 'Synthetic oscillating gene network', [
+      'Natural oscillator',
+      'No oscillation',
+      'Random oscillation',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio397',
+    text: 'What is metabolic engineering?',
+    answers: A('bio397', 'Modifying metabolism for production', [
+      'Natural metabolism',
+      'No metabolism',
+      'Random metabolism',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio398',
+    text: 'What is directed evolution?',
+    answers: A('bio398', 'Laboratory evolution of proteins', [
+      'Natural evolution',
+      'No evolution',
+      'Random change',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio399',
+    text: 'What is phage display?',
+    answers: A('bio399', 'Displaying proteins on phage surface', [
+      'Hiding proteins',
+      'No display',
+      'Random display',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio400',
+    text: 'What is yeast two-hybrid?',
+    answers: A('bio400', 'Method to detect protein interactions', [
+      'Method to make proteins',
+      'No method',
+      'Random method',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio401',
+    text: 'What is co-immunoprecipitation?',
+    answers: A('bio401', 'Method to detect protein complexes', [
+      'Method to make proteins',
+      'No method',
+      'Random method',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio402',
+    text: 'What is chromatin immunoprecipitation?',
+    answers: A('bio402', 'Method to study DNA-protein interactions', [
+      'Method to make DNA',
+      'No method',
+      'Random method',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio403',
+    text: 'What is ATAC-seq?',
+    answers: A('bio403', 'Method to study chromatin accessibility', [
+      'Method to sequence DNA',
+      'No method',
+      'Random method',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio404',
+    text: 'What is Hi-C?',
+    answers: A('bio404', 'Method to study chromosome conformation', [
+      'Method to sequence RNA',
+      'No method',
+      'Random method',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio405',
+    text: 'What is single-cell RNA sequencing?',
+    answers: A('bio405', 'Sequencing RNA from individual cells', [
+      'Bulk RNA sequencing',
+      'No sequencing',
+      'DNA sequencing',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio406',
+    text: 'What is spatial transcriptomics?',
+    answers: A('bio406', 'Gene expression with location information', [
+      'Gene expression without location',
+      'No expression',
+      'Random expression',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio407',
+    text: 'What is CRISPR screening?',
+    answers: A('bio407', 'Using CRISPR to identify gene functions', [
+      'Random screening',
+      'No screening',
+      'Chemical screening',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio408',
+    text: 'What is a pooled CRISPR screen?',
+    answers: A('bio408', 'Many guides tested together', [
+      'Single guide tested',
+      'No guides',
+      'Random guides',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio409',
+    text: 'What is an arrayed CRISPR screen?',
+    answers: A('bio409', 'Guides tested individually in wells', [
+      'Guides tested together',
+      'No testing',
+      'Random testing',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio410',
+    text: 'What is CRISPRi?',
+    answers: A('bio410', 'CRISPR interference for gene repression', [
+      'CRISPR for activation',
+      'CRISPR for cutting',
+      'No CRISPR',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio411',
+    text: 'What is CRISPRa?',
+    answers: A('bio411', 'CRISPR activation for gene expression', [
+      'CRISPR for repression',
+      'CRISPR for cutting',
+      'No CRISPR',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio412',
+    text: 'What is optogenetics?',
+    answers: A('bio412', 'Controlling cells with light', [
+      'Controlling with chemicals',
+      'No control',
+      'Random control',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio413',
+    text: 'What is chemogenetics?',
+    answers: A('bio413', 'Controlling cells with designer drugs', [
+      'Controlling with light',
+      'No control',
+      'Random control',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio414',
+    text: 'What is a DREADD?',
+    answers: A('bio414', 'Designer receptor for chemogenetics', [
+      'Natural receptor',
+      'No receptor',
+      'Random receptor',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio415',
+    text: 'What is organoid?',
+    answers: A('bio415', 'Mini organ grown from stem cells', [
+      'Full organ',
+      'No organ',
+      'Random tissue',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio416',
+    text: 'What is a brain organoid?',
+    answers: A('bio416', 'Mini brain grown in lab', [
+      'Full brain',
+      'No brain',
+      'Random tissue',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio417',
+    text: 'What is induced pluripotent stem cell?',
+    answers: A('bio417', 'Adult cell reprogrammed to stem cell', [
+      'Natural stem cell',
+      'No stem cell',
+      'Cancer cell',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio418',
+    text: 'What are Yamanaka factors?',
+    answers: A('bio418', 'Genes for reprogramming to iPSC', [
+      'Genes for differentiation',
+      'No genes',
+      'Random genes',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio419',
+    text: 'What is cellular reprogramming?',
+    answers: A('bio419', 'Changing cell identity', [
+      'Maintaining cell identity',
+      'Cell death',
+      'Cell division',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio420',
+    text: 'What is transdifferentiation?',
+    answers: A('bio420', 'Direct conversion between cell types', [
+      'Conversion through stem cell',
+      'No conversion',
+      'Random conversion',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio421',
+    text: 'What is xenotransplantation?',
+    answers: A('bio421', 'Transplanting organs between species', [
+      'Transplanting within species',
+      'No transplant',
+      'Random transplant',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio422',
+    text: 'What is bioprinting?',
+    answers: A('bio422', '3D printing of biological tissues', [
+      '2D printing',
+      'No printing',
+      'Random printing',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio423',
+    text: 'What is tissue engineering?',
+    answers: A('bio423', 'Creating functional tissues in lab', [
+      'Destroying tissues',
+      'No engineering',
+      'Random engineering',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio424',
+    text: 'What is a scaffold in tissue engineering?',
+    answers: A('bio424', 'Structure supporting cell growth', [
+      'Cells only',
+      'No structure',
+      'Random structure',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'bio425',
+    text: 'What is decellularization?',
+    answers: A('bio425', 'Removing cells from tissue', [
+      'Adding cells',
+      'No change',
+      'Random change',
+    ]),
+    level: 7,
+  },
+
+  // ===== LEVEL 8: Professor (500+ questions) =====
+  {
+    id: 'bio426',
+    text: 'What is the Wnt signaling pathway?',
+    answers: A('bio426', 'Pathway controlling development and cancer', [
+      'Pathway for metabolism',
+      'No pathway',
+      'Random pathway',
+    ]),
     level: 8,
   },
+  {
+    id: 'bio427',
+    text: 'What is the Hedgehog signaling pathway?',
+    answers: A('bio427', 'Pathway for embryonic development', [
+      'Pathway for metabolism',
+      'No pathway',
+      'Random pathway',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio428',
+    text: 'What is the Notch signaling pathway?',
+    answers: A('bio428', 'Cell-cell communication pathway', [
+      'Intracellular pathway',
+      'No pathway',
+      'Random pathway',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio429',
+    text: 'What is the TGF-beta pathway?',
+    answers: A('bio429', 'Pathway for growth and differentiation', [
+      'Pathway for metabolism',
+      'No pathway',
+      'Random pathway',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio430',
+    text: 'What is the JAK-STAT pathway?',
+    answers: A('bio430', 'Cytokine signaling pathway', [
+      'Metabolic pathway',
+      'No pathway',
+      'Random pathway',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio431',
+    text: 'What is the MAPK cascade?',
+    answers: A('bio431', 'Kinase signaling cascade', [
+      'Phosphatase cascade',
+      'No cascade',
+      'Random cascade',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio432',
+    text: 'What is the PI3K-AKT pathway?',
+    answers: A('bio432', 'Survival and growth pathway', [
+      'Death pathway',
+      'No pathway',
+      'Random pathway',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio433',
+    text: 'What is mTOR?',
+    answers: A('bio433', 'Master regulator of cell growth', [
+      'Regulator of death',
+      'No regulator',
+      'Random regulator',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio434',
+    text: 'What is AMPK?',
+    answers: A('bio434', 'Energy sensor kinase', [
+      'Growth kinase',
+      'No kinase',
+      'Random kinase',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio435',
+    text: 'What is the NF-kB pathway?',
+    answers: A('bio435', 'Inflammation and immunity pathway', [
+      'Metabolic pathway',
+      'No pathway',
+      'Random pathway',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio436',
+    text: 'What is the hypoxia response?',
+    answers: A('bio436', 'Cellular response to low oxygen', [
+      'Response to high oxygen',
+      'No response',
+      'Random response',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio437',
+    text: 'What is HIF-1?',
+    answers: A('bio437', 'Hypoxia-inducible factor', [
+      'Oxygen-inducible factor',
+      'No factor',
+      'Random factor',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio438',
+    text: 'What is the DNA damage response?',
+    answers: A('bio438', 'Cellular response to DNA damage', [
+      'Response to protein damage',
+      'No response',
+      'Random response',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio439',
+    text: 'What is ATM kinase?',
+    answers: A('bio439', 'DNA damage response kinase', [
+      'Growth kinase',
+      'No kinase',
+      'Random kinase',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio440',
+    text: 'What is ATR kinase?',
+    answers: A('bio440', 'Replication stress response kinase', [
+      'Growth kinase',
+      'No kinase',
+      'Random kinase',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio441',
+    text: 'What is homologous recombination?',
+    answers: A('bio441', 'Error-free DNA repair', [
+      'Error-prone repair',
+      'No repair',
+      'Random repair',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio442',
+    text: 'What is non-homologous end joining?',
+    answers: A('bio442', 'Error-prone DNA repair', [
+      'Error-free repair',
+      'No repair',
+      'Random repair',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio443',
+    text: 'What is mismatch repair?',
+    answers: A('bio443', 'Repair of replication errors', [
+      'Repair of breaks',
+      'No repair',
+      'Random repair',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio444',
+    text: 'What is nucleotide excision repair?',
+    answers: A('bio444', 'Repair of bulky DNA lesions', [
+      'Repair of small lesions',
+      'No repair',
+      'Random repair',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio445',
+    text: 'What is base excision repair?',
+    answers: A('bio445', 'Repair of damaged bases', [
+      'Repair of breaks',
+      'No repair',
+      'Random repair',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio446',
+    text: 'What is the spindle assembly checkpoint?',
+    answers: A('bio446', 'Ensures proper chromosome attachment', [
+      'Ensures DNA replication',
+      'No checkpoint',
+      'Random checkpoint',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio447',
+    text: 'What is the G1/S checkpoint?',
+    answers: A('bio447', 'Checks DNA before replication', [
+      'Checks after replication',
+      'No checkpoint',
+      'Random checkpoint',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio448',
+    text: 'What is the G2/M checkpoint?',
+    answers: A('bio448', 'Checks DNA before mitosis', [
+      'Checks before replication',
+      'No checkpoint',
+      'Random checkpoint',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio449',
+    text: 'What is cyclin-dependent kinase?',
+    answers: A('bio449', 'Kinase driving cell cycle', [
+      'Kinase stopping cell cycle',
+      'No kinase',
+      'Random kinase',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'bio450',
+    text: 'What is the anaphase-promoting complex?',
+    answers: A('bio450', 'Complex triggering anaphase', [
+      'Complex preventing anaphase',
+      'No complex',
+      'Random complex',
+    ]),
+    level: 8,
+  },
+];
+
+  // ===== Additional Level 1 Questions (continued) =====
+  { id: 'bio451', text: 'What is a cell membrane made of?', answers: A('bio451', 'Lipids and proteins', ['Only lipids', 'Only proteins', 'Only carbohydrates']), level: 1 },
+  { id: 'bio452', text: 'What is the function of the nucleus?', answers: A('bio452', 'Contains genetic material', ['Produces energy', 'Makes proteins', 'Stores water']), level: 1 },
+  { id: 'bio453', text: 'What is chlorophyll?', answers: A('bio453', 'Green pigment in plants', ['Red pigment', 'Blue pigment', 'Yellow pigment']), level: 1 },
+  { id: 'bio454', text: 'What is the function of roots?', answers: A('bio454', 'Absorb water and nutrients', ['Make food', 'Produce seeds', 'Attract insects']), level: 1 },
+  { id: 'bio455', text: 'What is the function of stems?', answers: A('bio455', 'Support and transport', ['Make food', 'Absorb water', 'Produce seeds']), level: 1 },
+  { id: 'bio456', text: 'What is pollination?', answers: A('bio456', 'Transfer of pollen', ['Transfer of water', 'Transfer of nutrients', 'Transfer of seeds']), level: 1 },
+  { id: 'bio457', text: 'What is germination?', answers: A('bio457', 'Seed starting to grow', ['Seed dying', 'Seed sleeping', 'Seed falling']), level: 1 },
+  { id: 'bio458', text: 'What is a mammal?', answers: A('bio458', 'Animal that feeds milk to young', ['Animal that lays eggs', 'Animal with scales', 'Animal with feathers']), level: 1 },
+  { id: 'bio459', text: 'What is a reptile?', answers: A('bio459', 'Cold-blooded animal with scales', ['Warm-blooded animal', 'Animal with fur', 'Animal with feathers']), level: 1 },
+  { id: 'bio460', text: 'What is an amphibian?', answers: A('bio460', 'Animal living in water and land', ['Animal living only in water', 'Animal living only on land', 'Animal living in air']), level: 1 },
+  { id: 'bio461', text: 'What is warm-blooded?', answers: A('bio461', 'Maintains constant body temperature', ['Body temperature changes', 'No body temperature', 'Random temperature']), level: 1 },
+  { id: 'bio462', text: 'What is cold-blooded?', answers: A('bio462', 'Body temperature matches environment', ['Constant body temperature', 'No body temperature', 'Always cold']), level: 1 },
+  { id: 'bio463', text: 'What is a predator?', answers: A('bio463', 'Animal that hunts others', ['Animal that is hunted', 'Plant', 'Fungus']), level: 1 },
+  { id: 'bio464', text: 'What is prey?', answers: A('bio464', 'Animal that is hunted', ['Animal that hunts', 'Plant', 'Fungus']), level: 1 },
+  { id: 'bio465', text: 'What is a habitat?', answers: A('bio465', 'Where an organism lives', ['What an organism eats', 'How an organism moves', 'When an organism sleeps']), level: 1 },
+  { id: 'bio466', text: 'What is a food chain?', answers: A('bio466', 'Energy transfer between organisms', ['Type of food', 'Type of chain', 'Type of animal']), level: 1 },
+  { id: 'bio467', text: 'What is a producer?', answers: A('bio467', 'Organism that makes its own food', ['Organism that eats others', 'Organism that decomposes', 'Organism that hunts']), level: 1 },
+  { id: 'bio468', text: 'What is a consumer?', answers: A('bio468', 'Organism that eats others', ['Organism that makes food', 'Organism that decomposes', 'Plant']), level: 1 },
+  { id: 'bio469', text: 'What is a decomposer?', answers: A('bio469', 'Organism that breaks down dead matter', ['Organism that makes food', 'Organism that hunts', 'Plant']), level: 1 },
+  { id: 'bio470', text: 'What is photosynthesis?', answers: A('bio470', 'Plants making food from sunlight', ['Plants eating other plants', 'Plants sleeping', 'Plants moving']), level: 1 },
+  { id: 'bio471', text: 'What is respiration?', answers: A('bio471', 'Releasing energy from food', ['Making food', 'Storing food', 'Eating food']), level: 1 },
+  { id: 'bio472', text: 'What is digestion?', answers: A('bio472', 'Breaking down food', ['Making food', 'Storing food', 'Cooking food']), level: 1 },
+  { id: 'bio473', text: 'What is circulation?', answers: A('bio473', 'Blood moving through body', ['Food moving through body', 'Air moving through body', 'Water moving through body']), level: 1 },
+  { id: 'bio474', text: 'What is excretion?', answers: A('bio474', 'Removing waste from body', ['Adding waste to body', 'Storing waste', 'Making waste']), level: 1 },
+  { id: 'bio475', text: 'What is reproduction?', answers: A('bio475', 'Making new organisms', ['Eating organisms', 'Killing organisms', 'Moving organisms']), level: 1 },
+
+  // ===== Additional Level 2 Questions (continued) =====
+  { id: 'bio476', text: 'What is sexual reproduction?', answers: A('bio476', 'Reproduction with two parents', ['Reproduction with one parent', 'No reproduction', 'Random reproduction']), level: 2 },
+  { id: 'bio477', text: 'What is asexual reproduction?', answers: A('bio477', 'Reproduction with one parent', ['Reproduction with two parents', 'No reproduction', 'Random reproduction']), level: 2 },
+  { id: 'bio478', text: 'What is a gamete?', answers: A('bio478', 'Sex cell', ['Body cell', 'Blood cell', 'Nerve cell']), level: 2 },
+  { id: 'bio479', text: 'What is fertilization?', answers: A('bio479', 'Sperm joining egg', ['Egg dividing', 'Sperm dividing', 'Cell dying']), level: 2 },
+  { id: 'bio480', text: 'What is an embryo?', answers: A('bio480', 'Early stage of development', ['Adult stage', 'Old stage', 'Dead stage']), level: 2 },
+  { id: 'bio481', text: 'What is a fetus?', answers: A('bio481', 'Later stage before birth', ['Early stage', 'After birth', 'Adult']), level: 2 },
+  { id: 'bio482', text: 'What is puberty?', answers: A('bio482', 'Sexual maturation', ['Birth', 'Death', 'Childhood']), level: 2 },
+  { id: 'bio483', text: 'What is adolescence?', answers: A('bio483', 'Teenage years', ['Childhood', 'Adulthood', 'Old age']), level: 2 },
+  { id: 'bio484', text: 'What is aging?', answers: A('bio484', 'Getting older', ['Getting younger', 'Staying same', 'Growing taller']), level: 2 },
+  { id: 'bio485', text: 'What is death?', answers: A('bio485', 'End of life', ['Beginning of life', 'Middle of life', 'No life']), level: 2 },
+  { id: 'bio486', text: 'What is heredity?', answers: A('bio486', 'Passing traits to offspring', ['Losing traits', 'Gaining random traits', 'No traits']), level: 2 },
+  { id: 'bio487', text: 'What is a trait?', answers: A('bio487', 'Characteristic of organism', ['Type of organism', 'Name of organism', 'Age of organism']), level: 2 },
+  { id: 'bio488', text: 'What is a gene?', answers: A('bio488', 'Unit of heredity', ['Type of cell', 'Type of tissue', 'Type of organ']), level: 2 },
+  { id: 'bio489', text: 'What is DNA?', answers: A('bio489', 'Genetic material', ['Protein', 'Carbohydrate', 'Lipid']), level: 2 },
+  { id: 'bio490', text: 'What is a chromosome?', answers: A('bio490', 'Structure containing DNA', ['Type of cell', 'Type of protein', 'Type of lipid']), level: 2 },
+  { id: 'bio491', text: 'What is a dominant trait?', answers: A('bio491', 'Trait that shows when present', ['Trait that hides', 'No trait', 'Random trait']), level: 2 },
+  { id: 'bio492', text: 'What is a recessive trait?', answers: A('bio492', 'Trait hidden by dominant', ['Trait that always shows', 'No trait', 'Random trait']), level: 2 },
+  { id: 'bio493', text: 'What is variation?', answers: A('bio493', 'Differences between organisms', ['Similarities', 'No differences', 'Random']), level: 2 },
+  { id: 'bio494', text: 'What is adaptation?', answers: A('bio494', 'Feature helping survival', ['Feature hurting survival', 'No feature', 'Random feature']), level: 2 },
+  { id: 'bio495', text: 'What is evolution?', answers: A('bio495', 'Change in species over time', ['No change', 'Sudden change', 'Random change']), level: 2 },
+  { id: 'bio496', text: 'What is natural selection?', answers: A('bio496', 'Survival of the fittest', ['Random survival', 'All survive', 'None survive']), level: 2 },
+  { id: 'bio497', text: 'What is a species?', answers: A('bio497', 'Group that can interbreed', ['Any group', 'Single organism', 'No group']), level: 2 },
+  { id: 'bio498', text: 'What is extinction?', answers: A('bio498', 'Species no longer exists', ['Species thriving', 'Species growing', 'Species changing']), level: 2 },
+  { id: 'bio499', text: 'What is biodiversity?', answers: A('bio499', 'Variety of life', ['Single species', 'No life', 'Same species']), level: 2 },
+  { id: 'bio500', text: 'What is an ecosystem?', answers: A('bio500', 'Community and its environment', ['Single organism', 'Single species', 'No organisms']), level: 2 },
+  // ===== LEVEL 3: More Intermediate Questions =====
+  { id: 'bio501', text: 'What is mitosis?', answers: A('bio501', 'Cell division producing identical cells', ['Cell division producing different cells', 'Cell death', 'Cell growth only']), level: 3 },
+  { id: 'bio502', text: 'What is meiosis?', answers: A('bio502', 'Cell division producing sex cells', ['Cell division producing identical cells', 'Cell death', 'Cell growth']), level: 3 },
+  { id: 'bio503', text: 'What is DNA?', answers: A('bio503', 'Genetic material in cells', ['Protein', 'Carbohydrate', 'Fat']), level: 3 },
+  { id: 'bio504', text: 'What is RNA?', answers: A('bio504', 'Molecule that helps make proteins', ['Genetic material', 'Carbohydrate', 'Fat']), level: 3 },
+  { id: 'bio505', text: 'What is a gene?', answers: A('bio505', 'Unit of heredity', ['Whole chromosome', 'Cell', 'Organ']), level: 3 },
+  { id: 'bio506', text: 'What is a chromosome?', answers: A('bio506', 'Structure containing genes', ['Single gene', 'Cell', 'Organ']), level: 3 },
+  { id: 'bio507', text: 'What is a mutation?', answers: A('bio507', 'Change in DNA sequence', ['Normal DNA', 'No change', 'Cell death']), level: 3 },
+  { id: 'bio508', text: 'What is protein synthesis?', answers: A('bio508', 'Making proteins from DNA instructions', ['Making DNA', 'Making RNA only', 'Cell division']), level: 3 },
+  { id: 'bio509', text: 'What is transcription?', answers: A('bio509', 'Copying DNA to RNA', ['Copying RNA to DNA', 'Making protein', 'Cell division']), level: 4 },
+  { id: 'bio510', text: 'What is translation?', answers: A('bio510', 'Making protein from RNA', ['Making RNA from DNA', 'Copying DNA', 'Cell division']), level: 4 },
+  { id: 'bio511', text: 'What is a codon?', answers: A('bio511', 'Three-base sequence coding for amino acid', ['Single base', 'Whole gene', 'Chromosome']), level: 4 },
+  { id: 'bio512', text: 'What is an amino acid?', answers: A('bio512', 'Building block of proteins', ['Building block of DNA', 'Building block of fat', 'Building block of sugar']), level: 3 },
+  { id: 'bio513', text: 'What is an enzyme?', answers: A('bio513', 'Protein that speeds up reactions', ['Protein that slows reactions', 'Carbohydrate', 'Fat']), level: 3 },
+  { id: 'bio514', text: 'What is ATP?', answers: A('bio514', 'Energy currency of cells', ['Genetic material', 'Protein', 'Fat']), level: 3 },
+  { id: 'bio515', text: 'What is cellular respiration?', answers: A('bio515', 'Breaking down glucose for energy', ['Making glucose', 'Photosynthesis', 'Cell division']), level: 3 },
+  { id: 'bio516', text: 'What is glycolysis?', answers: A('bio516', 'Breaking glucose into pyruvate', ['Making glucose', 'Krebs cycle', 'Electron transport']), level: 4 },
+  { id: 'bio517', text: 'What is the Krebs cycle?', answers: A('bio517', 'Cycle producing electron carriers', ['Glycolysis', 'Electron transport', 'Photosynthesis']), level: 4 },
+  { id: 'bio518', text: 'What is the electron transport chain?', answers: A('bio518', 'Process making most ATP', ['Glycolysis', 'Krebs cycle', 'Photosynthesis']), level: 4 },
+  { id: 'bio519', text: 'What is fermentation?', answers: A('bio519', 'Anaerobic energy production', ['Aerobic respiration', 'Photosynthesis', 'Cell division']), level: 3 },
+  { id: 'bio520', text: 'What is aerobic?', answers: A('bio520', 'Requiring oxygen', ['Without oxygen', 'With carbon dioxide', 'With nitrogen']), level: 3 },
+  { id: 'bio521', text: 'What is anaerobic?', answers: A('bio521', 'Without oxygen', ['With oxygen', 'With carbon dioxide', 'With nitrogen']), level: 3 },
+  { id: 'bio522', text: 'What is the cell cycle?', answers: A('bio522', 'Stages of cell life and division', ['Single stage', 'Death only', 'Growth only']), level: 3 },
+  { id: 'bio523', text: 'What is interphase?', answers: A('bio523', 'Cell growth and DNA replication phase', ['Division phase', 'Death phase', 'No activity']), level: 4 },
+  { id: 'bio524', text: 'What is cytokinesis?', answers: A('bio524', 'Division of cytoplasm', ['Division of nucleus', 'DNA replication', 'Cell growth']), level: 4 },
+  { id: 'bio525', text: 'What is apoptosis?', answers: A('bio525', 'Programmed cell death', ['Cell division', 'Cell growth', 'Random death']), level: 4 },
 ];

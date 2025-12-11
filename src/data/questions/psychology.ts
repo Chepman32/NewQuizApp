@@ -659,4 +659,1856 @@ export const psychologyQuestions: Question[] = [
     ),
     level: 8,
   },
+
+  // ===== Additional Level 1-2 Questions =====
+  {
+    id: 'psy66',
+    text: 'What is psychology?',
+    answers: A('psy66', 'Study of mind and behavior', [
+      'Study of body',
+      'Study of society',
+      'Study of history',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy67',
+    text: 'What is an emotion?',
+    answers: A('psy67', 'Feeling like happiness or sadness', [
+      'Thought',
+      'Action',
+      'Memory',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy68',
+    text: 'What is memory?',
+    answers: A('psy68', 'Ability to store and recall information', [
+      'Ability to move',
+      'Ability to see',
+      'Ability to hear',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy69',
+    text: 'What is learning?',
+    answers: A('psy69', 'Acquiring new knowledge or skills', [
+      'Forgetting',
+      'Sleeping',
+      'Eating',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy70',
+    text: 'What is behavior?',
+    answers: A('psy70', 'Actions and reactions', [
+      'Thoughts only',
+      'Feelings only',
+      'Dreams only',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy71',
+    text: 'What is the brain?',
+    answers: A('psy71', 'Organ that controls thinking', [
+      'Organ that pumps blood',
+      'Organ that digests food',
+      'Organ that filters blood',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy72',
+    text: 'What is stress?',
+    answers: A('psy72', 'Response to pressure or demands', [
+      'Relaxation',
+      'Sleep',
+      'Happiness',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy73',
+    text: 'What is happiness?',
+    answers: A('psy73', 'Positive emotional state', [
+      'Negative state',
+      'Neutral state',
+      'No state',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy74',
+    text: 'What is fear?',
+    answers: A('psy74', 'Response to perceived danger', [
+      'Response to safety',
+      'Response to boredom',
+      'Response to sleep',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy75',
+    text: 'What is anger?',
+    answers: A('psy75', 'Strong feeling of displeasure', [
+      'Feeling of pleasure',
+      'Feeling of calm',
+      'Feeling of sleep',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy76',
+    text: 'What is motivation?',
+    answers: A('psy76', 'Drive to achieve goals', [
+      'Lack of drive',
+      'Sleep',
+      'Boredom',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy77',
+    text: 'What is personality?',
+    answers: A('psy77', 'Characteristic patterns of behavior', [
+      'Physical appearance',
+      'Intelligence only',
+      'Memory only',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy78',
+    text: 'What is intelligence?',
+    answers: A('psy78', 'Ability to learn and solve problems', [
+      'Physical strength',
+      'Height',
+      'Weight',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy79',
+    text: 'What is perception?',
+    answers: A('psy79', 'Interpreting sensory information', [
+      'Creating information',
+      'Ignoring information',
+      'Deleting information',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy80',
+    text: 'What is attention?',
+    answers: A('psy80', 'Focusing on specific information', [
+      'Ignoring all information',
+      'Processing all information equally',
+      'No processing',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy81',
+    text: 'What is consciousness?',
+    answers: A('psy81', 'Awareness of self and environment', [
+      'Unconsciousness',
+      'Sleep',
+      'Coma',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy82',
+    text: 'What is the unconscious?',
+    answers: A('psy82', 'Mental processes outside awareness', [
+      'Conscious thoughts',
+      'Physical actions',
+      'Visible behavior',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy83',
+    text: 'What is a habit?',
+    answers: A('psy83', 'Automatic behavior pattern', [
+      'Conscious decision',
+      'Random action',
+      'One-time action',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy84',
+    text: 'What is a phobia?',
+    answers: A('psy84', 'Irrational fear', [
+      'Rational fear',
+      'No fear',
+      'Courage',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy85',
+    text: 'What is anxiety?',
+    answers: A('psy85', 'Worry about future events', [
+      'Calm about future',
+      'No thoughts about future',
+      'Happiness about future',
+    ]),
+    level: 2,
+  },
+
+  // ===== Additional Level 3-4 Questions =====
+  {
+    id: 'psy86',
+    text: 'What is classical conditioning?',
+    answers: A('psy86', 'Learning through association', [
+      'Learning through rewards',
+      'Learning through observation',
+      'No learning',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy87',
+    text: 'What is operant conditioning?',
+    answers: A('psy87', 'Learning through consequences', [
+      'Learning through association',
+      'Learning through observation',
+      'No learning',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy88',
+    text: 'What is reinforcement?',
+    answers: A('psy88', 'Increasing behavior through consequences', [
+      'Decreasing behavior',
+      'No change',
+      'Random change',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy89',
+    text: 'What is punishment?',
+    answers: A('psy89', 'Decreasing behavior through consequences', [
+      'Increasing behavior',
+      'No change',
+      'Random change',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy90',
+    text: 'What is short-term memory?',
+    answers: A('psy90', 'Brief storage of information', [
+      'Permanent storage',
+      'No storage',
+      'Random storage',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy91',
+    text: 'What is long-term memory?',
+    answers: A('psy91', 'Permanent storage of information', [
+      'Brief storage',
+      'No storage',
+      'Random storage',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy92',
+    text: 'What is encoding?',
+    answers: A('psy92', 'Converting information for storage', [
+      'Retrieving information',
+      'Deleting information',
+      'Ignoring information',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy93',
+    text: 'What is retrieval?',
+    answers: A('psy93', 'Accessing stored information', [
+      'Storing information',
+      'Deleting information',
+      'Creating information',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy94',
+    text: 'What is forgetting?',
+    answers: A('psy94', 'Inability to retrieve information', [
+      'Perfect memory',
+      'Enhanced memory',
+      'No memory needed',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy95',
+    text: 'What is the id?',
+    answers: A('psy95', 'Freud primitive instincts', [
+      'Freud moral conscience',
+      'Freud reality principle',
+      'No concept',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy96',
+    text: 'What is the ego?',
+    answers: A('psy96', 'Freud reality-based self', [
+      'Freud instincts',
+      'Freud conscience',
+      'No concept',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy97',
+    text: 'What is the superego?',
+    answers: A('psy97', 'Freud moral conscience', [
+      'Freud instincts',
+      'Freud reality self',
+      'No concept',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy98',
+    text: 'What is cognitive dissonance?',
+    answers: A('psy98', 'Discomfort from conflicting beliefs', [
+      'Comfort from beliefs',
+      'No beliefs',
+      'Random beliefs',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy99',
+    text: 'What is attribution?',
+    answers: A('psy99', 'Explaining causes of behavior', [
+      'Describing behavior',
+      'Ignoring behavior',
+      'Random explanation',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy100',
+    text: 'What is conformity?',
+    answers: A('psy100', 'Changing behavior to match group', [
+      'Resisting group',
+      'Ignoring group',
+      'Leading group',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy101',
+    text: 'What is obedience?',
+    answers: A('psy101', 'Following authority commands', [
+      'Resisting authority',
+      'Ignoring authority',
+      'Commanding authority',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy102',
+    text: 'What is groupthink?',
+    answers: A('psy102', 'Poor decisions from group conformity', [
+      'Good decisions',
+      'Individual decisions',
+      'No decisions',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy103',
+    text: 'What is social facilitation?',
+    answers: A('psy103', 'Improved performance with others present', [
+      'Worse performance',
+      'No change',
+      'Random change',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy104',
+    text: 'What is social loafing?',
+    answers: A('psy104', 'Reduced effort in groups', [
+      'Increased effort',
+      'Same effort',
+      'No effort',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy105',
+    text: 'What is the bystander effect?',
+    answers: A('psy105', 'Less helping when others present', [
+      'More helping',
+      'Same helping',
+      'No effect',
+    ]),
+    level: 4,
+  },
+
+  // ===== Additional Level 5-8 Questions =====
+  {
+    id: 'psy106',
+    text: 'What is the fundamental attribution error?',
+    answers: A('psy106', 'Overemphasizing personality in explanations', [
+      'Overemphasizing situation',
+      'Balanced attribution',
+      'No attribution',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy107',
+    text: 'What is self-serving bias?',
+    answers: A(
+      'psy107',
+      'Taking credit for success blaming others for failure',
+      ['Blaming self for all', 'Crediting others for all', 'No bias'],
+    ),
+    level: 5,
+  },
+  {
+    id: 'psy108',
+    text: 'What is confirmation bias?',
+    answers: A('psy108', 'Seeking information that confirms beliefs', [
+      'Seeking disconfirming information',
+      'Seeking all information',
+      'Seeking no information',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy109',
+    text: 'What is the availability heuristic?',
+    answers: A('psy109', 'Judging by ease of recall', [
+      'Judging by logic',
+      'Judging by statistics',
+      'No judging',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy110',
+    text: 'What is the representativeness heuristic?',
+    answers: A('psy110', 'Judging by similarity to prototype', [
+      'Judging by base rates',
+      'Judging by logic',
+      'No judging',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy111',
+    text: 'What is schema?',
+    answers: A('psy111', 'Mental framework for organizing information', [
+      'Random organization',
+      'No organization',
+      'Physical framework',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy112',
+    text: 'What is priming?',
+    answers: A('psy112', 'Exposure affecting subsequent processing', [
+      'No effect',
+      'Opposite effect',
+      'Random effect',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy113',
+    text: 'What is implicit memory?',
+    answers: A('psy113', 'Memory without conscious awareness', [
+      'Conscious memory',
+      'No memory',
+      'Random memory',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy114',
+    text: 'What is explicit memory?',
+    answers: A('psy114', 'Conscious memory recall', [
+      'Unconscious memory',
+      'No memory',
+      'Random memory',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy115',
+    text: 'What is procedural memory?',
+    answers: A('psy115', 'Memory for skills and procedures', [
+      'Memory for facts',
+      'Memory for events',
+      'No memory',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy116',
+    text: 'What is the mere exposure effect?',
+    answers: A('psy116', 'Preference from repeated exposure', [
+      'Dislike from exposure',
+      'No effect',
+      'Random effect',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'psy117',
+    text: 'What is cognitive load?',
+    answers: A('psy117', 'Mental effort required for task', [
+      'Physical effort',
+      'No effort',
+      'Random effort',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'psy118',
+    text: 'What is working memory?',
+    answers: A('psy118', 'Active manipulation of information', [
+      'Passive storage',
+      'No storage',
+      'Random storage',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'psy119',
+    text: 'What is the central executive?',
+    answers: A('psy119', 'Attention control in working memory', [
+      'Storage component',
+      'No component',
+      'Random component',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'psy120',
+    text: 'What is the phonological loop?',
+    answers: A('psy120', 'Verbal working memory component', [
+      'Visual component',
+      'No component',
+      'Random component',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'psy121',
+    text: 'What is the visuospatial sketchpad?',
+    answers: A('psy121', 'Visual working memory component', [
+      'Verbal component',
+      'No component',
+      'Random component',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'psy122',
+    text: 'What is the episodic buffer?',
+    answers: A('psy122', 'Integration component of working memory', [
+      'Storage only',
+      'No component',
+      'Random component',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'psy123',
+    text: 'What is spreading activation?',
+    answers: A('psy123', 'Activation spreading through memory network', [
+      'No spreading',
+      'Random spreading',
+      'Opposite spreading',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'psy124',
+    text: 'What is the levels of processing theory?',
+    answers: A('psy124', 'Deeper processing leads to better memory', [
+      'Shallow processing better',
+      'No difference',
+      'Random processing',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'psy125',
+    text: 'What is transfer-appropriate processing?',
+    answers: A('psy125', 'Memory best when encoding matches retrieval', [
+      'No match needed',
+      'Opposite match',
+      'Random match',
+    ]),
+    level: 8,
+  },
+  // ===== LEVEL 1: More Very Easy Questions =====
+  {
+    id: 'psy126',
+    text: 'What is the brain?',
+    answers: A('psy126', 'Organ that controls thinking', [
+      'Organ that pumps blood',
+      'Organ that digests food',
+      'Organ that breathes',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy127',
+    text: 'What is a thought?',
+    answers: A('psy127', 'Idea in your mind', [
+      'Physical object',
+      'Sound',
+      'Taste',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy128',
+    text: 'What is a feeling?',
+    answers: A('psy128', 'Emotional experience', [
+      'Physical object',
+      'Sound',
+      'Taste',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy129',
+    text: 'What is happiness?',
+    answers: A('psy129', 'Positive emotion', [
+      'Negative emotion',
+      'No emotion',
+      'Physical sensation',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy130',
+    text: 'What is sadness?',
+    answers: A('psy130', 'Negative emotion from loss', [
+      'Positive emotion',
+      'No emotion',
+      'Physical sensation',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy131',
+    text: 'What is anger?',
+    answers: A('psy131', 'Strong negative emotion', [
+      'Positive emotion',
+      'No emotion',
+      'Physical sensation',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy132',
+    text: 'What is fear?',
+    answers: A('psy132', 'Emotion from perceived danger', [
+      'Positive emotion',
+      'No emotion',
+      'Physical sensation',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy133',
+    text: 'What is surprise?',
+    answers: A('psy133', 'Emotion from unexpected event', [
+      'Expected emotion',
+      'No emotion',
+      'Physical sensation',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy134',
+    text: 'What is love?',
+    answers: A('psy134', 'Strong positive feeling for someone', [
+      'Negative feeling',
+      'No feeling',
+      'Physical sensation',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy135',
+    text: 'What is memory?',
+    answers: A('psy135', 'Ability to remember', [
+      'Ability to forget',
+      'Ability to see',
+      'Ability to hear',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy136',
+    text: 'What is learning?',
+    answers: A('psy136', 'Gaining new knowledge', [
+      'Forgetting',
+      'Sleeping',
+      'Eating',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy137',
+    text: 'What is sleep?',
+    answers: A('psy137', 'State of rest for body and mind', [
+      'State of activity',
+      'State of eating',
+      'State of working',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy138',
+    text: 'What is a dream?',
+    answers: A('psy138', 'Images and thoughts during sleep', [
+      'Thoughts while awake',
+      'Physical activity',
+      'Eating',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy139',
+    text: 'What is attention?',
+    answers: A('psy139', 'Focusing on something', [
+      'Ignoring everything',
+      'Sleeping',
+      'Forgetting',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy140',
+    text: 'What is concentration?',
+    answers: A('psy140', 'Focused attention', [
+      'Distraction',
+      'Sleep',
+      'Forgetting',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy141',
+    text: 'What is stress?',
+    answers: A('psy141', 'Mental or emotional strain', [
+      'Relaxation',
+      'Happiness',
+      'Sleep',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy142',
+    text: 'What is relaxation?',
+    answers: A('psy142', 'State of being calm', [
+      'State of stress',
+      'State of anger',
+      'State of fear',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy143',
+    text: 'What is a habit?',
+    answers: A('psy143', 'Regular behavior pattern', [
+      'One-time action',
+      'Random action',
+      'No action',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy144',
+    text: 'What is motivation?',
+    answers: A('psy144', 'Desire to do something', [
+      'Desire to do nothing',
+      'Fear',
+      'Anger',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy145',
+    text: 'What is personality?',
+    answers: A('psy145', 'Unique characteristics of a person', [
+      'Physical appearance',
+      'Age',
+      'Height',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy146',
+    text: 'What is intelligence?',
+    answers: A('psy146', 'Ability to learn and understand', [
+      'Physical strength',
+      'Height',
+      'Weight',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy147',
+    text: 'What is creativity?',
+    answers: A('psy147', 'Ability to create new ideas', [
+      'Copying others',
+      'Following rules',
+      'Memorizing',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy148',
+    text: 'What is imagination?',
+    answers: A('psy148', 'Ability to form mental images', [
+      'Physical vision',
+      'Hearing',
+      'Touch',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy149',
+    text: 'What is a psychologist?',
+    answers: A('psy149', 'Person who studies the mind', [
+      'Person who studies the body',
+      'Person who studies plants',
+      'Person who studies rocks',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy150',
+    text: 'What is behavior?',
+    answers: A('psy150', 'How someone acts', [
+      'How someone looks',
+      'How tall someone is',
+      'How old someone is',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy151',
+    text: 'What is a mood?',
+    answers: A('psy151', 'Emotional state over time', [
+      'Single emotion',
+      'Physical state',
+      'Thought',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy152',
+    text: 'What is boredom?',
+    answers: A('psy152', 'Feeling of lack of interest', [
+      'Excitement',
+      'Happiness',
+      'Fear',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy153',
+    text: 'What is curiosity?',
+    answers: A('psy153', 'Desire to learn or know', [
+      'Lack of interest',
+      'Fear',
+      'Anger',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy154',
+    text: 'What is confidence?',
+    answers: A('psy154', 'Belief in oneself', ['Doubt', 'Fear', 'Anger']),
+    level: 1,
+  },
+  {
+    id: 'psy155',
+    text: 'What is shyness?',
+    answers: A('psy155', 'Feeling nervous around others', [
+      'Confidence',
+      'Aggression',
+      'Happiness',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy156',
+    text: 'What is jealousy?',
+    answers: A('psy156', 'Feeling envious of others', [
+      'Happiness for others',
+      'Indifference',
+      'Love',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy157',
+    text: 'What is empathy?',
+    answers: A('psy157', 'Understanding others feelings', [
+      'Ignoring others',
+      'Hurting others',
+      'Avoiding others',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy158',
+    text: 'What is sympathy?',
+    answers: A('psy158', 'Feeling sorry for someone', [
+      'Feeling happy for someone',
+      'Ignoring someone',
+      'Hurting someone',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy159',
+    text: 'What is patience?',
+    answers: A('psy159', 'Ability to wait calmly', [
+      'Impatience',
+      'Anger',
+      'Fear',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy160',
+    text: 'What is frustration?',
+    answers: A('psy160', 'Feeling upset when blocked', [
+      'Satisfaction',
+      'Happiness',
+      'Calm',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy161',
+    text: 'What is excitement?',
+    answers: A('psy161', 'Strong positive anticipation', [
+      'Boredom',
+      'Sadness',
+      'Fear',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy162',
+    text: 'What is anxiety?',
+    answers: A('psy162', 'Worry about future', [
+      'Calm',
+      'Happiness',
+      'Excitement',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy163',
+    text: 'What is pride?',
+    answers: A('psy163', 'Satisfaction in achievement', [
+      'Shame',
+      'Guilt',
+      'Fear',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy164',
+    text: 'What is shame?',
+    answers: A('psy164', 'Painful feeling from wrongdoing', [
+      'Pride',
+      'Happiness',
+      'Excitement',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy165',
+    text: 'What is guilt?',
+    answers: A('psy165', 'Feeling bad about actions', [
+      'Pride',
+      'Happiness',
+      'Excitement',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy166',
+    text: 'What is loneliness?',
+    answers: A('psy166', 'Feeling of being alone', [
+      'Feeling of connection',
+      'Happiness',
+      'Excitement',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy167',
+    text: 'What is friendship?',
+    answers: A('psy167', 'Close relationship between people', [
+      'Enmity',
+      'Hatred',
+      'Indifference',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy168',
+    text: 'What is trust?',
+    answers: A('psy168', 'Belief in reliability of someone', [
+      'Distrust',
+      'Fear',
+      'Anger',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy169',
+    text: 'What is honesty?',
+    answers: A('psy169', 'Being truthful', ['Lying', 'Cheating', 'Deceiving']),
+    level: 1,
+  },
+  {
+    id: 'psy170',
+    text: 'What is kindness?',
+    answers: A('psy170', 'Being friendly and caring', [
+      'Cruelty',
+      'Meanness',
+      'Indifference',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy171',
+    text: 'What is gratitude?',
+    answers: A('psy171', 'Feeling thankful', [
+      'Ungratefulness',
+      'Anger',
+      'Resentment',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy172',
+    text: 'What is forgiveness?',
+    answers: A('psy172', 'Letting go of anger at someone', [
+      'Holding grudge',
+      'Revenge',
+      'Hatred',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy173',
+    text: 'What is self-esteem?',
+    answers: A('psy173', 'How you value yourself', [
+      'How others value you',
+      'Physical appearance',
+      'Intelligence',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy174',
+    text: 'What is optimism?',
+    answers: A('psy174', 'Expecting good outcomes', [
+      'Expecting bad outcomes',
+      'No expectations',
+      'Fear',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'psy175',
+    text: 'What is pessimism?',
+    answers: A('psy175', 'Expecting bad outcomes', [
+      'Expecting good outcomes',
+      'No expectations',
+      'Happiness',
+    ]),
+    level: 1,
+  },
+  // ===== LEVEL 2: More Easy Questions =====
+  {
+    id: 'psy176',
+    text: 'What is the conscious mind?',
+    answers: A('psy176', 'Awareness of thoughts and surroundings', [
+      'Unconscious mind',
+      'Sleep state',
+      'Dream state',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy177',
+    text: 'What is the unconscious mind?',
+    answers: A('psy177', 'Mental processes outside awareness', [
+      'Conscious thoughts',
+      'Awake state',
+      'Alert state',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy178',
+    text: 'What is short-term memory?',
+    answers: A('psy178', 'Memory lasting seconds to minutes', [
+      'Memory lasting years',
+      'Permanent memory',
+      'No memory',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy179',
+    text: 'What is long-term memory?',
+    answers: A('psy179', 'Memory lasting long periods', [
+      'Memory lasting seconds',
+      'Temporary memory',
+      'No memory',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy180',
+    text: 'What is perception?',
+    answers: A('psy180', 'Interpreting sensory information', [
+      'Ignoring information',
+      'Creating information',
+      'Deleting information',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy181',
+    text: 'What is sensation?',
+    answers: A('psy181', 'Detecting stimuli through senses', [
+      'Interpreting stimuli',
+      'Ignoring stimuli',
+      'Creating stimuli',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy182',
+    text: 'What is cognition?',
+    answers: A('psy182', 'Mental processes of knowing', [
+      'Physical processes',
+      'Emotional processes only',
+      'No processes',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy183',
+    text: 'What is an instinct?',
+    answers: A('psy183', 'Inborn behavior pattern', [
+      'Learned behavior',
+      'Random behavior',
+      'No behavior',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy184',
+    text: 'What is a reflex?',
+    answers: A('psy184', 'Automatic response to stimulus', [
+      'Planned response',
+      'Delayed response',
+      'No response',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy185',
+    text: 'What is conditioning?',
+    answers: A('psy185', 'Learning through association', [
+      'Forgetting',
+      'Ignoring',
+      'Random change',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy186',
+    text: 'What is reinforcement?',
+    answers: A('psy186', 'Strengthening behavior through consequences', [
+      'Weakening behavior',
+      'Ignoring behavior',
+      'Random behavior',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy187',
+    text: 'What is punishment?',
+    answers: A('psy187', 'Consequence that decreases behavior', [
+      'Consequence that increases behavior',
+      'No consequence',
+      'Reward',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy188',
+    text: 'What is a reward?',
+    answers: A('psy188', 'Positive consequence for behavior', [
+      'Negative consequence',
+      'No consequence',
+      'Punishment',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy189',
+    text: 'What is a phobia?',
+    answers: A('psy189', 'Intense irrational fear', [
+      'Normal fear',
+      'No fear',
+      'Courage',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy190',
+    text: 'What is depression?',
+    answers: A('psy190', 'Persistent sadness and low mood', [
+      'Happiness',
+      'Excitement',
+      'Normal mood',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy191',
+    text: 'What is therapy?',
+    answers: A('psy191', 'Treatment for mental health', [
+      'Physical treatment only',
+      'No treatment',
+      'Surgery',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy192',
+    text: 'What is a therapist?',
+    answers: A('psy192', 'Professional who provides therapy', [
+      'Patient',
+      'Friend',
+      'Family member',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy193',
+    text: 'What is a psychiatrist?',
+    answers: A('psy193', 'Doctor specializing in mental health', [
+      'General doctor',
+      'Surgeon',
+      'Dentist',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy194',
+    text: 'What is mental health?',
+    answers: A('psy194', 'Psychological well-being', [
+      'Physical health only',
+      'No health',
+      'Illness',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy195',
+    text: 'What is a disorder?',
+    answers: A('psy195', 'Condition affecting normal function', [
+      'Normal function',
+      'Perfect health',
+      'No condition',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy196',
+    text: 'What is addiction?',
+    answers: A('psy196', 'Compulsive need for substance or behavior', [
+      'Normal use',
+      'No use',
+      'Healthy habit',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy197',
+    text: 'What is withdrawal?',
+    answers: A('psy197', 'Symptoms when stopping addictive substance', [
+      'Starting substance',
+      'Normal state',
+      'No symptoms',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy198',
+    text: 'What is tolerance?',
+    answers: A('psy198', 'Needing more for same effect', [
+      'Needing less',
+      'Same amount',
+      'No need',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy199',
+    text: 'What is a hallucination?',
+    answers: A('psy199', 'Perceiving something not there', [
+      'Normal perception',
+      'Memory',
+      'Dream while awake',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'psy200',
+    text: 'What is a delusion?',
+    answers: A('psy200', 'False belief despite evidence', [
+      'True belief',
+      'Opinion',
+      'Fact',
+    ]),
+    level: 2,
+  },
+  // ===== LEVEL 3-4: More Intermediate Questions =====
+  {
+    id: 'psy201',
+    text: 'What is classical conditioning?',
+    answers: A('psy201', 'Learning through stimulus association', [
+      'Learning through rewards',
+      'Learning through observation',
+      'No learning',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy202',
+    text: 'What is operant conditioning?',
+    answers: A('psy202', 'Learning through consequences', [
+      'Learning through association',
+      'Learning through observation',
+      'No learning',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy203',
+    text: 'What is observational learning?',
+    answers: A('psy203', 'Learning by watching others', [
+      'Learning by doing',
+      'Learning by reading',
+      'No learning',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy204',
+    text: 'What is cognitive dissonance?',
+    answers: A('psy204', 'Discomfort from conflicting beliefs', [
+      'Comfort from beliefs',
+      'No beliefs',
+      'Agreement',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy205',
+    text: 'What is the placebo effect?',
+    answers: A('psy205', 'Improvement from belief in treatment', [
+      'Real drug effect',
+      'No effect',
+      'Negative effect',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy206',
+    text: 'What is confirmation bias?',
+    answers: A('psy206', 'Seeking information that confirms beliefs', [
+      'Seeking opposing information',
+      'No seeking',
+      'Random seeking',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy207',
+    text: 'What is the halo effect?',
+    answers: A('psy207', 'One trait influencing overall impression', [
+      'No influence',
+      'Negative influence only',
+      'Random impression',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy208',
+    text: 'What is groupthink?',
+    answers: A('psy208', 'Conformity in group decision-making', [
+      'Independent thinking',
+      'No thinking',
+      'Random decisions',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy209',
+    text: 'What is social facilitation?',
+    answers: A('psy209', 'Improved performance with audience', [
+      'Worse performance',
+      'No change',
+      'Random change',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy210',
+    text: 'What is social loafing?',
+    answers: A('psy210', 'Reduced effort in groups', [
+      'Increased effort',
+      'Same effort',
+      'No effort',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy211',
+    text: 'What is conformity?',
+    answers: A('psy211', 'Changing behavior to match group', [
+      'Staying different',
+      'No change',
+      'Random behavior',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy212',
+    text: 'What is obedience?',
+    answers: A('psy212', 'Following orders from authority', [
+      'Disobeying',
+      'Ignoring',
+      'Random response',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy213',
+    text: 'What is the bystander effect?',
+    answers: A('psy213', 'Less help when others present', [
+      'More help',
+      'Same help',
+      'No effect',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy214',
+    text: 'What is attribution?',
+    answers: A('psy214', 'Explaining causes of behavior', [
+      'Describing behavior',
+      'Ignoring behavior',
+      'Random explanation',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'psy215',
+    text: 'What is the fundamental attribution error?',
+    answers: A('psy215', 'Overemphasizing personality over situation', [
+      'Overemphasizing situation',
+      'Balanced view',
+      'No attribution',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy216',
+    text: 'What is self-serving bias?',
+    answers: A(
+      'psy216',
+      'Taking credit for success, blaming others for failure',
+      ['Blaming self for all', 'No bias', 'Random attribution'],
+    ),
+    level: 4,
+  },
+  {
+    id: 'psy217',
+    text: 'What is the mere exposure effect?',
+    answers: A('psy217', 'Liking things more with familiarity', [
+      'Liking less',
+      'No change',
+      'Random preference',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy218',
+    text: 'What is cognitive load?',
+    answers: A('psy218', 'Mental effort required for task', [
+      'Physical effort',
+      'No effort',
+      'Emotional effort only',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy219',
+    text: 'What is working memory?',
+    answers: A('psy219', 'Active processing of information', [
+      'Passive storage',
+      'Long-term storage',
+      'No memory',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy220',
+    text: 'What is encoding?',
+    answers: A('psy220', 'Converting information for storage', [
+      'Retrieving information',
+      'Forgetting information',
+      'No processing',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy221',
+    text: 'What is retrieval?',
+    answers: A('psy221', 'Accessing stored information', [
+      'Storing information',
+      'Forgetting information',
+      'No access',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy222',
+    text: 'What is interference?',
+    answers: A('psy222', 'Memory disruption from other information', [
+      'Memory enhancement',
+      'No effect',
+      'Random effect',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy223',
+    text: 'What is proactive interference?',
+    answers: A('psy223', 'Old memories disrupting new', [
+      'New disrupting old',
+      'No interference',
+      'Random interference',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy224',
+    text: 'What is retroactive interference?',
+    answers: A('psy224', 'New memories disrupting old', [
+      'Old disrupting new',
+      'No interference',
+      'Random interference',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'psy225',
+    text: 'What is the primacy effect?',
+    answers: A('psy225', 'Better memory for first items', [
+      'Better for last',
+      'Better for middle',
+      'No difference',
+    ]),
+    level: 4,
+  },
+  // ===== LEVEL 5-8: More Advanced Questions =====
+  {
+    id: 'psy226',
+    text: 'What is the recency effect?',
+    answers: A('psy226', 'Better memory for last items', [
+      'Better for first',
+      'Better for middle',
+      'No difference',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy227',
+    text: 'What is the serial position effect?',
+    answers: A('psy227', 'Memory varies by list position', [
+      'Same for all positions',
+      'Random memory',
+      'No memory',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy228',
+    text: 'What is chunking?',
+    answers: A('psy228', 'Grouping information for memory', [
+      'Separating information',
+      'Forgetting information',
+      'No organization',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy229',
+    text: 'What is elaborative rehearsal?',
+    answers: A('psy229', 'Deep processing for memory', [
+      'Shallow processing',
+      'No processing',
+      'Random processing',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy230',
+    text: 'What is the spacing effect?',
+    answers: A('psy230', 'Better learning with distributed practice', [
+      'Better with massed practice',
+      'No difference',
+      'Random effect',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy231',
+    text: 'What is state-dependent memory?',
+    answers: A('psy231', 'Better recall in same state as learning', [
+      'Better in different state',
+      'No effect',
+      'Random recall',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy232',
+    text: 'What is context-dependent memory?',
+    answers: A('psy232', 'Better recall in same context as learning', [
+      'Better in different context',
+      'No effect',
+      'Random recall',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy233',
+    text: 'What is the misinformation effect?',
+    answers: A('psy233', 'Memory distortion from misleading information', [
+      'Memory improvement',
+      'No effect',
+      'Random effect',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy234',
+    text: 'What is source monitoring?',
+    answers: A('psy234', 'Identifying origin of memories', [
+      'Creating memories',
+      'Forgetting memories',
+      'No monitoring',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy235',
+    text: 'What is flashbulb memory?',
+    answers: A('psy235', 'Vivid memory of emotional event', [
+      'Faded memory',
+      'No memory',
+      'Random memory',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy236',
+    text: 'What is implicit memory?',
+    answers: A('psy236', 'Memory without conscious awareness', [
+      'Conscious memory',
+      'No memory',
+      'Random memory',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy237',
+    text: 'What is explicit memory?',
+    answers: A('psy237', 'Conscious memory recall', [
+      'Unconscious memory',
+      'No memory',
+      'Random memory',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy238',
+    text: 'What is semantic memory?',
+    answers: A('psy238', 'Memory for facts and knowledge', [
+      'Memory for events',
+      'Memory for skills',
+      'No memory',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy239',
+    text: 'What is episodic memory?',
+    answers: A('psy239', 'Memory for personal events', [
+      'Memory for facts',
+      'Memory for skills',
+      'No memory',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy240',
+    text: 'What is procedural memory?',
+    answers: A('psy240', 'Memory for skills and procedures', [
+      'Memory for facts',
+      'Memory for events',
+      'No memory',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'psy241',
+    text: 'What is the availability heuristic?',
+    answers: A('psy241', 'Judging by ease of recall', [
+      'Judging by logic',
+      'No judgment',
+      'Random judgment',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy242',
+    text: 'What is the representativeness heuristic?',
+    answers: A('psy242', 'Judging by similarity to prototype', [
+      'Judging by statistics',
+      'No judgment',
+      'Random judgment',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy243',
+    text: 'What is anchoring bias?',
+    answers: A('psy243', 'Over-relying on first information', [
+      'Ignoring first information',
+      'No bias',
+      'Random reliance',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy244',
+    text: 'What is the hindsight bias?',
+    answers: A('psy244', 'Believing you knew it all along', [
+      'Admitting surprise',
+      'No bias',
+      'Random belief',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy245',
+    text: 'What is the Dunning-Kruger effect?',
+    answers: A('psy245', 'Incompetent overestimate ability', [
+      'Competent overestimate',
+      'Accurate estimation',
+      'No effect',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy246',
+    text: 'What is learned helplessness?',
+    answers: A('psy246', 'Giving up after repeated failure', [
+      'Persisting after failure',
+      'No response',
+      'Random response',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy247',
+    text: 'What is self-efficacy?',
+    answers: A('psy247', 'Belief in ability to succeed', [
+      'Belief in failure',
+      'No belief',
+      'Random belief',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy248',
+    text: 'What is locus of control?',
+    answers: A('psy248', 'Belief about control over outcomes', [
+      'No belief',
+      'Random belief',
+      'Physical control',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'psy249',
+    text: 'What is the spotlight effect?',
+    answers: A('psy249', 'Overestimating others notice of us', [
+      'Underestimating',
+      'Accurate estimation',
+      'No effect',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'psy250',
+    text: 'What is the illusion of transparency?',
+    answers: A('psy250', 'Overestimating how much others know our feelings', [
+      'Underestimating',
+      'Accurate estimation',
+      'No illusion',
+    ]),
+    level: 7,
+  },
 ];

@@ -1463,4 +1463,1223 @@ export const historyQuestions: Question[] = [
     ]),
     level: 8,
   },
+
+  // ===== Additional Level 1 Questions =====
+  {
+    id: 'his161',
+    text: 'What is the capital of France?',
+    answers: A('his161', 'Paris', ['London', 'Berlin', 'Rome']),
+    level: 1,
+  },
+  {
+    id: 'his162',
+    text: 'Who built the Great Wall of China?',
+    answers: A('his162', 'Chinese emperors', ['Romans', 'Greeks', 'Egyptians']),
+    level: 1,
+  },
+  {
+    id: 'his163',
+    text: 'What year did the Titanic sink?',
+    answers: A('his163', '1912', ['1905', '1920', '1898']),
+    level: 1,
+  },
+  {
+    id: 'his164',
+    text: 'Who was the first man on the moon?',
+    answers: A('his164', 'Neil Armstrong', [
+      'Buzz Aldrin',
+      'John Glenn',
+      'Yuri Gagarin',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'his165',
+    text: 'What country gave the Statue of Liberty to America?',
+    answers: A('his165', 'France', ['England', 'Spain', 'Italy']),
+    level: 1,
+  },
+  {
+    id: 'his166',
+    text: 'Who painted the Mona Lisa?',
+    answers: A('his166', 'Leonardo da Vinci', [
+      'Michelangelo',
+      'Raphael',
+      'Picasso',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'his167',
+    text: 'What ancient civilization built the pyramids?',
+    answers: A('his167', 'Egyptians', ['Greeks', 'Romans', 'Mayans']),
+    level: 1,
+  },
+  {
+    id: 'his168',
+    text: 'Who wrote the Declaration of Independence?',
+    answers: A('his168', 'Thomas Jefferson', [
+      'George Washington',
+      'Benjamin Franklin',
+      'John Adams',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'his169',
+    text: 'What war was fought between the North and South in America?',
+    answers: A('his169', 'Civil War', [
+      'Revolutionary War',
+      'World War I',
+      'War of 1812',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'his170',
+    text: 'Who was known as the King of Rock and Roll?',
+    answers: A('his170', 'Elvis Presley', [
+      'Michael Jackson',
+      'Chuck Berry',
+      'Little Richard',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'his171',
+    text: 'What empire was ruled by Julius Caesar?',
+    answers: A('his171', 'Roman Empire', [
+      'Greek Empire',
+      'Persian Empire',
+      'Egyptian Empire',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'his172',
+    text: 'Who was the first woman to fly solo across the Atlantic?',
+    answers: A('his172', 'Amelia Earhart', [
+      'Harriet Quimby',
+      'Bessie Coleman',
+      'Jacqueline Cochran',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'his173',
+    text: 'What year did World War I begin?',
+    answers: A('his173', '1914', ['1912', '1916', '1918']),
+    level: 1,
+  },
+  {
+    id: 'his174',
+    text: 'Who was the leader of Nazi Germany?',
+    answers: A('his174', 'Adolf Hitler', [
+      'Benito Mussolini',
+      'Joseph Stalin',
+      'Winston Churchill',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'his175',
+    text: 'What country was Napoleon Bonaparte from?',
+    answers: A('his175', 'France', ['Italy', 'Spain', 'Germany']),
+    level: 1,
+  },
+  {
+    id: 'his176',
+    text: 'Who invented the telephone?',
+    answers: A('his176', 'Alexander Graham Bell', [
+      'Thomas Edison',
+      'Nikola Tesla',
+      'Guglielmo Marconi',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'his177',
+    text: 'What was the name of the first satellite in space?',
+    answers: A('his177', 'Sputnik', ['Apollo', 'Explorer', 'Voyager']),
+    level: 1,
+  },
+  {
+    id: 'his178',
+    text: 'Who was the British Prime Minister during World War II?',
+    answers: A('his178', 'Winston Churchill', [
+      'Neville Chamberlain',
+      'Clement Attlee',
+      'Anthony Eden',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'his179',
+    text: 'What ancient city was destroyed by a volcano in 79 AD?',
+    answers: A('his179', 'Pompeii', ['Rome', 'Athens', 'Carthage']),
+    level: 1,
+  },
+  {
+    id: 'his180',
+    text: 'Who was the first President of South Africa after apartheid?',
+    answers: A('his180', 'Nelson Mandela', [
+      'F.W. de Klerk',
+      'Thabo Mbeki',
+      'Jacob Zuma',
+    ]),
+    level: 1,
+  },
+
+  // ===== Additional Level 2 Questions =====
+  {
+    id: 'his181',
+    text: 'What was the Renaissance?',
+    answers: A('his181', 'Cultural rebirth in Europe', [
+      'A war',
+      'A disease',
+      'A religion',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his182',
+    text: 'Who was Cleopatra?',
+    answers: A('his182', 'Queen of Egypt', [
+      'Queen of Rome',
+      'Queen of Greece',
+      'Queen of Persia',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his183',
+    text: 'What was the Cold War?',
+    answers: A('his183', 'Tension between USA and USSR', [
+      'A war in Antarctica',
+      'A medieval conflict',
+      'A trade dispute',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his184',
+    text: 'Who was Martin Luther King Jr.?',
+    answers: A('his184', 'Civil rights leader', [
+      'President',
+      'General',
+      'Scientist',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his185',
+    text: 'What was the Industrial Revolution?',
+    answers: A('his185', 'Shift to machine manufacturing', [
+      'A political revolution',
+      'A religious movement',
+      'A war',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his186',
+    text: 'Who was Alexander the Great?',
+    answers: A('his186', 'Macedonian conqueror', [
+      'Roman emperor',
+      'Egyptian pharaoh',
+      'Persian king',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his187',
+    text: 'What was the Black Death?',
+    answers: A('his187', 'Plague pandemic in 1300s', [
+      'A war',
+      'A famine',
+      'An earthquake',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his188',
+    text: 'Who was Mahatma Gandhi?',
+    answers: A('his188', 'Indian independence leader', [
+      'Chinese leader',
+      'African leader',
+      'European leader',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his189',
+    text: 'What was the French Revolution?',
+    answers: A('his189', 'Overthrow of French monarchy', [
+      'A war with England',
+      'A religious movement',
+      'A trade agreement',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his190',
+    text: 'Who was Queen Victoria?',
+    answers: A('his190', 'British monarch 1837-1901', [
+      'French queen',
+      'Spanish queen',
+      'Russian empress',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his191',
+    text: 'What was the Silk Road?',
+    answers: A('his191', 'Ancient trade route', [
+      'A river',
+      'A mountain range',
+      'A type of fabric',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his192',
+    text: 'Who was Genghis Khan?',
+    answers: A('his192', 'Mongol Empire founder', [
+      'Chinese emperor',
+      'Indian ruler',
+      'Persian king',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his193',
+    text: 'What was the Boston Tea Party?',
+    answers: A('his193', 'Protest against British taxes', [
+      'A celebration',
+      'A battle',
+      'A treaty',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his194',
+    text: 'Who was Joan of Arc?',
+    answers: A('his194', 'French military leader', [
+      'English queen',
+      'Spanish princess',
+      'Italian artist',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his195',
+    text: 'What was the Reformation?',
+    answers: A('his195', 'Religious movement against Catholic Church', [
+      'A war',
+      'A plague',
+      'A trade route',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his196',
+    text: 'Who was Confucius?',
+    answers: A('his196', 'Chinese philosopher', [
+      'Japanese emperor',
+      'Indian guru',
+      'Korean king',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his197',
+    text: 'What was the Magna Carta?',
+    answers: A('his197', 'Document limiting royal power', [
+      'A map',
+      'A weapon',
+      'A ship',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his198',
+    text: 'Who was Charlemagne?',
+    answers: A('his198', 'Holy Roman Emperor', [
+      'French king only',
+      'Pope',
+      'Byzantine emperor',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his199',
+    text: 'What was the Crusades?',
+    answers: A('his199', 'Religious wars for Holy Land', [
+      'Trade expeditions',
+      'Scientific missions',
+      'Art movements',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'his200',
+    text: 'Who was Marco Polo?',
+    answers: A('his200', 'Venetian explorer to Asia', [
+      'Spanish conquistador',
+      'Portuguese navigator',
+      'English pirate',
+    ]),
+    level: 2,
+  },
+
+  // ===== Additional Level 3 Questions =====
+  {
+    id: 'his201',
+    text: 'What was the Treaty of Versailles?',
+    answers: A('his201', 'Peace treaty ending WWI', [
+      'Trade agreement',
+      'Military alliance',
+      'Colonial charter',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his202',
+    text: 'Who was Otto von Bismarck?',
+    answers: A('his202', 'German unification leader', [
+      'Austrian emperor',
+      'French general',
+      'Russian tsar',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his203',
+    text: 'What was the Meiji Restoration?',
+    answers: A('his203', 'Japanese modernization', [
+      'Chinese revolution',
+      'Korean war',
+      'Vietnamese independence',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his204',
+    text: 'Who was Simón Bolívar?',
+    answers: A('his204', 'South American liberator', [
+      'Mexican president',
+      'Cuban revolutionary',
+      'Brazilian emperor',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his205',
+    text: 'What was the Opium Wars?',
+    answers: A('his205', 'British-Chinese conflicts over trade', [
+      'American-Japanese war',
+      'French-Indian war',
+      'Spanish-Dutch war',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his206',
+    text: 'Who was Catherine the Great?',
+    answers: A('his206', 'Russian empress', [
+      'French queen',
+      'English queen',
+      'Spanish queen',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his207',
+    text: 'What was the Scramble for Africa?',
+    answers: A('his207', 'European colonization of Africa', [
+      'African civil war',
+      'Trade competition',
+      'Religious mission',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his208',
+    text: 'Who was Tokugawa Ieyasu?',
+    answers: A('his208', 'Japanese shogun', [
+      'Chinese emperor',
+      'Korean king',
+      'Mongol khan',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his209',
+    text: 'What was the Hundred Years War?',
+    answers: A('his209', 'English-French conflict', [
+      'German-Italian war',
+      'Spanish-Portuguese war',
+      'Russian-Polish war',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his210',
+    text: 'Who was Suleiman the Magnificent?',
+    answers: A('his210', 'Ottoman sultan', [
+      'Persian shah',
+      'Mughal emperor',
+      'Egyptian pharaoh',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his211',
+    text: 'What was the Thirty Years War?',
+    answers: A('his211', 'European religious conflict', [
+      'Asian trade war',
+      'African colonial war',
+      'American independence war',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his212',
+    text: 'Who was Peter the Great?',
+    answers: A('his212', 'Russian tsar who modernized Russia', [
+      'French king',
+      'English king',
+      'German emperor',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his213',
+    text: 'What was the Spanish Inquisition?',
+    answers: A('his213', 'Religious persecution tribunal', [
+      'Military campaign',
+      'Trade organization',
+      'Scientific academy',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his214',
+    text: 'Who was Akbar the Great?',
+    answers: A('his214', 'Mughal emperor', [
+      'Ottoman sultan',
+      'Persian shah',
+      'Chinese emperor',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his215',
+    text: 'What was the War of the Roses?',
+    answers: A('his215', 'English civil war for throne', [
+      'French revolution',
+      'German unification',
+      'Italian independence',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his216',
+    text: 'Who was Frederick the Great?',
+    answers: A('his216', 'Prussian king', [
+      'Austrian emperor',
+      'Russian tsar',
+      'French king',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his217',
+    text: 'What was the Glorious Revolution?',
+    answers: A('his217', 'Bloodless English revolution', [
+      'French revolution',
+      'American revolution',
+      'Russian revolution',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his218',
+    text: 'Who was Hernán Cortés?',
+    answers: A('his218', 'Spanish conquistador of Aztecs', [
+      'Portuguese explorer',
+      'English colonizer',
+      'French trader',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his219',
+    text: 'What was the Byzantine Empire?',
+    answers: A('his219', 'Eastern Roman Empire', [
+      'Western Roman Empire',
+      'Greek Empire',
+      'Persian Empire',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'his220',
+    text: 'Who was Saladin?',
+    answers: A('his220', 'Muslim leader during Crusades', [
+      'Christian crusader',
+      'Byzantine emperor',
+      'Mongol khan',
+    ]),
+    level: 3,
+  },
+
+  // ===== Additional Level 4 Questions =====
+  {
+    id: 'his221',
+    text: 'What was the Congress of Vienna?',
+    answers: A('his221', 'Post-Napoleonic peace conference', [
+      'Trade agreement',
+      'Military alliance',
+      'Religious council',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his222',
+    text: 'Who was Maximilien Robespierre?',
+    answers: A('his222', 'French Revolution leader', [
+      'Napoleon general',
+      'English spy',
+      'Austrian diplomat',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his223',
+    text: 'What was the Taiping Rebellion?',
+    answers: A('his223', 'Chinese civil war 1850-1864', [
+      'Japanese invasion',
+      'Korean uprising',
+      'Vietnamese revolution',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his224',
+    text: 'Who was Giuseppe Garibaldi?',
+    answers: A('his224', 'Italian unification leader', [
+      'French general',
+      'Spanish king',
+      'Austrian emperor',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his225',
+    text: 'What was the Sepoy Mutiny?',
+    answers: A('his225', 'Indian rebellion against British', [
+      'Chinese uprising',
+      'African revolt',
+      'Southeast Asian war',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his226',
+    text: 'Who was Klemens von Metternich?',
+    answers: A('his226', 'Austrian statesman', [
+      'Prussian general',
+      'Russian diplomat',
+      'French minister',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his227',
+    text: 'What was the Boxer Rebellion?',
+    answers: A('his227', 'Chinese anti-foreign uprising', [
+      'Japanese civil war',
+      'Korean independence movement',
+      'Vietnamese revolt',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his228',
+    text: 'Who was Toussaint Louverture?',
+    answers: A('his228', 'Haitian revolution leader', [
+      'Cuban revolutionary',
+      'Mexican general',
+      'Brazilian emperor',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his229',
+    text: 'What was the Dreyfus Affair?',
+    answers: A('his229', 'French political scandal', [
+      'German military crisis',
+      'British spy case',
+      'Russian revolution',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his230',
+    text: 'Who was Leopold II of Belgium?',
+    answers: A('his230', 'Colonial ruler of Congo', [
+      'French king',
+      'Dutch emperor',
+      'German kaiser',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his231',
+    text: 'What was the Zimmermann Telegram?',
+    answers: A('his231', 'German message to Mexico in WWI', [
+      'British code',
+      'French treaty',
+      'Russian alliance',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his232',
+    text: 'Who was Woodrow Wilson?',
+    answers: A('his232', 'US President during WWI', [
+      'British PM',
+      'French President',
+      'German Chancellor',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his233',
+    text: 'What was the Balfour Declaration?',
+    answers: A('his233', 'British support for Jewish homeland', [
+      'French colonial policy',
+      'German war plan',
+      'Russian treaty',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his234',
+    text: 'Who was Mustafa Kemal Atatürk?',
+    answers: A('his234', 'Founder of modern Turkey', [
+      'Persian shah',
+      'Egyptian king',
+      'Iraqi leader',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his235',
+    text: 'What was the Weimar Republic?',
+    answers: A('his235', 'German democracy 1919-1933', [
+      'Austrian empire',
+      'French republic',
+      'Italian kingdom',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his236',
+    text: 'Who was Benito Mussolini?',
+    answers: A('his236', 'Italian fascist dictator', [
+      'Spanish general',
+      'Portuguese leader',
+      'Greek king',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his237',
+    text: 'What was the Spanish Civil War?',
+    answers: A('his237', 'Conflict between Republicans and Nationalists', [
+      'Colonial war',
+      'Religious war',
+      'Trade war',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his238',
+    text: 'Who was Francisco Franco?',
+    answers: A('his238', 'Spanish dictator', [
+      'Portuguese leader',
+      'Italian general',
+      'Greek king',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his239',
+    text: 'What was the Munich Agreement?',
+    answers: A('his239', 'Appeasement of Hitler', [
+      'Trade deal',
+      'Military alliance',
+      'Peace treaty',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'his240',
+    text: 'Who was Neville Chamberlain?',
+    answers: A('his240', 'British PM who appeased Hitler', [
+      'French President',
+      'German Chancellor',
+      'Italian PM',
+    ]),
+    level: 4,
+  },
+
+  // ===== Additional Level 5-8 Questions =====
+  {
+    id: 'his241',
+    text: 'What was the Molotov-Ribbentrop Pact?',
+    answers: A('his241', 'Nazi-Soviet non-aggression pact', [
+      'Allied treaty',
+      'Trade agreement',
+      'Military alliance',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'his242',
+    text: 'What was Operation Barbarossa?',
+    answers: A('his242', 'German invasion of USSR', [
+      'Allied D-Day',
+      'Japanese attack',
+      'Italian campaign',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'his243',
+    text: 'What was the Manhattan Project?',
+    answers: A('his243', 'US atomic bomb development', [
+      'British radar project',
+      'German rocket program',
+      'Soviet space program',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'his244',
+    text: 'What was the Yalta Conference?',
+    answers: A('his244', 'Allied leaders meeting 1945', [
+      'Peace treaty',
+      'Trade summit',
+      'Military planning',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'his245',
+    text: 'What was the Nuremberg Trials?',
+    answers: A('his245', 'Nazi war crimes tribunal', [
+      'Peace conference',
+      'Trade negotiations',
+      'Military court',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'his246',
+    text: 'What was the Marshall Plan?',
+    answers: A('his246', 'US aid to rebuild Europe', [
+      'Military alliance',
+      'Trade agreement',
+      'Immigration policy',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'his247',
+    text: 'What was the Berlin Airlift?',
+    answers: A('his247', 'Western supply of blockaded Berlin', [
+      'Military invasion',
+      'Trade embargo',
+      'Diplomatic mission',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'his248',
+    text: 'What was the Korean War?',
+    answers: A('his248', 'Conflict between North and South Korea', [
+      'Chinese civil war',
+      'Japanese invasion',
+      'Vietnamese war',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'his249',
+    text: 'What was the Suez Crisis?',
+    answers: A('his249', 'Egyptian nationalization conflict', [
+      'Israeli war',
+      'Syrian uprising',
+      'Lebanese civil war',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'his250',
+    text: 'What was the Cuban Missile Crisis?',
+    answers: A('his250', 'US-Soviet nuclear standoff', [
+      'Trade dispute',
+      'Immigration crisis',
+      'Military exercise',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'his251',
+    text: 'What was the Gulf of Tonkin Resolution?',
+    answers: A('his251', 'US authorization for Vietnam War', [
+      'Peace treaty',
+      'Trade agreement',
+      'Immigration law',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'his252',
+    text: 'What was the Tet Offensive?',
+    answers: A('his252', 'North Vietnamese attack 1968', [
+      'US invasion',
+      'Peace negotiation',
+      'Trade embargo',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'his253',
+    text: 'What was the Prague Spring?',
+    answers: A('his253', 'Czechoslovak liberalization 1968', [
+      'Polish uprising',
+      'Hungarian revolution',
+      'East German protest',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'his254',
+    text: 'What was the Camp David Accords?',
+    answers: A('his254', 'Egyptian-Israeli peace agreement', [
+      'Syrian treaty',
+      'Lebanese accord',
+      'Jordanian pact',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'his255',
+    text: 'What was the Iranian Revolution?',
+    answers: A('his255', 'Overthrow of Shah 1979', [
+      'Iraqi coup',
+      'Afghan war',
+      'Pakistani crisis',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'his256',
+    text: 'What was Solidarity?',
+    answers: A('his256', 'Polish trade union movement', [
+      'Soviet policy',
+      'German party',
+      'Czech organization',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'his257',
+    text: 'What was Glasnost?',
+    answers: A('his257', 'Soviet openness policy', [
+      'Economic reform',
+      'Military strategy',
+      'Foreign policy',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'his258',
+    text: 'What was Perestroika?',
+    answers: A('his258', 'Soviet economic restructuring', [
+      'Political openness',
+      'Military reform',
+      'Foreign policy',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'his259',
+    text: 'What was the Tiananmen Square Massacre?',
+    answers: A('his259', 'Chinese government crackdown 1989', [
+      'Cultural Revolution',
+      'Great Leap Forward',
+      'Long March',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'his260',
+    text: 'What was the fall of the Berlin Wall?',
+    answers: A('his260', 'End of divided Berlin 1989', [
+      'Start of Cold War',
+      'German unification',
+      'Soviet collapse',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'his261',
+    text: 'What was the Sykes-Picot Agreement?',
+    answers: A('his261', 'Secret WWI Middle East division', [
+      'Peace treaty',
+      'Trade agreement',
+      'Military alliance',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'his262',
+    text: 'What was the Dawes Plan?',
+    answers: A('his262', 'German reparations restructuring', [
+      'Military alliance',
+      'Trade agreement',
+      'Immigration policy',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'his263',
+    text: 'What was the Kellogg-Briand Pact?',
+    answers: A('his263', 'Agreement to outlaw war', [
+      'Military alliance',
+      'Trade treaty',
+      'Colonial agreement',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'his264',
+    text: 'What was the Lateran Treaty?',
+    answers: A('his264', 'Vatican-Italy agreement', [
+      'French-German treaty',
+      'British-Spanish pact',
+      'Austrian-Hungarian accord',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'his265',
+    text: 'What was the Locarno Treaties?',
+    answers: A('his265', 'European border guarantees', [
+      'Trade agreements',
+      'Military alliances',
+      'Colonial divisions',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'his266',
+    text: 'What was the Rapallo Treaty?',
+    answers: A('his266', 'German-Soviet agreement 1922', [
+      'French-British pact',
+      'Italian-Austrian treaty',
+      'Polish-Czech accord',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'his267',
+    text: 'What was the Hoare-Laval Pact?',
+    answers: A('his267', 'Failed Ethiopian partition plan', [
+      'Trade agreement',
+      'Military alliance',
+      'Peace treaty',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'his268',
+    text: 'What was the Anti-Comintern Pact?',
+    answers: A('his268', 'German-Japanese anti-communist agreement', [
+      'Trade treaty',
+      'Peace accord',
+      'Colonial division',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'his269',
+    text: 'What was the Tripartite Pact?',
+    answers: A('his269', 'Axis powers alliance', [
+      'Allied agreement',
+      'Neutral pact',
+      'Trade treaty',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'his270',
+    text: 'What was the Atlantic Charter?',
+    answers: A('his270', 'US-British war aims statement', [
+      'Peace treaty',
+      'Trade agreement',
+      'Military alliance',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'his271',
+    text: 'What was the Potsdam Conference?',
+    answers: A('his271', 'Allied meeting on post-war Germany', [
+      'Peace treaty',
+      'Trade summit',
+      'Military planning',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'his272',
+    text: 'What was the Truman Doctrine?',
+    answers: A('his272', 'US policy to contain communism', [
+      'Trade policy',
+      'Immigration law',
+      'Military strategy',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'his273',
+    text: 'What was the Brezhnev Doctrine?',
+    answers: A('his273', 'Soviet right to intervene in socialist states', [
+      'Economic policy',
+      'Trade agreement',
+      'Military strategy',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'his274',
+    text: 'What was the Nixon Doctrine?',
+    answers: A('his274', 'US allies should defend themselves', [
+      'Trade policy',
+      'Immigration law',
+      'Economic plan',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'his275',
+    text: 'What was the Carter Doctrine?',
+    answers: A('his275', 'US would defend Persian Gulf', [
+      'Trade policy',
+      'Immigration law',
+      'Economic plan',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'his276',
+    text: 'What was the Reagan Doctrine?',
+    answers: A('his276', 'US support for anti-communist movements', [
+      'Trade policy',
+      'Immigration law',
+      'Economic plan',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'his277',
+    text: 'What was the Bush Doctrine?',
+    answers: A('his277', 'Preemptive war against terrorists', [
+      'Trade policy',
+      'Immigration law',
+      'Economic plan',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'his278',
+    text: 'What was the Domino Theory?',
+    answers: A('his278', 'Fear of spreading communism', [
+      'Economic theory',
+      'Military strategy',
+      'Trade policy',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'his279',
+    text: 'What was Containment?',
+    answers: A('his279', 'US policy to stop communist expansion', [
+      'Trade policy',
+      'Immigration law',
+      'Economic plan',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'his280',
+    text: 'What was Détente?',
+    answers: A('his280', 'Easing of Cold War tensions', [
+      'Military buildup',
+      'Trade war',
+      'Diplomatic crisis',
+    ]),
+    level: 8,
+  },
+];
+
+  // ===== Additional Level 1 Questions (continued) =====
+  { id: 'his281', text: 'What is history?', answers: A('his281', 'Study of the past', ['Study of the future', 'Study of science', 'Study of math']), level: 1 },
+  { id: 'his282', text: 'What is an artifact?', answers: A('his282', 'Object from the past', ['Object from the future', 'Natural object', 'Modern object']), level: 1 },
+  { id: 'his283', text: 'What is archaeology?', answers: A('his283', 'Study of ancient remains', ['Study of stars', 'Study of animals', 'Study of plants']), level: 1 },
+  { id: 'his284', text: 'What is a civilization?', answers: A('his284', 'Advanced human society', ['Animal group', 'Plant group', 'Rock formation']), level: 1 },
+  { id: 'his285', text: 'What is a dynasty?', answers: A('his285', 'Ruling family line', ['Single ruler', 'No rulers', 'Random rulers']), level: 1 },
+  { id: 'his286', text: 'What is an empire?', answers: A('his286', 'Large territory under one ruler', ['Small village', 'Single city', 'No territory']), level: 1 },
+  { id: 'his287', text: 'What is a kingdom?', answers: A('his287', 'Territory ruled by king or queen', ['Territory with no ruler', 'Modern country', 'Ancient tribe']), level: 1 },
+  { id: 'his288', text: 'What is a republic?', answers: A('his288', 'Government without monarch', ['Government with king', 'No government', 'Random government']), level: 1 },
+  { id: 'his289', text: 'What is democracy?', answers: A('his289', 'Rule by the people', ['Rule by one person', 'Rule by few', 'No rule']), level: 1 },
+  { id: 'his290', text: 'What is a monarchy?', answers: A('his290', 'Rule by king or queen', ['Rule by people', 'Rule by elected officials', 'No rule']), level: 1 },
+  { id: 'his291', text: 'What is a dictator?', answers: A('his291', 'Ruler with absolute power', ['Elected leader', 'No leader', 'Weak leader']), level: 1 },
+  { id: 'his292', text: 'What is a revolution?', answers: A('his292', 'Overthrow of government', ['Peaceful change', 'No change', 'Small change']), level: 1 },
+  { id: 'his293', text: 'What is a war?', answers: A('his293', 'Armed conflict between groups', ['Peaceful discussion', 'Trade agreement', 'Sports competition']), level: 1 },
+  { id: 'his294', text: 'What is a treaty?', answers: A('his294', 'Agreement between nations', ['Declaration of war', 'Trade embargo', 'No agreement']), level: 1 },
+  { id: 'his295', text: 'What is colonization?', answers: A('his295', 'Settling and controlling territory', ['Leaving territory', 'Trading with territory', 'Ignoring territory']), level: 1 },
+  { id: 'his296', text: 'What is independence?', answers: A('his296', 'Freedom from foreign rule', ['Being ruled by others', 'No government', 'Random rule']), level: 1 },
+  { id: 'his297', text: 'What is a constitution?', answers: A('his297', 'Fundamental laws of nation', ['Single law', 'No laws', 'Random rules']), level: 1 },
+  { id: 'his298', text: 'What is slavery?', answers: A('his298', 'Owning people as property', ['Paying workers', 'No workers', 'Free labor']), level: 1 },
+  { id: 'his299', text: 'What is abolition?', answers: A('his299', 'Ending slavery', ['Starting slavery', 'Continuing slavery', 'Ignoring slavery']), level: 1 },
+  { id: 'his300', text: 'What is immigration?', answers: A('his300', 'Moving to new country', ['Staying in same country', 'Leaving country', 'No movement']), level: 1 },
+
+  // ===== Additional Level 2 Questions (continued) =====
+  { id: 'his301', text: 'What was the Stone Age?', answers: A('his301', 'Period using stone tools', ['Period using metal', 'Period using plastic', 'Modern period']), level: 2 },
+  { id: 'his302', text: 'What was the Bronze Age?', answers: A('his302', 'Period using bronze tools', ['Period using stone', 'Period using iron', 'Modern period']), level: 2 },
+  { id: 'his303', text: 'What was the Iron Age?', answers: A('his303', 'Period using iron tools', ['Period using stone', 'Period using bronze', 'Modern period']), level: 2 },
+  { id: 'his304', text: 'What was the Middle Ages?', answers: A('his304', 'Period between ancient and modern', ['Ancient period', 'Modern period', 'Future period']), level: 2 },
+  { id: 'his305', text: 'What was feudalism?', answers: A('his305', 'Medieval social system', ['Modern democracy', 'Ancient republic', 'No system']), level: 2 },
+  { id: 'his306', text: 'What was a knight?', answers: A('his306', 'Medieval mounted warrior', ['Modern soldier', 'Ancient farmer', 'No warrior']), level: 2 },
+  { id: 'his307', text: 'What was a castle?', answers: A('his307', 'Fortified medieval residence', ['Modern house', 'Ancient tent', 'No building']), level: 2 },
+  { id: 'his308', text: 'What was the Renaissance?', answers: A('his308', 'Cultural rebirth in Europe', ['Dark ages', 'Modern era', 'Ancient times']), level: 2 },
+  { id: 'his309', text: 'What was the Enlightenment?', answers: A('his309', 'Age of reason and science', ['Age of religion', 'Age of war', 'Age of darkness']), level: 2 },
+  { id: 'his310', text: 'What was the Industrial Revolution?', answers: A('his310', 'Shift to machine manufacturing', ['Agricultural revolution', 'Political revolution', 'No revolution']), level: 2 },
+  { id: 'his311', text: 'What was imperialism?', answers: A('his311', 'Extending national power', ['Isolationism', 'Pacifism', 'No expansion']), level: 2 },
+  { id: 'his312', text: 'What was nationalism?', answers: A('his312', 'Pride in ones nation', ['No national pride', 'Internationalism', 'Globalism']), level: 2 },
+  { id: 'his313', text: 'What was communism?', answers: A('his313', 'System of collective ownership', ['Capitalism', 'Feudalism', 'No system']), level: 2 },
+  { id: 'his314', text: 'What was capitalism?', answers: A('his314', 'System of private ownership', ['Communism', 'Feudalism', 'No system']), level: 2 },
+  { id: 'his315', text: 'What was fascism?', answers: A('his315', 'Authoritarian nationalist ideology', ['Democracy', 'Communism', 'Liberalism']), level: 2 },
+  { id: 'his316', text: 'What was the Holocaust?', answers: A('his316', 'Nazi genocide of Jews', ['World War I', 'Cold War', 'Trade war']), level: 2 },
+  { id: 'his317', text: 'What was apartheid?', answers: A('his317', 'South African racial segregation', ['Integration', 'Democracy', 'Freedom']), level: 2 },
+  { id: 'his318', text: 'What was the Civil Rights Movement?', answers: A('his318', 'Fight for racial equality', ['Fight for war', 'Fight for trade', 'No fight']), level: 2 },
+  { id: 'his319', text: 'What was the Space Race?', answers: A('his319', 'US-Soviet competition in space', ['Trade competition', 'Military war', 'Sports competition']), level: 2 },
+  { id: 'his320', text: 'What was the Berlin Wall?', answers: A('his320', 'Wall dividing East and West Berlin', ['Wall in China', 'Wall in Rome', 'No wall']), level: 2 },
 ];

@@ -1231,4 +1231,1242 @@ export const artQuestions: Question[] = [
     ]),
     level: 8,
   },
+
+  // ===== Additional Level 1-2 Questions =====
+  {
+    id: 'art126',
+    text: 'What are the primary colors?',
+    answers: A('art126', 'Red, blue, yellow', [
+      'Green, orange, purple',
+      'Black, white, gray',
+      'Pink, brown, tan',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art127',
+    text: 'What tool do painters use to apply paint?',
+    answers: A('art127', 'Brush', ['Hammer', 'Scissors', 'Ruler']),
+    level: 1,
+  },
+  {
+    id: 'art128',
+    text: 'What is a sculpture?',
+    answers: A('art128', '3D artwork', ['2D painting', 'Music piece', 'Dance']),
+    level: 1,
+  },
+  {
+    id: 'art129',
+    text: 'What is a portrait?',
+    answers: A('art129', 'Picture of a person', [
+      'Picture of landscape',
+      'Picture of food',
+      'Picture of animals',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art130',
+    text: 'What is a landscape painting?',
+    answers: A('art130', 'Picture of nature scenery', [
+      'Picture of people',
+      'Picture of buildings',
+      'Picture of objects',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art131',
+    text: 'What is a still life?',
+    answers: A('art131', 'Painting of inanimate objects', [
+      'Painting of people',
+      'Painting of animals',
+      'Painting of landscapes',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art132',
+    text: 'What is a canvas?',
+    answers: A('art132', 'Surface for painting', [
+      'Type of paint',
+      'Painting tool',
+      'Art style',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art133',
+    text: 'What is a palette?',
+    answers: A('art133', 'Board for mixing colors', [
+      'Type of brush',
+      'Art frame',
+      'Canvas type',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art134',
+    text: 'What is an easel?',
+    answers: A('art134', 'Stand for holding canvas', [
+      'Type of paint',
+      'Painting technique',
+      'Art style',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art135',
+    text: 'What is a mural?',
+    answers: A('art135', 'Large wall painting', [
+      'Small painting',
+      'Sculpture',
+      'Photograph',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art136',
+    text: 'What is a mosaic?',
+    answers: A('art136', 'Art made from small pieces', [
+      'Oil painting',
+      'Watercolor',
+      'Pencil drawing',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art137',
+    text: 'What is a fresco?',
+    answers: A('art137', 'Painting on wet plaster', [
+      'Painting on canvas',
+      'Painting on wood',
+      'Painting on paper',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art138',
+    text: 'What is perspective in art?',
+    answers: A('art138', 'Creating depth on flat surface', [
+      'Color mixing',
+      'Brush technique',
+      'Frame style',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art139',
+    text: 'What is shading?',
+    answers: A('art139', 'Adding darkness for depth', [
+      'Adding color',
+      'Adding lines',
+      'Adding texture',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art140',
+    text: 'What is a sketch?',
+    answers: A('art140', 'Quick preliminary drawing', [
+      'Finished painting',
+      'Sculpture',
+      'Photograph',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art141',
+    text: 'What is watercolor?',
+    answers: A('art141', 'Paint mixed with water', [
+      'Paint mixed with oil',
+      'Paint mixed with wax',
+      'Paint mixed with glue',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art142',
+    text: 'What is oil paint?',
+    answers: A('art142', 'Paint with oil binder', [
+      'Paint with water',
+      'Paint with wax',
+      'Paint with glue',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art143',
+    text: 'What is acrylic paint?',
+    answers: A('art143', 'Fast-drying synthetic paint', [
+      'Slow-drying oil paint',
+      'Watercolor',
+      'Tempera',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art144',
+    text: 'What is a collage?',
+    answers: A('art144', 'Art from glued materials', [
+      'Oil painting',
+      'Watercolor',
+      'Pencil drawing',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art145',
+    text: 'What is printmaking?',
+    answers: A('art145', 'Creating art by printing', [
+      'Painting',
+      'Sculpting',
+      'Drawing',
+    ]),
+    level: 2,
+  },
+
+  // ===== Additional Level 3-4 Questions =====
+  {
+    id: 'art146',
+    text: 'What is chiaroscuro?',
+    answers: A('art146', 'Strong light-dark contrast', [
+      'Color harmony',
+      'Perspective technique',
+      'Brush stroke',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art147',
+    text: 'What is sfumato?',
+    answers: A('art147', 'Soft blending technique', [
+      'Sharp edges',
+      'Bold colors',
+      'Geometric shapes',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art148',
+    text: 'What is trompe-l oeil?',
+    answers: A('art148', 'Optical illusion art', [
+      'Abstract art',
+      'Minimalist art',
+      'Expressionist art',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art149',
+    text: 'What is impasto?',
+    answers: A('art149', 'Thick paint application', [
+      'Thin paint layers',
+      'Watercolor technique',
+      'Pencil shading',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art150',
+    text: 'What is glazing in painting?',
+    answers: A('art150', 'Transparent paint layers', [
+      'Opaque paint',
+      'Thick paint',
+      'Dry brush',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art151',
+    text: 'What is the golden ratio?',
+    answers: A('art151', 'Mathematical proportion in art', [
+      'Color theory',
+      'Brush technique',
+      'Canvas size',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art152',
+    text: 'What is composition in art?',
+    answers: A('art152', 'Arrangement of elements', [
+      'Color choice',
+      'Brush type',
+      'Canvas material',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art153',
+    text: 'What is negative space?',
+    answers: A('art153', 'Empty space around subject', [
+      'Filled space',
+      'Dark areas',
+      'Colored areas',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art154',
+    text: 'What is a vanishing point?',
+    answers: A('art154', 'Point where parallel lines meet', [
+      'Starting point',
+      'Center point',
+      'Random point',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art155',
+    text: 'What is foreshortening?',
+    answers: A('art155', 'Distortion for depth effect', [
+      'Elongation',
+      'Flattening',
+      'Enlarging',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art156',
+    text: 'What is Art Nouveau?',
+    answers: A('art156', 'Decorative style with organic forms', [
+      'Geometric style',
+      'Minimalist style',
+      'Abstract style',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art157',
+    text: 'What is Art Deco?',
+    answers: A('art157', 'Geometric decorative style', [
+      'Organic style',
+      'Naturalistic style',
+      'Impressionist style',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art158',
+    text: 'What is Bauhaus?',
+    answers: A('art158', 'German design school', [
+      'French art movement',
+      'Italian style',
+      'Spanish technique',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art159',
+    text: 'What is De Stijl?',
+    answers: A('art159', 'Dutch abstract movement', [
+      'French movement',
+      'German movement',
+      'Italian movement',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art160',
+    text: 'What is Fauvism?',
+    answers: A('art160', 'Bold color movement', [
+      'Muted color movement',
+      'Black and white art',
+      'Realistic art',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art161',
+    text: 'What is Dadaism?',
+    answers: A('art161', 'Anti-art movement', [
+      'Traditional art',
+      'Classical art',
+      'Academic art',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art162',
+    text: 'What is Constructivism?',
+    answers: A('art162', 'Russian abstract movement', [
+      'French movement',
+      'American movement',
+      'British movement',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art163',
+    text: 'What is Suprematism?',
+    answers: A('art163', 'Geometric abstraction movement', [
+      'Figurative movement',
+      'Realistic movement',
+      'Naturalistic movement',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art164',
+    text: 'What is Futurism?',
+    answers: A('art164', 'Movement celebrating speed and technology', [
+      'Movement celebrating nature',
+      'Movement celebrating tradition',
+      'Movement celebrating stillness',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'art165',
+    text: 'What is Precisionism?',
+    answers: A('art165', 'American industrial art', [
+      'European romantic art',
+      'Asian traditional art',
+      'African tribal art',
+    ]),
+    level: 4,
+  },
+
+  // ===== Additional Level 5-8 Questions =====
+  {
+    id: 'art166',
+    text: 'What is action painting?',
+    answers: A('art166', 'Spontaneous paint application', [
+      'Careful detailed painting',
+      'Geometric painting',
+      'Realistic painting',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art167',
+    text: 'What is color field painting?',
+    answers: A('art167', 'Large areas of flat color', [
+      'Small detailed areas',
+      'Textured surfaces',
+      'Geometric patterns',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art168',
+    text: 'What is hard-edge painting?',
+    answers: A('art168', 'Sharp boundaries between colors', [
+      'Soft blended edges',
+      'Textured edges',
+      'Irregular edges',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art169',
+    text: 'What is Neo-Expressionism?',
+    answers: A('art169', 'Return to expressive painting', [
+      'Minimalist movement',
+      'Conceptual movement',
+      'Abstract movement',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art170',
+    text: 'What is Photorealism?',
+    answers: A('art170', 'Painting resembling photographs', [
+      'Abstract painting',
+      'Impressionist painting',
+      'Expressionist painting',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'art171',
+    text: 'What is appropriation art?',
+    answers: A('art171', 'Using existing images', [
+      'Creating original images',
+      'Abstract art',
+      'Minimalist art',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art172',
+    text: 'What is installation art?',
+    answers: A('art172', 'Site-specific 3D works', [
+      '2D paintings',
+      'Small sculptures',
+      'Photographs',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art173',
+    text: 'What is performance art?',
+    answers: A('art173', 'Art as live action', [
+      'Static art',
+      'Painted art',
+      'Sculpted art',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art174',
+    text: 'What is land art?',
+    answers: A('art174', 'Art in natural landscape', [
+      'Art in galleries',
+      'Art in museums',
+      'Art in studios',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art175',
+    text: 'What is video art?',
+    answers: A('art175', 'Art using video medium', [
+      'Art using paint',
+      'Art using stone',
+      'Art using metal',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'art176',
+    text: 'What is relational aesthetics?',
+    answers: A('art176', 'Art as social interaction', [
+      'Art as object',
+      'Art as image',
+      'Art as sound',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'art177',
+    text: 'What is institutional critique?',
+    answers: A('art177', 'Art questioning art institutions', [
+      'Art supporting institutions',
+      'Art ignoring institutions',
+      'Art decorating institutions',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'art178',
+    text: 'What is post-internet art?',
+    answers: A('art178', 'Art influenced by internet culture', [
+      'Art before internet',
+      'Art without technology',
+      'Traditional art',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'art179',
+    text: 'What is bio art?',
+    answers: A('art179', 'Art using living organisms', [
+      'Art using paint',
+      'Art using stone',
+      'Art using metal',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'art180',
+    text: 'What is generative art?',
+    answers: A('art180', 'Art created by algorithms', [
+      'Art created by hand',
+      'Art created by accident',
+      'Art created by nature',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'art181',
+    text: 'What is the Pictures Generation?',
+    answers: A('art181', 'Artists using appropriated images', [
+      'Artists using original images',
+      'Artists using sculptures',
+      'Artists using performance',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'art182',
+    text: 'What is the Young British Artists movement?',
+    answers: A('art182', 'Provocative British artists 1990s', [
+      'Traditional British artists',
+      'Academic British artists',
+      'Classical British artists',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'art183',
+    text: 'What is Superflat?',
+    answers: A('art183', 'Japanese postmodern art movement', [
+      'American movement',
+      'European movement',
+      'African movement',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'art184',
+    text: 'What is Stuckism?',
+    answers: A('art184', 'Anti-conceptual art movement', [
+      'Pro-conceptual movement',
+      'Abstract movement',
+      'Minimalist movement',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'art185',
+    text: 'What is Altermodern?',
+    answers: A('art185', 'Post-postmodern art concept', [
+      'Modern art',
+      'Classical art',
+      'Traditional art',
+    ]),
+    level: 8,
+  },
+  // ===== LEVEL 1: More Very Easy Questions =====
+  {
+    id: 'art186',
+    text: 'What is art?',
+    answers: A('art186', 'Creative expression', ['Science', 'Math', 'History']),
+    level: 1,
+  },
+  {
+    id: 'art187',
+    text: 'What is a painting?',
+    answers: A('art187', 'Art made with paint', [
+      'Art made with clay',
+      'Art made with stone',
+      'Art made with metal',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art188',
+    text: 'What is a drawing?',
+    answers: A('art188', 'Art made with pencil or pen', [
+      'Art made with paint',
+      'Art made with clay',
+      'Art made with stone',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art189',
+    text: 'What is a sculpture?',
+    answers: A('art189', 'Three-dimensional art', [
+      'Two-dimensional art',
+      'Music',
+      'Dance',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art190',
+    text: 'What is a photograph?',
+    answers: A('art190', 'Image captured by camera', [
+      'Painting',
+      'Drawing',
+      'Sculpture',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art191',
+    text: 'What is a museum?',
+    answers: A('art191', 'Place to display art', [
+      'Place to make art',
+      'Place to sell art',
+      'Place to destroy art',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art192',
+    text: 'What is a gallery?',
+    answers: A('art192', 'Place to show and sell art', [
+      'Place to make art',
+      'Place to store art',
+      'Place to destroy art',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art193',
+    text: 'What is an artist?',
+    answers: A('art193', 'Person who creates art', [
+      'Person who sells art',
+      'Person who buys art',
+      'Person who destroys art',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art194',
+    text: 'What is a canvas?',
+    answers: A('art194', 'Surface for painting', [
+      'Surface for writing',
+      'Surface for walking',
+      'Surface for sleeping',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art195',
+    text: 'What is a brush?',
+    answers: A('art195', 'Tool for applying paint', [
+      'Tool for cutting',
+      'Tool for measuring',
+      'Tool for writing',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art196',
+    text: 'What is a palette?',
+    answers: A('art196', 'Surface for mixing paint', [
+      'Surface for painting',
+      'Tool for cutting',
+      'Tool for measuring',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art197',
+    text: 'What is red?',
+    answers: A('art197', 'Primary color', [
+      'Secondary color',
+      'Neutral color',
+      'No color',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art198',
+    text: 'What is blue?',
+    answers: A('art198', 'Primary color', [
+      'Secondary color',
+      'Neutral color',
+      'No color',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art199',
+    text: 'What is yellow?',
+    answers: A('art199', 'Primary color', [
+      'Secondary color',
+      'Neutral color',
+      'No color',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art200',
+    text: 'What is green?',
+    answers: A('art200', 'Secondary color (blue + yellow)', [
+      'Primary color',
+      'Neutral color',
+      'No color',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art201',
+    text: 'What is orange?',
+    answers: A('art201', 'Secondary color (red + yellow)', [
+      'Primary color',
+      'Neutral color',
+      'No color',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art202',
+    text: 'What is purple?',
+    answers: A('art202', 'Secondary color (red + blue)', [
+      'Primary color',
+      'Neutral color',
+      'No color',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art203',
+    text: 'What is black?',
+    answers: A('art203', 'Absence of light', [
+      'Primary color',
+      'Secondary color',
+      'Bright color',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art204',
+    text: 'What is white?',
+    answers: A('art204', 'All colors of light combined', [
+      'Absence of color',
+      'Primary color',
+      'Secondary color',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art205',
+    text: 'What is a portrait?',
+    answers: A('art205', 'Picture of a person', [
+      'Picture of landscape',
+      'Picture of objects',
+      'Picture of animals',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art206',
+    text: 'What is a landscape?',
+    answers: A('art206', 'Picture of scenery', [
+      'Picture of person',
+      'Picture of objects',
+      'Picture of animals',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art207',
+    text: 'What is a still life?',
+    answers: A('art207', 'Picture of objects', [
+      'Picture of person',
+      'Picture of landscape',
+      'Picture of action',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art208',
+    text: 'What is a frame?',
+    answers: A('art208', 'Border around artwork', [
+      'Center of artwork',
+      'Back of artwork',
+      'Top of artwork',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art209',
+    text: 'What is a sketch?',
+    answers: A('art209', 'Quick rough drawing', [
+      'Detailed painting',
+      'Sculpture',
+      'Photograph',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art210',
+    text: 'What is a masterpiece?',
+    answers: A('art210', 'Outstanding work of art', [
+      'Average work',
+      'Bad work',
+      'Unfinished work',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art211',
+    text: 'What is a mural?',
+    answers: A('art211', 'Painting on a wall', [
+      'Painting on canvas',
+      'Painting on paper',
+      'Sculpture',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art212',
+    text: 'What is a statue?',
+    answers: A('art212', 'Sculpture of person or animal', [
+      'Painting',
+      'Drawing',
+      'Photograph',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art213',
+    text: 'What is clay?',
+    answers: A('art213', 'Material for sculpting', [
+      'Material for painting',
+      'Material for drawing',
+      'Material for photography',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art214',
+    text: 'What is pottery?',
+    answers: A('art214', 'Objects made from clay', [
+      'Objects made from metal',
+      'Objects made from wood',
+      'Objects made from glass',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art215',
+    text: 'What is a vase?',
+    answers: A('art215', 'Container for flowers', [
+      'Container for food',
+      'Container for water',
+      'Container for clothes',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art216',
+    text: 'What is a pencil?',
+    answers: A('art216', 'Tool for drawing', [
+      'Tool for painting',
+      'Tool for sculpting',
+      'Tool for photography',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art217',
+    text: 'What is an eraser?',
+    answers: A('art217', 'Tool for removing marks', [
+      'Tool for making marks',
+      'Tool for painting',
+      'Tool for sculpting',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art218',
+    text: 'What is paper?',
+    answers: A('art218', 'Surface for drawing or writing', [
+      'Surface for painting only',
+      'Surface for sculpting',
+      'Surface for photography',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art219',
+    text: 'What is watercolor?',
+    answers: A('art219', 'Paint mixed with water', [
+      'Paint mixed with oil',
+      'Paint mixed with wax',
+      'Dry paint',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art220',
+    text: 'What is oil paint?',
+    answers: A('art220', 'Paint mixed with oil', [
+      'Paint mixed with water',
+      'Paint mixed with wax',
+      'Dry paint',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art221',
+    text: 'What is a crayon?',
+    answers: A('art221', 'Colored wax stick for drawing', [
+      'Pencil',
+      'Brush',
+      'Pen',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art222',
+    text: 'What is a marker?',
+    answers: A('art222', 'Pen with colored ink', ['Pencil', 'Crayon', 'Brush']),
+    level: 1,
+  },
+  {
+    id: 'art223',
+    text: 'What is coloring?',
+    answers: A('art223', 'Filling areas with color', [
+      'Drawing outlines',
+      'Sculpting',
+      'Photography',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art224',
+    text: 'What is shading?',
+    answers: A('art224', 'Adding dark areas for depth', [
+      'Adding light areas',
+      'Adding color',
+      'Removing marks',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'art225',
+    text: 'What is an outline?',
+    answers: A('art225', 'Line showing edge of shape', [
+      'Filled area',
+      'Shaded area',
+      'Colored area',
+    ]),
+    level: 1,
+  },
+  // ===== LEVEL 2-4: More Questions =====
+  {
+    id: 'art226',
+    text: 'What is perspective?',
+    answers: A('art226', 'Technique showing depth', [
+      'Technique showing color',
+      'Technique showing texture',
+      'Technique showing movement',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art227',
+    text: 'What is composition?',
+    answers: A('art227', 'Arrangement of elements', [
+      'Single element',
+      'Color only',
+      'Texture only',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art228',
+    text: 'What is contrast?',
+    answers: A('art228', 'Difference between elements', [
+      'Similarity',
+      'Sameness',
+      'Unity',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art229',
+    text: 'What is balance?',
+    answers: A('art229', 'Visual equilibrium', [
+      'Visual chaos',
+      'Visual confusion',
+      'Visual disorder',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art230',
+    text: 'What is symmetry?',
+    answers: A('art230', 'Mirror-image balance', [
+      'Asymmetry',
+      'Chaos',
+      'Disorder',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art231',
+    text: 'What is texture?',
+    answers: A('art231', 'Surface quality', ['Color', 'Shape', 'Size']),
+    level: 2,
+  },
+  {
+    id: 'art232',
+    text: 'What is form?',
+    answers: A('art232', 'Three-dimensional shape', [
+      'Two-dimensional shape',
+      'Color',
+      'Texture',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art233',
+    text: 'What is line?',
+    answers: A('art233', 'Mark connecting two points', [
+      'Area',
+      'Shape',
+      'Color',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art234',
+    text: 'What is shape?',
+    answers: A('art234', 'Two-dimensional area', [
+      'Three-dimensional form',
+      'Line',
+      'Point',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art235',
+    text: 'What is space?',
+    answers: A('art235', 'Area around and within objects', [
+      'Color',
+      'Texture',
+      'Line',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art236',
+    text: 'What is value in art?',
+    answers: A('art236', 'Lightness or darkness', [
+      'Color',
+      'Texture',
+      'Shape',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art237',
+    text: 'What is hue?',
+    answers: A('art237', 'Name of a color', [
+      'Brightness',
+      'Darkness',
+      'Texture',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art238',
+    text: 'What is saturation?',
+    answers: A('art238', 'Intensity of color', [
+      'Name of color',
+      'Lightness',
+      'Darkness',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art239',
+    text: 'What is a warm color?',
+    answers: A('art239', 'Red, orange, yellow', [
+      'Blue, green, purple',
+      'Black, white, gray',
+      'No color',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art240',
+    text: 'What is a cool color?',
+    answers: A('art240', 'Blue, green, purple', [
+      'Red, orange, yellow',
+      'Black, white, gray',
+      'No color',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art241',
+    text: 'What is a neutral color?',
+    answers: A('art241', 'Black, white, gray, brown', [
+      'Primary colors',
+      'Secondary colors',
+      'Bright colors',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art242',
+    text: 'What is the color wheel?',
+    answers: A('art242', 'Circle showing color relationships', [
+      'Square of colors',
+      'Line of colors',
+      'Random colors',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art243',
+    text: 'What are complementary colors?',
+    answers: A('art243', 'Opposite colors on wheel', [
+      'Adjacent colors',
+      'Same colors',
+      'No colors',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'art244',
+    text: 'What is Impressionism?',
+    answers: A('art244', 'Art movement capturing light and moment', [
+      'Realistic art',
+      'Abstract art',
+      'Ancient art',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art245',
+    text: 'What is Expressionism?',
+    answers: A('art245', 'Art expressing emotion', [
+      'Realistic art',
+      'Impressionism',
+      'Ancient art',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art246',
+    text: 'What is Cubism?',
+    answers: A('art246', 'Art showing multiple viewpoints', [
+      'Single viewpoint',
+      'Realistic art',
+      'Impressionism',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art247',
+    text: 'What is Surrealism?',
+    answers: A('art247', 'Art of dreams and unconscious', [
+      'Realistic art',
+      'Impressionism',
+      'Cubism',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art248',
+    text: 'What is Abstract art?',
+    answers: A('art248', 'Art not representing reality', [
+      'Realistic art',
+      'Portrait art',
+      'Landscape art',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art249',
+    text: 'What is Realism?',
+    answers: A('art249', 'Art depicting reality accurately', [
+      'Abstract art',
+      'Surrealism',
+      'Cubism',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'art250',
+    text: 'What is Pop Art?',
+    answers: A('art250', 'Art using popular culture imagery', [
+      'Classical art',
+      'Ancient art',
+      'Religious art',
+    ]),
+    level: 3,
+  },
 ];
