@@ -1,0 +1,916 @@
+import { Question, createAnswers } from './types';
+
+const A = (id: string, correct: string, others: string[]) =>
+  createAnswers(id, correct, others);
+
+export const musicQuestions: Question[] = [
+  // ===== LEVEL 1: Very Easy =====
+  {
+    id: 'mus1',
+    text: 'How many notes are in a musical octave?',
+    answers: A('mus1', '8', ['6', '7', '12']),
+    level: 1,
+  },
+  {
+    id: 'mus2',
+    text: 'What instrument has 88 keys?',
+    answers: A('mus2', 'Piano', ['Guitar', 'Violin', 'Flute']),
+    level: 1,
+  },
+  {
+    id: 'mus3',
+    text: 'What instrument has 6 strings?',
+    answers: A('mus3', 'Guitar', ['Violin', 'Cello', 'Bass']),
+    level: 1,
+  },
+  {
+    id: 'mus4',
+    text: 'Who composed "Für Elise"?',
+    answers: A('mus4', 'Beethoven', ['Mozart', 'Bach', 'Chopin']),
+    level: 1,
+  },
+  {
+    id: 'mus5',
+    text: 'What is the lowest male voice type?',
+    answers: A('mus5', 'Bass', ['Tenor', 'Baritone', 'Alto']),
+    level: 1,
+  },
+  {
+    id: 'mus6',
+    text: 'What is the highest female voice type?',
+    answers: A('mus6', 'Soprano', ['Alto', 'Mezzo-soprano', 'Contralto']),
+    level: 1,
+  },
+  {
+    id: 'mus7',
+    text: 'What instrument do you blow into?',
+    answers: A('mus7', 'Flute', ['Violin', 'Piano', 'Drums']),
+    level: 1,
+  },
+  {
+    id: 'mus8',
+    text: 'What do you hit to play drums?',
+    answers: A('mus8', 'Drumsticks', ['Bow', 'Pick', 'Mallet']),
+    level: 1,
+  },
+  {
+    id: 'mus9',
+    text: 'What is a group of singers called?',
+    answers: A('mus9', 'Choir', ['Orchestra', 'Band', 'Ensemble']),
+    level: 1,
+  },
+  {
+    id: 'mus10',
+    text: 'What is a group of musicians playing together called?',
+    answers: A('mus10', 'Orchestra', ['Solo', 'Duet', 'Trio']),
+    level: 1,
+  },
+  {
+    id: 'mus11',
+    text: 'Who wrote "Twinkle Twinkle Little Star" variations?',
+    answers: A('mus11', 'Mozart', ['Beethoven', 'Bach', 'Haydn']),
+    level: 1,
+  },
+  {
+    id: 'mus12',
+    text: 'What is the symbol for a treble clef?',
+    answers: A('mus12', 'G clef', ['F clef', 'C clef', 'D clef']),
+    level: 1,
+  },
+  {
+    id: 'mus13',
+    text: 'What is the symbol for a bass clef?',
+    answers: A('mus13', 'F clef', ['G clef', 'C clef', 'D clef']),
+    level: 1,
+  },
+  {
+    id: 'mus14',
+    text: 'How many lines are on a musical staff?',
+    answers: A('mus14', '5', ['4', '6', '7']),
+    level: 1,
+  },
+  {
+    id: 'mus15',
+    text: 'What does "forte" mean in music?',
+    answers: A('mus15', 'Loud', ['Soft', 'Fast', 'Slow']),
+    level: 1,
+  },
+  {
+    id: 'mus16',
+    text: 'What does "piano" mean in music dynamics?',
+    answers: A('mus16', 'Soft', ['Loud', 'Fast', 'Slow']),
+    level: 1,
+  },
+  {
+    id: 'mus17',
+    text: 'What is a half note called in British English?',
+    answers: A('mus17', 'Minim', ['Crotchet', 'Quaver', 'Semibreve']),
+    level: 1,
+  },
+  {
+    id: 'mus18',
+    text: 'What is a quarter note called in British English?',
+    answers: A('mus18', 'Crotchet', ['Minim', 'Quaver', 'Semibreve']),
+    level: 1,
+  },
+  {
+    id: 'mus19',
+    text: 'What instrument family does the violin belong to?',
+    answers: A('mus19', 'Strings', ['Brass', 'Woodwind', 'Percussion']),
+    level: 1,
+  },
+  {
+    id: 'mus20',
+    text: 'What instrument family does the trumpet belong to?',
+    answers: A('mus20', 'Brass', ['Strings', 'Woodwind', 'Percussion']),
+    level: 1,
+  },
+  {
+    id: 'mus21',
+    text: 'What instrument family does the clarinet belong to?',
+    answers: A('mus21', 'Woodwind', ['Brass', 'Strings', 'Percussion']),
+    level: 1,
+  },
+  {
+    id: 'mus22',
+    text: 'What instrument family does the drum belong to?',
+    answers: A('mus22', 'Percussion', ['Brass', 'Strings', 'Woodwind']),
+    level: 1,
+  },
+  {
+    id: 'mus23',
+    text: 'Who is known as the "King of Pop"?',
+    answers: A('mus23', 'Michael Jackson', [
+      'Elvis Presley',
+      'Prince',
+      'Madonna',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus24',
+    text: 'Who is known as the "King of Rock and Roll"?',
+    answers: A('mus24', 'Elvis Presley', [
+      'Michael Jackson',
+      'Chuck Berry',
+      'Little Richard',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus25',
+    text: 'What band was John Lennon in?',
+    answers: A('mus25', 'The Beatles', [
+      'The Rolling Stones',
+      'The Who',
+      'Led Zeppelin',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus26',
+    text: 'What band was Mick Jagger in?',
+    answers: A('mus26', 'The Rolling Stones', [
+      'The Beatles',
+      'The Who',
+      'Led Zeppelin',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus27',
+    text: 'What is a song for one voice called?',
+    answers: A('mus27', 'Solo', ['Duet', 'Trio', 'Quartet']),
+    level: 1,
+  },
+  {
+    id: 'mus28',
+    text: 'What is a song for two voices called?',
+    answers: A('mus28', 'Duet', ['Solo', 'Trio', 'Quartet']),
+    level: 1,
+  },
+  {
+    id: 'mus29',
+    text: 'What is a song for three voices called?',
+    answers: A('mus29', 'Trio', ['Solo', 'Duet', 'Quartet']),
+    level: 1,
+  },
+  {
+    id: 'mus30',
+    text: 'What is a song for four voices called?',
+    answers: A('mus30', 'Quartet', ['Solo', 'Duet', 'Trio']),
+    level: 1,
+  },
+  {
+    id: 'mus31',
+    text: 'What does "allegro" mean?',
+    answers: A('mus31', 'Fast', ['Slow', 'Loud', 'Soft']),
+    level: 1,
+  },
+  {
+    id: 'mus32',
+    text: 'What does "adagio" mean?',
+    answers: A('mus32', 'Slow', ['Fast', 'Loud', 'Soft']),
+    level: 1,
+  },
+  {
+    id: 'mus33',
+    text: 'What is the stick used to conduct an orchestra?',
+    answers: A('mus33', 'Baton', ['Wand', 'Rod', 'Staff']),
+    level: 1,
+  },
+  {
+    id: 'mus34',
+    text: 'What is the person who leads an orchestra called?',
+    answers: A('mus34', 'Conductor', ['Director', 'Manager', 'Leader']),
+    level: 1,
+  },
+  {
+    id: 'mus35',
+    text: 'What is a musical play called?',
+    answers: A('mus35', 'Opera', ['Symphony', 'Concerto', 'Sonata']),
+    level: 1,
+  },
+  {
+    id: 'mus36',
+    text: 'What is a large musical work for orchestra called?',
+    answers: A('mus36', 'Symphony', ['Opera', 'Concerto', 'Sonata']),
+    level: 1,
+  },
+  {
+    id: 'mus37',
+    text: 'What is a piece for solo instrument with orchestra?',
+    answers: A('mus37', 'Concerto', ['Symphony', 'Opera', 'Sonata']),
+    level: 1,
+  },
+  {
+    id: 'mus38',
+    text: 'What is a piece for one or two instruments?',
+    answers: A('mus38', 'Sonata', ['Symphony', 'Concerto', 'Opera']),
+    level: 1,
+  },
+  {
+    id: 'mus39',
+    text: 'What is the repeated section of a song called?',
+    answers: A('mus39', 'Chorus', ['Verse', 'Bridge', 'Intro']),
+    level: 1,
+  },
+  {
+    id: 'mus40',
+    text: 'What is the beginning of a song called?',
+    answers: A('mus40', 'Intro', ['Outro', 'Chorus', 'Bridge']),
+    level: 1,
+  },
+  {
+    id: 'mus41',
+    text: 'What is the end of a song called?',
+    answers: A('mus41', 'Outro', ['Intro', 'Chorus', 'Bridge']),
+    level: 1,
+  },
+  {
+    id: 'mus42',
+    text: 'What is a sharp symbol?',
+    answers: A('mus42', '♯', ['♭', '♮', '♩']),
+    level: 1,
+  },
+  {
+    id: 'mus43',
+    text: 'What is a flat symbol?',
+    answers: A('mus43', '♭', ['♯', '♮', '♩']),
+    level: 1,
+  },
+  {
+    id: 'mus44',
+    text: 'What does a sharp do to a note?',
+    answers: A('mus44', 'Raises it half step', [
+      'Lowers it half step',
+      'Makes it louder',
+      'Makes it longer',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus45',
+    text: 'What does a flat do to a note?',
+    answers: A('mus45', 'Lowers it half step', [
+      'Raises it half step',
+      'Makes it softer',
+      'Makes it shorter',
+    ]),
+    level: 1,
+  },
+  {
+    id: 'mus46',
+    text: 'What is the speed of music called?',
+    answers: A('mus46', 'Tempo', ['Pitch', 'Volume', 'Tone']),
+    level: 1,
+  },
+  {
+    id: 'mus47',
+    text: 'What is the highness or lowness of a sound?',
+    answers: A('mus47', 'Pitch', ['Tempo', 'Volume', 'Tone']),
+    level: 1,
+  },
+  {
+    id: 'mus48',
+    text: 'What is the loudness of music called?',
+    answers: A('mus48', 'Volume/Dynamics', ['Pitch', 'Tempo', 'Tone']),
+    level: 1,
+  },
+  {
+    id: 'mus49',
+    text: 'What is the quality of a sound called?',
+    answers: A('mus49', 'Timbre', ['Pitch', 'Tempo', 'Volume']),
+    level: 1,
+  },
+  {
+    id: 'mus50',
+    text: 'What is a rest in music?',
+    answers: A('mus50', 'Silence', ['Loud note', 'Fast note', 'Long note']),
+    level: 1,
+  },
+
+  // ===== LEVEL 2-3: Easy/Intermediate =====
+  {
+    id: 'mus51',
+    text: 'Who composed the "Moonlight Sonata"?',
+    answers: A('mus51', 'Beethoven', ['Mozart', 'Chopin', 'Bach']),
+    level: 2,
+  },
+  {
+    id: 'mus52',
+    text: 'Who composed "The Four Seasons"?',
+    answers: A('mus52', 'Vivaldi', ['Bach', 'Handel', 'Mozart']),
+    level: 2,
+  },
+  {
+    id: 'mus53',
+    text: 'Who composed "The Nutcracker"?',
+    answers: A('mus53', 'Tchaikovsky', [
+      'Stravinsky',
+      'Prokofiev',
+      'Rachmaninoff',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus54',
+    text: 'Who composed "Swan Lake"?',
+    answers: A('mus54', 'Tchaikovsky', [
+      'Stravinsky',
+      'Prokofiev',
+      'Rachmaninoff',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus55',
+    text: 'Who composed "The Magic Flute"?',
+    answers: A('mus55', 'Mozart', ['Beethoven', 'Bach', 'Handel']),
+    level: 2,
+  },
+  {
+    id: 'mus56',
+    text: 'Who composed "Messiah"?',
+    answers: A('mus56', 'Handel', ['Bach', 'Mozart', 'Beethoven']),
+    level: 2,
+  },
+  {
+    id: 'mus57',
+    text: 'What is the famous chorus from "Messiah"?',
+    answers: A('mus57', 'Hallelujah', ['Amen', 'Gloria', 'Hosanna']),
+    level: 2,
+  },
+  {
+    id: 'mus58',
+    text: 'Who composed "Toccata and Fugue in D minor"?',
+    answers: A('mus58', 'Bach', ['Handel', 'Mozart', 'Beethoven']),
+    level: 2,
+  },
+  {
+    id: 'mus59',
+    text: 'What is a fugue?',
+    answers: A('mus59', 'Contrapuntal composition', [
+      'Dance form',
+      'Song form',
+      'March form',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus60',
+    text: 'What is counterpoint?',
+    answers: A('mus60', 'Multiple independent melodies', [
+      'Single melody',
+      'Harmony only',
+      'Rhythm only',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus61',
+    text: 'Who composed "Rhapsody in Blue"?',
+    answers: A('mus61', 'George Gershwin', [
+      'Cole Porter',
+      'Irving Berlin',
+      'Leonard Bernstein',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus62',
+    text: 'What genre is "Rhapsody in Blue"?',
+    answers: A('mus62', 'Jazz-classical fusion', [
+      'Pure classical',
+      'Pure jazz',
+      'Rock',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus63',
+    text: 'Who composed "West Side Story"?',
+    answers: A('mus63', 'Leonard Bernstein', [
+      'George Gershwin',
+      'Stephen Sondheim',
+      'Andrew Lloyd Webber',
+    ]),
+    level: 2,
+  },
+  {
+    id: 'mus64',
+    text: 'What is a musical interval?',
+    answers: A('mus64', 'Distance between two notes', [
+      'Type of chord',
+      'Type of scale',
+      'Type of rhythm',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus65',
+    text: 'What is a major scale?',
+    answers: A('mus65', 'Scale with major third', [
+      'Scale with minor third',
+      'Chromatic scale',
+      'Pentatonic scale',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus66',
+    text: 'What is a minor scale?',
+    answers: A('mus66', 'Scale with minor third', [
+      'Scale with major third',
+      'Chromatic scale',
+      'Pentatonic scale',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus67',
+    text: 'How many notes in a pentatonic scale?',
+    answers: A('mus67', '5', ['7', '8', '12']),
+    level: 3,
+  },
+  {
+    id: 'mus68',
+    text: 'How many notes in a chromatic scale?',
+    answers: A('mus68', '12', ['7', '8', '5']),
+    level: 3,
+  },
+  {
+    id: 'mus69',
+    text: 'What is a chord?',
+    answers: A('mus69', 'Three or more notes together', [
+      'Single note',
+      'Two notes',
+      'Melody',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus70',
+    text: 'What is a triad?',
+    answers: A('mus70', 'Three-note chord', [
+      'Two-note chord',
+      'Four-note chord',
+      'Five-note chord',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus71',
+    text: 'What notes make a C major chord?',
+    answers: A('mus71', 'C, E, G', ['C, D, E', 'C, E♭, G', 'C, F, G']),
+    level: 3,
+  },
+  {
+    id: 'mus72',
+    text: 'What is the dominant chord in C major?',
+    answers: A('mus72', 'G major', ['F major', 'A minor', 'D minor']),
+    level: 3,
+  },
+  {
+    id: 'mus73',
+    text: 'What is the subdominant chord in C major?',
+    answers: A('mus73', 'F major', ['G major', 'A minor', 'D minor']),
+    level: 3,
+  },
+  {
+    id: 'mus74',
+    text: 'What is syncopation?',
+    answers: A('mus74', 'Off-beat emphasis', [
+      'On-beat emphasis',
+      'No rhythm',
+      'Steady beat',
+    ]),
+    level: 3,
+  },
+  {
+    id: 'mus75',
+    text: 'What time signature is a waltz?',
+    answers: A('mus75', '3/4', ['4/4', '2/4', '6/8']),
+    level: 3,
+  },
+
+  // ===== LEVEL 4-5: Normal/Hard =====
+  {
+    id: 'mus76',
+    text: 'What is a cadence?',
+    answers: A('mus76', 'Chord progression ending phrase', [
+      'Beginning of phrase',
+      'Middle of phrase',
+      'Type of scale',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'mus77',
+    text: 'What is a perfect cadence?',
+    answers: A('mus77', 'V to I progression', ['IV to I', 'I to V', 'II to V']),
+    level: 4,
+  },
+  {
+    id: 'mus78',
+    text: 'What is a plagal cadence?',
+    answers: A('mus78', 'IV to I progression', ['V to I', 'I to V', 'II to V']),
+    level: 4,
+  },
+  {
+    id: 'mus79',
+    text: 'What is modulation?',
+    answers: A('mus79', 'Key change', [
+      'Tempo change',
+      'Volume change',
+      'Instrument change',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'mus80',
+    text: 'What is a relative minor?',
+    answers: A('mus80', 'Minor key sharing key signature', [
+      'Parallel minor',
+      'Harmonic minor',
+      'Melodic minor',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'mus81',
+    text: 'What is the relative minor of C major?',
+    answers: A('mus81', 'A minor', ['C minor', 'E minor', 'G minor']),
+    level: 4,
+  },
+  {
+    id: 'mus82',
+    text: 'What is a seventh chord?',
+    answers: A('mus82', 'Four-note chord with seventh', [
+      'Three-note chord',
+      'Five-note chord',
+      'Two-note chord',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'mus83',
+    text: 'What is a dominant seventh chord?',
+    answers: A('mus83', 'Major triad with minor seventh', [
+      'Minor triad with major seventh',
+      'Diminished triad',
+      'Augmented triad',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'mus84',
+    text: 'Who composed "The Rite of Spring"?',
+    answers: A('mus84', 'Stravinsky', [
+      'Tchaikovsky',
+      'Prokofiev',
+      'Rachmaninoff',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'mus85',
+    text: 'What happened at the premiere of "The Rite of Spring"?',
+    answers: A('mus85', 'Riot in the audience', [
+      'Standing ovation',
+      'Silence',
+      'Walkout',
+    ]),
+    level: 4,
+  },
+  {
+    id: 'mus86',
+    text: 'Who composed "Bolero"?',
+    answers: A('mus86', 'Ravel', ['Debussy', 'Satie', 'Fauré']),
+    level: 4,
+  },
+  {
+    id: 'mus87',
+    text: 'What is Impressionism in music?',
+    answers: A('mus87', 'Atmospheric, coloristic style', [
+      'Strict classical form',
+      'Atonal music',
+      'Minimalist music',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'mus88',
+    text: 'Who is associated with musical Impressionism?',
+    answers: A('mus88', 'Debussy', ['Beethoven', 'Bach', 'Mozart']),
+    level: 5,
+  },
+  {
+    id: 'mus89',
+    text: 'Who composed "Clair de Lune"?',
+    answers: A('mus89', 'Debussy', ['Ravel', 'Satie', 'Fauré']),
+    level: 5,
+  },
+  {
+    id: 'mus90',
+    text: 'What is atonality?',
+    answers: A('mus90', 'Music without tonal center', [
+      'Music with strong tonal center',
+      'Music in major key',
+      'Music in minor key',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'mus91',
+    text: 'Who developed twelve-tone technique?',
+    answers: A('mus91', 'Arnold Schoenberg', [
+      'Igor Stravinsky',
+      'Béla Bartók',
+      'Alban Berg',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'mus92',
+    text: 'What is serialism?',
+    answers: A('mus92', 'Composition using tone rows', [
+      'Improvisation',
+      'Traditional harmony',
+      'Folk music',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'mus93',
+    text: 'Who composed "Wozzeck"?',
+    answers: A('mus93', 'Alban Berg', [
+      'Arnold Schoenberg',
+      'Anton Webern',
+      'Paul Hindemith',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'mus94',
+    text: 'What is minimalism in music?',
+    answers: A('mus94', 'Repetitive patterns, gradual change', [
+      'Complex orchestration',
+      'Atonal music',
+      'Romantic style',
+    ]),
+    level: 5,
+  },
+  {
+    id: 'mus95',
+    text: 'Who is associated with musical minimalism?',
+    answers: A('mus95', 'Steve Reich', [
+      'Arnold Schoenberg',
+      'Igor Stravinsky',
+      'Béla Bartók',
+    ]),
+    level: 5,
+  },
+
+  // ===== LEVEL 6-8: Very Hard/Legendary/Professor =====
+  {
+    id: 'mus96',
+    text: 'What is a Neapolitan sixth chord?',
+    answers: A('mus96', 'Major chord on flattened second', [
+      'Minor chord on fifth',
+      'Diminished chord',
+      'Augmented chord',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'mus97',
+    text: 'What is an augmented sixth chord?',
+    answers: A('mus97', 'Chord with augmented sixth interval', [
+      'Chord with perfect fifth',
+      'Chord with minor third',
+      'Chord with major seventh',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'mus98',
+    text: 'What is a German sixth chord?',
+    answers: A('mus98', 'Augmented sixth with perfect fifth', [
+      'Augmented sixth with major third',
+      'Augmented sixth with minor third',
+      'Diminished chord',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'mus99',
+    text: 'What is a French sixth chord?',
+    answers: A('mus99', 'Augmented sixth with augmented fourth', [
+      'Augmented sixth with perfect fifth',
+      'Augmented sixth with minor third',
+      'Diminished chord',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'mus100',
+    text: 'What is a Picardy third?',
+    answers: A('mus100', 'Major third ending minor piece', [
+      'Minor third ending major piece',
+      'Augmented third',
+      'Diminished third',
+    ]),
+    level: 6,
+  },
+  {
+    id: 'mus101',
+    text: 'What is a hemiola?',
+    answers: A('mus101', 'Rhythmic ratio of 3:2', [
+      'Rhythmic ratio of 2:1',
+      'Rhythmic ratio of 4:3',
+      'Rhythmic ratio of 5:4',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'mus102',
+    text: 'What is a tritone?',
+    answers: A('mus102', 'Interval of three whole tones', [
+      'Interval of two whole tones',
+      'Interval of four whole tones',
+      'Perfect fifth',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'mus103',
+    text: 'Why was the tritone called "diabolus in musica"?',
+    answers: A('mus103', 'Dissonant, unstable sound', [
+      'Beautiful sound',
+      'Sacred sound',
+      'Simple sound',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'mus104',
+    text: 'What is a Lydian mode?',
+    answers: A('mus104', 'Major scale with raised fourth', [
+      'Major scale with lowered seventh',
+      'Minor scale',
+      'Pentatonic scale',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'mus105',
+    text: 'What is a Mixolydian mode?',
+    answers: A('mus105', 'Major scale with lowered seventh', [
+      'Major scale with raised fourth',
+      'Minor scale',
+      'Pentatonic scale',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'mus106',
+    text: 'What is a Dorian mode?',
+    answers: A('mus106', 'Minor scale with raised sixth', [
+      'Minor scale with lowered sixth',
+      'Major scale',
+      'Pentatonic scale',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'mus107',
+    text: 'What is a Phrygian mode?',
+    answers: A('mus107', 'Minor scale with lowered second', [
+      'Minor scale with raised second',
+      'Major scale',
+      'Pentatonic scale',
+    ]),
+    level: 7,
+  },
+  {
+    id: 'mus108',
+    text: 'What is a Locrian mode?',
+    answers: A('mus108', 'Scale with diminished fifth', [
+      'Scale with perfect fifth',
+      'Major scale',
+      'Pentatonic scale',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'mus109',
+    text: 'What is Schenkerian analysis?',
+    answers: A('mus109', 'Hierarchical tonal analysis', [
+      'Rhythmic analysis',
+      'Formal analysis',
+      'Textural analysis',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'mus110',
+    text: 'What is an Urlinie?',
+    answers: A('mus110', 'Fundamental melodic line', [
+      'Bass line',
+      'Harmony',
+      'Rhythm',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'mus111',
+    text: 'What is an Ursatz?',
+    answers: A('mus111', 'Fundamental structure', [
+      'Surface structure',
+      'Ornament',
+      'Variation',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'mus112',
+    text: 'What is set theory in music?',
+    answers: A('mus112', 'Analysis of pitch-class sets', [
+      'Analysis of rhythm',
+      'Analysis of form',
+      'Analysis of timbre',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'mus113',
+    text: 'What is a pitch-class set?',
+    answers: A('mus113', 'Collection of pitch classes', [
+      'Collection of rhythms',
+      'Collection of dynamics',
+      'Collection of timbres',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'mus114',
+    text: 'What is the Forte number?',
+    answers: A('mus114', 'Catalog number for pitch-class sets', [
+      'Tempo marking',
+      'Dynamic marking',
+      'Articulation marking',
+    ]),
+    level: 8,
+  },
+  {
+    id: 'mus115',
+    text: 'What is spectral music?',
+    answers: A('mus115', 'Music based on acoustic spectra', [
+      'Music based on scales',
+      'Music based on chords',
+      'Music based on rhythms',
+    ]),
+    level: 8,
+  },
+];

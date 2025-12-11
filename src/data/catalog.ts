@@ -4461,8 +4461,12 @@ function translate(s: string, l: Locale): string {
   return (map && map[s]) || s;
 }
 
+// Import additional question banks
+import { questionBanks } from './questions';
+
 function bankFor(categoryId: string, l: Locale): Question[] {
-  const src = BANK_EN[categoryId] || BANK_EN.math;
+  // First check the new question banks, then fall back to BANK_EN, then to math
+  const src = questionBanks[categoryId] || BANK_EN[categoryId] || BANK_EN.math;
   return src.map(q => ({
     id: q.id,
     text: translate(q.text, l),
